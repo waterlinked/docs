@@ -15,11 +15,12 @@ Once the position is known relative to the Receivers, the global position can be
 ## Revision features
 
 * Increased range up to 300m (R300 version only)
-* Support for Quick Deploy [Antenna](../antenna.md)
+* Support for quick deploy [Antenna](../antenna.md)
 * WiFi connectivity
 * 2 x IMUs
 * Smaller topside housing
 * Integrated GPS antenna
+* New interface with BlueROV2 integration support
 
 ## Kit content
 
