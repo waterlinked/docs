@@ -68,6 +68,7 @@ nav:
         - Locator-U1: locators/locator-u1.md
 
     - Receiver-D1: receiver-d1.md
+    - Antenna: antenna.md
     - Master-D1: master-d1.md
     - Modems:
         - Modem-M64: modems/modem-m64.md

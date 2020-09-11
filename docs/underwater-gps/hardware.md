@@ -4,6 +4,8 @@
 
 ![pelicase_connectors](../img/pelicase_g2_connectors.png)
 
+\* *Locator-D1 is not compatible with the [BlueROV2 Integration Kit](bluerov-integration.md).*
+
 ### Receiver-D1 setup
 
 * Connect the four Receiver-D1 cables to bulkheads marked "Receiver 1" to "Receiver 4" on the housing.
@@ -14,7 +16,7 @@
 
 * If using the Locator-U1, no connections to the housing is needed. Just power the Locator and make sure both status leds on U1 and Master-D1 are solid green.
 
-![pelicase_cables_connected](../img/pelicase_cables_connected.png)
+![pelicase_cables_connected](../img/placeholder-300x300.jpg)
 
 ## IMU
 
