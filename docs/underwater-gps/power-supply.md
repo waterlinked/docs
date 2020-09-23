@@ -32,4 +32,6 @@ The power button will illuminate when the power is switched on.
 A battery may be used instead of wired power. Use a battery with a nominal voltage within the voltage range. A Molex-to-XT60 cable assembly is provided with the Underwater GPS kit for ease of connection to battery packs with XT60 connectors.
 The battery pack can be secured within the Underwater GPS housing using the provided non-slip battery strap.
 
-Maximum battery width: 50 mm. 
+![topside_battery_tray_dimensions](../img/topside_battery_tray_dimensions.png)
+
+Maximum battery width: 50 mm (2"). 
