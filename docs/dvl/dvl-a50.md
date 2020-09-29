@@ -11,7 +11,7 @@ The DVL estimates velocity relative to the sea bottom by sending acoustic waves 
 
 * 0.05 - 50 meter range
 * 1 MHz transducer frequency
-* 4-10 Hz ping rate (altitude dependent)
+* 4-26 Hz ping rate (altitude dependent)
 * 2 m/s max velocity
 * ± 0.1 cm/s long term accuracy
 * 1000 meter depth rating
