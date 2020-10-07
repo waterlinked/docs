@@ -18,8 +18,11 @@ The DVL estimates velocity relative to the sea bottom by sending acoustic waves 
 * 10-30 V input voltage (reversed-polarity protection)
 * Ethernet and UART
 
-!!! note
-    We are using a constant speed of sound equal to 1500 m/s (Release 1.3.1). This will be user configurable in comming releases.
+!!! Note
+	The DVL-A50 uses a constant speed of sound equal to 1500 m/s (Release 1.3.1). This is configurable for the Performace edition.
+
+!!! Warning
+	The DVL-A50 is intended for use in water and is designed to be water cooled. Do not run the DVL-A50 in air for more than 10 minutes as it may overheat and damage internal components.
 
 ## LED Signals
 
