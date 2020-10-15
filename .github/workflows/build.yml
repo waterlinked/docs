@@ -19,9 +19,14 @@ jobs:
       run: |
         python3 -m pip install --upgrade pip
         python3 -m pip install -r requirements.txt
+    - name: Clone waterlinked.github.io
+      run: |
+        git clone git@github.com:waterlinked/waterlinked.github.io.git
     - name: Build
       run: |
-        mkdocs build --verbose --clean --strict
+        # mkdocs build --verbose --clean --strict
+        cd waterlinked.github.io
+        mkdocs gh-deploy --config-file ../docs/mkdocs.yml --remote-branch master
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v2
       env:
