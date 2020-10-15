@@ -46,6 +46,10 @@ The Modem-M64 has a 3.3 volt UART interface.
 | Data parity stop | 8N1   |
 | Flow control | None  |
 
+## Channels
+
+Modem M64 supports channels 1-7. Channel overveiw can be found [here](../channels.md).
+
 ## Libraries and code examples
 
 Example code and libraries that can be used to communicate with the modem on the terminal interface:
