@@ -4,7 +4,7 @@
 
 ## Locator setup
 
-In this section you choose which locator you are using with the system and on which channel it is sending. The Water Linked default channel is 2 and this is the best channel for long distance operation. If using the Locator-U1 the channel needs to macth the rotary switch at the back of the U1. Channel overveiw can be found [here](../channels.md).
+In this section you choose which locator you are using with the system and on which channel it is sending. The Water Linked default channel is 2 and this is the best channel for long distance operation. If using the Locator-U1 the channel needs to macth the rotary switch at the back of the U1. Channel overveiw can be found [here](../../channels.md).
 
 !!! warning
     If you are using the Locator-A1, you need to provid depth information to the topside unit. Description on how to do this is found [here](api.md#providing-depth-to-system-when-using-locator-a1).
