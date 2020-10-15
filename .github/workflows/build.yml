@@ -20,11 +20,12 @@ jobs:
         python3 -m pip install --upgrade pip
         python3 -m pip install -r requirements.txt
     - name: Clone waterlinked.github.io
-      run: |
-        git clone git@github.com:waterlinked/waterlinked.github.io.git
+        uses: actions/checkout@v2
+        with:
+          repository: waterlinked/waterlinked.github.io
+          path: waterlinked.github.io
     - name: Build
       run: |
-        # mkdocs build --verbose --clean --strict
         cd waterlinked.github.io
         mkdocs gh-deploy --config-file ../mkdocs.yml --remote-branch master
     - name: Deploy
