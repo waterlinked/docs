@@ -18,7 +18,7 @@ git clone --recursive https://github.com/waterlinked/docs
 cd docs
 
 python -m venv venv
-source ven/bin/activate (Linux)
+source venv/bin/activate (Linux)
 venv\Scripts\activate.bat (Windows)
 pip install -r requirements.txt
 
