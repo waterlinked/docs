@@ -19,13 +19,9 @@ jobs:
       run: |
         python3 -m pip install --upgrade pip
         python3 -m pip install -r requirements.txt
-    - name: Clone waterlinked.github.io
-      uses: actions/checkout@v2
-      with:
-        repository: waterlinked/waterlinked.github.io
-        token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        path: waterlinked.github.io
-    - name: Build
-      run: |
-        cd waterlinked.github.io
-        mkdocs gh-deploy --config-file ../mkdocs.yml --remote-branch master
+
+    - name: Deploy docs
+      uses: mhausenblas/mkdocs-deploy-gh-pages@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        CUSTOM_DOMAIN: waterlinked.github.io
