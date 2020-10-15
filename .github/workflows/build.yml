@@ -20,10 +20,10 @@ jobs:
         python3 -m pip install --upgrade pip
         python3 -m pip install -r requirements.txt
     - name: Clone waterlinked.github.io
-        uses: actions/checkout@v2
-        with:
-          repository: waterlinked/waterlinked.github.io
-          path: waterlinked.github.io
+      uses: actions/checkout@v2
+      with:
+        repository: waterlinked/waterlinked.github.io
+        path: waterlinked.github.io
     - name: Build
       run: |
         cd waterlinked.github.io
