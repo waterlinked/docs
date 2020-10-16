@@ -24,9 +24,9 @@ This guide details how to permanently attach the DVL-A50 to a BlueROV2.
 
 * Small ethernet switch. We recommend [this one](https://www.aliexpress.com/item/32854568356.html). Requires a 12V DC/DC converter such as [this one](https://octopart.com/7812sr-c-murata+power+solutions-49447769).
 
-![bluerov2_mounting_bracket](../img/placeholder-300x300.jpg)
+<img src="https://waterlinked.com/wp-content/uploads/2020/08/DVL_Bracket_1600_web.jpg" alt="dvl-bracket" width="300" height="300">
 
-* [BlueROV2 mounting bracket](https://waterlinked.com/store/). This is optional, but protects the DVL-A50 and allows for down to 0 cm minimum altitude.
+* [DVL-A50 BlueROV2 Integration Kit](https://waterlinked.com/store/). This is optional, but protects the DVL-A50 and allows for down to 0 cm minimum altitude.
 
 You will also need:
 
@@ -56,16 +56,16 @@ You will also need:
 
 The first thing you will have to do before going about any of the installation options is to cut the DVL-A50 cable, separating the IO Interface board. We recommend you do so near the end where the IO Interface board is to begin with. 
 
-![cut-dvl-cable](../img/placeholder-300x300.jpg)
+![cut-dvl-cable](../img/cut_io_interface.png)
 
 !!! Warning
 	The DVL-A50 cable is permanently attached and non-replacable inside the DVL-A50. If you cut the cable too short you will either have to splice the cable with another cable, or order a new DVL-A50. Measure twice, cut once!
 
 ### Attaching the BlueROV2 mounting bracket
 
-* Attach the BlueROV2 mounting bracket to the DVL-A50 using 4 x M3x6 screws.
+* Attach the BlueROV2 mounting bracket to the DVL-A50 using the 4 x M3x6 screws provided with the DVL-A50 BlueROV2 Integration Kit.
 
-![attaching-mounting-bracket-to-dvl](../img/placeholder-300x300.jpg)
+![attaching-mounting-bracket-to-dvl](../img/screw_on_dvl_bracket_to_dvl.png)
 
 The BlueROV2 mounting bracket can be attached to the BlueROV2 in one of the 2 places indicated in the image below (standard BlueROV2).
 
@@ -82,7 +82,7 @@ If your BlueROV2 has the Heavy Configuration upgrade, the BlueROV2 mounting brac
 
 ![drilling-holes-in-bluerov-frame](../img/placeholder-300x300.jpg)
 
-Check that the BlueROV2 mounting bracket will attach properly to the BlueROV2 frame using 2 x M5x12 mm screws, but do not secure the bracket in place as more work is needed on the cable end.
+Check that the BlueROV2 mounting bracket will attach properly to the BlueROV2 frame using 2 x M5x16 mm screws, but do not secure the bracket in place as more work is needed on the cable end.
 
 ### Final cable lenght
 
@@ -309,3 +309,29 @@ Reinstall 4” Watertight Enclosure onto ROV with the following steps:
 Mount the Electronics Enclosure to the frame using the M3x16 screws so that the dome is on the same side as the front center panels (the center panels without the 3 large holes). Install the M3x16 screws through the clips and into the Enclosure Cradle (4” Series). It is easier to install these screws if the clips are not fully tightened until all screws are through the clips and threading into the Enclosure Cradle (4” Series). This allows clips to rotate so you can find the threaded hole in the Enclosure Cradle (4” Series) easily.
 
 ![bluerov2-remove-electronic](../img/bluerov2-remove-electronic-1024x743.png)
+
+### Attach DVL-A50 to BlueROV2
+
+Attach the DVL-A50 to the BlueROV2 using the 2 x M5x16 screws provided with the DVL-A50 BlueROV2 Integration Kit through the two holes you've made previously.
+
+![dvl-attached-to-bluerov2](../img/dvl_attached_to_bluerov2.png)
+
+Excess cable can be bundled together and attached to the BlueROV2 frame using zip ties. 
+
+![bundled-excess-dvl-cable](../img/bundled_excess_dvl_cable.png)
+
+## Software
+
+Integration of the DVL-A50 into ArduPilot Companion currently exists as a branch to the ArduPilot Companion Git repository:
+
+[https://github.com/bluerobotics/companion/tree/dvl](https://github.com/bluerobotics/companion/tree/dvl)
+
+Follow these steps to use the DVL code:
+
+* Start from Companion v0.0.22 (see [https://bluerobotics.com/learn/bluerov2-software-setup/#update-software](https://bluerobotics.com/learn/bluerov2-software-setup/#update-software) to check if you're using v0.0.22)
+* Make sure the ROV is connected to the internet
+* Navigate to [http://192.168.2.2:2770/git](http://192.168.2.2:2770/git)
+* Click "origin" -> "branches" -> "dvl"
+* Click "update"
+* Wait until the update is over and the Companion reboots
+* Refresh the page and "Water Linked" should show up in the navbar
