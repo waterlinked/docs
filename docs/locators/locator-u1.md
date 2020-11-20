@@ -36,6 +36,8 @@ To power **off** the Locator-U1 unscrew the back lid until the LED turns off.
 
 * Pulsating green light : The Locator-U1 is charging. The unit is **not ready** to dive.
 
+* Flashing green light (fast): Error internally on Locator-U1. The unit is **not ready** to dive. Typically error with pressure sensor. Drying the locator could help. If not contact Water Linked.
+
 !!! warning
     The Locator-U1 can only be submerged for about 6 hours. It then needs to dry the pressure sensor in order to give correct depth readings.
 
