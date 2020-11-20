@@ -49,10 +49,8 @@ Commands in the table are shown **without** the checksum for readability.
 
 | Command | Description | Response | Description |
 |---------|-------------|----------|-------------|
-| `wcv`   | Get protocol version | `wrv,`*[major],[minor],[patch]* | Protocol version. eg: `wrv,2.0.0` |
-| `wcw`   | Get product detail | `wrw,`*[type]*,*[name]*,*[version]*,*[chipID]*,*[IP address]* | Where type is dvl, name is product name, version is software version, chip ID is the chip ID and IP address is the IP if connected to DHCP server: eg: `wrw,dvl,dvl-a50,1.3.0,0xdeadbeef,10.11.12.95` |
-| `wcc`   | Get configuration | TBD | Get configuration |
-| `wcs,`*[TBD]*   | Set configuration | TBD | Set configuration |
+| `wcv`   | Get protocol version | `wrv,`*[major],[minor],[patch]* | Protocol version. eg: `wrv,2.1.0` |
+| `wcw`   | Get product detail | `wrw,`*[name]*,*[version]*,*[chipID]*,*[IP address]* | Where type is dvl, name is product name, version is software version, chip ID is the chip ID and _optionally_ the IP address if connected to DHCP server: eg: `wrw,dvl-a50,1.4.0,0xfedcba98765432` or `wrw,dvl-a50,1.4.0,0xfedcba98765432,10.11.12.140` |
 |         |             |          |              |
 |         |             | `wrx,`*[details below]* | Velocities measured. See details below |
 |         |             | `wr?` | Malformed request: Response when packet cannot be understood |
@@ -60,10 +58,10 @@ Commands in the table are shown **without** the checksum for readability.
 
 ### Velocity report
 
-Velocity report is outputted after each measurement has been completed. The expected update rate varies depending on the altitude and will be in the range is from 2-10 Hz. The X, Y, Z axis are oriented according to the marking on the DVL.
+Velocity report is outputted after each measurement has been completed. The expected update rate varies depending on the altitude and will be in the range is from 2-26 Hz. The X, Y, Z axis are oriented according to the marking on the DVL.
 
 The velocities measured response is on the following format:
-`wrx,`*[time],[vx],[vy],[vz],[fom],[altitude],[valid]*
+`wrx,`*[time],[vx],[vy],[vz],[fom],[altitude],[valid],[status]*
 
 | Variable | Description |
 |----------|-------------|
@@ -74,40 +72,46 @@ The velocities measured response is on the following format:
 | fom | Figure of merit, a measure of the accuracy of the measured velocities  (m/s) |
 | altitude | Measured altitude to the bottom (m) |
 | valid | If valid is "y" the DVL has lock on the bottom and the altitude and velocities are valid (y/n) |
+| status | 0 for normal operation, 1 for high temperature warning |
 
-Example:
-`wrx,125,0.05,0.01,0.001,0.5,0.1,y`
+Example where velocities are valid:
 
-<!--
-## Velocity report type B
+```
+wrx,112.83,0.007,0.017,0.006,0.000,0.93,y,0*d2
+wrx,140.43,0.008,0.021,0.012,0.000,0.92,y,0*b7
+wrx,118.47,0.009,0.020,0.013,0.000,0.92,y,0*54
+```
 
-`wrx,`*[time],[vx],[vy],[vz],[distance],[std],[rssi],[nsd]*
+Example where velocity and altitude is not valid and high temperature warning is given:
 
-| Variable | Description |
-|----------|-------------|
-| time | Milliseconds since last velocity report |
-| vx | Measured velocity in x direction (m/s) |
-| vy | Measured velocity in y direction (m/s) |
-| vz | Measured velocity in z direction (m/s) |
-| std | Standard deviation (m/s), a measure of the accuracy of the measured velocities |
-| distance | Measured distance to the bottom (altitude) |
-| rssi | Receiver signal strength indication, indication of signal strength (dB) |
-| nsd | Noise spectral density, indication of background noise (dB) |
+```
+wrx,1075.51,0.000,0.000,0.000,2.707,-1.00,n,1*04
+wrx,1249.29,0.000,0.000,0.000,2.707,-1.00,n,1*6a
+wrx,1164.94,0.000,0.000,0.000,2.707,-1.00,n,1*39
+```
 
-## Examples
+### Checksum
 
-Here is an example of setting up a DVLs and receiving velocities.
+The checksum algorithm is CRC-8 (Polynomal: 0x07, Init: 0x00, RefIn/RefOut: false, XorOut: 0x00, Check: 0xf4).
+Checksum is formatted as a hexadecimal number using 2 lower-case charaters (ex: `*c3`).
 
-On top side DVL (using role A):
+Compatible implementations:
 
-| Command          | Response            | Description |
-|------------------|---------------------|-------------|
-| `wcv`            | `wrv,1,0,1*44`      | Get protocol version |
-| `wcw`            | `wrw,xxxxx*ba`      | Get product detail |
-|                  |                     | Wait for measurements from DVL |
-|                  | `wrx,xxxxxx*bb`     | Got measurements  |
--->
+* Python 3: [crcmod](https://pypi.org/project/crcmod/) `crcmod.predefined.mkPredefinedCrcFun("crc-8")`
+* Golang: [github.com/sigurn/crc8](github.com/sigurn/crc8) `crc8.MakeTable(crc8.CRC8)`
 
+Example for how to verify checksum using Python 3 and [crcmod](https://pypi.org/project/crcmod/):
+
+```
+crc = crcmod.predefined.mkPredefinedCrcFun("crc-8")
+sentence = b"wrx,1164.94,0.000,0.000,0.000,2.707,-1.00,n,1*39"
+data, checksum = sentence.split(b"*")
+
+if crc(data) == int(checksum, 16):
+    print("CRC valid")
+else:
+    print("CRC invalid")
+```
 
 ## Ethernet protocol (TCP)
 
