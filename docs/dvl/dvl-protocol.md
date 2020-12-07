@@ -123,7 +123,7 @@ Each packet sent contains a velocity report from the DVL on JSON format.
 
 ### Velocity report
 
-Velocity report is outputted after each measurement has been completed. The expected update rate varies depending on the altitude. The X, Y, Z axis are oriented according to the DVL.
+Velocity report is outputted after each measurement has been completed. The expected update rate varies depending on the altitude. The X, Y, Z axis are oriented according to the DVL. The messages are delimited by newline.
 
 | Variable | Description |
 |----------|-------------|
