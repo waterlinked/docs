@@ -1,14 +1,14 @@
 ## Introduction
 
-The revised Water Linked Underwater GPS is designed with a connection interface that has power-line communication (PLC) capabilities through the [BlueROV2 Integration Kit](https://waterlinked.com/store/).
+The revised Water Linked Underwater GPS is designed with a connection interface that has power-line communication (PLC) capabilities through the [BlueROV2 Integration Kit](https://waterlinked.com/product/bluerov2-integration-kit/).
 
 The Water Linked BlueROV2 Integration Kit provides the necessary components to seamlessly connect the BlueROV2 and the Underwater GPS.
 
-This page specifically covers using the BlueROV2 Integration Kit to connect the Underwater GPS with the BlueRobotics BlueROV2.
+The following steps specifically covers using the [BlueROV2 Integration Kit](https://waterlinked.com/product/bluerov2-integration-kit/) to connect the Underwater GPS with the BlueRobotics BlueROV2. For other configurations, see [BlueROV2 integration without integration kit](#bluerov2-integration-without-integration-kit).
 
 ## Parts and tools
 
-The [Locator-A1](../locators/locator-a1.md) and [Locator-U1](../locators/locator-u1.md) are the only Locators that will work together with the BlueROV2 Integration Kit as the Locator bulkhead on the Underwater GPS will be altered and used for connection to the BlueROV2.
+The [Locator-A1](../locators/locator-a1.md) and [Locator-U1](../locators/locator-u1.md) are the only Locators that will work together with the BlueROV2 Integration Kit as the Locator bulkhead on the Underwater GPS will be altered and used for connection to the BlueROV2. For other Locators, see [BlueROV2 integration without integration kit](#bluerov2-integration-without-integration-kit).
 
 ### You will need
 
@@ -34,7 +34,7 @@ You will also need:
 
 Optional:
 
-* Bottle of treadlocker
+* Bottle of threadlocker
 * Soldering iron
 
 ## Installing the Locator-A1 on the BlueROV2
@@ -42,7 +42,7 @@ Optional:
 You will need to install the Locator-A1 on the BlueROV2 using components from the BlueROV2 Integration Kit. The Locator will use one of the spare cable penetrations in the back of the BlueROV2 and will connect to the spare green and white twisted pair in the tether.
 
 !!! Note
-	The Locator-A1 requires a mounting bracket to attach it to the BlueROV2. You can find a 3D model of a suitable mounting bracket [here](https://waterlinked.com/wp-content/uploads/2017/06/Locator_A1_Mounting_Bracket.zip) which you can 3D print as is, or modify to your needs. Altenativly you can simply attach the Locator-A1 to the BlueROV2 using zip ties. Just make sure the Locator-A1 has free line-of-sight towards the Receivers near the surface.
+	The Locator-A1 requires a mounting bracket to attach it to the BlueROV2. You can find a 3D model of a suitable mounting bracket [here](https://waterlinked.com/wp-content/uploads/2017/06/Locator_A1_Mounting_Bracket.zip) which you can 3D print as is, or modify to your needs. Alternatively you can simply attach the Locator-A1 to the BlueROV2 using zip ties. Just make sure the Locator-A1 has free line-of-sight towards the Receivers near the surface.
  
 ### Removing a blank penetrator
 
@@ -240,3 +240,23 @@ If the error message *No external depth received. Is it being sent correctly?* i
 ## Water Linked software update
 
 Check the Water Linked system for available software updates. You can check the Underwater GPS software version at [192.168.2.94/#/about](192.168.2.94/#/about). The update process is documented in the [Software Update section](upgrader.md).
+
+## BlueROV2 integration without integration kit
+
+It is possible to integrate the Underwater GPS G2 with the BlueROV2 *without* the BlueROV2 Integration Kit. What you need to make sure is that the Underwater GPS G2 and the BlueROV2 is on the same network. This can be achieved using a networking cable from the Master Electronics inside the Topside Housing to the computer which is connected to the FXTI. You will have to configure a bridged connection between the two networking interfaces for the Underwater GPS G2 to be able to communicate with the BlueROV2 through the computer. 
+
+### Locator-U1
+
+The [Locator-U1](../locators/locator-u1.md) is a battery powered and has an integrated depth sensor, therefore you only need to charge it, attach it to the BlueROV2, turn it on, and configure it in the [Underwater GPS GUI](gui/settings.md).
+
+### Locator-A1
+
+The [Locator-A1](../locators/locator-a1.md) needs to be integrated with the BlueROV2 following the steps in [Installing the Locator-A1](#installing-the-locator-a1-on-the-bluerov2) above. Since the Locator-A1 signals goes through the BlueROV2 tether and enters the FXTI, you will have to route the Locator-A1 signals to the *Locator* bulkhead on the Underwater GPS G2. The bulkheads on the Underwater GPS G2 mates with [Binder 770 Series NNC Miniature Cable Connectors](https://octopart.com/99-0771-002-08-binder-39031370) and uses pins 7 and 8 for the Locator-A1 signals. For the signal integrity of the Locator-A1 signal, use a Cat5e cable between the Topside and the FXTI. Using the Locator-A1, you will also need to provide external depth. See [Providing depth to system when using Locator-A1/S1](gui/api.md/#providing-depth-to-system-when-using-locator-a1s1) for more information.
+
+### Locator-D1
+
+The [Locator-D1](../locators/locator-d1.md) comes with a seperate cable which must run parallel with the BlueROV2 tether to the Topside. Since the Locator-D1 is a stand-alone unit, no further integration with the BlueROV2 is needed.
+
+### Locator-S1
+
+As with Locator-A1, you will have to provide external depth. See [Providing depth to system when using Locator-A1/S1](gui/api.md/#providing-depth-to-system-when-using-locator-a1s1) for more information. The Locator-S1 cable will also have to run alongside the BlueROV2 tether up to the Topside unit.

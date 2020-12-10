@@ -52,7 +52,7 @@ If mDNS is not supported you need to obtain the IP address of the DVL and use th
 The web GUI shows the status of the DVL (velocity and altitude) as well as diagnostic information.
 The web GUI also allows for network configuration.
 
-### Network config
+### Network configuration
 
 The DVL has two IP configuration options though the web GUI:
 
@@ -60,6 +60,9 @@ The DVL has two IP configuration options though the web GUI:
 * Static mode where the user sets the wanted IP address for the DVL.
 
 Once the IP configuration is modified the DVL needs to be rebooted for the settings take effect.
+
+!!! Note
+	The boot time, i.e. the time it takes from the DVL-A50 receives power until it starts operating normally, will vary based on the network configuration. Using the [fallback IP](#fallback-ip), the boot time can be as much as 1 min 30 sec. The lowest observed boot time is 20 sec with static IP.
 
 ### TCP Output
 

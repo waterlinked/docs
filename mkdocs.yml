@@ -50,6 +50,7 @@ nav:
         - Power supply: explorer-kit/power-supply.md
         - Network settings: explorer-kit/network-settings.md
         - Hardware: explorer-kit/hardware.md
+        - Master-D1: master-d1.md
         - GUI:
             - Position: explorer-kit/gui/position.md
             - Receivers: explorer-kit/gui/receivers.md
@@ -69,7 +70,6 @@ nav:
 
     - Receiver-D1: receiver-d1.md
     - Antenna: antenna.md
-    - Master-D1: master-d1.md
     - Modems:
         - Modem-M64: modems/modem-m64.md
         - Protocol: modems/modem-m64-protocol.md

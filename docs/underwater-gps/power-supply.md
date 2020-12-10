@@ -15,11 +15,11 @@ The power cable comes with a blunt cut end. Strip the jacket and connect the wir
 
 |              |                     |
 | ------------ | :------------------ |
-| Black      : | Negative            |
-| White      : | Positive            |
-| Voltage    : | 10V – 30V           |
-| Current    : | 0.7A  (12V nominal) |
-| Protection : | Reverse polarity    |
+| Black        | Negative            |
+| White        | Positive            |
+| Voltage      | 10V – 30V           |
+| Current      | 0.7A  (12V nominal) |
+| Protection   | Reverse polarity    |
 
 Both the power button and the power input can be found on the right side of the Underwater GPS housing.
 The power button will illuminate when the power is switched on.
@@ -35,3 +35,18 @@ The battery pack can be secured within the Underwater GPS housing using the prov
 ![topside_battery_tray_dimensions](../img/topside_battery_tray_dimensions.png)
 
 Maximum battery width: 50 mm (2"). 
+
+## Power usage
+
+The power usage of the Underwater GPS G2 will vary based on the supplied voltage, Receiver and Locator setup, and whether or not the [BlueROV2 Integration Kit](https://waterlinked.com/product/bluerov2-integration-kit/) has been installed.
+
+The table below list the average current consumption for components used with Underwater GPS G2, assuming an input voltage of 12 VDC.
+
+| Component          | Current consumption (12V in) |
+| ------------------ | :--------------------------- |
+| Master Electronics | 250 mA                       |
+| Locator-A1         | 10 mA                        |
+| Locator-D1         | 130 mA                       |
+| Locator-S1         | 60 mA                        |
+| 4x Receiver-D1     | 4x35 mA                      |
+| Antenna            | 20 mA                        |
