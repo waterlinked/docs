@@ -20,9 +20,9 @@ The M64 sets a new market standard with its record-breaking physical size, low p
 
 * No green light: Power is off.
 
-* Flashing green light (slow): Modem is trying to pair with another modem.
+* Flashing green light (every 3 seconds): Modem is trying to pair with another modem.
 
-* Fixed green light: Modem has sync with another modem. The LED will blink each time it receives a packet from the other modem.
+* Fixed green light: Modem has sync with another modem. The LED will blink each time it receives a packet from the other modem (once a second).
 
 
 ## Wiring interface
