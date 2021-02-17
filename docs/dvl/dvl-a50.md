@@ -1,7 +1,7 @@
 # DVL-A50
 
 ## Description
-The DVL A50 is – by far – the world’s smallest commercially available Doppler Velocity Log.
+The DVL-A50 is – by far – the world’s smallest commercially available Doppler Velocity Log.
 
 The A50 is establishing a new market standard with its high performance, ultra-small 4 beam setup, open interface protocol and low cost.
 
@@ -19,10 +19,10 @@ The DVL estimates velocity relative to the sea bottom by sending acoustic waves 
 * Ethernet and UART
 
 !!! Note
-	The DVL A50 uses a constant speed of sound equal to 1500 m/s (Release 1.3.1). This is configurable for the Performace edition.
+	The DVL-A50 uses a constant speed of sound equal to 1500 m/s (Release 1.3.1). This is configurable for the Performace edition.
 
 !!! Tip
-	Keep the DVL A50 in a bucket of water to ensure sufficient cooling when doing development with the DVL.
+	Keep the DVL-A50 in a bucket of water to ensure sufficient cooling when doing development with the DVL.
 
 
 ## LED Signals

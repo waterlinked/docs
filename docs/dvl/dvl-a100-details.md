@@ -1,8 +1,8 @@
-# DVL-A50 details
+# DVL-A100 details
 
 ## Axis conventions
 
-The axis on the DVL-A50 are oriented North-East-Down (NED)
+The axis on the DVL-A100 are oriented North-East-Down (NED)
 
 * X axis is pointing forward (LED is forward, cable backward)
 * Y axis is pointing right
@@ -11,19 +11,19 @@ The axis on the DVL-A50 are oriented North-East-Down (NED)
 
 ## Transducer numbering
 
-![dvl_a50_transducer_numbering](../img/dvl_transducer_numbering.jpg)
+![dvl_a100_transducer_numbering](../img/dvl-a100_transducer_numbering.jpg)
 
 
 ## Transducer beam width
 
-![dvl_a50_transducer_beam](../img/dvl_transducer_directivity.svg)
+![dvl_a100_transducer_beam](../img/dvl-a100_transducer_directivity.svg)
 
-Half-power beam width is 4.4°
+Half-power beam width is 4.3°
 
 
 ## Line of sight
 
-![dvl_a50_transducer_line_of_sight](../img/dvl_line_of_sight.svg)
+![dvl_a100_transducer_line_of_sight](../img/dvl-a100_line_of_sight.svg)
 
 
 ## Ethernet Interface
