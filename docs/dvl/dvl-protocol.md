@@ -90,6 +90,34 @@ wrx,1249.29,0.000,0.000,0.000,2.707,-1.00,n,1*6a
 wrx,1164.94,0.000,0.000,0.000,2.707,-1.00,n,1*39
 ```
 
+### Transducer report
+
+Transducer report is outputted after each measurement has been completed. The expected update rate varies depending on the altitude and will be in the range is from 2-26 Hz.
+
+The distances measured form each transducer is on the following format:
+`wrt,`*[dist_1],[dist_2],[dist_3],[dist_4]*
+
+| Variable | Description |
+|----------|-------------|
+| dist_1 | Measured distance to bottom from trancduser 1 (m) |
+| dist_2 | Measured distance to bottom from trancduser 2 (m) |
+| dist_3 | Measured distance to bottom from trancduser 3 (m) |
+| dist_4 | Measured distance to bottom from trancduser 4 (m) |
+
+Example where velocities are valid:
+
+```
+wrt,15.00,15.20,14.90,14.20*b1
+wrt,14.90,15.10,14.80,14.10*ac
+```
+
+Example where distance is not valid on transducer 4:
+
+```
+wrt,14.90,15.10,14.80,-1.00*53
+wrt,15.00,15.20,14.90,-1.00*71
+```
+
 ### Checksum
 
 The checksum algorithm is CRC-8 (Polynomal: 0x07, Init: 0x00, RefIn/RefOut: false, XorOut: 0x00, Check: 0xf4).
