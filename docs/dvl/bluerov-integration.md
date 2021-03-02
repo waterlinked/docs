@@ -328,6 +328,7 @@ Integration of the DVL-A50 into ArduPilot Companion currently exists as a branch
 
 Follow these steps to use the DVL code:
 
+* Go to the DVL GUI "Configuration" page. In "Network configuration" set "Static IP" with IP address 192.168.2.95 (subnet prefix 24, gateway: 192.168.2.1 dns 192.168.2.1). Click "Apply" and the power cycle the DVL.
 * Start from Companion v0.0.22 (see [https://bluerobotics.com/learn/bluerov2-software-setup/#update-software](https://bluerobotics.com/learn/bluerov2-software-setup/#update-software) to check if you're using v0.0.22)
 * Make sure the ROV is connected to the internet
 * Navigate to [http://192.168.2.2:2770/git](http://192.168.2.2:2770/git)
