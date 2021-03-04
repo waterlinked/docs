@@ -26,7 +26,7 @@ This guide details how to permanently attach the DVL-A50 to a BlueROV2.
 
 <img src="https://waterlinked.com/wp-content/uploads/2020/08/DVL_Bracket_1600_web.jpg" alt="dvl-bracket" width="300" height="300">
 
-* [DVL-A50 BlueROV2 Integration Kit](https://waterlinked.com/store/). This is optional, but protects the DVL-A50 and allows for down to 0 cm minimum altitude.
+* [DVL-A50 Bracket](https://waterlinked.com/product/dvl-a50-mounting-bracket/). This is optional, but protects the DVL-A50 and allows for down to 0 cm minimum altitude.
 
 You will also need:
 
@@ -44,7 +44,7 @@ You will also need:
 * Wire cutter
 * Tweezers or nose pliers
 * Solder wick and/or desoldering pump
-* Utility knife 
+* Utility knife
 * Wire stripping tool
 * Zip ties
 * 4 x 30 cm (12") wires (options discussed under [Connect DVL-A50 and BlueROV2](#connect-dvl-a50-and-bluerov2)). If possible, use 2 x red and 2 x black wires.
@@ -54,7 +54,7 @@ You will also need:
 
 ### Seperate IO Interface from DVL-A50
 
-The first thing you will have to do before going about any of the installation options is to cut the DVL-A50 cable, separating the IO Interface board. We recommend you do so near the end where the IO Interface board is to begin with. 
+The first thing you will have to do before going about any of the installation options is to cut the DVL-A50 cable, separating the IO Interface board. We recommend you do so near the end where the IO Interface board is to begin with.
 
 ![cut-dvl-cable](../img/cut_io_interface.png)
 
@@ -126,7 +126,7 @@ To add a penetrator to the cable you will need:
 * [M10 Cable Penetrator for 6mm Cable](https://bluerobotics.com/store/cables-connectors/penetrators/penetrator-10-25-a/) from Blue Robotics
 * Potting compound (possible options in appendix A)
 * (Optional) [Potting kit](https://bluerobotics.com/store/cables-connectors/tools/tool-potting-kit-r1/) from Blue Robotics
-* Utility knife 
+* Utility knife
 
 !!! Note
 	The penetrator will be pottet using a potting compound. Most potting compounds need several hours or days to harden, so prepare a space where the potting can be left undisturbed for longer periods. Note also that working with potting compounds may get messy, so place old newspapers or some cardboard over the work area, and have single-use tissue nearby to clean any mess.
@@ -221,7 +221,7 @@ With the DVL-A50 penetrator now through the 4" End Cap, strip off 2-3 mm of the 
 !!! Warning
 	The two wires of a twisted wire pair are fully colored and fully white (the table below shows the white wires having a stripe of the complemeting color, this is **not** the reality and only for reference). Keep track of which white wire is paired with which colored wire!
 
-Resolder the leads of the DVL-A50 cable to the IO Interface board following the table below: 
+Resolder the leads of the DVL-A50 cable to the IO Interface board following the table below:
 
 | DVL-A50 cable                                                  | IO Interface pad | Function       | Diameter (mm) | AWG\# |
 | -------------------------------------------------------------- | :--------------- | :------------- | :------------ | :---- |
@@ -254,7 +254,7 @@ To provide power to the DVL-A50 you can either use (A) a 2-pin [Molex MicroFit3.
 
 ![io_interface_power](../img/io_interface_power.png)
 
-* Connect VIN to the positive Power Terminal Block inside the BlueROV2 by either stripping off 6-8 mm of the wire and screw it in place, or add a spade terminal for a \# 6 screw (M3.5) and screw in place. 
+* Connect VIN to the positive Power Terminal Block inside the BlueROV2 by either stripping off 6-8 mm of the wire and screw it in place, or add a spade terminal for a \# 6 screw (M3.5) and screw in place.
 
 ![power_terminal_positive](../img/power_terminal_positive.png)
 
@@ -281,7 +281,7 @@ Providing power to the ethernet switch is dependent on choosen ethernet switch. 
 
 With power now sorted, we will connect up the ethernet cables:
 
-* Disconnect the ethernet cable attached to the Raspberry Pi comming from the Fathom-X Tether Interface Board. 
+* Disconnect the ethernet cable attached to the Raspberry Pi comming from the Fathom-X Tether Interface Board.
 * Connect the ethernet from the Fathom-X Tether Interface Board to the ethernet switch.
 * Connect a 6" ethernet cable from the Raspberry Pi to the ethernet switch.
 * Connect a 6" ethernet cable from the IO Interface Board to the ethernet switch.
@@ -316,7 +316,7 @@ Attach the DVL-A50 to the BlueROV2 using the 2 x M5x16 screws provided with the 
 
 ![dvl-attached-to-bluerov2](../img/dvl_attached_to_bluerov2.png)
 
-Excess cable can be bundled together and attached to the BlueROV2 frame using zip ties. 
+Excess cable can be bundled together and attached to the BlueROV2 frame using zip ties.
 
 ![bundled-excess-dvl-cable](../img/bundled_excess_dvl_cable.png)
 

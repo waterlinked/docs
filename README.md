@@ -52,5 +52,5 @@ cd ../waterlinked.github.io/
 ```
 mkdocs gh-deploy --config-file ../docs/mkdocs.yml --remote-branch master
 ```
-    
+
 The website should now be updated. You may then want to pull the updated "waterlinked.github.io" repo, although not necessary.
