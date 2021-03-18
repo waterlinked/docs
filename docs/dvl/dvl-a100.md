@@ -1,5 +1,7 @@
 # DVL-A100
 
+![dvl_a100](../img/DVL-A100-side-coin-white.png)
+
 ## Description
 The DVL-A100 is the next step up from the DVL-A50, providing even better performance at greater distances while still keeping a small form factor relative to competing DVLs.
 

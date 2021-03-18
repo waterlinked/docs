@@ -11,19 +11,19 @@ The axis on the DVL-A100 are oriented North-East-Down (NED)
 
 ## Transducer numbering
 
-![dvl_a100_transducer_numbering](../img/dvl-a100_transducer_numbering.jpg)
+![dvl_a100_transducer_numbering](../img/dvl-a100_transducer_numbering.png)
 
 
 ## Transducer beam width
 
-![dvl_a100_transducer_beam](../img/dvl-a100_transducer_directivity.svg)
+![dvl_a100_transducer_beam](../img/dvl-a100_transducer_directivity.png)
 
 Half-power beam width is 4.3°
 
 
 ## Line of sight
 
-![dvl_a100_transducer_line_of_sight](../img/dvl-a100_line_of_sight.svg)
+![dvl_a100_transducer_line_of_sight](../img/dvl-a100_line_of_sight.png)
 
 
 ## Ethernet Interface

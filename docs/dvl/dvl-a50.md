@@ -1,5 +1,7 @@
 # DVL-A50
 
+![dvl_a50](../img/DVL-A50.jpg)
+
 ## Description
 The DVL-A50 is – by far – the world’s smallest commercially available Doppler Velocity Log.
 
