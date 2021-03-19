@@ -1,11 +1,11 @@
-# DVL-A100
+# DVL-A125
 
-![dvl_a100](../img/DVL-A100-side-coin-white.png)
+![dvl_A125](../img/DVL-A125-side-coin-white.png)
 
 ## Description
-The DVL-A100 is the next step up from the DVL-A50, providing even better performance at greater distances while still keeping a small form factor relative to competing DVLs.
+The DVL-A125 is the next step up from the DVL-A50, providing even better performance at greater distances while still keeping a small form factor relative to competing DVLs.
 
-The DVL-A100 builds on the already impressive feats of the DVL-A50 with its increased performance, small 4 beam setup, open interface protocol and mid-to-low cost.
+The DVL-A125 builds on the already impressive feats of the DVL-A50 with its increased performance, small 4 beam setup, open interface protocol and mid-to-low cost.
 
 The DVL estimates velocity relative to the sea bottom by sending acoustic waves from the four angled transducers and then measure the frequency shift (doppler effect) from the received echo. By combining the measurements of all four transducers and the time between each acoustic pulse, it is possible to very accurately estimate the speed and direction of movement.
 
@@ -21,10 +21,10 @@ The DVL estimates velocity relative to the sea bottom by sending acoustic waves 
 * Ethernet and UART
 
 !!! Note
-	The DVL-A100 uses a constant speed of sound equal to 1500 m/s (Release 1.3.1). This is configurable for the Performance edition.
+	The DVL-A125 uses a constant speed of sound equal to 1500 m/s (Release 1.3.1). This is configurable for the Performance edition.
 
 !!! Tip
-	Keep the DVL-A100 in a bucket of water to ensure sufficient cooling when doing development with the DVL.
+	Keep the DVL-A125 in a bucket of water to ensure sufficient cooling when doing development with the DVL.
 
 
 ## LED Signals
@@ -52,7 +52,7 @@ The tables below shows the pinning of the DVL-A50 interface.
 
 ## Terminal Interface
 
-The DVL-A100 has a 3.3 volt UART interface (5V tolerant).
+The DVL-A125 has a 3.3 volt UART interface (5V tolerant).
 
 | Settings            | Value |
 | :------------------ | :-- |
@@ -78,18 +78,18 @@ Example code and libraries that can be used to communicate with the DVL on the t
 
 ## Dimensions
 
-![dvl_a100_dimensions](../img/dvl-a100_dimensions.png)
+![dvl_A125_dimensions](../img/dvl-a125_dimensions.png)
 
 
 ## Mounting Holes
 
-![dvl_a100_mounting_holes_drawing](../img/dvl-a100_mounting_holes_drawing.png)
+![dvl_A125_mounting_holes_drawing](../img/dvl-a125_mounting_holes_drawing.png)
 
 
 ## Other details
 
-See [details](./dvl-a100-details.md) for description of axis conventions, transducer numbering and other details.
+See [details](./dvl-A125-details.md) for description of axis conventions, transducer numbering and other details.
 
 ## Datasheet
 
-[Datasheet](https://www.waterlinked.com/datasheets/dvl-a100/)
+[Datasheet](https://www.waterlinked.com/datasheets/dvl-A125/)
