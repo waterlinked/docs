@@ -11,6 +11,7 @@ The channels used for the Water Linked acoustic products and what frequency band
 | 156.00 | 187.00 | 5, 17 | |
 | 187.00 | 218.00 | 6, 18 | |
 | 218.00 | 250.00 | 7, 18 | |
-| 968.25 | 1031.25 | | DVL-A50 |
+| 968.75 | 1031.25 | | DVL-A50 |
+| 388.75 | 451.25 | | DVL-A125 |
 
 Please note that the Underwater GPS channels 16, 17, 18 overlaps multiple modem/Locator-U1 channels.
