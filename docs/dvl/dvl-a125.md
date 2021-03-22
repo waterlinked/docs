@@ -11,9 +11,9 @@ The DVL estimates velocity relative to the sea bottom by sending acoustic waves 
 
 ## Key specifications
 
-* 0.05 - 100 meter range
+* 0.05 - 125 meter range
 * 420 MHz transducer frequency
-* 4-13 Hz ping rate (altitude dependent)
+* 1-26 Hz ping rate (altitude dependent)
 * 4 m/s max velocity
 * ± 0.1 cm/s long term accuracy
 * 3000 meter depth rating
@@ -21,7 +21,7 @@ The DVL estimates velocity relative to the sea bottom by sending acoustic waves 
 * Ethernet and UART
 
 !!! Note
-	The DVL-A125 uses a constant speed of sound equal to 1500 m/s (Release 1.3.1). This is configurable for the Performance edition.
+	The DVL-A125 uses a constant speed of sound equal to 1500 m/s (Release 1.5.1). This is configurable for the Performance edition.
 
 !!! Tip
 	Keep the DVL-A125 in a bucket of water to ensure sufficient cooling when doing development with the DVL.
@@ -37,7 +37,7 @@ The DVL estimates velocity relative to the sea bottom by sending acoustic waves 
 
 ## Wiring interface
 
-The tables below shows the pinning of the DVL-A50 interface.
+The tables below shows the pinning of the DVL-A125 interface.
 
 | Interface           | Color |
 | :------------------ | :-- |
