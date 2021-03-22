@@ -88,7 +88,7 @@ Example code and libraries that can be used to communicate with the DVL on the t
 
 ## Other details
 
-See [details](./dvl-A125-details.md) for description of axis conventions, transducer numbering and other details.
+See [details](./dvl-a125-details.md) for description of axis conventions, transducer numbering and other details.
 
 ## Datasheet
 
