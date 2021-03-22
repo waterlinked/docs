@@ -43,7 +43,7 @@ You will need to install the Locator-A1 on the BlueROV2 using components from th
 
 !!! Note
 	The Locator-A1 requires a mounting bracket to attach it to the BlueROV2. You can find a 3D model of a suitable mounting bracket [here](https://waterlinked.com/wp-content/uploads/2017/06/Locator_A1_Mounting_Bracket.zip) which you can 3D print as is, or modify to your needs. Alternatively you can simply attach the Locator-A1 to the BlueROV2 using zip ties. Just make sure the Locator-A1 has free line-of-sight towards the Receivers near the surface.
- 
+
 ### Removing a blank penetrator
 
 To remove a blank penetrator from your BlueROV2, you will need the following tools:
@@ -99,7 +99,7 @@ Using the pre-crimped header pin connector on the Locator-A1, connect the Locato
 ### Reasemble BlueROV2 electronics enclosure
 
 To reassemble your BlueROV2 Electronics Enclosure, you will need the following parts and tools:
-	
+
 * 4 x M3x16 screws that were placed off to the side during disassembly
 * Silicone Grease – 10g Tube
 * 2.5 mm hex driver
@@ -162,7 +162,7 @@ Press the PLC module into the socket, making sure that the press-fit standoffs l
 
 !!! Warning
 	Skipping this step leaves a regulated 12V power source from the Underwater GPS on the PLC lines (pins 1 (GND) and 2 (12V) on the Locator bulkhead). Connecting non-isolated equipment to the PLC lines may damage the Underwater GPS or any external equipment.
-	
+
 The Interface Electronics board in the Underwater GPS housing comes with the resistors R2 and R3 attached. These put GND on pin 1 and 12V on pin 2 of the bulkhead connector with the label “Locator”. The configuration of the FXTI, BlueROV2 and the Locator-A1 as presented in this guide is not affected by leaving these resistors on the board. In any other configuration, you should assess whether or not removing R2 and R3 is necessary for safe operation.
 
 ![topside-interface-resistors](../img/topside-interface-resistors.png)
@@ -239,11 +239,11 @@ If the error message *No external depth received. Is it being sent correctly?* i
 
 ## Water Linked software update
 
-Check the Water Linked system for available software updates. You can check the Underwater GPS software version at [192.168.2.94/#/about](192.168.2.94/#/about). The update process is documented in the [Software Update section](upgrader.md).
+Check the Water Linked system for available software updates. You can check the Underwater GPS software version at [192.168.2.94/#/about](192.168.2.94/#/about). The update process is documented in the [Software Update section](../sw-update.md).
 
 ## BlueROV2 integration without integration kit
 
-It is possible to integrate the Underwater GPS G2 with the BlueROV2 *without* the BlueROV2 Integration Kit. What you need to make sure is that the Underwater GPS G2 and the BlueROV2 is on the same network. This can be achieved using a networking cable from the Master Electronics inside the Topside Housing to the computer which is connected to the FXTI. You will have to configure a bridged connection between the two networking interfaces for the Underwater GPS G2 to be able to communicate with the BlueROV2 through the computer. 
+It is possible to integrate the Underwater GPS G2 with the BlueROV2 *without* the BlueROV2 Integration Kit. What you need to make sure is that the Underwater GPS G2 and the BlueROV2 is on the same network. This can be achieved using a networking cable from the Master Electronics inside the Topside Housing to the computer which is connected to the FXTI. You will have to configure a bridged connection between the two networking interfaces for the Underwater GPS G2 to be able to communicate with the BlueROV2 through the computer.
 
 ### Locator-U1
 
