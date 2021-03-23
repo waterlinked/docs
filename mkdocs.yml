@@ -79,8 +79,8 @@ nav:
           - Details: dvl/dvl-a50-details.md
           - BlueROV2 integration: dvl/bluerov-integration.md
         - DVL A125:
-          - Introduction: dvl/dvl-a125
-          - Details: dvl/dvl-a125-details
+          - Introduction: dvl/dvl-a125.md
+          - Details: dvl/dvl-a125-details.md
         - Protocol: dvl/dvl-protocol.md
         - IO Interface: dvl/io-interface.md
     - Software update: sw-update.md
