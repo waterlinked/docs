@@ -16,7 +16,7 @@ The DVL estimates velocity relative to the sea bottom by sending acoustic waves 
 * 4-26 Hz ping rate (altitude dependent)
 * 2 m/s max velocity
 * ± 0.1 cm/s long term accuracy
-* 1000 meter depth rating
+* 300 meter depth rating
 * 10-30 V input voltage (reversed-polarity protection)
 * Ethernet and UART
 
