@@ -1,6 +1,6 @@
 # DVL-A125
 
-![dvl_A125](../img/DVLA125-coin-light-white.png)
+![dvl_A125](../img/dvl-a125-coin-light-white.png)
 
 ## Description
 The DVL-A125 is the next step up from the DVL-A50, providing even better performance at greater distances while still keeping a small form factor relative to competing DVLs.
