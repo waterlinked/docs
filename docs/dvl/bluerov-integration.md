@@ -56,7 +56,7 @@ You will also need:
 
 The first thing you will have to do before going about any of the installation options is to cut the DVL-A50 cable, separating the IO Interface board. We recommend you do so near the end where the IO Interface board is to begin with.
 
-![cut-dvl-cable](../img/cut_io_interface.png)
+![cut-io-interface-rev3](../img/cut-io-interface-rev3.jpeg)
 
 !!! Warning
 	The DVL-A50 cable is permanently attached and non-replacable inside the DVL-A50. If you cut the cable too short you will either have to splice the cable with another cable, or order a new DVL-A50. Measure twice, cut once!
