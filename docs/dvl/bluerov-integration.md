@@ -80,18 +80,24 @@ If your BlueROV2 has the Heavy Configuration upgrade, the BlueROV2 mounting brac
 
 * Mark 2 hole positions on the BlueROV2 frame for attaching the BlueROV2 mounting bracket and drill through the frame using a 5 mm universal drill bit.
 
-![drilling-holes-in-bluerov-frame](../img/placeholder-300x300.jpg)
+![mark-hole-positions-in-bluerov-frame](../img/mark-hole-positions-in-bluerov-frame.jpeg) ![drilling-holes-in-bluerov-frame](../img/drilling-holes-in-bluerov-frame.jpeg)
 
-Check that the BlueROV2 mounting bracket will attach properly to the BlueROV2 frame using 2 x M5x16 mm screws, but do not secure the bracket in place as more work is needed on the cable end.
+Check that the BlueROV2 mounting bracket will attach properly to the BlueROV2 frame using 2 x M5x16 mm screws. No need to secure the bracket in place as more work must be done on the cable end.
+
+![check-a50-bracket-fit](../img/check-a50-bracket-fit.jpeg)
 
 ### Final cable lenght
 
 With the DVL-A50 now attached to the BlueROV2 frame, find the appropriate cable length needed by leading the cable back to the penetrator end cap of the BlueROV2 and add the length of the electronics enclosure (30 cm) to the cable. This is the *minimum* required cable length.
 
-!!! Note
+![measure-cable-length-of-a50](../img/measure-cable-length-of-a50.jpeg)
+
+!!! Tip
 	We recommend adding atleast another 30 cm to the cable to provide enough service loop in case the penetrator fails or the leads get damaged.
 
 Cut the cable to the final length.
+
+![cutting-final-cabel-length-a50](../img/cutting-final-cabel-length-a50.jpeg)
 
 ## Installation
 
@@ -106,15 +112,17 @@ To prepare the IO Interface Board you will need:
 * Tweezers or nose pliers
 * Solder wick and/or desoldering pump
 
-* Cut off the zip tie holding the cable onto the IO Interface board.
+Cut off the zip tie holding the cable onto the IO Interface board.
 
-![cut_zip_tie](../img/placeholder-300x300.jpg)
+![cut-zip-tie-io-interface](../img/cut-zip-tie-io-interface.jpeg)
 
-* Cut off the individual wires soldered onto the IO Interface board. Leave enough wire to grab onto with a tweezer or nose pliers.
+Cut off the individual wires soldered onto the IO Interface board. Leave enough wire to grab onto with a tweezer or nose pliers.
 
-![remove_wires](../img/placeholder-300x300.jpg)
+![remove-wires-io-interface](../img/remove-wires-io-interface.jpeg)
 
-* Desolder all the cut wires. Use solder wick and/or a desoldering pump to remove any excess solder from the now desoldered through hole pads.
+Desolder all the cut wires. Use solder wick and/or a desoldering pump to remove any excess solder from the now desoldered through hole pads.
+
+![desoldered-io-interface](../img/desoldered-io-interface.jpeg)
 
 !!! Warning
 	Using too much force or heat may delaminate the IO Interface PCB, rendering the IO Interface board useless.
@@ -131,28 +139,28 @@ To add a penetrator to the cable you will need:
 !!! Note
 	The penetrator will be pottet using a potting compound. Most potting compounds need several hours or days to harden, so prepare a space where the potting can be left undisturbed for longer periods. Note also that working with potting compounds may get messy, so place old newspapers or some cardboard over the work area, and have single-use tissue nearby to clean any mess.
 
-* Strip off 25-30 cm of the cable jacket using a utility knife or a sharp blade. Take care not to cut into the leads inside the cable. Blue Robotics has a great guide on cable stripping [here](https://bluerobotics.com/learn/cable-stripping/).
+Strip off 25-30 cm of the cable jacket using a utility knife or a sharp blade. Take care not to cut into the leads inside the cable. Blue Robotics has a great guide on cable stripping [here](https://bluerobotics.com/learn/cable-stripping/).
 
-![stripped_cable](../img/placeholder-300x300.jpg)
+![stripped-a50-cable](../img/stripped-a50-cable.jpeg)
 
-* Feed the now exposed leads through the penetrator starting from the head, and continue feeding until the cable jacket is situated within the shoulder of the penetrator.
+Feed the now exposed leads through the penetrator starting from the head, and continue feeding until the cable jacket is situated within the shoulder of the penetrator.
 
-![labeled-penetrator-cutaway](../img/labeled-penetrator-cutaway.png)
+![a50-cable-through-penetrator](../img/a50-cable-through-penetrator.jpeg) ![labeled-penetrator-cutaway](../img/labeled-penetrator-cutaway.png)
 
-* With the threads of the penetrator pointing downwards and the cable pointing upwards, pour potting compound into the space between the cable and the penetrator. Fill with potting compound until it is flush with the top of the penetrator.
+With the threads of the penetrator pointing downwards and the cable pointing upwards, pour potting compound into the space between the cable and the penetrator. Fill with potting compound until it is flush with the top of the penetrator.
 
-![potting_cable](../img/placeholder-300x300.jpg)
+![potting-penetrator-rear](../img/potting-penetrator-rear.jpeg) ![potted-penetrator-rear](../img/potted-penetrator-rear.jpeg)
 
 !!! Tip
 	Use a clamping vice to hold the penetrator in place while pouring the potting compund.
 
-* Let the potting compound harden before proceeding.
+Let the potting compound harden before proceeding.
 
-* Turn the penetrator upside downs and fill the gap between the leads with more potting compound.
+Turn the penetrator upside downs and fill the gap between the leads with more potting compound.
 
-![potting_wires](../img/placeholder-300x300.jpg)
+![potting-penetrator-front](../img/potting-penetrator-front.jpeg) ![potted-penetrator-front](../img/potted-penetrator-front.jpeg)
 
-* Let the potting compound fully cure before proceeding.
+Let the potting compound fully cure before proceeding.
 
 ### Removing a blank penetrator
 
