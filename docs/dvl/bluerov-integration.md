@@ -202,18 +202,22 @@ To install DVL-A50 into the end cap, you will need the following parts and tools
 
 Wipe the exterior surface of the electronics enclosure end cap clean with isopropyl alcohol or isopropyl alcohol wipes, and make sure it is free of any particles in the areas where the penetrator O-ring will sit.
 
-Remove the O-ring from the bag and apply silicone grease to it.
+Remove the O-ring from the bag 
 
-![bluerov2-grease-o-ring](../img/bluerov2-grease-o-ring-1024x683.png)
+Install the O-ring onto the DVL-A50 cable penetrator and apply silicone grease to it.
 
-Install the O-ring onto the DVL-A50 cable penetrator.
+![grease-o-ring-on-a50-penetrator](../img/grease-o-ring-on-a50-penetrator.jpeg) ![o-ring-on-a50-penetrator](../img/o-ring-on-a50-penetrator.jpeg)
 
-Install the DVL-A50 cable penetrator on to the end cap in the hole you previously removed the blank penetrator from. Tighten to finger tight, then use the penetrator wrench to tighten it an additional ~1/16 of a turn. If you can’t loosen it with your fingers, it is tight enough.
+Push the wires throught the hole in the end cap where you previously removed a blank penetrator from.
 
-![bluerov2-end-cap-A1](../img/bluerov2-end-cap-A50-1024x576.jpg)
+![a50-wires-through-bluerov2-end-cap](../img/a50-wires-through-bluerov2-end-cap.jpeg)
 
 !!! Tip
 	Since the penetrator has to be screwed on, adding a bit of tape around the end of the wires helps them stay untangles while turning. Also twisting the DVL-A50 cable in a clock-wise direction will aid in screwing on the penetrator.
+
+Screw on the DVL-A50 cable penetrator to the end cap. Tighten to finger tight, then use the penetrator wrench to tighten it an additional ~1/16 of a turn. If you can’t loosen it with your fingers, it is tight enough.
+
+![screwed-in-a50-penetrator](../img/screwed-in-a50-penetrator.jpeg) ![tightened-a50-penetrator](../img/tightened-a50-penetrator.jpeg)
 
 ### Reinstall IO Interface Board
 
@@ -224,7 +228,9 @@ To reinstall the IO Interface Board onto the DVL-A50 cable you will need:
 * Solder wire
 * Zip tie
 
-With the DVL-A50 penetrator now through the 4" End Cap, strip off 2-3 mm of the ends of all the wires. Wire sizes are detailed in the table below.
+With the DVL-A50 penetrator now through the 4" End Cap, strip off 2-3 mm of the ends of all the wires. Wire sizes are detailed in the table below. The blue pair can be removed as it is not used for the DVL-A50.
+
+![stripped-wires-a50](../img/stripped-wires-a50.jpeg)
 
 !!! Warning
 	The two wires of a twisted wire pair are fully colored and fully white (the table below shows the white wires having a stripe of the complemeting color, this is **not** the reality and only for reference). Keep track of which white wire is paired with which colored wire!
@@ -242,9 +248,11 @@ Resolder the leads of the DVL-A50 cable to the IO Interface board following the 
 | ![4tp2p_white-brown_lead](../img/4tp2p_white-brown_lead.png)   | TX               | Serial UART TX | 0.4 mm        | 26    |
 | ![4tp2p_brown_lead](../img/4tp2p_brown_lead.png)               | RX               | Serial UART RX | 0.4 mm        | 26    |
 
-![io_interface_wires](../img/io_interface_wires.png)
+![io-interface-wires](../img/io-interface-wires-300px.png)  ![soldered-wires-to-io-interface](../img/soldered-wires-to-io-interface.jpeg)
 
 Zip tie the soldered wires to the IO Interface board to protect the solder joints.
+
+![zip-tied-wires-a50](../img/zip-tied-wires-a50.jpeg)
 
 ### Connect to BlueROV2
 
