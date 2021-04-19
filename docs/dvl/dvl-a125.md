@@ -60,6 +60,8 @@ The DVL-A125 has a 3.3 volt UART interface (5V tolerant).
 | Data parity stop    | 8N1   |
 | Flow control        | None  |
 
+!!! Warning
+	There can be a short power spike (<10 us) on the UART lines when applying power to the DVL. Make sure whatever you are connecting to those lines are 5V tolerant and has some surge protection.
 
 Description of the [serial protocol](./dvl-protocol.md).
 
