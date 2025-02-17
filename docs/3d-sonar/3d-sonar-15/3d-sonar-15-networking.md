@@ -30,8 +30,8 @@ The Sonar 3D-15 will always be available with the static IP address: **192.168.1
 
 The IP address of the Sonar 3D-15 can be configured in two ways via the web [GUI](3d-sonar-15-gui.md):
 
-* DCHP client: an IP address is obtained from a DHCP server (e.g. in a router) on the same network, as in the discussion of [mDNS](#multicast-dns-mdns) above.
-* Static: equip the Sonar 3D-15 with a certain static IP address.
+* DCHP client: An IP address is obtained from a DHCP server (e.g. in a router) on the same network, as mentioned above in [mDNS](#multicast-dns-mdns).
+* Static: Configure the Sonar 3D-15 to use static IP address of your choice.
 
 After the IP configuration of the Sonar 3D-15 is modified, the Sonar 3D-15 needs to be rebooted for the settings take effect.
 
@@ -40,6 +40,6 @@ After the IP configuration of the Sonar 3D-15 is modified, the Sonar 3D-15 needs
 
 ## UDP multicast and unicast
 
-By default, the Sonar 3D-15 uses **UDP Multicast** (`224.0.0.96:4747`), so any device on the local network can receive data without knowing the sonar’s IP. You can also configure **UDP Unicast** to send data to a specific IP/port, allowing routing outside the local network (but losing multicast discoverability).
+By default, the Sonar 3D-15 uses **UDP Multicast** (`224.0.0.96:4747`), so any device on the local network can receive data without knowing the sonar’s IP. You can also configure **UDP Unicast** to send data to a specific IP/port, allowing routing outside the local network (but losing multicast discoverability). Please see [API](3d-sonar-15-api.md) for more information on the data on the UDP multi/unicast.
 
 

@@ -3,12 +3,6 @@
 ## Introduction
 The **Water Linked Sonar 3D-15** provides real-time 3D views of underwater environments using a low-bandwidth **Range Image Protocol (RIP1)**. This protocol efficiently transmits data such as 3D points or grayscale bitmaps over UDP (multicast or unicast), enabling live visualization, analysis, or archival for later use.
 
-<!-- Typical output modes:
-
-1. **Strength Image** – 2D, first-person view with color/brightness indicating reflection strength.  
-2. **Range Image** – 2D, first-person view with color/brightness indicating distance.  
-3. **Point Cloud** – 3D visualization for detailed analysis, derived from the same range data. -->
-
 ---
 
 ## Range Image Protocol (RIP1)
@@ -26,6 +20,33 @@ RIP1 is a compact format for range and bitmap images, designed for <10 Mbit ba
 4. Use `.type_url` to identify the contained message.  
 5. Decode `.value` into that message type.  
 6. Interpret fields per the `.proto` [File](#proto-file-excerpt).
+
+---
+
+## Network
+By default, the Sonar 3D-15 uses **UDP Multicast** (`224.0.0.96:4747`), so any device on the local network can receive data without knowing the sonar’s IP. You can also configure **UDP Unicast** to send data to a specific IP/port, allowing routing outside the local network (but losing multicast discoverability).
+
+---
+
+## Image Sizes and Update Rates
+| **Mode**      | **Resolution (W×H)** | **FOV (H×V)** | **Rate** |
+|---------------|----------------------|--------------|---------|
+| Navigation    | 256 × 64            | 90° × 40°     | 5 Hz    |
+| Inspection    | 256 × 64            | 40° × 40°     | 20 Hz   |
+
+---
+
+## Message Types
+RIP1 supports several Protobuf-encoded messages, including:
+
+### `BitmapImageGreyscale8`
+- 8-bit grayscale; each pixel = signal strength or shaded depth.  
+- `type` enum differentiates **signal strength** vs. **shaded**.  
+
+### `RangeImage`
+- Each pixel represents distance (radius) to the strongest reflection.
+- `0` = no valid data.
+- `radius = pixelValue * imagePixelScale`.
 
 ---
 
@@ -68,42 +89,6 @@ z = -radius * sin(pitch); // z is downward
 
 ---
 
-## Message Types
-RIP1 supports several Protobuf-encoded messages, including:
-
-### `BitmapImageGreyscale8`
-- 8-bit grayscale; each pixel = signal strength or shaded depth.  
-- `type` enum differentiates **signal strength** vs. **shaded**.  
-
-### `RangeImage`
-- Each pixel represents distance (radius) to the strongest reflection.
-- `0` = no valid data.
-- `radius = pixelValue * imagePixelScale`.
-
----
-
-## Network
-By default, the Sonar 3D-15 uses **UDP Multicast** (`224.0.0.96:4747`), so any device on the local network can receive data without knowing the sonar’s IP. You can also configure **UDP Unicast** to send data to a specific IP/port, allowing routing outside the local network (but losing multicast discoverability).
-
----
-
-## Image Sizes and Update Rates
-| **Mode**      | **Resolution (W×H)** | **FOV (H×V)** | **Rate** |
-|---------------|----------------------|--------------|---------|
-| Navigation    | 256 × 64            | 90° × 40°     | 5 Hz    |
-| Inspection    | 256 × 64            | 40° × 40°     | 20 Hz   |
-
----
-
-## Example Data
-Typical example data may include:
-
-- **Range** and **Strength** images from different positions.
-- **IMU** data (pitch, roll, yaw).
-- Python sample code for decoding and visualizing range images with Matplotlib.
-
----
-
 ## `.proto` File (Excerpt)
 ```protobuf
 // Water Linked Sonar 3D-15 protocol
@@ -115,7 +100,8 @@ import "google/protobuf/any.proto";
 
 // Packet is the top-level message that is sent over the wire.
 message Packet {
-  google.protobuf.Any msg = 1; // Use .type_url to deserialize .value into one of the messages defined in this proto file
+  google.protobuf.Any msg = 1; // Use .type_url to deserialize .value 
+  // into one of the messages defined in this proto file
 }
 
 message Header {
