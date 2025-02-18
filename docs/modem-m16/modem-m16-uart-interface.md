@@ -203,16 +203,12 @@ When in diagnostic mode (or upon a report request in transparent mode), the mode
 | 16 (4:7)       | `RESERVED`             | Reserved bits                                                                                   |
 | 17 (0:7)       | `END_OF_FRAME (EOF)`   | New line (“\n”)                                                                                 |
 
-!!! warning
-    **Signal Power & Noise Power**  
-    - Both range from 0 to 255.  
-    - When the modem is idle (not transmitting or receiving), **Signal Power** reflects the background noise floor, which should match **Noise Power**.  
-    - **During** packet decoding, `SIGNAL_POWER` should be **greater** than `NOISE_POWER` for a successful decode.
+!!! Warning
+    **Signal Power:** This value represents the strength of the signal received by the modem when it is decoding a data packet. It ranges from 0 to 255, where 255 is the strongest signal (ideal conditions), and lower values indicate weaker signals. Importantly, when the modem is idle and not decoding or sending data, the signal power will represent the background noise, known as the "noise floor." This is because the modem is not detecting any signal during idle periods.
 
-    **Practical Tip**  
-    - Record the Noise Power while idle as your baseline (noise floor).  
-    - Compare that with Signal Power during active communication.  
-    - The bigger the gap, the better the link quality.
+    **Noise Power:** This value represents the background noise in the environment. When the modem is idle, the noise power and signal power will be the same, both representing the noise floor. During packet decoding, the noise power may increase due to interference, energy leakage, or other environmental factors, but this will only be noticeable when data is being processed. The signal power should always exceed the noise power when data of sufficient quality is being received for decoding.
+
+    **Summary:** It's essential to note that when the modem is idle, the signal power and noise power will be identical, representing the noise floor. Therefore, you cannot directly compare these values when the modem is idle. To assess the environment, store the noise power while the modem is idle (as the noise floor) and compare it with the signal power during packet decoding. A higher signal power compared to the stored noise floor indicates a better communication setup and environment. 
 
 ---
 
