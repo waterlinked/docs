@@ -30,19 +30,20 @@ Below you can see how to adjust the 3D image and some hotkeys.
 
 Here is the general configuration page of the Sonar 3D-15.
 
-![Config GUI](../../img/Sonar-3D-15-gui-config-2.png)
+![Config GUI](../../img/Sonar-3D-15-gui-config-3.png)
 
 1. Enable/disable acoustics
 2. Network config
 3. Time config
 4. Speed of sound config
-5. Mounting angle offset 
+5. Mounting angle offset
+6. About the Sonar 
 
 ### Show diagnostic view
 
 In the same config view you can show diagnostic views which have these feasters.
 
-![Config GUI all](../../img/Sonar-3D-15-gui-config-all-2.png)
+![Config GUI all](../../img/Sonar-3D-15-gui-config-diagnostics-3.png)
 
 1. Blink LED
 2. Update firmware

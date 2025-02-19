@@ -28,7 +28,7 @@ The GUI automatically checks for new software versions. If an update is found, f
 ## Offline Software Update
 
 1. **Get Current Version and Chip ID**  
-In the Sonar GUI, select “Advanced → config → Diagnostics → Firmware upgrade” to note the current software version and the **Chip ID**.
+In the Sonar GUI, select “Advanced → config → About this Sonar” to note the current software version and the **Chip ID**.
 
 2. **Download the Update Package**  
 Visit the [update server](https://update.waterlinked.com/) to locate the correct `.wlup` file for your Sonar’s Chip ID. Confirm that the downloaded version is newer than your current version.
