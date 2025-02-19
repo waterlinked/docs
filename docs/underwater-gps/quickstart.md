@@ -19,6 +19,9 @@ If you are using the Locator-U1, power it on now as well; it too will acquire a 
 
 If you are inside, use of a GPS repeater or similar will be necessary.
 
+!!! Warning  
+    If you are using the locator U1, the topside must obtain a GPS lock through its *internal* GNSS receiver. While you can still provide an external GPS position via the API to improve accuracy, the local GNSS receiver is *required* for time synchronization and cannot be bypassed. A local GPS lock is therefore always necessary with the locator U1.
+
 ## Connect to the Underwater GPS topside box
 
 Connect to the WiFi access point **UnderwaterGPS** on your PC/tablet/smartphone. The WiFi password is **waterlinked**. Navigate to [http://192.168.7.1/](http://192.168.7.1/) in a web browser to access the Underwater GPS web GUI.
