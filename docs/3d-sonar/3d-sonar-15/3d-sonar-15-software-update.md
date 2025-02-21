@@ -18,6 +18,8 @@ Keeping your Sonar 3D-15 up to date is highly recommended. You can update the so
 
 2. **Access the Sonar GUI**  
    In your web browser, go to:  http://[IP_ADDRESS_OF_THE_SONAR]:9000/#/
+   or
+   navigate to “Advanced → config → Diagnostics (Show) → Firmware upgrade”
 
 
 3. **Check and Install**  
