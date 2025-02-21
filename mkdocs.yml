@@ -33,6 +33,20 @@ extra_css:
 
 nav:
   - Home: index.md
+  - Sonar 3D-15: 
+      - Introduction: 3d-sonar/3d-sonar-15/3d-sonar-15-introduction.md
+      - Quickstart: 3d-sonar/3d-sonar-15/3d-sonar-15-quickstart.md
+      - Interface: 
+        - Wiring: 3d-sonar/3d-sonar-15/3d-sonar-15-wiring.md
+        - LED: 3d-sonar/3d-sonar-15/3d-sonar-15-led.md
+        - GUI: 3d-sonar/3d-sonar-15/3d-sonar-15-gui.md
+      - Integration:
+ #       - BlueROV2: 3d-sonar/3d-sonar-15/3d-sonar-15-bluerov-integration.md
+         - API: 3d-sonar/3d-sonar-15/3d-sonar-15-api.md
+      - Software Updates: 3d-sonar/3d-sonar-15/3d-sonar-15-software-update.md
+      - Networking: 3d-sonar/3d-sonar-15/3d-sonar-15-networking.md
+      - FAQ: 3d-sonar/3d-sonar-15/3d-sonar-15-faq.md
+
   - Underwater GPS:
       - G2:
           - Quickstart: underwater-gps/quickstart.md
@@ -114,5 +128,8 @@ nav:
           - Introduction: modem-m16/modem-m16.md
           - Serial Interface: modem-m16/modem-m16-uart-interface.md
           - M16 FAQ: modem-m16/modem-m16-faq.md
+  - I/O interface cards:
+          - Rev 4: io-interface-cards/rev4/io-interface-rev4.md
+
 
 copyright: © Water Linked 2018-2024
