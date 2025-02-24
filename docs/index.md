@@ -12,7 +12,7 @@
     height: auto;
   }
 
-  /* Optional: ensure each column is 1/3 width on large screens */
+  /* Each item in a row takes up 1/3 of the width on large screens */
   .col-3 {
     flex: 0 0 33%;
     box-sizing: border-box;
@@ -35,24 +35,16 @@
   <article class="md-content__inner md-typeset">
     <h1 id="documentation">Documentation</h1>
     <h3 id="select-your-device">Select your device</h3>
-    <!-- TOP ROW: SONAR 3D-15 centered alone -->
-    <div class="grid align" >
-      <!-- Left spacer column -->
-      <div class="col-3 col-md-6 col-sm-12"></div>
-      <!-- Center column (Sonar 3D-15) -->
+    <!-- ROW 1: 3D Sonar, DVL A125, DVL A50 -->
+    <div class="grid align">
       <div class="col-3 col-md-6 col-sm-12">
         <a href="./3d-sonar/3d-sonar-15/3d-sonar-15-introduction/">
           <img class="img-fluid"
-               src="https://waterlinked.com/web/image/product.template/689/image_512/%5BWL-21045-2%5D%20Sonar%203D-15?unique=935e74a"/>
+               src="https://waterlinked.com/web/image/product.template/689/image_512/%5BWL-21045-2%5D%20Sonar%203D-15?unique=935e74a" />
           <br />
           <h4>Sonar 3D-15</h4>
         </a>
       </div>
-      <!-- Right spacer column -->
-      <div class="col-3 col-md-6 col-sm-12"></div>
-    </div>
-    <!-- SECOND ROW: Other products -->
-    <div class="grid align">
       <div class="col-3 col-md-6 col-sm-12">
         <a href="./dvl/dvl-a125/">
           <img class="img-fluid"
@@ -65,7 +57,19 @@
         <a href="./dvl/dvl-a50/">
           <img class="img-fluid"
                src="https://waterlinked.com/web/image/product.product/227/image_512/%5BWL-21035-3-S-300%5D%20DVL%20A50%20%28Standard%2C%20300m%29"/>
+          <br />
           <h4>DVL A50</h4>
+        </a>
+      </div>
+    </div>
+    <!-- ROW 2: Modem M16, Underwater GPS G2, Locator-A1 -->
+    <div class="grid align">
+      <div class="col-3 col-md-6 col-sm-12">
+        <a href="./modem-m16/modem-m16">
+          <img class="img-fluid"
+               src="https://waterlinked.com/web/image/product.product/240/image_1024/%5BWL-21048-1-S%5D%20Modem%20M16%20%28Standard%29?unique=f736508"/>
+          <br />
+          <h4>Modem M16</h4>
         </a>
       </div>
       <div class="col-3 col-md-6 col-sm-12">
@@ -77,27 +81,22 @@
         </a>
       </div>
       <div class="col-3 col-md-6 col-sm-12">
-        <a href="./modem-m16/modem-m16">
+        <a href="./underwater-gps/locators/locator-a1/">
           <img class="img-fluid"
-               src="https://waterlinked.com/web/image/product.product/240/image_1024/%5BWL-21048-1-S%5D%20Modem%20M16%20%28Standard%29?unique=f736508"/>
+               src="https://waterlinked.com/web/image/product.product/120/image_512/%5BWL-21009-1-N001%5D%20Locator%20A1"/>
           <br />
-          <h4>Modem-M16</h4>
+          <h4>Locator-A1</h4>
         </a>
       </div>
+    </div>
+    <!-- ROW 3: Remaining locators: U1, D1, Receiver-D1 -->
+    <div class="grid align">
       <div class="col-3 col-md-6 col-sm-12">
         <a href="./underwater-gps/locators/locator-u1/">
           <img class="img-fluid"
                src="https://waterlinked.com/web/image/product.product/122/image_512/%5BWL-21018-1%5D%20Locator%20U1"/>
           <br />
           <h4>Locator-U1</h4>
-        </a>
-      </div>
-      <div class="col-3 col-md-6 col-sm-12">
-        <a href="./underwater-gps/locators/locator-a1/">
-          <img class="img-fluid"
-               src="https://waterlinked.com/web/image/product.product/120/image_512/%5BWL-21009-1-N001%5D%20Locator%20A1"/>
-          <br />
-          <h4>Locator-A1</h4>
         </a>
       </div>
       <div class="col-3 col-md-6 col-sm-12">
