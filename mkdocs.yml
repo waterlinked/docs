@@ -30,22 +30,21 @@ markdown_extensions:
 
 extra_css:
   - css/extra.css
-
 nav:
   - Home: index.md
-  - Sonar 3D-15: 
-      - Introduction: 3d-sonar/3d-sonar-15/3d-sonar-15-introduction.md
-      - Quickstart: 3d-sonar/3d-sonar-15/3d-sonar-15-quickstart.md
+  - Sonar 3D-15:
+      - Introduction: sonar-3d/sonar-3d-15.md
+      - Quickstart: sonar-3d/sonar-3d-15-quickstart.md
       - Interface: 
-        - Wiring: 3d-sonar/3d-sonar-15/3d-sonar-15-wiring.md
-        - LED: 3d-sonar/3d-sonar-15/3d-sonar-15-led.md
-        - GUI: 3d-sonar/3d-sonar-15/3d-sonar-15-gui.md
+        - Wiring: sonar-3d/sonar-3d-15-wiring.md
+        - LED: sonar-3d/sonar-3d-15-led.md
+        - GUI: sonar-3d/sonar-3d-15-gui.md
       - Integration:
- #       - BlueROV2: 3d-sonar/3d-sonar-15/3d-sonar-15-bluerov-integration.md
-         - API: 3d-sonar/3d-sonar-15/3d-sonar-15-api.md
-      - Software Updates: 3d-sonar/3d-sonar-15/3d-sonar-15-software-update.md
-      - Networking: 3d-sonar/3d-sonar-15/3d-sonar-15-networking.md
-      - FAQ: 3d-sonar/3d-sonar-15/3d-sonar-15-faq.md
+ #       - BlueROV2: sonar-3d/sonar-3d-15/sonar-3d-15-bluerov-integration.md
+         - API: sonar-3d/sonar-3d-15-api.md
+      - Software Updates: sonar-3d/sonar-3d-15-software-update.md
+      - Networking: sonar-3d/sonar-3d-15-networking.md
+      - FAQ: sonar-3d/sonar-3d-15-faq.md
 
   - Underwater GPS:
       - G2:

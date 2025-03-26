@@ -59,7 +59,7 @@ RIP1 supports several Protobuf-encoded messages, including:
 
 **Image**:
 
-![Pixels](../../img/Sonar-3D-15-pixel-pic.png)
+![Pixels](../img/Sonar-3D-15-pixel-pic.png)
 
 - Horizontal FOV (`fovH`) spans width.
 - Vertical FOV (`fovV`) spans height.

@@ -51,5 +51,5 @@ After completion, the Sonar 3D-15 will reboot with the new software version.
 
 ---
 
-If you have any questions or run into issues, please consult the release notes  and check out the [Sonar 3D-15 FAQ](../3d-sonar-15/3d-sonar-15-faq.md) or contact our support team.
+If you have any questions or run into issues, please consult the release notes  and check out the [Sonar 3D-15 FAQ](sonar-3d-15-faq.md) or contact our support team.
 

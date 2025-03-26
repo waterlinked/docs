@@ -5,15 +5,15 @@
 
 
 <!-- Insert image of 3d sonar below -->
-<div style="text-align: center;">
-  <img src="../../../img/Sonar 3D-15-handheld-2.png" alt="Sonar 3D 15" width="500" />
-</div>
+<!-- <div style="text-align: center;">
+  <img src="../../img/Sonar-3D-15-physical-dims-public-alpha-4x.png" alt="Sonar 3D 15" width="500" />
+</div> -->
 <!-- ![Sonar 3D 15](../../img/Sonar 3D-15-handheld-2.png) -->
 
 
 ## Dimensions
 
-![Sonar 3D 15 Dimensions](../../img/Sonar-3D-15-dimensions_2.png)
+![Sonar 3D 15 Dimensions](../img/Sonar-3D-15-physical-dims-public-alpha-4x.png)
 
 The cable can be bent as shown in the image up to 90 degrees without causing any damage. 
 
