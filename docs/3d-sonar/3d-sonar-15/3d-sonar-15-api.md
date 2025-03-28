@@ -135,12 +135,11 @@ message BitmapImageGreyscale8 {
   BitmapImageType type = 5; // Identifier for what is shown in the image
   uint32 width = 6;
   uint32 height = 7;
-  float horizontal_fov = 8;
-  float vertical_fov = 9;
+  float fov_horizontal = 8;
+  float fov_vertical = 9;
   // image pixel data is organized in rows of pixels.Each row is
   // 'width' wide, and there are 'height' rows. Each pixel is an 8-bit
-  // value that represents the intensity of the pixel, from 0 to
-  // 2^8-1.
+  // value that represents the intensity of the pixel, from 0 to 255
   bytes image_pixel_data = 10;
 }
 
@@ -151,14 +150,14 @@ message RangeImage {
   float speed_of_sound = 2; // Configured speed of sound in water in m/s
   float range = 3; // Configured range in meters
   uint32 frequency = 4; // Configured imaging frequency in Hz.
-  uint32 n_pixels_horizontal = 5;
-  uint32 n_pixels_vertical = 6;
+  uint32 width = 5;
+  uint32 height = 6;
   float fov_horizontal = 7; // In degrees
   float fov_vertical = 8; // In degrees
   float image_pixel_scale = 9;
 
   // image_pixel_data is organized in rows of pixels. Each row is
-  // n_pixels_horizontal wide, and there are n_pixels_vertical rows.
+  // 'width' wide, and there are 'height' rows.
   // Each pixel is a 16-bit value that must be multiplied by
   // image_pixel_scale to obtain the distance in meters from the sonar
   // to the strongest reflection in that direction.
