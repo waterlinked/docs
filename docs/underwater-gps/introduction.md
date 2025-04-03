@@ -43,6 +43,8 @@ Please read the following carefully before the UGPS G2 system is installed and u
 | **Temperature** | Make sure the system does not overheat. Avoid placing it in direct sunlight over extended periods of time. |
 | **Salt water** | The contents of the topside housing will corrode and/or short if in contact with salt water. Keep the housing lid closed when in the field to avoid salt water getting inside. |
 | **Force** | Avoid using excessive force on connectors, screws and other parts of the system, as this can lead to mechanical failure. |
+| **Locator U1** | It will discharge when not in use, so always remember to charge it before operation. See [U1 charging procedure.](locators/locator-u1.md#charging)|
+| **External position and U1** | You can use external poition data to give a better position estimate, however, if using the U1 the topside will still need GPS lock for time synchronization purposes. |
 
 
 ## Discussion
