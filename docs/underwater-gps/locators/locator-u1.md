@@ -10,9 +10,12 @@ Before deployment, the Locator-U1 must obtain a GPS lock. The integrated status 
 
 A rotary switch is located inside the cap, allowing you to select the channel on which the Locator transmits. The same channel must be set in the Water Linked Underwater GPS GUI. Each side of the Locator has three M3 mounting holes, and a standard bracket is included.
 
+!!! Note
+    You will need GPS lock on the topside as well when using the U1. This is for timing purposes, it will not help to use only external GPS position as this can not be used for time synchronization. It is not enough to only have GPS lock on the U1.
+
 ## Charging
 
-The Locator-U1 has an internal rechargeable battery. Use the included USB-C cable and a 5 V / 2 A (or higher) wall adapter to charge it.
+The Locator-U1 has an internal rechargeable battery. Use the included USB-C cable and a 5 V / 2 A (or higher) wall adapter to charge it. The U1 will require to be fully charged before each operation as it will discharge over time when left with the cap off. Depending on the age of the U1 and the temperature in the environment the discharging effect will be worse. 
 
 1) **Insert the USB-C cable**  
    Plug one end of the cable into the Locator-U1’s charging port.

@@ -13,9 +13,9 @@ A quick guide on how to start using the Underwater GPS system:
 
 ## Power the topside unit
 
-Start by connecting power to the UGPS G2 topside box. The GPS receiver in the topside box will begin receiving signals and achieve a lock whilst we setup the rest of the system.
+Start by connecting power to the UGPS G2 topside box. Make sure to place the box where there s good GPS signals. The GPS receiver in the topside box will begin receiving signals and achieve a lock whilst we setup the rest of the system.
 
-If you are using the Locator-U1, power it on now as well; it too will acquire a GPS lock whilst we setup the rest of the system.
+If you are using the Locator-U1, power it on now as well. It too will acquire a GPS lock whilst we setup the rest of the system.
 
 If you are inside, use of a GPS repeater or similar will be necessary.
 
