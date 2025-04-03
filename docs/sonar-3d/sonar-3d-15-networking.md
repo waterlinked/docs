@@ -4,7 +4,7 @@ The Sonar 3D-15 has several services available over ethernet:
 
 * [Multicast DNS](#multicast-dns-mdns) (mDNS) for easy discovery
 * Web [GUI](sonar-3d-15-gui.md), providing a visualization of the data collected by the Sonar 3D-15, as well as configuration, [updating of software](sonar-3d-15-software-update.md) and more.
-* UDP Multicast and Unicast [data stream](#udp-multicast-and-unicast)
+* UDP Multicast [data stream](#udp-multicast)
 * [Software updates](sonar-3d-15-software-update.md)
 
 
@@ -38,8 +38,8 @@ After the IP configuration of the Sonar 3D-15 is modified, the Sonar 3D-15 needs
 !!! Note
     The boot time, i.e. the time it takes from the Sonar 3D-15 receives power until it starts operating normally, will depend upon the IP configuration. Using the [fallback IP](#fallback-ip), the boot time can be as much as 1 min 30 sec, whilst it can be as low as 20 sec with a static IP.
 
-## UDP multicast and unicast
+## UDP multicast
 
-By default, the Sonar 3D-15 uses **UDP Multicast** (`224.0.0.96:4747`), so any device on the local network can receive data without knowing the sonar’s IP. You can also configure **UDP Unicast** to send data to a specific IP/port, allowing routing outside the local network (but losing multicast discoverability). Please see [API](sonar-3d-15-api.md) for more information on the data on the UDP multi/unicast.
+By default, the Sonar 3D-15 uses **UDP Multicast** (`224.0.0.96:4747`), so any device on the local network can receive data without knowing the sonar’s IP. Please see [API](sonar-3d-15-api.md) for more information on the data on the UDP multicast.
 
 
