@@ -120,3 +120,10 @@ For more details, see [Range mode](dvl-protocol.md#range-mode-configuration). In
 Yes, the DVL can operate over soft bottoms. However, softer seabeds absorb more acoustic energy, which reduces the maximum altitude at which the DVL can reliably track. The degree of range reduction varies from environment to environment and may require on-site testing to determine.
 
 ---
+
+## 14. I get an error when updating my DVL?
+
+Most likely your DVL is running an older software version that requires you to set the time before you can update. This is not and issue when updating from version 2.6.5
+For more software update details please see [DVL Software Updates.](sw-update.md)
+
+---

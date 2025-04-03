@@ -38,7 +38,7 @@
     <!-- ROW 1: 3D Sonar, DVL A125, DVL A50 -->
     <div class="grid align">
       <div class="col-3 col-md-6 col-sm-12">
-        <a href="./3d-sonar/3d-sonar-15/3d-sonar-15-introduction/">
+        <a href="./sonar-3d/sonar-3d-15/">
           <img class="img-fluid"
                src="https://waterlinked.com/web/image/product.template/689/image_512/%5BWL-21045-2%5D%20Sonar%203D-15?unique=935e74a" />
           <br />

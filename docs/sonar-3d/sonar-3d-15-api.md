@@ -1,7 +1,7 @@
 # Integration API Sonar 3D-15
 
 ## Introduction
-The **Water Linked Sonar 3D-15** provides real-time 3D views of underwater environments using a low-bandwidth **Range Image Protocol (RIP1)**. This protocol efficiently transmits data such as 3D points or grayscale bitmaps over UDP (multicast or unicast), enabling live visualization, analysis, or archival for later use.
+The **Water Linked Sonar 3D-15** provides real-time 3D views of underwater environments using a low-bandwidth **Range Image Protocol (RIP1)**. This protocol efficiently transmits data such as 3D points or grayscale bitmaps over UDP multicast, enabling live visualization, analysis, or archival for later use.
 
 ---
 
@@ -24,7 +24,7 @@ RIP1 is a compact format for range and bitmap images, designed for <10 Mbit ba
 ---
 
 ## Network
-By default, the Sonar 3D-15 uses **UDP Multicast** (`224.0.0.96:4747`), so any device on the local network can receive data without knowing the sonar’s IP. You can also configure **UDP Unicast** to send data to a specific IP/port, allowing routing outside the local network (but losing multicast discoverability).
+By default, the Sonar 3D-15 uses **UDP Multicast** (`224.0.0.96:4747`), so any device on the local network can receive data without knowing the sonar’s IP.
 
 ---
 
@@ -59,7 +59,7 @@ RIP1 supports several Protobuf-encoded messages, including:
 
 **Image**:
 
-![Pixels](../../img/Sonar-3D-15-pixel-pic.png)
+![Pixels](../img/Sonar-3D-15-pixel-pic.png)
 
 - Horizontal FOV (`fovH`) spans width.
 - Vertical FOV (`fovV`) spans height.
