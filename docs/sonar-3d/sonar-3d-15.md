@@ -14,8 +14,8 @@
 ## Dimensions
 
 ![Sonar 3D 15 Dimensions](../img/Sonar-3D-15-physical-dims-public-alpha-4x.png)
-
-The cable can be bent as shown in the image up to 90 degrees without causing any damage. 
+The cable can be bent as shown in the image up to 90 degrees without causing any damage.
+![Sonar 3D 15 Back Dim](../img/Sonar-3D-15-back.png)
 
 ## Field of view
 
