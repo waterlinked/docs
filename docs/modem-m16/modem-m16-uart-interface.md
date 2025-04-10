@@ -77,6 +77,8 @@ For a simple point-to-point setup with two modems:
 2. Ensure both are set to the same **channel** (default is 1).  
 3. Begin sending data; the modems will relay up to 2 bytes each ~1.6 seconds.
 
+Please check out our [github for examples with Modem M16](https://github.com/waterlinked/Modem-M16-Driver)
+
 ---
 
 ## Settings Interface
@@ -212,7 +214,7 @@ When in diagnostic mode (or upon a report request in transparent mode), the mode
     **Practical Tip**  
     - Record the Noise Power while idle as your baseline (noise floor).  
     - Compare that with Signal Power during active communication.  
-    - The bigger the gap, the better the link quality.
+    - The bigger the gap, the better the link quality. (Could be closer to each other)
 
 ---
 
