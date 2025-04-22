@@ -1,6 +1,6 @@
 # GUI
 
-The GUI is designed to be user friendly with a clean an intuitive set of controls. Please check out the [Sonar 3D-15 GUI Demo](https://sonar.demo.waterlinked.com/) to explore all the features without the need of an actual Sonar 3D-15!
+The GUI is designed to be user friendly with a clean an intuitive set of controls.
 
 
 ## Main view
