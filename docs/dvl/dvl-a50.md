@@ -21,6 +21,11 @@ The DVL estimates velocity relative to the sea bottom by sending acoustic waves 
 
 ![dvl_a50_dimensions](../img/WL-21035-3_DVL-A50_Side3_1600_dimension_crop.jpg)
 
+### Cable dimensions
+Delivered cable length: 3.0m
+
+Cable diameter:  6.8mm +/- 0.2mm 
+
 
 ## Mounting Holes
 

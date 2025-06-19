@@ -5,7 +5,9 @@ It is recommended to always run the latest DVL software where possible. The late
 The release notes for each release is available in the [GUI](../gui/dashboard) and also in the [GUI demo](https://dvl.demo.waterlinked.com/#/about).
 
 !!! Warning
-	During the software upgrade, the thermal protection feature is turned off. To prevent the DVL from overheating, it is important to submerge the DVL in water throughout the update process.”
+	During the software upgrade, the thermal protection feature is turned off. To prevent the DVL from overheating, it is important to submerge the DVL in water throughout the update process.
+	
+	If the DVL is switched off during an upgrade it might be permanently damaged.”
 
 
 ## Automatic software update

@@ -6,6 +6,8 @@ Keeping your Sonar 3D-15 up to date is highly recommended. You can update the so
     **Thermal protection is disabled during software upgrades.**  
     Make sure the Sonar 3D-15 is submerged in water (or otherwise cooled) throughout the update to prevent overheating.
 
+    Allowing the sonar to shut down during upgrade might permanently damage the Sonar.
+
 ---
 
 ## Automatic Software Update

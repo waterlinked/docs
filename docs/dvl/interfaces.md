@@ -12,7 +12,7 @@ For both the DVL-A50 and the DVL-A125.
 
 * Flashing green light, mostly on (slow, every few seconds): DVL has bottom lock.
 
-* Flashing green light (fast, many times a second): DVL is in thermal shutdown.
+* Flashing green light (fast, many times a second): DVL is in [thermal shutdown](dvl-troubleshooting.md#thermal-shutdown---does-the-dvl-look-like-it-is-constantly-powering-on-and-off)
 
 ## Wiring interface
 
@@ -51,6 +51,13 @@ The table below shows the specific pinout for the Seacon MCOM8M connector.
 ## Shielded Cable Information
 
 The DVL is equipped with a shielded cable that helps protect the communication and power lines from external electromagnetic interference (EMI) and radio frequency interference (RFI). Please note that the DVL electronics themselves are not internally connected to the shield; it is up to the user to decide whether and how to connect the shield.
+
+!!! Note
+	For DVLA50, shielded cables were introduced autumn 2024 from serial number 30273 and upwards, and 05838 and upwards.
+
+	DVLA50's with Seacon MCOMSM connector and DVLA50's made before autumn 2024 are delivered with unshielded cable.
+
+	All DVLA125 are delivered with shielded cable.
 
 ### Connecting the Shield
 

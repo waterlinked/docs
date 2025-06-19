@@ -87,9 +87,7 @@ The maximum transmit source level is 200 dB.
 
 ## 9. Can the DVL overheat?
 
-Yes. The DVL has a thermal shutdown to avoid damage. It will issue a warning before shutting down at 55℃. Once it cools below 50℃, it automatically restarts. If the overheating issue is not addressed, it may repeat this shutdown/restart cycle.
-
-For more details, see [Protocol](dvl-protocol.md).
+Yes. The DVL has a thermal shutdown to avoid damage. It will issue a warning before shutting down at 55℃. Once it cools below 50℃, it automatically restarts. If the overheating issue is not addressed, it may repeat this shutdown/restart cycle. To avoid this always keep the DVL in water when powered on.
 
 ---
 
