@@ -18,7 +18,6 @@ Toggle whether or not to enable the Sonar to send acoustic signals. The 3D point
 !!! Important
     Ensure that the Sonar is under water before enabling acoustics, to avoid interference with objects and infrastructure around you.
 
-
 Acoustics are disabled when the Sonar first boot. You'll see a message in the 3D view about enabling this.
 
 ![Acoustics](../img/Sonar-3D-15-enable-acoustics.png)
