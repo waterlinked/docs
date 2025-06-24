@@ -42,4 +42,4 @@ For advanced integrations, you can use the Sonar 3D-15’s API to develop custom
 ---
 
 ## 6. The performance is not as expected?
-If the performance is not as expected and you can not find a solution in this documentation, please create a diagnostic log with you Sonar 3D-15 and submit a [support ticket](https://waterlinked.com/support) with the Sonar 3D diagnostic log file attached. 
+If the performance is not as expected and you can not find a solution in this documentation, please create a diagnostic log with your Sonar 3D-15 and submit a [support ticket](https://waterlinked.com/support) with the Sonar 3D diagnostic log file attached. 

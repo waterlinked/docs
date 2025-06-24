@@ -43,6 +43,7 @@ nav:
  #       - BlueROV2: sonar-3d/sonar-3d-15/sonar-3d-15-bluerov-integration.md
          - API: sonar-3d/sonar-3d-15-api.md
       - Software Updates: sonar-3d/sonar-3d-15-software-update.md
+      - Settings: sonar-3d/sonar-3d-15-config.md
       - Networking: sonar-3d/sonar-3d-15-networking.md
       - FAQ: sonar-3d/sonar-3d-15-faq.md
 
