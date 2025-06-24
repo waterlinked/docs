@@ -38,7 +38,7 @@ Set how the Sonar acquires date and time, NTP Server og Use Computer Time. Defau
 
 ### Speed of Sound
 
-Change the speed of sound to reflect the surroundings of the Sonar. Default is **1491 m/s**. When using custom speed, the speed must be between 1000 and 2000 m/s.
+Change the speed of sound to reflect the surroundings of the Sonar. Default is **1491 m/s**, the approximate speed of sound in 5-10&deg;C ocean water at 5 meters depth. When using custom speed, the speed must be between 1000 and 2000 m/s.
 
 ### Mounting angle
 
