@@ -251,7 +251,7 @@ If DHCP is disabled, please enable this on your computer.
 
 Once you have assured that your device is using DHCP, you need to determine which IP-address has been automatically assigned to the Sonar 3D-15 by the Chasing system. Once located, entering it in your browser displays a page like the one below — in this example, the Sonar 3D-15 is assigned the IP-address `192.168.1.21`.
 
-![Pixels](../img/sonar3d-integration-chasing/chasing_sonar_gui.png){width="30%"}
+![Pixels](../img/sonar3d-integration-chasing/chasing_sonar_gui.png){width="49%"}
 
 !!! Warning
     To avoid overheating, **do not click the green button “Enable Acoustics”** until the ROV is submerged in water.
