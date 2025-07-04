@@ -32,6 +32,8 @@ To follow this guide, you will need the following:
 
 - A mount (Sonar 3D-15 to ROV)
 
+    - *An example can be downloaded from here: [3D step file](./stp_files/WL-21045-2--Chasing-M2-Pro-Max-Mount--v2.stp)*
+
 - Correct screws
 
     - *See the [Mounting](#mounting) section*
