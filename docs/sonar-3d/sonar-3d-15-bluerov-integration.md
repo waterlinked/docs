@@ -238,7 +238,7 @@ Find the IP-address corresponding to the Sonar 3D-15 on a computer by doing the 
     nmap -sn <YOUR_IP>
     ```
 
-    This will scan the BlueROV2 Wi-Fi and show all accessible connected devices and their IPs.
+    This will scan the BlueROV2 network and show all accessible connected devices and their IPs.
 
     ![Pixels](../img/sonar3d-integration-bluerov2/nmap_bluerov_cropped.png)
 
