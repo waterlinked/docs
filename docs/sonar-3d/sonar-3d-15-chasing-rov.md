@@ -32,6 +32,8 @@ To follow this guide, you will need the following:
 
 - A mount (Sonar 3D-15 to ROV)
 
+    - *An example can be downloaded from here: [3D step file](./stp_files/WL-21045-2--Chasing-M2-Pro-Max-Mount--v2.stp)*
+
 - Correct screws
 
     - *See the [Mounting](#mounting) section*
@@ -249,7 +251,7 @@ If DHCP is disabled, please enable this on your computer.
 
 Once you have assured that your device is using DHCP, you need to determine which IP-address has been automatically assigned to the Sonar 3D-15 by the Chasing system. Once located, entering it in your browser displays a page like the one below — in this example, the Sonar 3D-15 is assigned the IP-address `192.168.1.21`.
 
-![Pixels](../img/sonar3d-integration-chasing/chasing_sonar_gui.png){width="30%"}
+![Pixels](../img/sonar3d-integration-chasing/chasing_sonar_gui.png){width="40%"}
 
 !!! Warning
     To avoid overheating, **do not click the green button “Enable Acoustics”** until the ROV is submerged in water.
@@ -298,7 +300,7 @@ Find the IP-address corresponding to the Sonar 3D-15 on a computer by doing the 
 
     Once installed and inside the WiFiman app, go to **Discovery** and scan the network. A list of all connected devices on the network will show, similar to the following:
 
-    ![Pixels](../img/sonar3d-integration-chasing/chasing_wifiman.png){width="30%"}
+    ![Pixels](../img/sonar3d-integration-chasing/chasing_wifiman.png){width="40%"}
 
 2. **Test and find the IP-address**
 

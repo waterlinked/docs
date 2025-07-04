@@ -124,7 +124,7 @@ If working, the browser will display a page like the one below — in this examp
 
 The following picture is an example of the Sonar 3D-15 GUI on a Android phone using the IP-address `192.168.1.233`.
 
-![Pixels](../img/sonar3d-integration-blueyex3/sonar_gui_phone.jpg){width="30%"}
+![Pixels](../img/sonar3d-integration-blueyex3/sonar_gui_phone.jpg){width="40%"}
 
 !!! Note
     The Blueye might take a minute to boot up all the devices properly. If these local hostnames don't work immediately, it might be that the ROV just hasn't fully initialized them yet.
@@ -138,7 +138,7 @@ To do this, we recommend downloading an app on your phone to find all IP-address
 
 Once installed and inside the WiFiman app, go to **Discovery** and scan the network. A list of all connected devices on the network will show, similar to the following:
 
-![Pixels](../img/sonar3d-integration-blueyex3/wifiman_networks_cropped2.png){width="30%"}
+![Pixels](../img/sonar3d-integration-blueyex3/wifiman_networks_cropped2.png){width="40%"}
 
 Find the IP-address corresponding to the Water Linked Sonar 3D-15. In the picture, this is the **192.168.1.233**. Enter this IP-address into your browser to see the Sonar 3D-15 GUI.
 
