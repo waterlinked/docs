@@ -49,6 +49,7 @@ nav:
       - Software Updates: sonar-3d/sonar-3d-15-software-update.md
       - Settings: sonar-3d/sonar-3d-15-config.md
       - Networking: sonar-3d/sonar-3d-15-networking.md
+      - Sonar Replay: sonar-3d/sonar-replay.md
       - FAQ: sonar-3d/sonar-3d-15-faq.md
 
   - Underwater GPS:
