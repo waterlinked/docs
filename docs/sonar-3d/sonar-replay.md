@@ -9,27 +9,27 @@ All processing is done in your browser and not uploaded anywhere.
 !!! Note
     Sonar Replay is still in development. Some features may not be fully functional or implemented yet.
 
-Select a file to process by clicking the file input or dragging or dropping a file onto the browser window. Alternatively use one of the provided examples by clicking "Load demo" and selecting a recording. Processing time depends on file size, device and browser you are using. While processing, an estimated remaining time is shown.
+Select a file to process by clicking the file input or by dragging and dropping a file onto the browser window. Alternatively use one of the provided examples by clicking "Load demo" and selecting a recording. Processing time depends on file size, device and browser you are using. While processing, an estimated remaining time is shown.
 
 ![Sonar Replay Processing Recording](../img/sonar-replay/processing-recording.png)
 
 !!! Note
-    We recommend playback of files smaller than 300 MB for the best experience.
+    We recommend recordings smaller than 300 MB for the best experience.
 
 ## Playback
-Once processing is complete, the 3D point cloud will show and playback start immediately. Scrub through the recording using the playback slider, adjust playback speed or look through the file via "Chapters".
+Once processing is complete, the 3D point cloud is shown and playback will start immediately. Scrub through the recording using the playback slider, pause, adjust playback speed or get an overview of the recording with "Chapters".
 
 ![Sonar Replay](../img/sonar-replay/playback.png)
 
 ## Chapters
-Sonar Replay will automatically create chapter previews of the provided recording. Open this view by clicking the "Chapters" button or by hitting <code>C</code> on your keyboard. All timestamps are in UTC.
+Sonar Replay will automatically create chapter previews of the provided recording. Access this by clicking the "Chapters" button or by hitting <code>C</code> on your keyboard. Note that all recorded timestamps are in UTC (Coordinated Universal Time).
 
 ![Sonar Replay](../img/sonar-replay/chapters.png)
 
 !!! Tip
     Quickly jump to a chapter by clicking the preview image.
 
-Expand each chapter preview to a larger version by clicking the magnifying glass icon when hovering a chapter. 
+Chapter preview can be expanded to a larger version by clicking the magnifying glass icon that appears when hovering the chapter preview. 
 
 ![Sonar Replay](../img/sonar-replay/chapter-preview.png)
 
