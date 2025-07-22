@@ -31,8 +31,8 @@ By default, the Sonar 3D-15 uses **UDP Multicast** (`224.0.0.96:4747`), so any d
 ## Image Sizes and Update Rates
 | **Mode**      | **Resolution (W×H)** | **FOV (H×V)** | **Rate** |
 |---------------|----------------------|--------------|---------|
-| Navigation    | 256 × 64            | 90° × 40°     | 5 Hz    |
-| Inspection    | 256 × 64            | 40° × 40°     | 20 Hz   |
+| Low Frequency | 256 × 64            | 90° × 40°     | 5 Hz    |
+| High Frequency| 256 × 64            | 40° × 40°     | 20 Hz   |
 
 ---
 

@@ -21,7 +21,7 @@ The cable can be bent as shown in the image up to 90 degrees without causing any
 
 The Sonar 3D-15 provides an opening angle as described in the tables below for the different modes. 
 
-### Navigation 
+### Low Frequency (1.2 MHz)
 
 | Specification        | Range             |
 |----------------------|-------------------|
@@ -31,7 +31,7 @@ The Sonar 3D-15 provides an opening angle as described in the tables below for t
 | Horizontal coverage  | 90° total         |
 
 
-### Inspection
+### High Frequency (2.4 MHz)
 
 | Specification        | Range             |
 |----------------------|-------------------|
