@@ -56,7 +56,7 @@
       <div class="col-3 col-md-6 col-sm-12">
         <a href="./dvl/dvl-a50/">
           <img class="img-fluid"
-               src="https://waterlinked.com/web/image/product.product/227/image_512/%5BWL-21035-3-S-300%5D%20DVL%20A50%20%28Standard%2C%20300m%29"/>
+               src="https://waterlinked.com/web/image/product.product/1516/image_512/%5BWL-21035-4-S-300-SIDE-IO%5D%20DVL%20A50%20%28Standard%2C%20300m%2C%203m%20c-w%20Interface%20PCB%29"/>
           <br />
           <h4>DVL A50</h4>
         </a>
