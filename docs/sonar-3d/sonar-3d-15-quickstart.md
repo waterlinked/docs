@@ -13,16 +13,17 @@ Requirements:
 
 <!-- Insert picture of Sonar in a bucket/tank -->
 
-## 1. Unbox and connect the Ethernet cable
-Unbox the Sonar 3D-15 and plug one end of the Ethernet cable into the I/O board, and connect the other end to your computer’s Ethernet port.  
+## 1. Unbox and place in water
+Unbox the Sonar 3D-15 and place the Sonar 3D-15 in a water container (e.g., a bucket or tank). Avoid getting water on the I/O board.
+
 <!-- Insert image showing the I/O card and computer -->
 
-## 2. Connect a power supply
-Connect your power supply to the I/O board. Use a power supply capable of delivering 60W (surge) at 10-30V (20+ V recommended).
+## 2. Connect the Ethernet cable
+Plug one end of the Ethernet cable into your computer's Ethernet port, and connect the other end to the Sonar's I/O board.  
 <!-- Insert image showing power supply connection -->
 
-## 3. Place and Boot the Sonar
-- Place the Sonar 3D-15 in a water container (e.g., a bucket or tank). Avoid getting water on the I/O board. 
+## 3. Connect a power supply and boot the Sonar
+- Connect your power supply to the I/O board. Use a power supply capable of delivering 60W (surge) at 10-30V (20+ V recommended).
 - Turn on your power supply. Your Sonar 3D-15 takes about 30 seconds to boot.
 
 ## 4. Configure your computer’s IP
