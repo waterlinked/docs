@@ -4,12 +4,15 @@ This guide will help you connect and access the Sonar 3D-15 GUI so you can explo
 
 <!-- Insert video here -->
 
-Requirements:
+<iframe width="100%" height="420" src="https://www.youtube.com/embed/IxMZxHuacdQ?si=6m16D2UlgL0NQ6lD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-* A 3D sonar
-* Power source (10-30V DC, 60W surge)
-* Computer
-* Ethernet cable
+_Requirements:_
+
+- A 3D sonar
+- Power source (10-30V DC, 60W surge)
+- Power
+- Computer
+- Ethernet cable
 
 ![Sonar-unboxing-1](../img/Sonar-3D-15-requirements.png)
 
