@@ -8,9 +8,9 @@ This guide will help you connect and access the Sonar 3D-15 GUI so you can explo
 
 _Requirements:_
 
-- A 3D sonar
+- Water Linked 3D sonar
 - Power source (10-30V DC, 60W surge)
-- Power
+- Power connector
 - Computer
 - Ethernet cable
 
