@@ -70,6 +70,9 @@ To be able to see what you send and receive on the modems you will have to open 
 
 Begin sending data using either the GUI or the serial protocol; the modems will relay up to 2 bytes each ~1.6 seconds.
 
+!!! Note 
+To do configuration changes using the protocol, the letters needs to be sent with almost exactly 1 second between each letter. In any other circumstances the letters will be interpreted as a packege to be transmitted.
+
 ---
 
 ## Make your own interface that suits your needs

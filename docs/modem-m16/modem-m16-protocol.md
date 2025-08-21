@@ -10,6 +10,10 @@ You can configure the modem by issuing commands over the serial link. Five user-
 
 Each configuration command requires sending specific characters with a 1-second pause between them, followed by a character that selects the new value. Refer to the relevant section below.
 
+!!! Note 
+The timing of the commands need to be separated by exactly 1 second, if not it will interpret the input as a package to be sent. 
+Doing this by hand is almost impossible, so it is advised to make a programmed user interface, or use the provided GUI (see [WL GUI](../modem-m16/modem-m16-gui.md)).
+
 ---
 
 ### Communication Channel Command

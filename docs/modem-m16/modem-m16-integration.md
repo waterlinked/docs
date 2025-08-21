@@ -7,7 +7,7 @@ For details of the protocol used to implement the settings, see [Modem-M16-Proto
 
 ## Interface overview
 
-The Modem-M16 has a 3.3 volt UART interface and a RS422 interface with the following configuration:
+The standard Modem-M16 has a **3.3V TTL UART**  interface and the extended version has a **RS422** interface. Both with the following configuration:
 
 | Settings         | Value  |
 | :--------------- | :----- |
@@ -16,7 +16,7 @@ The Modem-M16 has a 3.3 volt UART interface and a RS422 interface with the follo
 | Flow control     | None   |
 
 
-Users can switch between **3.3V TTL UART** or **RS422** for physical interfacing. Through this serial link, you can:
+Through this serial link, you can:
 
 - Set operational modes  
 - Change communication channels  
