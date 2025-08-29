@@ -17,15 +17,18 @@ A rotary switch is located inside the cap, allowing you to select the channel on
 
 The Locator-U1 has an internal rechargeable battery. Use the included USB-C cable and a 5 V / 2 A (or higher) wall adapter to charge it. The U1 will require to be fully charged before each operation as it will discharge over time when left with the cap off. Depending on the age of the U1 and the temperature in the environment the discharging effect will be worse. 
 
+!!! Note
+Do not use your computer to charge the locator, the computers USB port does not supply enough power to charge the locator. Charge for at least 7 hours. Note that a steady green light only indicates gps lock, and has nothing to do with the charging status. 
+
 1) **Insert the USB-C cable**  
    Plug one end of the cable into the Locator-U1’s charging port.
 
 2) **Connect to a suitable power source**  
-   Attach the other end of the cable to a wall adapter providing at least 2 A.  
+   Attach the other end of the cable to a wall adapter providing at least 5V/2A.  
    Avoid charging from a computer USB port.
 
 3) **Charge for 7 hours**  
-   Leave the Locator-U1 connected for a full 7 hours to ensure a complete charge. You can then disconnect the cable and use the Locator-U1.
+   Leave the Locator-U1 connected for a full 7 hours to ensure a complete charge. You can then disconnect the cable and use the Locator-U1. Charging overnight the night before use is a recommended routine.
 
 ### LED Behavior While Charging
 
@@ -65,10 +68,10 @@ When the Locator-U1 is connected to a charger, the LED does not indicate chargin
   The Locator-U1 previously had a GPS lock but lost it. It is still ready to dive.
 
 - **Fast flashing green light (multiple times per second)**  
-  Error indication. The Locator-U1 is not ready to dive. This often happens if the device has exceeded its dive time and the pressure sensor requires drying. Charging the Locator helps to dry the sensor more quickly.
+  Error indication. The Locator-U1 is not ready to dive. This often happens if the device has exceeded its dive time and the pressure sensor requires drying, or if the battery power is very low. Charging the Locator helps to dry the sensor more quickly.
 
 !!! warning
-    The Locator-U1 can only be submerged for about 6 hours. It then requires time to dry the pressure sensor in order to provide accurate depth readings.
+    The Locator-U1 can only be submerged for about 6 hours. It then requires charging and time to dry the pressure sensor in order to provide accurate depth readings.
 
 ## Wiring Interface
 

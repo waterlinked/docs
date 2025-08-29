@@ -54,31 +54,38 @@ nav:
 
   - Underwater GPS:
       - G2:
-          - Quickstart: underwater-gps/quickstart.md
           - Introduction: underwater-gps/introduction.md
+          - Quickstart: underwater-gps/quickstart.md
           - Reference frames: underwater-gps/reference-frames.md
-          - Components:
-              - Topside:
-                  - Hardware: underwater-gps/hardware.md
+          - Interface:
+             - GUI: underwater-gps/interface/ugps-gui.md
+             - LED: underwater-gps/interface/ugps-led.md
+             - Wiring: underwater-gps/interface/ugps-wiring.md
+             - Warnings: underwater-gps/interface/warnings.md
+            #  - GUI: 
+            #       - Position: underwater-gps/interface/gui/position.md
+            #       - Baseline: underwater-gps/interface/gui/receivers.md
+            #       - Settings: underwater-gps/interface/gui/settings.md
+            #       - Diagnostic: underwater-gps/interface/gui/diagnostic.md
+            #       - Diagnostic report: underwater-gps/interface/gui/diagnostic-report.md
+            #       - Demo: underwater-gps/interface/gui/demo-gui.md
+          - Hardware setup: 
+              - System setup: underwater-gps/ugps-sys-setup.md
+              - Components:
                   - Power supply: underwater-gps/power-supply.md
-                  - Network settings: underwater-gps/network-settings.md
-              - Baseline:
-                  - Antenna: underwater-gps/antenna.md
-                  - Receiver-D1: underwater-gps/receiver-d1.md
-              - Locator:
-                  - Locator-A1: underwater-gps/locators/locator-a1.md
-                  - Locator-D1: underwater-gps/locators/locator-d1.md
-                  - Locator-U1: underwater-gps/locators/locator-u1.md
-          - GUI:
-              - Position: underwater-gps/gui/position.md
-              - Baseline: underwater-gps/gui/receivers.md
-              - Settings: underwater-gps/gui/settings.md
-              - Diagnostic: underwater-gps/gui/diagnostic.md
-              - Diagnostic report: underwater-gps/gui/diagnostic-report.md
-              - Warnings: underwater-gps/gui/warnings.md
-              - Demo: underwater-gps/gui/demo-gui.md
+                  - Topside: underwater-gps/ugps-topside.md
+                  - Baseline:
+                      - Antenna: underwater-gps/antenna.md
+                      - Receiver-D1: underwater-gps/receiver-d1.md
+                  - Locator:
+                      - Locator-A1: underwater-gps/locators/locator-a1.md
+                      - Locator-D1: underwater-gps/locators/locator-d1.md
+                      - Locator-U1: underwater-gps/locators/locator-u1.md
+          - System configurations: underwater-gps/ugps-sysconfig.md
+          - Networking: underwater-gps/network-settings.md
           - Integration:
               - API: underwater-gps/integration/api.md
+              - External compass: underwater-gps/integration/external-gps.md
               - BlueROV2 integration:
                   - Overview: underwater-gps/integration/bluerov-integration.md
                   - BlueROV2 & Locator-A1: underwater-gps/integration/bluerov-integration-a1.md

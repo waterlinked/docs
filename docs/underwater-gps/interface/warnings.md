@@ -1,6 +1,6 @@
 # Warnings
 
-Warnings that you might experience will using UGPS.
+Warnings that you might experience while using the UGPS.
 
 | Message | Solution |
 |---------|----------|

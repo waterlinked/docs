@@ -4,11 +4,11 @@
 
 ## Description
 
-The Master-D1 is a digital acoustic position computing board. It calculates the position of any Locator relative to the position of the Receivers, as well as global position through use of the integrated GPS and IMU (compass). The board supports up to 7 independent D1 devices, 1 A1 device or 1 U1 device. It is accessed through a network interface. The Master-D1 is running its own webserver which exposes an API and a GUI. With its small physical footprint, the board is easily integrated into a topside housing.
+The Master-D1 is a digital acoustic position computing board. It calculates the position of any Locator relative to the position of the Receivers, as well as global position through use of the integrated GPS and an IMU. The board supports up to 7 independent D1 devices, 1 A1 device or 1 U1 device. It is accessed through a network interface. The Master-D1 is running its own webserver which exposes an API and a GUI. With its small physical footprint, the board is easily integrated into a topside housing.
 
 ## Benefits
 
-* Extremely small footprint enabling easy integration in other equipment.
+* Extremely small footprint enabling easy integration with other equipment.
 
 * Highly robust operation in areas with reflections (shallow water, around installations etc.)
 

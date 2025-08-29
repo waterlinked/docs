@@ -14,7 +14,7 @@ Select the type of locator ([U1](../../locators/locator-u1), [A1](../../locators
 
 ## Channel overview
 
-The frequency bands of the available channels are as follows. Lower frequency typically corresponds to greater range due to less acoustic absorption, though there are other factors involved: if you experience issues with signal quality (low RSSI or high NSD), try a different channel.
+The frequency bands of the available channels are as follows. Lower frequency typically corresponds to greater range due to less acoustic absorption, though there are other factors involved: if you experience issues with signal quality (low RSSI or high NSD), try a different channel. Often channel 3 is recommended.
 
 | From (kHz) | To (kHz) | Channel |
 |------------|----------|---------|

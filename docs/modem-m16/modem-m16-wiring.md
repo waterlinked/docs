@@ -14,10 +14,14 @@ The tables below shows the pinning of the Modem-M16 interface. Depending on whic
 | RS422 TX+             | NA                | NA                | Green             |
 | RS422 TX-             | NA                | NA                | Green-White       |
 
-Note: Shutdown line can be used to control the ON/OFF state of the Modem. 
+Maximum power consumption for package transmit is in range 390 mW to 1105 mW
+
+!!! Note 
+Shutdown line can be used to control the ON/OFF state of the Modem. 
 If Shutdown is left floating, the Modem is ON. If Shutdown is short to GND, the modem is OFF. 
 Shutdown line can be controlled by an external open-drain, open-collector or relay device.
 DO NOT apply voltage to Shutdown line. 
+
 
 ## Wiring OEM/Standard
 ![Standard](../img/modem_m16_standard_connection.png)

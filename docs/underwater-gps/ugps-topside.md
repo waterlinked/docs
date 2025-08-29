@@ -1,4 +1,4 @@
-# Hardware Setup
+# UGPS Topside
 
 ## Connectors
 

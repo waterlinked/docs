@@ -6,9 +6,12 @@
 
 <div style="text-align: center;"><img src="../../img/UGPS_G2_Pelicase_Top_1600_web.jpg" style="width: 550px;"></div><br>
 
-[Underwater GPS G2](https://www.waterlinked.com/underwater-gps) is a new and improved version of the Explorer Kit. It provides an even more robust and reliable acoustic positioning system with a range of up to 300m (R300 edition). The purpose of the system is to give a live GPS position of ROVs, divers and other moving objects below the water surface.
+The [Underwater GPS G2](https://www.waterlinked.com/underwater-gps) is a robust and reliable acoustic positioning system with a range of up to 300m (R300 edition). The purpose of the system is to give a live GPS position of ROVs, divers and other moving objects below the water surface. 
 
 <div style="text-align: center;"><img src="../../img/gui_global_position_r300.png" style="width: 750px;" title="GUI Example"></div><br>
+
+!!! Tip
+    We offer a live [demo](https://demo.waterlinked.com) of the GUI of the UGPS G2 system. It runs on simulated data designed to illustrate various GUI features; this data is not necessarily realistic in all aspects!
 
 The Underwater GPS G2 system is based upon Short Baseline (SBL) acoustic positioning. A locator ([U1](../locators/locator-u1), [A1](../locators/locator-a1), or [D1](../locators/locator-d1)) is attached to the device to be positioned. It functions as a beacon, sending out acoustic signals. Near the surface, either an [antenna](antenna) containing four receivers is lowered into the water, or four loose [receivers](../receiver-d1) are lowered into the water. These listen for the beacon signals.
 
@@ -44,7 +47,8 @@ Please read the following carefully before the UGPS G2 system is installed and u
 | **Salt water** | The contents of the topside housing will corrode and/or short if in contact with salt water. Keep the housing lid closed when in the field to avoid salt water getting inside. |
 | **Force** | Avoid using excessive force on connectors, screws and other parts of the system, as this can lead to mechanical failure. |
 | **Locator U1** | It will discharge when not in use, so always remember to charge it before operation. See [U1 charging procedure.](locators/locator-u1.md#charging)|
-| **External position and U1** | You can use external poition data to give a better position estimate, however, if using the U1 the topside will still need GPS lock for time synchronization purposes. |
+| **External position and U1** | You can use external position data to give a better position estimate, however, if using the U1 the topside will still need GPS lock for time synchronization purposes. |
+| **Implementing an external compass** | In a static environment manually setting the current heading based on a reliable compass will be sufficient. In more dynamic/challenging environments it is neccessary to provide compass heading from an external compass, to achive accurate position data. |
 
 
 ## Discussion
