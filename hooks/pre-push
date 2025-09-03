@@ -1,0 +1,13 @@
+#!/bin/bash
+# Pre-push hook: run MkDocs linkcheck
+
+echo "Running MkDocs linkcheck..."
+python -m mkdocs build --config-file mkdocs-linkcheck.yml
+
+if [ $? -ne 0 ]; then
+    echo "Linkcheck failed! Push aborted."
+    exit 1
+fi
+
+echo "Linkcheck passed. Proceeding with push."
+exit 0
