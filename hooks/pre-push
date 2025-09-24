@@ -9,16 +9,10 @@ VENV_BIN="$PROJECT_ROOT/venv/bin"
 TMP_BUILD_DIR="$PROJECT_ROOT/.tmp-mkdocs-build"
 DOCS_DIR="$PROJECT_ROOT/docs"
 
-echo "PROJECT_ROOT=$PROJECT_ROOT"
-echo "DOCS_DIR=$DOCS_DIR"
-echo "VENV_BIN=$VENV_BIN"
-"$VENV_BIN/python" --version
-
 # Activate venv if not already activated
 if [ -f "$VENV_BIN/activate" ]; then
     . "$VENV_BIN/activate"
 fi
-
 
 #Checking internal links in markdown files only
 echo "Checking internal links in markdown files..."
