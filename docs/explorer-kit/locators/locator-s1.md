@@ -11,7 +11,7 @@ Some Locator-S1 attributes can be configured using an integrated UART (3V3) inte
 
 Locator-S1 supports channel 16,17 and 18.
 
-As the Locator-S1 does not carry its own depth sensor, the depth needs to be provided from the underwater vehicle (ROV etc.) to the topside Master-D1 using the software API. This can be achieved by means of the [UGPS API](../gui/api.md).
+As the Locator-S1 does not carry its own depth sensor, the depth needs to be provided from the underwater vehicle (ROV etc.) to the topside Master-D1 using the software API. Example of how to perform this can be found [here](../gui/api.md#providing-depth-to-system-when-using-locator-a1s1).
 
 ## LED Signals
 

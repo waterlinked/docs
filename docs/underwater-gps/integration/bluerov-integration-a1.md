@@ -1,6 +1,6 @@
 # Installation of Locator-A1 on BlueROV2 with integration kit
 
-This guide describes the hardware modifications to the ROV, FXTI and UGPS Topside in order to integrate the [Locator-A1](../locators/locator-a1.md). To summarize, two main changes are performed: A spare twisted wire pair in the tether is used to connect the Locator-A1 and the UGPS Topside. Secondly, the UGPS Topside is connected directly to the communication between ROV and topside computer.
+This guide describes the hardware modifications to the ROV, FXTI and UGPS Topside in order to integrate the [Locator-A1](../../locators/locator-a1). To summarize, two main changes are performed: A spare twisted wire pair in the tether is used to connect the Locator-A1 and the UGPS Topside. Secondly, the UGPS Topside is connected directly to the communication between ROV and topside computer.
 
 ## Required parts and tools
 
@@ -291,7 +291,7 @@ Now that all hardware modifications are done, you will connect UGPS Topside, FXT
 
 * Set your topside computer to have a static IP address of 192.168.2.1 with subnet mask 255.255.255.0. The BlueROV2 typically has IP address 192.168.2.2, so you probably already have this set up. Make sure your firewall allows QGroundControl to communicate with the network. Look at the [Network Setup steps at Blue Robotics](https://bluerobotics.com/learn/bluerov2-software-setup/#network-setup) if you need more details.
 
-* Set the [IP switch](../network-settings.md#ethernet) inside the UGPS Topside unit to `192.168.2.94` (the down position). This equips the G2 topside unit with the static IP address 192.168.2.94.
+* Set the [IP switch](../../network-settings/#ethernet) inside the UGPS Topside unit to `192.168.2.94` (the down position). This equips the G2 topside unit with the static IP address 192.168.2.94.
 
 * Connect the Binder-connector named "Locator" at the UGPS Topside with the newly installed Binder-connector at the FXTI using the deck extension cable, which came with the BlueROV integration kit. (Power up the UGPS Topside)[https://waterlinked.github.io/underwater-gps/power-supply/]. It is on when the power button is lit.
 

@@ -25,7 +25,7 @@ Acoustics are disabled when the Sonar first boot. You'll see a message in the 3D
 
 ### Network
 
-Set how the Sonar 3D-15 is assigned an IP on your network: Automatic IP (DHCP) or Static IP. Default is Automatic IP. For further details regarding network setup, [see Networking](../sonar-3d/sonar-3d-15-networking.md).
+Set how the Sonar 3D-15 is assigned an IP on your network: Automatic IP (DHCP) or Static IP. Default is Automatic IP. For further details regarding network setup, [see Networking](/Sonar-3d/Sonar-3d-15-networking/).
 
 !!! Note
     Saved Network Settings are persistent, meaning it is kept on restart.
@@ -83,7 +83,7 @@ Allows for upgrading the Sonar's firmware. Click the button to open a new tab to
 
 ![Upgrade firmware](../img/Sonar-3D-15-config-advanced-firmware.png)
 
-The firmware upgrader allows for automatically checking and upgrading the Sonar firmware if neccessary. This requires a working Internet connection to work. Alternatively, an offline (manual) upgrade can be used. [Read more about offline firmware upgrades](../sonar-3d/sonar-3d-15-software-update.md#offline-software-update).
+The firmware upgrader allows for automatically checking and upgrading the Sonar firmware if neccessary. This requires a working Internet connection to work. Alternatively, an offline (manual) upgrade can be used. [Read more about offline firmware upgrades](/sonar-3d-15-software-update/#offline-software-update).
 
 If needed, follow the steps to complete the upgrade. Upon completion, the Sonar will reset all settings back to factory default and restart. Firmware upgrade can take a couple of minutes.
 
@@ -105,7 +105,7 @@ Submit a [support ticket](https://waterlinked.com/support) and attach the diagno
 
 ### Integration API
 
-Change how the Sonar transmits data and at what address the integration API is available from. Options are Disabled, Multicast (Default) and Unicast. [Read more about the Integration API](../sonar-3d/sonar-3d-15-api.md).
+Change how the Sonar transmits data and at what address the integration API is available from. Options are Disabled, Multicast (Default) and Unicast. [Read more about the Integration API](/sonar-3d/sonar-3d-15-api).
 
 ### Update Rate
 

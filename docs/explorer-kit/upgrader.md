@@ -10,7 +10,7 @@ A software update package (.wlup file) includes all files required to update the
 
 Please select the update process that is best suited to you:
 
-* Type *http://192.168.2.94* in your web browser. If the Underwater GPS GUI is visible to you, please use the [Update with static IP](#update-using-static-ip).
+* If the Underwater GPS GUI is visible to you on [http://192.168.2.94](http://192.168.2.94) please use the [Update with static IP](#update-using-static-ip).
 * If the Underwater GPS GUI is not shown when using the link above, please use the [Update with DHCP](#update-using-dhcp).
 
 !!! warning
@@ -33,12 +33,12 @@ This procedure works if you have haven't changed the jumpers on the Master-D1, y
 | 2    | Power off the system |  |
 | 3    | Connect the upgrade plug included in the kit or connect GPIO0 to ground using a jumper cable | ![upgrade_plug](../img/upgrade_plug.jpg)  ![upgrade_jumper](/../img/upgrade_jumper.jpg) |
 | 4    | Power on the system |  |
-| 6    | Open the web gui by typing *http://192.168.2.94* in your web browser.| If you see a blank or partly broken page, try to clean browser cache by pressing Ctrl-F5 or opening the page in "Private"/"Incognito" mode |
+| 6    | Go to web gui [http://192.168.2.94](http://192.168.2.94) | If you see a blank or partly broken page, try to clean browser cache by pressing Ctrl-F5 or opening the page in "Private"/"Incognito" mode |
 | 7    | Remove the upgade plug or the jumper grounding GP0. |  |
 | 8    | Click “Browse file” and select correct <>.wlup file |  |
 | 9    | Wait for update process to complete |  |
 | 10    | When the update process is complete and successful, the system will automatically reboot to standard mode | If process fails, please try again |
-| 11   | Verify that the SW version has updated by going to the web gui *http://192.168.2.94* | If you see a blank or partly broken page, try to clean browser cache by pressing Ctrl-F5 or opening the page in "Private"/"Incognito" mode |
+| 11   | Verify that the SW version has updated by going to the web gui [http://192.168.2.94](http://192.168.2.94) | If you see a blank or partly broken page, try to clean browser cache by pressing Ctrl-F5 or opening the page in "Private"/"Incognito" mode |
 | 12   | Upgrade process complete | Celebrate with your favorite beverage |
 
 
@@ -55,11 +55,11 @@ This procedure works if you don't know how to set a static IP address on your co
 | 5    | Configure the network on your computer to get IP address from DHCP  | (this is default on most computers, so if you haven't set a static ip you're good) |
 | 6    | Connect the upgrade plug included in the kit or connect GPIO0 to ground using a jumper cable | ![upgrade_plug](../img/upgrade_plug.jpg)  ![upgrade_jumper](/../img/upgrade_jumper.jpg) |
 | 7    | Power on the system |  |
-| 8    | In your web browser, open *http://192.168.0.1* | If you see a blank or partly broken page, try to clean browser cache by pressing Ctrl-F5 or opening the page in "Private"/"Incognito" mode |
+| 8    | Go to web GUI [http://192.168.0.1](http://192.168.0.1) | If you see a blank or partly broken page, try to clean browser cache by pressing Ctrl-F5 or opening the page in "Private"/"Incognito" mode |
 | 9    | Remove the grounding of GP0. |  |
 | 10    | Click “Browse file” and select correct <>.wlup file |  |
 | 11    | Wait for update process to complete |  |
 | 12    | When the update process is complete and successful, the system will automatically reboot to standard mode | If process fails, please try again |
-| 13   | Verify that the SW version has updated by opeing the web gui in your browser: *http://192.168.0.1* | If you see a blank or partly broken page, try to clean browser cache by pressing Ctrl-F5 or opening the page in "Private"/"Incognito" mode |
+| 13   | Verify that the SW version has updated by going to the web gui [http://192.168.0.1](http://192.168.0.1) | If you see a blank or partly broken page, try to clean browser cache by pressing Ctrl-F5 or opening the page in "Private"/"Incognito" mode |
 | 14   | Reset network settings to original setting from step 2 | See [network settings](hardware.md). |
 | 15   | Upgrade process complete | Celebrate with your favorite beverage |

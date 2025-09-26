@@ -21,7 +21,6 @@ python -m venv venv
 source venv/bin/activate (Linux)
 venv\Scripts\activate.bat (Windows)
 pip install -r requirements.txt
-./install-hooks.sh
 
 mkdocs serve
 ```
@@ -34,7 +33,4 @@ mkdocs serve
 
 ## Deploy changes to server
 After the changes have been tested and they work, push the changes to the master branch and Github will build the website and publish it on https://docs.waterlinked.com.
-
-## Automatic link-checker
-When you push to git, all links are automatically checked. Any errors will be listed in your terminal. If you want to check links before pushing, use > ./hooks/pre-push
 

@@ -7,7 +7,7 @@
 In this section you choose which locator you are using with the system and on which channel it is sending. The Water Linked default channel is 17 and this is the channel that the Locator-S1 is running on. If using the Locator-U1 the channel needs to macth the rotary switch at the back of the U1.
 
 !!! warning
-    If you are using the Locator-A1 or S1, you need to provid depth information to the topside unit. This is implemented through the explorer-kit's[API](../gui/api.md).
+    If you are using the Locator-A1 or S1, you need to provid depth information to the topside unit. Description on how to do this is found [here](api.md#providing-depth-to-system-when-using-locator-a1s1).
 
 
 ## Top-side Setup

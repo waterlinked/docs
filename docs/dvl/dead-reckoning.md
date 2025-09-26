@@ -4,8 +4,8 @@ The DVL-A50 and DVL-A125 run a dead reckoning algorithm which estimates the orie
 
 ## Starting dead reckoning
 
-1. Calibrate the gyroscope by pressing *More -> Calibrate gyro* in the [GUI](../dvl/gui/dashboard.md) whilst the DVL is stationary.
-2. Click the 'Reset' button ![](../img/dvl_gui_icon_reset.png) in the [GUI](../dvl/gui/dashboard.md), or send a reset command over the TCP or serial [protocol](../dvl-protocol).
+1. Calibrate the gyroscope by pressing *More -> Calibrate gyro* in the [GUI](../gui/dashboard) whilst the DVL is stationary.
+2. Click the 'Reset' button ![](../img/dvl_gui_icon_reset.png) in the [GUI](../gui/dashboard), or send a reset command over the TCP or serial [protocol](../dvl-protocol).
 
 Failure to perform gyro calibration will result in less accurate dead reckoning.
 
@@ -22,11 +22,11 @@ When the DVL fails in its determination of velocity, speed and position are pred
 !!! note
     When the DVL is powered on in the air, its position will drift significantly. This should be ignored, and dead reckoning should be [started](#starting-dead-reckoning) in water when ready.
 
-The position of the DVL can be viewed in the GUI [dashboard](../dvl/gui/dashboard.md) or be fetched by [API](../dvl-protocol/#dead-reckoning-report).
+The position of the DVL can be viewed in the GUI [dashboard](../gui/dashboard/) or be fetched by [API](../dvl-protocol/#dead-reckoning-report).
 
 ## Orientation
 
-The calculation of the orientation of the DVL is based upon the accelerometer and gyroscope measurements of its IMU. The orientation is represented by roll, pitch, and yaw angles, and can be viewed in the GUI [dashboard](../dvl/gui/dashboard.md) or be fetched by [API](../dvl-protocol/#dead-reckoning-report).
+The calculation of the orientation of the DVL is based upon the accelerometer and gyroscope measurements of its IMU. The orientation is represented by roll, pitch, and yaw angles, and can be viewed in the GUI [dashboard](../gui/dashboard/) or be fetched by [API](../dvl-protocol/#dead-reckoning-report).
 
 - Roll is a rotation around the X axis of the DVL
 - Pitch is a rotation around the Y axis of the DVL

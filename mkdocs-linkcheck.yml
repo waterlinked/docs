@@ -1,0 +1,4 @@
+site_name: build linkcheck
+plugins:
+  - linkcheck:
+      fail_on_warning: true
