@@ -1,6 +1,8 @@
 # LED Indicators 
 Only the topside box and the Locator U1 has LED indicators.
 
+Here is a broken [link](http://dennelinken.fungererikke)
+
 ## Topside
 
 |LED name 	| Description 					 											|

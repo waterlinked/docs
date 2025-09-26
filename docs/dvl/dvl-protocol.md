@@ -538,7 +538,7 @@ The new configuration will not be returned in the response, but can be obtained 
 
 ### Velocity report, old format (wrx) [Deprecated]
 
-Same purpose as the [velocity report](#velocity-report), but in an older format:
+Same purpose as the [velocity report](#velocity-report-wrz), but in an older format:
 
 `wrx,`*[time],[vx],[vy],[vz],[fom],[altitude],[valid],[status]*
 
@@ -571,7 +571,7 @@ wrx,1164.94,0.000,0.000,0.000,2.707,-1.00,n,1*39
 
 ### Transducer report, old format (wrt) [Deprecated]
 
-Same purpose as the [transducer report](#transducer-report), but in an older format, and combining the data of all four transducers:
+Same purpose as the [transducer report](#transducer-report-wru), but in an older format, and combining the data of all four transducers:
 
 `wrt,`*[dist_1],[dist_2],[dist_3],[dist_4]*
 
@@ -605,7 +605,7 @@ Checksum is formatted as a hexadecimal number using 2 lower-case characters (ex:
 Compatible implementations:
 
 * Python 3: [crcmod](https://pypi.org/project/crcmod/) `crcmod.predefined.mkPredefinedCrcFun("crc-8")`
-* Golang: [github.com/sigurn/crc8](github.com/sigurn/crc8) `crc8.MakeTable(crc8.CRC8)`
+* Golang: [github.com/sigurn/crc8](https://github.com/sigurn/crc8) `crc8.MakeTable(crc8.CRC8)`
 
 Example for how to verify checksum using Python 3 and [crcmod](https://pypi.org/project/crcmod/):
 

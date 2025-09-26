@@ -46,7 +46,7 @@ For alternative ways to connect to the topside, see [Networking](../underwater-g
 
 ### Locator
 
-Attach the locator ([U1](../locators/locator-u1), [A1](../locators/locator-a1), or [D1](../locators/locator-d1)) to your vehicle. The [BlueROV2 integration guide](../integration/bluerov-integration) may be helpful if integrating an A1 or D1 locator with a vehicle tether.
+Attach the locator ([U1](../underwater-gps/locators/locator-u1.md), [A1](../underwater-gps/locators/locator-a1.md), or [D1](../underwater-gps/locators/locator-d1.md)) to your vehicle. The [BlueROV2 integration guide](../underwater-gps/integration/bluerov-integration.md) may be helpful if integrating an A1 or D1 locator with a vehicle tether.
 
 If using an A1 or D1 locator, connect it to the 'Locator' bulkhead on the UGPS G2 topside box. The U1 connector is wireless, which means that this step can be omitted.
 
@@ -54,7 +54,7 @@ If using an A1 or D1 locator, connect it to the 'Locator' bulkhead on the UGPS G
 
 ### Antenna
 
-Unfold the [antenna](../../antenna) and lock the mast straight using the latches on the folding joints. Avoid the cable being pinched at the joints. Secure the three arms in place using the thumb screw. Place the antenna in water at the desired location. Secure the Antenna using the RAM Mount components included with the antenna.
+Unfold the [antenna](../underwater-gps/antenna.md) and lock the mast straight using the latches on the folding joints. Avoid the cable being pinched at the joints. Secure the three arms in place using the thumb screw. Place the antenna in water at the desired location. Secure the Antenna using the RAM Mount components included with the antenna.
 
 Connect the antenna to the bulkhead marked 'Receiver 1/Antenna' on the UGPS G2 topside box (see the above picture).
 
@@ -63,21 +63,21 @@ Connect the antenna to the bulkhead marked 'Receiver 1/Antenna' on the UGPS G2 t
 
 ### Loose receivers
 
-Before deploying the [receivers](../../receiver-d1) in the water, add a piece of tape to each receiver cable at the desired depth, to make [configuration](#configure-antennareceiver-placement-and-search-range) easier. Place the receivers in the water at the desired location, and connect one to each of the four bulkheads 'Receiver 1', 'Receiver 2', 'Receiver 3', and 'Receiver 4' of the UGPS G2 topside box (see the above picture).
+Before deploying the [receivers](../underwater-gps/receiver-d1.md) in the water, add a piece of tape to each receiver cable at the desired depth, to make [configuration](#configure-antennareceiver-placement-and-search-range) easier. Place the receivers in the water at the desired location, and connect one to each of the four bulkheads 'Receiver 1', 'Receiver 2', 'Receiver 3', and 'Receiver 4' of the UGPS G2 topside box (see the above picture).
 
 !!! Tip
     Add a weight just above each receiver to improve stability in the water.
 
 ## Select locator and channel in the GUI
 
-Select the correct locator type in the [GUI settings](../gui/settings/), and choose which channel to listen on. Channel 2 is the default. If using a [Locator-U1](../locators/locator-u1/), ensure that its channel (set by completely unscrewing the lid and turning the dial inside) is set to the same channel as you configure in the GUI.
+Select the correct locator type in the [GUI settings](../underwater-gps/interface/ugps-gui.md#settings), and choose which channel to listen on. Channel 2 is the default. If using a [Locator-U1](../underwater-gps/locators/locator-u1.md), ensure that its channel (set by completely unscrewing the lid and turning the dial inside) is set to the same channel as you configure in the GUI.
 
 !!! Note
-    If you are using the Locator-A1, depth information needs to be provided to the topside unit by means of the UGPS [API](../integration/api). You can ignore this if following the [BlueROV2 integration guide](../integration/bluerov-integration).
+    If you are using the Locator-A1, depth information needs to be provided to the topside unit by means of the UGPS [API](../underwater-gps/integration/api.md). You can ignore this if following the [BlueROV2 integration guide](../underwater-gps/integration/bluerov-integration.md).
 
 ## Configure antenna/receiver placement and search range
 
-Provide the correct placement of the antenna/receivers relative to the topside box in the [GUI settings](../gui/settings/), and, if using an antenna, specify if it has been rotated from the default indicated in the GUI.
+Provide the correct placement of the antenna/receivers relative to the topside box in the [GUI settings](../underwater-gps/interface/ugps-gui.md#settings), and, if using an antenna, specify if it has been rotated from the default indicated in the GUI.
 
 Specifically, for the antenna, enter the position and optionally the rotational angle manually under **Advanced settings**.
 

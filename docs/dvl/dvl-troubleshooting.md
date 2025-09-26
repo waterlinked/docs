@@ -6,7 +6,7 @@ Below is a small list to check if your DVL is not performing as expected or you 
 
 In the Support Portal please describe the test environment or test setup you have used and how the DVL is mounted. If possible, open the DVL GUI and go to Diagnostic Log in the left menu. Press the Create Diagnostic Report button. This will automatically record a log file that you can download to your computer. Please add the [Diagnostic reports](gui/diagnostic-report.md) and pictures of the test setup in the support portal. This will help our support team greatly! 
 
-If the troubleshooting guide do not help, please check out [FAQ DVL](faq.md#faq-dvl)!  
+If the troubleshooting guide do not help, please check out [FAQ DVL](../dvl/faq.md)!  
 
 ### Check if DVL is powered
 1. Put the DVL under water and power it on with an adequate power supply.
@@ -14,7 +14,7 @@ If the troubleshooting guide do not help, please check out [FAQ DVL](faq.md#faq-
     * Does the LED turn on?
 
 ### LED
-1. For LED status, see [LED Signals](../interfaces#LED-Signals).
+1. For LED status, see [LED Signals](../dvl/interfaces.md#led-signals).
 
 ### Wiring 
 1. Check that you have wired your DVL correctly, see [Wiring interface](../interfaces#wiring-interface).

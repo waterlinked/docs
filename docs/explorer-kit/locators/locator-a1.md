@@ -4,7 +4,7 @@
 
 ## Description
 
-The Locator-A1 has the smallest physical footprint in our series of locators. It can be integrated into even the most compact ROVs. The Locator-A1 does not carry its own depth sensor, and the Master-D1 requires that the depth be provided from your underwater vehicle (ROV etc.) This can be achieved by means of the [UGPS API](../gui/api).
+The Locator-A1 has the smallest physical footprint in our series of locators. It can be integrated into even the most compact ROVs. The Locator-A1 does not carry its own depth sensor, and the Master-D1 requires that the depth be provided from your underwater vehicle (ROV etc.) This can be achieved by means of the [UGPS API](../gui/api.md).
 
 
 ## Wiring interface

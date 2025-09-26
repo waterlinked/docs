@@ -132,4 +132,4 @@ The master electronics has an built in IMU used to provide the orientation of th
 
 ### IMU Calibration
 
-For the IMU to work properly it needs to be calibrated. If the system is started on a new location a new calibration is needed for the IMU to work as intended. The IMU is calibrated in the [settings page](gui/settings.md) of the user interface.
+For the IMU to work properly it needs to be calibrated. If the system is started on a new location a new calibration is needed for the IMU to work as intended. The IMU is calibrated in the [settings page](./interface/ugps-gui.md#settings) of the user interface.
