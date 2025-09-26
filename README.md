@@ -5,6 +5,7 @@
 We are using mkdocs to manage our documentation.
 
 # Contributing
+This is a temporary change
 
 We're really happy if you want to contribute to make the documentation better!
 This is done by creating a pull request.
