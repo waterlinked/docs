@@ -1,0 +1,4 @@
+site_name: Check links
+plugins:
+  - linkcheck:
+      fail_on_warning: true
