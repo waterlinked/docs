@@ -1,8 +1,8 @@
 # Dashboard
 
-Both the DVL-A50 and the DVL-A125 have a web-based GUI. In your favorite web browser, simply navigate to the DVL's [IP address](../../networking).
+Both the DVL-A50 and the DVL-A125 have a web-based GUI. In your favorite web browser, simply navigate to the DVL's [IP address](../networking.md).
 
-The default page is a dashboard which provides a summary and visualisation of both the velocity and [dead reckoning](../../dead-reckoning) data outputted by the DVL, as well as an indication of current status.
+The default page is a dashboard which provides a summary and visualisation of both the velocity and [dead reckoning](../dead-reckoning.md) data outputted by the DVL, as well as an indication of current status.
 
 ## Screenshot
 

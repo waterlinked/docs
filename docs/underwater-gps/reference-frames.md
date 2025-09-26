@@ -40,4 +40,4 @@ The z-coordinate of the acoustic frame is always depth relative to the sea surfa
 The default origin is a point on the topside housing, but can be taken to be anywhere: it is entirely defined by the positioning of the antenna/receivers with respect to it. If using an antenna, it may help intuitively to take the origin to be the base of the antenna, which can be achieved by setting both *Distance to topside housing* fields to 0 under *Baseline -> Antenna configuration -> Advanced settings*.
 
 !!! Note
-    The axes of the acoustic frame in the first version of UGPS, the [Explorer Kit](../../explorer-kit/quickstart), were slightly different: it was the y-axis which was aligned with the forward direction of the topside housing, and the x-axis which was to the 'east' of this.
+    The axes of the acoustic frame in the first version of UGPS, the [Explorer Kit](../explorer-kit/quickstart.md), were slightly different: it was the y-axis which was aligned with the forward direction of the topside housing, and the x-axis which was to the 'east' of this.

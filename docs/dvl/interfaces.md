@@ -91,7 +91,7 @@ See the DVL's [serial protocol](../dvl-protocol#serial-protocol).
 
 ## Ethernet Interface
 
-See [networking](../networking) and the DVL's [TCP protocol](../dvl-protocol#ethernet-protocol-tcp).
+See [networking](../networking) and the DVL's [TCP protocol](../dvl/dvl-protocol.md#json-protocol-tcp).
 
 
 ## Code examples
