@@ -1,33 +1,20 @@
 #!/bin/bash
-# Pre-push hook: Custom linkchecker for local links, Build MkDocs locally and run LinkChecker on external links
-
+# Pre-push hook: build MkDocs locally and run LinkChecker
 set -e
 
 # === Paths ===
-PROJECT_ROOT="$(git rev-parse --show-toplevel)"
+PROJECT_ROOT="$(cd "$(dirname "$0")"/.. && pwd)"
 VENV_BIN="$PROJECT_ROOT/venv/bin"
 TMP_BUILD_DIR="$PROJECT_ROOT/.tmp-mkdocs-build"
 DOCS_DIR="$PROJECT_ROOT/docs"
 
-echo "PROJECT_ROOT=$PROJECT_ROOT"
-echo "DOCS_DIR=$DOCS_DIR"
-echo "VENV_BIN=$VENV_BIN"
-"$VENV_BIN/python" --version
-
-# Activate venv if not already activated
-if [ -f "$VENV_BIN/activate" ]; then
-    . "$VENV_BIN/activate"
-fi
-
 
 #Checking internal links in markdown files only
 echo "Checking internal links in markdown files..."
-
 set +e
 #Using custom python script for internal link checking:
 "$VENV_BIN/python" "$PROJECT_ROOT/checklinks.py" "$DOCS_DIR"
 RESULT_INTERNAL=$?
-
 set -e
 
 if [ $RESULT_INTERNAL -ne 0 ]; then
