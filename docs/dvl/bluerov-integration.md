@@ -47,7 +47,7 @@ You will also need:
 * Utility knife
 * Wire stripping tool
 * Zip ties
-* 4 x 30 cm (12") wires (options discussed under [Connect DVL-A50 and BlueROV2](#connect-dvl-a50-and-bluerov2)). If possible, use 2 x red and 2 x black wires.
+* 4 x 30 cm (12") wires (options discussed under [Connect DVL-A50 and BlueROV2](#attach-dvl-a50-to-bluerov2)). If possible, use 2 x red and 2 x black wires.
 * 15 cm (6") ethernet cable
 
 ## Preparation

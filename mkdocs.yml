@@ -1,9 +1,6 @@
 site_name: Documentation
-site_url: "https://waterlinked.github.io"
-repo_url: https://github.com/waterlinked/waterlinked.github.io
-plugins:
-  - linkcheck:
-    fail_on_warning: true
+site_url: https://docs.waterlinked.com
+repo_url: https://github.com/waterlinked/docs
 theme:
   name: material
   theme_dir: docstheme/material
@@ -73,7 +70,7 @@ nav:
                   - Baseline:
                       - Antenna: underwater-gps/antenna.md
                       - Receiver-D1: underwater-gps/receiver-d1.md
-                  - Locator:
+                  - Locators:
                       - Locator-A1: underwater-gps/locators/locator-a1.md
                       - Locator-D1: underwater-gps/locators/locator-d1.md
                       - Locator-U1: underwater-gps/locators/locator-u1.md
