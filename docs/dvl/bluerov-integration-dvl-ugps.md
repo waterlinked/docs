@@ -39,7 +39,7 @@ Before successful sensor fusion of Underwater GPS and DVL the following conditio
 * Make sure that the compass calibration was successful by comparing the ROV orientation shown in the map in QGroundControl to the actual ROV orientation. Land-marks like a coast-line or an analogue compass can help.
 
 !!! Note
-    When you want to use the position estimate for *control* of the ROV and the UGPS Topside is on land, it is highly recommended setting up the Underwater GPS to use static position and static heading mode.  Alternatively when the UGPS Topside position is not static (on a boat or similar) you need to input heading and position data from an external GPS compass. [Details can be found here](../underwater-gps/interface/gui/settings.md#topside-setup).
+    When you want to use the position estimate for *control* of the ROV and the UGPS Topside is on land, it is highly recommended setting up the Underwater GPS to use static position and static heading mode.  Alternatively when the UGPS Topside position is not static (on a boat or similar) you need to input heading and position data from an external GPS compass. [Details can be found here](../underwater-gps/ugps-sysconfig.md#topside-settings).
 
     If you don't follow this advice, the position provided by the Underwater GPS will have more noise ("jump" too much) and also drift over time. This might cause the position hold mode to not work properly.
 
@@ -67,7 +67,7 @@ Now both sensors should be considered for the position estimate of the ROV. You 
 
 This mode can be useful when you experience issues with sensor fusion (Mode "DVL+UGPS" above) or not all the described conditions in above section are met. Otherwise, we recommend using Mode "DVL+UGPS".
 
-In this configuration the BlueROV will base its position estimate *updates* on velocity input from the DVL as well as accelerometer, gyroscope, compass and pressure sensor but not the Underwater GPS. Although the Underwater GPS is connected and running it will only be used to *initialize* the global ROV position at the beginning. QGroundControl (or the new Cockpit) will show the ROV position estimate based on the DVL only while the [Underwater GPS GUI](../underwater-gps/interface/gui/position.md) will show the position based on the Underwater GPS.
+In this configuration the BlueROV will base its position estimate *updates* on velocity input from the DVL as well as accelerometer, gyroscope, compass and pressure sensor but not the Underwater GPS. Although the Underwater GPS is connected and running it will only be used to *initialize* the global ROV position at the beginning. QGroundControl (or the new Cockpit) will show the ROV position estimate based on the DVL only while the [Underwater GPS GUI](../underwater-gps/interface/ugps-gui.md#position) will show the position based on the Underwater GPS.
 
 !!! Note
     The setup procedure below is very similar to when you only use the DVL without a running Underwater GPS. That case is described [here](bluerov-integration.md#software).

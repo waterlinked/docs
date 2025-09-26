@@ -11,4 +11,5 @@ Warnings that you might experience while using the UGPS.
 | Receiver N not detected. Please verify connection. | Receiver N is not detected by the Master-D1. Verify connection. |
 | External satellite position is required but not received. | External position is selected, but not received via the [API](http://demo.waterlinked.com/swagger/#/external/external#SetMaster). Typically this is an external software not started or not working. |
 | External orientation is required but not received. | External orientation is selected, but not received via the [API](http://demo.waterlinked.com/swagger/#/external/external#SetMaster). Typically this is an external software not started or not working. |
+| IMU is not calibrated: position will not be accurate. Please rotate the kit to calibrate or use external orientation source. | See [IMU calibration](../ugps-sysconfig.md#imu-calibration) for details on how calibrate. |
 | GPS has no position, please provide me with an unobstructed view of the sky. | The Underwater GPS needs GPS lock for time sync proposes. Move the Topside to another location where it has better view of the sky. |

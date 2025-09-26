@@ -6,7 +6,7 @@ In the Baseline window in the GUI, you adjust the placement of your antenna/rece
 
 ## Basline settings
 Go to [Baseline](../underwater-gps/interface/ugps-gui.md#baseline) from the left menu in the GUI. </br>
-In the tab at the top select **antenna** or **receivers** according to whether an [antenna](antenna.md) or loose [receivers](receiver-d1.md) are used.
+In the tab at the top select **antenna** or **receivers** according to whether an [antenna](../underwater-gps/antenna.md) or loose [receivers](../underwater-gps/receiver-d1.md) are used.
 
 In the receiver view, in the graphical configuration panel, you either drag and drop the receivers to their actual position in relation to the topside, or you fill in the position manually in the input fields below the panel. (You might need to drag the receivers apart for the manual input fields to become visible) Remember to fill inn the receivers depth.
 
