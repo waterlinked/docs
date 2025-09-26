@@ -1,6 +1,6 @@
 # Settings
 
-![gui_settings_topside_setup](../../img/gui_settings_topside_setup.png)
+![gui_settings_topside_setup](../../../img/gui_settings_topside_setup.png)
 
 ## Locator setup
 
@@ -46,7 +46,7 @@ For best performance on boats or similar with a moving topside unit, we recommen
 
 If the topside unit/antenna is at a globally stationary position (like a jetty) the *static* configuration of position and heading will give best accuracy of the system. Below you can see how the position and heading is set to static. Clicking on the map button opens a map window to help you input the static position.
 
-![gui_settings_topside_setup_static_pos_marked](../../img/gui_settings_topside_setup_static_pos_marked.png)
+![gui_settings_topside_setup_static_pos_marked](../../../img/gui_settings_topside_setup_static_pos_marked.png)
 
 ## User preferences
 
