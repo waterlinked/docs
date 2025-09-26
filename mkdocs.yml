@@ -1,6 +1,9 @@
 site_name: Documentation
 site_url: "https://waterlinked.github.io"
 repo_url: https://github.com/waterlinked/waterlinked.github.io
+plugins:
+  - linkcheck:
+    fail_on_warning: true
 theme:
   name: material
   theme_dir: docstheme/material
