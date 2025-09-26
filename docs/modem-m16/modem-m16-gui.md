@@ -22,6 +22,6 @@ Follow the installation guide provided in README at [github for examples with Mo
 
 
 ## GUI layout example:
-![](../../img/m16-gui.png)
+![](../img/m16-gui.png)
 
 ---
