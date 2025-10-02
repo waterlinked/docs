@@ -2,16 +2,16 @@
 In very dynamic conditions with rapid changes in angles, the IMU will drift too much to provide sufficient heading accuracy. In this case it is recommended to implement an external compass to provide updated heading information.
 
 ## Which compass to use
-If the UGPS is permanently installed on a boat, the simple solution is to use the boats compass, if it provides the possibility to output the NMEA data. Otherwise it is possible to use any portable compass that provide NMEA0185 or NMEA2000 information.
+If the UGPS is permanently installed on a boat, the simple solution is to use the boats compass, if it provides the possibility to output NMEA data. Otherwise it is possible to use any portable compass that provide NMEA0185 or NMEA2000 information.
 
 ## External compass on the UGPS:
-To use an external compass with the UGPS it has to be integrated in the software on your computer. As for now there are no hardware connection.
+To use an external compass with the UGPS it has to be integrated in the software on your computer. As for now there are no direct hardware connection available.
 The needed firmware can be installed by following this procedure:
 
 !!! Note
 This is valid only for compasses that provides NMEA0183
 
-- Go to: https://github.com/waterlinked/ugps-nmea-go under “Readme” and “Installation” and “Download the application”, choose v.1.7.1 
+- Go to: https://github.com/waterlinked/ugps-nmea-go under “Readme” and “Installation” and “Download the application”, choose v.1.8.0 
 - Download the .zip-file.
 - In windows: run the file. Follow the instructions you get. (It is advisable to create a folder on your computer specifically for this configuration)
 - In linux, in the directory you saved the file in: use chmod +x <filename> (It is advisable to create a folder on your computer specifically for this configuration)

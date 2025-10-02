@@ -41,7 +41,7 @@ Now that everything is connected and ready it is time to select the right locato
 After selecting the correct locator, you need to provide the correct placement of the receivers to the GUI for the positioning to work correctly. This is done by drag'n drop of each receiver to the correct placment relative to the topside unit. The position of each receiver is seen below in the map view. It you click on the receiver you get a pop up with the possibility to write its exact placment. Once this is done you can limit the search range by using the same drag and drop feature.
 
 !!! warning
-    If you are using the Locator-A1 or S1, you need to provide depth information to the topside unit. Description on how to do this is found [here](gui/api.md#providing-depth-to-system-when-using-locator-a1s1).
+    If you are using the Locator-A1 or S1, you need to provide depth information to the topside unit. This is achieved using the explorer-kit [API](../explorer-kit/gui/api.md).
 
 !!! tip
     Reducing the search range helps to improve the performance of the system. It is recomended to limith this range if you are operating in a smaller area. This is especially important in tanks.

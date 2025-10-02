@@ -15,7 +15,7 @@ The Sonar 3D-15 has several services available over ethernet:
 The Sonar 3D-15 runs a DHCP client which will attempt to obtain an IP address from a DHCP server (e.g. in a router) on the same network, and supports mDNS: the mDNS name of the Sonar 3D-15 is `waterlinked-sonar`. On a computer which supports mDNS, one can then simply access the web [GUI](sonar-3d-15-gui.md) at [http://waterlinked-sonar](http://waterlinked-sonar).
 
 !!! note
-    If no DHCP server is available on the network, it is recommended to use the [fallback IP](#fallback-ip) or  configure a [static IP address](#via-the-gui), as the Sonar 3D-15 can spend up to 5 minutes searching for a DHCP server.
+    If no DHCP server is available on the network, it is recommended to use the [fallback IP](#fallback-ip) or  configure a [static IP address](#user-set-ip), as the Sonar 3D-15 can spend up to 5 minutes searching for a DHCP server.
 
 ### Fallback IP
 
