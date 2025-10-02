@@ -6,7 +6,7 @@ In the Baseline window in the GUI, you adjust the placement of your antenna/rece
 
 ## Basline settings
 Go to [Baseline](../underwater-gps/interface/ugps-gui.md#baseline) from the left menu in the GUI. </br>
-In the tab at the top select **antenna** or **receivers** according to whether an [antenna](../antenna.md) or loose [receivers](../receiver-d1.md) are used.
+In the tab at the top select **antenna** or **receivers** according to whether an [antenna](../underwater-gps/antenna.md) or loose [receivers](../underwater-gps/receiver-d1.md) are used.
 
 In the receiver view, in the graphical configuration panel, you either drag and drop the receivers to their actual position in relation to the topside, or you fill in the position manually in the input fields below the panel. (You might need to drag the receivers apart for the manual input fields to become visible) Remember to fill inn the receivers depth.
 
@@ -14,7 +14,7 @@ In the antenna view you need to open Advanced Settings to fill in the position o
 
 Improved positioning will likely be obtained by **limiting the search area** : Restrict the search area as far as possible by dragging and dropping the arrows in the graphical configuration panel.
 
-![Receiver setup](../../img/receiver_placemet_g2.png)
+![Receiver setup](../img/receiver_placemet_g2.png)
 
 ## Locator and topside settings
 Cofigurations of the topside and locator settings is conducted in [Settings](../underwater-gps/interface/ugps-gui.md#settings), from the left menu in the GUI.
@@ -56,7 +56,7 @@ For best performance on boats or similar, with a moving topside unit, we recomme
 
 If the topside unit/antenna is at a globally stationary position (like a jetty) the *static* configuration of position and heading will give best accuracy of the system. Below you can see how the position and heading is set to static. Clicking on the map button opens a map window to help you input the static position.
 
-![gui_settings_topside_setup_static_pos_marked](../../img/gui_settings_topside_setup_static_pos_marked.png)
+![gui_settings_topside_setup_static_pos_marked](../img/gui_settings_topside_setup_static_pos_marked.png)
 
 #### User preferences
 

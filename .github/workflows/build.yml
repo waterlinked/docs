@@ -3,24 +3,33 @@ name: Deploy Water Linked Docs
 on:
   push:
     branches:
-    - master
+      - '**'   # run on all branches
+
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
+
     - name: Set up Python 3.8
       uses: actions/setup-python@v4
       with:
         python-version: '3.8'
+
     - name: Install dependencies
       run: |
         python3 -m pip install --upgrade pip
         python3 -m pip install -r requirements.txt
 
+    # Always build docs, e.g. for testing
+    - name: Build docs
+      run: |
+        mkdocs build --strict
+
+    # Only deploy on master
     - name: Deploy docs
+      if: github.ref == 'refs/heads/master'
       uses: mhausenblas/mkdocs-deploy-gh-pages@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

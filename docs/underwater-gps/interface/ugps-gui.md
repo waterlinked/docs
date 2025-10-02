@@ -76,18 +76,18 @@ In the diagnostic plot you should see the signal from all 4 Receivers. The signa
 
 Acoustic interference can be observed in the diagnostic plot. Echo sounders from your boat or nearby boats typically appears like burst noise.
 
-![diagnostics2](../../../img/diagnostics_2.png)
+![diagnostics2](../../img/diagnostics_2.png)
 
 If it is coming from your boat, try to turn off the echo sounder to improve position accuracy.
 In case of interference from other acoustic sources, use the GUI to try other channels to avoid the interference.
 
 !!! Tip
-    Typically, NSD (_Noise spectral density_, displayed in the [Diagnostic](../underwater-gps/interface/ugps-gui.md#diagnostics) pane of the GUI) is around -100 dBm (in the units of version 3.3.0 or later of the software; 15 nV/sqrt(Hz) in the units of earlier software versions), or a little higher or lower. If it is much higher than this, it is likely that there is acoustic interference in the chosen channel, and a different channel should be tried.
+    Typically, NSD (_Noise spectral density_) is around -100 dBm (in the units of version 3.3.0 or later of the software; 15 nV/sqrt(Hz) in the units of earlier software versions), or a little higher or lower. If it is much higher than this, it is likely that there is acoustic interference in the chosen channel, and a different channel should be tried.
 
     Note in particular that acoustic devices quite commonly operate at frequencies lying in Channel 1.
 
 !!! Tip
-    If the NSD values are normal, signal quality is mainly indicated by the RSSI values (_Received signal strength indicator_, displayed in the [Diagnostic](../underwater-gps/interface/ugps-gui.md#diagnostics) pane of the GUI). As long as the RSSI values are not too far below the NSD values, the signal strength should be at usable levels.
+    If the NSD values are normal, signal quality is mainly indicated by the RSSI values (_Received signal strength indicator). As long as the RSSI values are not too far below the NSD values, the signal strength should be at usable levels.
 
     The UGPS system uses advanced signal processing techniques and can work even with rather weak signals, but an RSSI of -125 dBm or so (in the units of version 3.3.0 or later of the software; -45 dBnW in the units of earlier software versions) is around the lowest possible for an NSD of roughly -100 dBm.
 
