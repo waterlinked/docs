@@ -26,6 +26,7 @@ jobs:
     - name: Build docs
       run: |
         mkdocs build --strict
+        ./check-links.sh
 
     # Only deploy on master
     - name: Deploy docs

@@ -1,6 +1,7 @@
 #!/bin/bash
 # Pre-push hook: Custom linkchecker for local links, Build MkDocs locally and run LinkChecker on external links
 
+# Exit on error
 set -e
 
 # === Paths ===
@@ -19,7 +20,7 @@ echo "Checking internal links in markdown files..."
 
 set +e
 #Using custom python script for internal link checking:
-"$VENV_BIN/python" "$PROJECT_ROOT/checklinks.py" "$DOCS_DIR"
+"$VENV_BIN/python" "$PROJECT_ROOT/check-internal-links.py" "$DOCS_DIR"
 RESULT_INTERNAL=$?
 
 set -e
