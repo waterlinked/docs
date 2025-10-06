@@ -20,7 +20,7 @@ echo "Checking internal links in markdown files..."
 
 set +e
 #Using custom python script for internal link checking:
-"$VENV_BIN/python" "$PROJECT_ROOT/check-internal-links.py" "$DOCS_DIR"
+python "$PROJECT_ROOT/check-internal-links.py" "$DOCS_DIR"
 RESULT_INTERNAL=$?
 
 set -e
@@ -33,8 +33,8 @@ fi
 echo "Internal linkcheck passed!"
 
 # Check if linkchecker exists
-if [ ! -x "$VENV_BIN/linkchecker" ]; then
-    echo "Error: linkchecker executable not found in $VENV_BIN"
+if ! command -v linkchecker >/dev/null 2>&1; then
+    echo "Error: linkchecker executable not found in PATH"
     exit 1
 fi
 
@@ -43,12 +43,12 @@ rm -rf "$TMP_BUILD_DIR"
 
 # Build MkDocs into temporary directory
 echo "Building MkDocs locally into $TMP_BUILD_DIR..."
-"$VENV_BIN/python" -m mkdocs build -d "$TMP_BUILD_DIR"
+python -m mkdocs build -d "$TMP_BUILD_DIR"
 
 echo "Running LinkChecker on external links against local build..."
 set +e
 # Only report broken links
-"$VENV_BIN/linkchecker" "file://$TMP_BUILD_DIR/index.html" \
+linkchecker "file://$TMP_BUILD_DIR/index.html" \
     --no-status \
     --check-extern \
     --recursion-level=2 \
