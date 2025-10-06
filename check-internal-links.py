@@ -30,7 +30,8 @@ def check_md_file(md_file: Path):
     errors = []
     if not md_file.is_file():  # <-- add this check
         return errors
-    
+
+    count = 0
     for line_number, line in enumerate(md_file.read_text(encoding="utf-8").splitlines(), start=1):
 
         stripped = line.strip()
@@ -39,17 +40,18 @@ def check_md_file(md_file: Path):
             continue
         elif stripped.startswith("<!--") and stripped.endswith("-->"):
             continue
-        
+
         for match in LINK_RE.finditer(line):
             text, target = match.groups()
 
             # Skip external links
             if target.startswith(("http://", "https://", "mailto:")):
                 continue
-            
             # Remove leading slash for site-root relative links
             elif target.startswith("/"):
                 target = target[1:]
+
+            count += 1
 
             # Split anchor from file
             if "#" in target:
@@ -77,15 +79,24 @@ def check_md_file(md_file: Path):
 
             if target_file.is_dir():
                 continue
-            
-    return errors
+
+    return errors, count
 
 
 def main(md_dir):
     md_dir = Path(md_dir)
     all_errors = []
+    total_count = 0
     for md_file in md_dir.rglob("*.md"):
-        all_errors.extend(check_md_file(md_file))
+        errors, count = check_md_file(md_file)
+        all_errors.extend(errors)
+        total_count += count
+
+    print(f"Checked {total_count} internal links in {md_dir}.")
+
+    if total_count == 0:
+        print("Expected internal links. None were found.")
+        return 1
 
     if all_errors:
         print(f'Found {len(all_errors)} internal link errors in md files:')
