@@ -1,4 +1,4 @@
-name: Deploy Water Linked Docs
+name: Build Docs
 
 on:
   push:
