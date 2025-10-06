@@ -1,6 +1,6 @@
 # Installation of Locator-U1 on BlueROV2
 
-This guide contains instructions for installation of the [Locator-U1](../../locators/locator-u1) to a BlueROV2. The first part describes the mechanical installation and the second part describes how to establish a network bridge between UGPS Topside and FXTI/BlueROV2.
+This guide contains instructions for installation of the [Locator-U1](../locators/locator-u1.md) to a BlueROV2. The first part describes the mechanical installation and the second part describes how to establish a network bridge between UGPS Topside and FXTI/BlueROV2.
 
 ## Mount the Locator-U1 to the BlueROV2 frame
 
@@ -15,7 +15,7 @@ See the [general Locator-U instructions](../locators/locator-u1.md) for daily op
 <!-- does ugps topside always have external ethernet port? -->
 In this guide it is described how to establish a network connection between UGPS Topside, FXTI/BlueROV2 and topside computer without hardware modifications to the UGPS Topside. This is opposed to the method used with the BlueROV integration kit for Locator-A1. To put it short, the connection between the three devices is established with a network bridge and a static IP address of 192.168.2.1 (subnet mask 255.255.255.0) for your computer.
 
-1. Set the [IP switch](../../network-settings/#ethernet) inside the UGPS G2 topside unit to `192.168.2.94` (the down position). This equips the G2 topside unit with the static IP address 192.168.2.94.
+1. Set the [IP switch](../network-settings.md#ethernet) inside the UGPS G2 topside unit to `192.168.2.94` (the down position). This equips the G2 topside unit with the static IP address 192.168.2.94.
 
 2. [Connect power](https://waterlinked.github.io/underwater-gps/power-supply/) to the UGPS Topside and switch on the power, resulting in the power switch lighting up.
 

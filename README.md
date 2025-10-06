@@ -14,23 +14,33 @@ This is done by creating a pull request.
 Make sure you have Python3 installed.
 
 ```
-git clone https://github.com/waterlinked/waterlinked.github.io
-cd waterlinked.github.io
+git clone https://github.com/waterlinked/docs.git
+cd docs
 
 python -m venv venv
 source venv/bin/activate (Linux)
 venv\Scripts\activate.bat (Windows)
 pip install -r requirements.txt
 
-mkdocs serve
+./install-hooks.sh  # (Optional) To automatically check links on git push
 ```
 
 2. Make changes using your favorite editor
 
 3. Test them
 
+```
+mkdocs serve  # Allow you to view the changes on your browser
+```
 * Fire up your browser and go to localhost:8000
 
-## Deploy changes to server
-After the changes have been tested and they work, push the changes to the master branch and Github will build the website and publish it on https://docs.waterlinked.com.
+Verify links are valid:
 
+```
+./check-links.sh
+```
+
+## Deploy changes to server
+After the changes have been tested and they work, push the changes to a branch, and make a merge request. The documentation site will built automatically and links will be verified.
+
+Once the pull request is merged the documentation will be automatically built and published to https://docs.waterlinked.com.
