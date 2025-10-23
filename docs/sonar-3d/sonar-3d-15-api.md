@@ -3,6 +3,8 @@
 ## Introduction
 The **Water Linked Sonar 3D-15** provides real-time 3D views of underwater environments using a low-bandwidth **Range Image Protocol (RIP1)**. This protocol efficiently transmits data such as 3D points or grayscale bitmaps over UDP multicast, enabling live visualization, analysis, or archival for later use.
 
+A Python example implementation of the Sonar API is available on [github](https://github.com/waterlinked/Sonar-3D-15-api-example).
+
 ---
 
 ## Range Image Protocol (RIP1)
