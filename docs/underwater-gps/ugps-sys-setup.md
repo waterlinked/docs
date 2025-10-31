@@ -31,7 +31,7 @@ The antenna can be placed anywhere up to 10m from the topside housing (limited b
 
 ## Receivers
 
-Loose receivers can be placed anywhere up to 100m from the topside housing. Go through the following, and configure the placement of the receivers in the graphical pane at *Baseline -> Receiver and range configuration* so that their positions relative to the origin and their depths are correct. See [System Configuration](../underwater-gps/ugps-sysconfig.md#basline-settings)
+Loose receivers can be placed anywhere up to 100m from the topside housing. Go through the following, and configure the placement of the receivers in the graphical pane at *Baseline -> Receiver and range configuration* so that their positions relative to the origin and their depths are correct. See [System Configuration](../underwater-gps/ugps-sysconfig.md#baseline-settings)
 
 |                     |                      |
 | ------------------- | :------------------- |
