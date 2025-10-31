@@ -2,11 +2,11 @@
 # How to install your system
 
 ## Topside
-The topside should be placed outdoors with an open view to the sky, to easily achieve GPS lock. The forward direction og the topside box should be in the whatever direction you define as forward. If you are using an antenna, make sure the forward direction of the antenna aligns with the forward direction of the topside. If one a boat, typically forward aligns with the boats heading.
+The topside should be placed outdoors with an open view to the sky, to easily achieve GPS lock. The forward direction of the topside box should be in the direction you define as forward. If you are using an antenna, make sure the forward direction of the antenna aligns with the forward direction of the topside. If on a boat, typically forward aligns with the boats heading.
 
 ## Antenna
 
-The antenna can be placed anywhere up to 10m from the topside housing (limited by cable length). Make sure it's forward direction aligns with the forward direction of the topside box. If this is not possible, make sure you enter the deviation in the Baseline settings in the GUI. See[System Configuration](../underwater-gps/ugps-sysconfig.md#basline-settings)
+The antenna can be placed anywhere up to 10m from the topside housing (limited by cable length). Make sure its forward direction aligns with the forward direction of the topside box. If this is not possible, make sure you enter the deviation in the Baseline settings in the GUI. See [System Configuration](../underwater-gps/ugps-sysconfig.md#baseline-settings)
 
 
 !!! Tip
