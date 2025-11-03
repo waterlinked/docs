@@ -15,7 +15,9 @@ The help overlay walks you through common features of the Sonar 3D-15 GUI.
 
 ## Config View
 
-You can acccess the config via the Settings sidebar and clicking "Config". This allows you to configure common settings of the Sonar. Note that all configurations are reset to default on restart.
+![Config Access](../img/Sonar-3D-15-gui-diagnostics-menu.png)
+
+You can acccess the config via the Settings sidebar and clicking "Config", like shown in the picture above. This allows you to configure common settings of the Sonar. Note that all configurations are reset to default on restart.
 
 ![Config GUI](../img/Sonar-3D-15-gui-config-3.png)
 
@@ -34,11 +36,11 @@ Details what version and chip ID your sonar is running on along with the option 
 
 
 --- 
-## Diagnostics
+## Advanced
 
-The diagnostics view provide different options to help diagnose the sonar. Toggle the display of these settings with the `Show/Hide` button next to the section.
+The advanced view opens from the Config  when clicking "Show" under "Advanced". This view provides different options to help diagnose the sonar. Toggle the display of these settings with the `Show/Hide` button next to the section.
 
-![Config GUI all](../img/Sonar-3D-15-gui-diagnostics.png)
+![Config GUI all](../img/Sonar-3D-15-gui-advanced-menu.png)
 
 ### Blink LED
 Blinks the LED on the Sonar to verify connection and that it responds correctly.

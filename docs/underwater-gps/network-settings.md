@@ -48,4 +48,4 @@ For example: If the IP address of the UGPS is 192.168.194.94 the host computer n
 - Connect to the UnderwaterGPS GUI on: [http://192.168.194.94/](http://192.168.194.94/)
 
 !!! Note
-With blueOS the static IP is 192.168.2.94
+    With blueOS the static IP is 192.168.2.94

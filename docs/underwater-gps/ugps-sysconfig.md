@@ -4,7 +4,7 @@ The setup in the GUI needs to mirror your actual setup in the real world for you
 
 In the Baseline window in the GUI, you adjust the placement of your antenna/receivers in relation to the topside box. In the Settings window you choose which locator you are using and the placement of the topside in the environment.
 
-## Basline settings
+## Baseline settings
 Go to [Baseline](../underwater-gps/interface/ugps-gui.md#baseline) from the left menu in the GUI. </br>
 In the tab at the top select **antenna** or **receivers** according to whether an [antenna](../underwater-gps/antenna.md) or loose [receivers](../underwater-gps/receiver-d1.md) are used.
 

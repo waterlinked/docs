@@ -10,7 +10,7 @@ The UGPS system consists of three components:
  - Locator: 
  You can choose between three different locators: [Locator-A1](../underwater-gps/locators/locator-a1.md), [Locator-D1](../underwater-gps/locators/locator-d1.md) and [locator-U1](../underwater-gps/locators/locator-u1.md)
 
- In addition you need a [Power supply](../underwater-gps/power-supply.md)
+ In addition you need a [power supply](../underwater-gps/power-supply.md)
 
 
 ## A quick guide on how to start using the Underwater GPS system:
@@ -26,7 +26,7 @@ The UGPS system consists of three components:
 * Set heading
 
 !!! Tip
-    If you are using a locator U1, make sure it is charged for at least 7 hours with a 5V/2A charger (not a computer) within 24 hours before use, and that it is adjusted to your preferred channel. Channel 3 is usually a good advise.
+    If you are using a locator U1, make sure it is charged for at least 7 hours with a 5V/2A charger (not a computer) within 24 hours before use, and that it is adjusted to your preferred channel. Choosing channel 3 is usually good advice.
 
 ## Power on the topside unit
 
@@ -54,7 +54,7 @@ If using an A1 or D1 locator, connect it to the 'Locator' bulkhead on the UGPS G
 
 ### Antenna
 
-Unfold the [antenna](../underwater-gps/antenna.md) and lock the mast straight using the latches on the folding joints. Avoid the cable being pinched at the joints. Secure the three arms in place using the thumb screw. Place the antenna in water at the desired location. Secure the Antenna using the RAM Mount components included with the antenna.
+Unfold the [antenna](../underwater-gps/antenna.md) and lock the mast straight using the latches on the folding joints. Avoid the cable being pinched at the joints. Secure the three arms in place using the thumb screw. Place the antenna in water at the desired location. Secure the antenna using the RAM Mount components included with the antenna.
 
 Connect the antenna to the bulkhead marked 'Receiver 1/Antenna' on the UGPS G2 topside box (see the above picture).
 
