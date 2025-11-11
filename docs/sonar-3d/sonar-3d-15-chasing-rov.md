@@ -62,15 +62,15 @@ The most common solution is to terminate a Chasing connector to the cable of the
 
 2. **Terminate a Chasing connector** to the Sonar 3D-15 cable using the table below.
 
-    | Sonar Cable Type | Sonar Cable Color | CHASING connector male |
-    |------------------|-------------------|-------------------------|
-    | DC-              | Black             | 1                       |
-    | DC+              | Red               | 2                       |
-    | RX+              | Green/White       | 6                       |
-    | RX-              | Green             | 5                       |
-    | TX+              | Orange/White      | 4                       |
-    | TX-              | Orange            | 3                       |
-    | NC               | NC                | 7                       |
+    | Sonar Cable Type | Sonar Cable Color | Chasing Cable Color | CHASING connector male |
+    |------------------|-------------------|---------------------|------------------------|
+    | DC-              | Black             | Black               | 1                      |
+    | DC+              | Red               | Red                 | 2                      |
+    | RX+              | Green/White       | White               | 6                      |
+    | RX-              | Green             | Brown               | 5                      |
+    | TX+              | Orange/White      | Green               | 4                      |
+    | TX-              | Orange            | Yellow              | 3                      |
+    | NC               | NC                | NC                  | 7                      |
 
     The following is a picture of the pins for the male Chasing connector face:
 
