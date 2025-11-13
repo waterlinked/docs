@@ -1,0 +1,390 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "contact": {}
+    },
+    "paths": {
+        "/api/v1/integration/about": {
+            "get": {
+                "description": "Get system version",
+                "tags": [
+                    "about",
+                    "integrationAPI"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/integrationapi.GinSystemVersion"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/integration/acoustics/enabled": {
+            "get": {
+                "description": "Get whether acoustics is enabled or disabled",
+                "tags": [
+                    "acoustics",
+                    "integrationAPI"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    "204": {
+                        "description": "No Content"
+                    }
+                }
+            },
+            "post": {
+                "description": "Enable/disable acoustic imaging",
+                "tags": [
+                    "acoustics",
+                    "integrationAPI"
+                ],
+                "parameters": [
+                    {
+                        "description": " ",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "408": {
+                        "description": "Request Timeout"
+                    },
+                    "409": {
+                        "description": "Conflict"
+                    }
+                }
+            }
+        },
+        "/api/v1/integration/acoustics/range": {
+            "get": {
+                "description": "Get range",
+                "tags": [
+                    "acoustics",
+                    "integrationAPI"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/integrationapi.RangeResponse"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Set range",
+                "tags": [
+                    "acoustics",
+                    "integrationAPI"
+                ],
+                "parameters": [
+                    {
+                        "description": " ",
+                        "name": "payload",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/integrationapi.RangeResponse"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "409": {
+                        "description": "Conflict"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        },
+        "/api/v1/integration/acoustics/speed_of_sound": {
+            "get": {
+                "description": "Get speed of sound",
+                "tags": [
+                    "acoustics",
+                    "integrationAPI"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    "204": {
+                        "description": "No Content"
+                    }
+                }
+            },
+            "post": {
+                "description": "Set speed of sound",
+                "tags": [
+                    "acoustics",
+                    "integrationAPI"
+                ],
+                "parameters": [
+                    {
+                        "description": " ",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "number",
+                            "example": 1500
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "408": {
+                        "description": "Request Timeout"
+                    },
+                    "409": {
+                        "description": "Conflict"
+                    }
+                }
+            }
+        },
+        "/api/v1/integration/status": {
+            "get": {
+                "description": "Get the status of the system",
+                "tags": [
+                    "status",
+                    "integrationAPI"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/integrationapi.GinStatusResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/integration/temperature": {
+            "get": {
+                "description": "Get the internal temperature of the Sonar in degrees Celsius",
+                "tags": [
+                    "status",
+                    "integrationAPI"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/integration/udp": {
+            "get": {
+                "description": "Get the current UDP configuration for how the Sonar outputs data.",
+                "tags": [
+                    "integrationAPI"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/integrationapi.GinHandleUdpConfigPayload"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            },
+            "post": {
+                "description": "Set UDP configuration for how the Sonar should output data.",
+                "tags": [
+                    "integrationAPI"
+                ],
+                "parameters": [
+                    {
+                        "description": " ",
+                        "name": "payload",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/integrationapi.GinHandleUdpConfigPayload"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "integrationapi.GinHandleUdpConfigPayload": {
+            "type": "object",
+            "properties": {
+                "mode": {
+                    "description": "Must be \"multicast\", \"unicast\" or \"disabled\"\n\nIf mode is \"disabled\", no UDP packets will be sent\n\nIf mode is \"multicast\", UDP packets will be sent on multicast\n\nIf mode is \"unicast\", UDP packets will be sent to the destination\nIP and port",
+                    "type": "string",
+                    "enum": [
+                        "multicast",
+                        "unicast",
+                        "disabled"
+                    ],
+                    "example": "multicast"
+                },
+                "unicast_destination_ip": {
+                    "description": "The destination IP address if mode is \"unicast\".\nIf mode is \"unicast\", this must be a valid IP address.\nOtherwise, this must be a valid IP adddress or empty string.",
+                    "type": "string",
+                    "example": "192.168.1.100"
+                },
+                "unicast_destination_port": {
+                    "description": "The destination port if mode is \"unicast\".\nIf mode is \"unicast\", this must be a valid port.\nOtherwise, this must be a valid port or 0.",
+                    "type": "integer",
+                    "example": 12345
+                }
+            }
+        },
+        "integrationapi.GinStatusResponse": {
+            "type": "object",
+            "properties": {
+                "api": {
+                    "description": "IntegrationAPI is the status of the UDP IntegrationAPI for external communication",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/integrationapi.GinSystemStatusEntryResponse"
+                        }
+                    ]
+                },
+                "calibration": {
+                    "description": "Calibration is the status of the Sonar calibration",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/integrationapi.GinSystemStatusEntryResponse"
+                        }
+                    ]
+                },
+                "temperature": {
+                    "description": "Temperature is the status of the Sonar temperature",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/integrationapi.GinSystemStatusEntryResponse"
+                        }
+                    ]
+                }
+            }
+        },
+        "integrationapi.GinSystemStatusEntryResponse": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "description": "Unique ID for the status message",
+                    "type": "string",
+                    "example": "api-normal"
+                },
+                "message": {
+                    "description": "Message is a human readable message describing the status",
+                    "type": "string",
+                    "example": "Integration API is operational"
+                },
+                "operational": {
+                    "description": "Operational is true if the system is functional, false if it is not",
+                    "type": "boolean",
+                    "example": true
+                },
+                "severity": {
+                    "description": "Severity is the severity of the status message: info, warning, error",
+                    "type": "string",
+                    "example": "info"
+                }
+            }
+        },
+        "integrationapi.GinSystemVersion": {
+            "type": "object",
+            "properties": {
+                "chipid": {
+                    "type": "string",
+                    "example": "0x12345678"
+                },
+                "hardware_revision": {
+                    "type": "integer",
+                    "example": 6
+                },
+                "is_ready": {
+                    "type": "boolean",
+                    "example": true
+                },
+                "product_id": {
+                    "type": "integer",
+                    "example": 21045
+                },
+                "product_name": {
+                    "type": "string",
+                    "example": "Sonar 3D-15"
+                },
+                "variant": {
+                    "type": "string"
+                },
+                "version": {
+                    "type": "string",
+                    "example": "1.5.1 (v1.3.0-26-gedccab6.2025-07-11T06:14:03.837365)"
+                },
+                "version_short": {
+                    "type": "string",
+                    "example": "1.5.1"
+                }
+            }
+        },
+        "integrationapi.RangeResponse": {
+            "type": "object",
+            "properties": {
+                "max": {
+                    "type": "number",
+                    "example": 15
+                },
+                "min": {
+                    "type": "number",
+                    "example": 0
+                }
+            }
+        }
+    }
+}

@@ -1,7 +1,9 @@
 # Integration API Sonar 3D-15
 
 ## Introduction
-The **Water Linked Sonar 3D-15** provides real-time 3D views of underwater environments using a low-bandwidth **Range Image Protocol (RIP1)**. This protocol efficiently transmits data such as 3D points or grayscale bitmaps over UDP multicast, enabling live visualization, analysis, or archival for later use.
+The **Water Linked Sonar 3D-15** provides real-time 3D views of underwater environments using a low-bandwidth **Range Image Protocol (RIP1)**. This protocol efficiently transmits data such as 3D points or grayscale bitmaps over UDP, enabling live visualization, analysis, or archival for later use.
+
+The Sonar 3D-15 also exposes a HTTP API for configuration and inspection of system state.
 
 A Python example implementation of the Sonar API is available on [github](https://github.com/waterlinked/Sonar-3D-15-api-example).
 
@@ -25,12 +27,14 @@ RIP1 is a compact format for range and bitmap images, designed for <10 Mbit ba
 
 ---
 
-## Network
-By default, the Sonar 3D-15 uses **UDP Multicast** (`224.0.0.96:4747`), so any device on the local network can receive data without knowing the sonar’s IP.
+### Network
+By default, the Sonar 3D-15 uses **UDP Multicast** (`224.0.0.96:4747`), so any device on the local network can receive RIP1 packets without knowing the sonar’s IP.
+
+The Sonar can also be configured for UDP unicast, or to disable sending of UDP packets. See HTTP API.
 
 ---
 
-## Image Sizes and Update Rates
+### Image Sizes and Update Rates
 | **Mode**      | **Resolution (W×H)** | **FOV (H×V)** | **Rate** |
 |---------------|----------------------|--------------|---------|
 | Low Frequency | 256 × 64            | 90° × 40°     | 5 Hz    |
@@ -38,21 +42,21 @@ By default, the Sonar 3D-15 uses **UDP Multicast** (`224.0.0.96:4747`), so any d
 
 ---
 
-## Message Types
+### Message Types
 RIP1 supports several Protobuf-encoded messages, including:
 
-### `BitmapImageGreyscale8`
+#### `BitmapImageGreyscale8`
 - 8-bit grayscale; each pixel = signal strength or shaded depth.  
 - `type` enum differentiates **signal strength** vs. **shaded**.  
 
-### `RangeImage`
+#### `RangeImage`
 - Each pixel represents distance (radius) to the strongest reflection.
 - `0` = no valid data.
 - `radius = pixelValue * imagePixelScale`.
 
 ---
 
-## Coordinate and Image Conventions
+### Coordinate and Image Conventions
 **Axes** (right-handed):
 
 - **x**: forward  
@@ -91,7 +95,7 @@ z = -radius * sin(pitch); // z is downward
 
 ---
 
-## `.proto` File (Excerpt)
+### `.proto` File (Excerpt)
 ```protobuf
 // Water Linked Sonar 3D-15 protocol
 syntax = "proto3";
@@ -173,7 +177,12 @@ message RangeImage {
 - Decoders should ignore unrecognized messages.  
 - Major breaking changes will involve a new protocol identifier.
 
+Refer to the full protocol specification and `.proto` file shown above for more information.
+
+## HTTP API
+
+The Sonar 3D-15 exposes a HTTP API for configuration and inspection of system state. The HTTP API is exposed on port 80 and uses paths rooted at `/api/v1/integration/`. JSON is used for request and response bodies. The HTTP API is documented with a [swagger.json](./sonar-3d-15-api-swagger/swagger.json) file. This file can be opened in a compatible viewer such as [this one](https://petstore.swagger.io/?url=https://docs.waterlinked.com/sonar-3d/sonar-3d-15-api/sonar-3d-15-api-swagger/swagger.json). Example code using the HTTP API exists on [github](https://github.com/waterlinked/Sonar-3D-15-api-example).
+
 ---
 
 **Thank you for using the Water Linked Sonar 3D-15!**  
-Refer to the full protocol specification and `.proto` file shown above for more information.
