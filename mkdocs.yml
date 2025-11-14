@@ -140,8 +140,9 @@ nav:
             - Protocol: modem-m16/modem-m16-protocol.md
             - Diagnostic report structure: modem-m16/modem-m16-diagnostic-report.md
           - M16 FAQ: modem-m16/modem-m16-faq.md
-  - I/O interface cards:
-          - Rev 4: io-interface-cards/rev4/io-interface-rev4.md
+  - I/O interface cards: 
+      - Revision 4: io-interface-cards/io-interface-rev4.md
+      - Revision 6: io-interface-cards/io-interface-rev6.md
 
 
 copyright: © Water Linked 2018-2024
