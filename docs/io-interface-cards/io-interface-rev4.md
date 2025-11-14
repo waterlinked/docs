@@ -6,7 +6,7 @@ There currently exists three revisions of the I/O Interface. Revision 2 and 3 ar
 
 ### Revision 4
 
-![I/O_Interface_rev4](../../img/WL-31014-4_IO_Interface_connections.png)
+![I/O_Interface_rev4](../img/WL-31014-4_IO_Interface_connections.png)
 
 Dimensions: 50.6 x 47 x 18.6 mm (Width x Height x Thickness)
 
