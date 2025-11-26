@@ -43,3 +43,8 @@ For advanced integrations, you can use the Sonar 3D-15’s API to develop custom
 
 ## 6. The performance is not as expected?
 If the performance is not as expected and you can not find a solution in this documentation, please create a diagnostic log with your Sonar 3D-15 and submit a [support ticket](https://waterlinked.com/support) with the Sonar 3D diagnostic log file attached. 
+
+---
+
+## 7. How should I maintain the Sonar 3D-15?
+After operating in seawater, brackish water, chlorinated pools, or any medium other than freshwater, rinse the unit thoroughly with fresh water to remove residues and salt deposits. Once dry, wipe the exterior with a clean, dry cloth. Avoid solvents or abrasive cleaners.

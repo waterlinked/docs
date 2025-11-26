@@ -125,3 +125,8 @@ Most likely your DVL is running an older software version that requires you to s
 For more software update details please see [DVL Software Updates.](sw-update.md)
 
 ---
+
+## 15. How should I maintain the DVL?
+After operating in seawater, brackish water, chlorinated pools, or any medium other than freshwater, rinse the DVL thoroughly with fresh water to remove residues and salt deposits. Once dry, wipe the exterior with a clean, dry cloth. Avoid solvents or abrasive cleaners.
+
+---
