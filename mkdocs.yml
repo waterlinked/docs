@@ -40,12 +40,12 @@ nav:
         - Wiring: sonar-3d/sonar-3d-15-wiring.md
         - LED: sonar-3d/sonar-3d-15-led.md
         - GUI: sonar-3d/sonar-3d-15-gui.md
+        - API: sonar-3d/sonar-3d-15-api.md
       - Integration:
          - DeepTrekker Pivot: sonar-3d/sonar-3d-15-deep-trekker-rov.md
          - Blueye X3: sonar-3d/sonar-3d-15-blueye-rov.md
          - BlueROV2: sonar-3d/sonar-3d-15-bluerov-integration.md
          - Chasing M2 PRO MAX: sonar-3d/sonar-3d-15-chasing-rov.md
-         - API: sonar-3d/sonar-3d-15-api.md
       - Software Updates: sonar-3d/sonar-3d-15-software-update.md
       - Settings: sonar-3d/sonar-3d-15-config.md
       - Networking: sonar-3d/sonar-3d-15-networking.md
