@@ -1,5 +1,4 @@
 # Sonar 3D-15 FAQ
-
 Below are some frequently asked questions about the Sonar 3D-15. Click on a question in the table of content to the right or simply scroll down to read the FAQ's. 
 
 ---
@@ -31,9 +30,6 @@ By default, the Sonar 3D-15 uses **DHCP** to request an address. If no DHCP serv
 ## 5. Is any software installation required to operate the Sonar 3D-15?
 No, there is no software installation needed. Once connected and powered on, you can access the Sonar 3D-15’s built-in GUI through a standard web browser. This allows you to operate and configure the sonar without installing any additional software.
 
-### What if I need custom integration?
-For advanced integrations, you can use the Sonar 3D-15’s API to develop custom solutions. This requires some programming knowledge but enables control and automation of the Sonar 3D-15’s functionality from your custom system.
-
 ---
 
 ## 6. The performance is not as expected?
@@ -43,3 +39,8 @@ If the performance is not as expected and you can not find a solution in this do
 
 ## 7. How should I maintain the Sonar 3D-15?
 After operating in seawater, brackish water, chlorinated pools, or any medium other than freshwater, rinse the unit thoroughly with fresh water to remove residues and salt deposits. Once dry, wipe the exterior with a clean, dry cloth. Avoid solvents or abrasive cleaners.
+
+---
+
+## 8. What if I need a custom integration?
+For advanced integrations, you can use the Sonar 3D-15’s API to develop custom solutions. This requires some programming knowledge but enables control and automation of the Sonar 3D-15’s functionality from your custom system.

@@ -1,0 +1,43 @@
+# Mechanical Integration of the Sonar 3D-15
+
+Here you should find all the information needed for a successful mechanical integration of the Sonar 3D-15 into your system.
+
+## Dimensions
+
+A detailed model (.step) of the Sonar, including the field of view, is available under [Resources](sonar-3d-15-resources.md)
+
+![Sonar 3D 15 Dimensions](../img/Sonar-3D-15-physical-dims-public-alpha-4x.png)
+![Sonar 3D 15 Right Side View](../img/Sonar-3D-15-side-right.png)
+The cable can be bent as shown in the image up to 90 degrees without causing any damage.
+![Sonar 3D 15 Back Dim](../img/Sonar-3D-15-back.png)
+
+
+
+## Field of view
+
+![Sonar 3D 15 FOV](../img/Sonar-3D-15-FOV-Visualization.png)
+
+The Sonar 3D-15 provides an opening angle as described in the tables below for the different modes. 
+
+### Low Frequency (1.2 MHz)
+
+| Specification        | Range             |
+|----------------------|-------------------|
+| Pitch (opening)      | -20° to +20°      |
+| Yaw (opening)        | -45° to +45°      |
+| Vertical coverage    | 40° total         |
+| Horizontal coverage  | 90° total         |
+
+
+### High Frequency (2.4 MHz)
+
+| Specification        | Range             |
+|----------------------|-------------------|
+| Pitch (opening)      | -20° to +20°      |
+| Yaw (opening)        | -20° to +20°      |
+| Vertical coverage    | 40° total         |
+| Horizontal coverage  | 40° total         |
+
+
+
+

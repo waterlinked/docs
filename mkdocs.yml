@@ -33,24 +33,56 @@ extra_css:
   - css/extra.css
 nav:
   - Home: index.md
-  - Sonar 3D-15:
-      - Introduction: sonar-3d/sonar-3d-15.md
-      - Quickstart: sonar-3d/sonar-3d-15-quickstart.md
-      - Interface: 
-        - Wiring: sonar-3d/sonar-3d-15-wiring.md
-        - LED: sonar-3d/sonar-3d-15-led.md
-        - GUI: sonar-3d/sonar-3d-15-gui.md
-      - Integration:
-         - DeepTrekker Pivot: sonar-3d/sonar-3d-15-deep-trekker-rov.md
-         - Blueye X3: sonar-3d/sonar-3d-15-blueye-rov.md
-         - BlueROV2: sonar-3d/sonar-3d-15-bluerov-integration.md
-         - Chasing M2 PRO MAX: sonar-3d/sonar-3d-15-chasing-rov.md
-         - API: sonar-3d/sonar-3d-15-api.md
-      - Software Updates: sonar-3d/sonar-3d-15-software-update.md
-      - Settings: sonar-3d/sonar-3d-15-config.md
-      - Networking: sonar-3d/sonar-3d-15-networking.md
-      - Sonar Replay: sonar-3d/sonar-replay.md
-      - FAQ: sonar-3d/sonar-3d-15-faq.md
+  - Sonar 3D 15:
+      - Overview: sonar-3d/sonar-3d-15-introduction.md
+      - Get started Quickstart Guide: sonar-3d/sonar-3d-15-quickstart.md
+
+      - Install and connect:
+          - Dimensions & FOV: sonar-3d/sonar-3d-15-mechanical.md
+          - Electrical Connection: sonar-3d/sonar-3d-15-electrical.md
+          - Network Setup: sonar-3d/sonar-3d-15-networking.md
+
+      - Operate the device:
+          - GUI: sonar-3d/sonar-3d-15-gui.md
+          - Settings: sonar-3d/sonar-3d-15-config.md
+          - API: sonar-3d/sonar-3d-15-api.md
+          - Software update: sonar-3d/sonar-3d-15-software-update.md
+          - Replay Sonar Data: sonar-3d/sonar-replay.md
+
+      - Integrate with specific ROV:
+          - DeepTrekker Pivot: sonar-3d/sonar-3d-15-deep-trekker-rov.md
+          - Blueye X3: sonar-3d/sonar-3d-15-blueye-rov.md
+          - BlueROV2: sonar-3d/sonar-3d-15-bluerov-integration.md
+          - Chasing M2 PRO MAX: sonar-3d/sonar-3d-15-chasing-rov.md
+
+      - Troubleshooting:
+          - FAQ: sonar-3d/sonar-3d-15-faq.md
+          - Diagnostic log: sonar-3d/sonar-3d-15-diagnostic-log.md
+
+      - Resources:
+          - Links to Resources: sonar-3d/sonar-3d-15-resources.md
+          - Software Changelog: sonar-3d/sonar-3d-15-software-changelog.md
+
+      
+
+  # - Sonar 3D-15:
+  #     - Introduction: sonar-3d/sonar-3d-15.md
+  #     - Quickstart: sonar-3d/sonar-3d-15-quickstart.md
+  #     - Interface: 
+  #       - Wiring: sonar-3d/sonar-3d-15-wiring.md
+  #       - LED: sonar-3d/sonar-3d-15-led.md
+  #       - GUI: sonar-3d/sonar-3d-15-gui.md
+  #     - Integration:
+  #        - DeepTrekker Pivot: sonar-3d/sonar-3d-15-deep-trekker-rov.md
+  #        - Blueye X3: sonar-3d/sonar-3d-15-blueye-rov.md
+  #        - BlueROV2: sonar-3d/sonar-3d-15-bluerov-integration.md
+  #        - Chasing M2 PRO MAX: sonar-3d/sonar-3d-15-chasing-rov.md
+  #        - API: sonar-3d/sonar-3d-15-api.md
+  #     - Software Updates: sonar-3d/sonar-3d-15-software-update.md
+  #     - Settings: sonar-3d/sonar-3d-15-config.md
+  #     - Networking: sonar-3d/sonar-3d-15-networking.md
+  #     - Sonar Replay: sonar-3d/sonar-replay.md
+  #     - FAQ: sonar-3d/sonar-3d-15-faq.md
 
   - Underwater GPS:
       - G2:
