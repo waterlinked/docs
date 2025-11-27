@@ -182,7 +182,3 @@ Refer to the full protocol specification and `.proto` file shown above for more 
 ## HTTP API
 
 The Sonar 3D-15 exposes a HTTP API for configuration and inspection of system state. The HTTP API is exposed on port 80 and uses paths rooted at `/api/v1/integration/`. JSON is used for request and response bodies. The HTTP API is documented with a [swagger.json](./sonar-3d-15-api-swagger/swagger.json) file. This file can be opened in a compatible viewer such as [this one](https://petstore.swagger.io/?url=https://docs.waterlinked.com/sonar-3d/sonar-3d-15-api-swagger/swagger.json). Example code using the HTTP API exists on [github](https://github.com/waterlinked/Sonar-3D-15-api-example).
-
----
-
-**Thank you for using the Water Linked Sonar 3D-15!**  
