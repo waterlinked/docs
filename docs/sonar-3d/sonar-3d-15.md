@@ -20,6 +20,8 @@ The cable can be bent as shown in the image up to 90 degrees without causing any
 
 ## Field of view
 
+![Sonar 3D 15 FOV](../img/Sonar-3D-15-FOV-Visualization.png)
+
 The Sonar 3D-15 provides an opening angle as described in the tables below for the different modes. 
 
 ### Low Frequency (1.2 MHz)
@@ -40,8 +42,6 @@ The Sonar 3D-15 provides an opening angle as described in the tables below for t
 | Yaw (opening)        | -20° to +20°      |
 | Vertical coverage    | 40° total         |
 | Horizontal coverage  | 40° total         |
-
-<!-- Insert drawing of Line of Sight -->
 
 ## Sonar 3D-15 Datasheet
 
