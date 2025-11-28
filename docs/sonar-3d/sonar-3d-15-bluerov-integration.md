@@ -197,6 +197,8 @@ The Sonar 3D-15 will now show a green light, indicating it is powered.
 
 ### 2. **Access the Sonar 3D-15 GUI**
 
+We recommend installing the **[Sonar 3D-15 extension](https://github.com/waterlinked/BlueOS-Sonar-Extension)** found in the [BlueOS extension manager](https://www.google.com/search?q=https://blueos.cloud/docs/latest/usage/advanced/%23extensions-manager). If you use the extension, you can skip directly to **Connection Step 3**. Otherwise, follow the procedure below to connect manually.
+
 The Sonar 3D-15 GUI can be accessed by entering the Sonar 3D-15's IP-address into the browser running on the computer connected to the ROV.
 
 You have to determine which IP-address has been automatically assigned to the Sonar 3D-15 by the BlueRov2 system. Steps to find it follows below. Once located, entering it in your browser will display a page like the one below — in this example, the Sonar 3D-15 is assigned the IP-address `192.168.2.172`. 
