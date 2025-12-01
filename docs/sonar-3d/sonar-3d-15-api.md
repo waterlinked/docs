@@ -59,6 +59,7 @@ RIP1 supports several Protobuf-encoded messages, including:
 ### Coordinate and Image Conventions
 **Axes** (right-handed):
 
+- **Origin**: The point cloud uses a mechanical origin located on the backplate, centered between the mounting screw holes.
 - **x**: forward  
 - **y**: right  
 - **z**: downward  
