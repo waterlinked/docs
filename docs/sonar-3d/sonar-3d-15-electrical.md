@@ -24,3 +24,6 @@ The table below shows the LED behavior of the Sonar 3D-15.
 | Flashing green, mostly on (slow, about every second)  | Power on, acoustics enabled |
 | Flashing green for a few seconds | Diagnostics blink initiated from GUI or API |
 | Flashing green (fast, many times a second) | Sonar is in thermal shutdown |
+
+# IO Boards
+The Water Linked IO Board is the easiest solution for testing Water Linked Products like the Sonar 3D-15. They provide an interface for connecting Power and ethernet to the Sonar 3D-15. Read more about how to connect your IO Board to your Water Linked product under "IO-Interface Cards".

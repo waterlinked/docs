@@ -114,6 +114,16 @@
   margin-right: auto;
 }
 
+/* Dark green for buttons */
+.md-button {
+  background-color: #2B9C6A;
+}
+
+/* Dark green for links */
+a {
+  color: #2B9C6A;
+}
+
 @media (max-width: 1280px) {
   .col-xl-12,
   .col-xl-11,
