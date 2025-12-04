@@ -1,7 +1,7 @@
 # Integration API Sonar 3D-15
 
 ## Introduction
-The **Water Linked Sonar 3D-15** provides real-time 3D views of underwater environments using a low-bandwidth **Range Image Protocol (RIP1)**. This protocol efficiently transmits data such as 3D points or grayscale bitmaps over UDP, enabling live visualization, analysis, or archival for later use.
+The **Water Linked Sonar 3D-15** provides real-time 3D views of underwater environments using a low-bandwidth **Range Image Protocol (RIP2)**. This protocol efficiently transmits data such as 3D points or grayscale bitmaps over UDP, enabling live visualization, analysis, or archival for later use.
 
 The Sonar 3D-15 also exposes a HTTP API for configuration and inspection of system state.
 
@@ -9,26 +9,39 @@ A Python example implementation of the Sonar API is available on [github](https:
 
 ---
 
-## Range Image Protocol (RIP1)
-RIP1 is a compact format for range and bitmap images, designed for <10 Mbit bandwidth. Each packet:
+## Range Image Protocol (RIP2)
 
-- Fits within a single UDP packet (max 65,507 bytes).
-- Starts with the 4-byte ID `"RIP1"`.
-- Contains a length field, a serialized Protobuf payload, and a CRC-32.
+RIP2 is a compact format for range and bitmap images, designed for <10 Mbit bandwidth.
+
+**NOTE**: Some Sonar 3D-15 releases support sending RIP1 packets. RIP1 will be removed in a future release.
+
+### Packet structure
+
+The packet format is designed to fit within a single UDP packet, introducing an upper limit of 65,507 bytes.
+
+This is the structure of a RIP2 packet:
+
+|Number of bytes|Description|
+|-|-|
+|4|0x82 0x73 0x80 0x50, Identifier which reads "RIP2" in ASCII|
+|4|Packet length (including identifier, packet length, payload and checksum)|
+|payload length (packet length - 12)|Encoded protobuf message, compressed with [Snappy](https://en.wikipedia.org/wiki/Snappy_(compression))|
+|4|IEEE 802.3 CRC-32 of the preceding bytes in the packet|
 
 **Decoding Steps**:
 
-1. Verify the `RIP1` ID.  
-2. Check the packet length and CRC-32.  
-3. Decode into `waterlinked.rip1.Packet`.  
-4. Use `.type_url` to identify the contained message.  
-5. Decode `.value` into that message type.  
-6. Interpret fields per the `.proto` [File](#proto-file-excerpt).
+1. Verify the "RIP2" ID.  
+2. Read packet length.
+3. Read compressed payload and CRC-32, and verify the CRC-32.
+4. Decompress the payload into an encoded protobuf packet.
+5. Decode into the `Packet` message type (see `.proto` [file](#proto-file-excerpt))
+6. Use `.msg.type_url` to identify the contained message.  
+7. Decode `.msg.value` into that message type (see `.proto` [file](#proto-file-excerpt))
 
 ---
 
 ### Network
-By default, the Sonar 3D-15 uses **UDP Multicast** (`224.0.0.96:4747`), so any device on the local network can receive RIP1 packets without knowing the sonar’s IP.
+By default, the Sonar 3D-15 uses **UDP Multicast** (`224.0.0.96:4747`), so any device on the local network can receive RIP2 packets without knowing the sonar’s IP.
 
 The Sonar can also be configured for UDP unicast, or to disable sending of UDP packets. See HTTP API.
 
@@ -43,7 +56,7 @@ The Sonar can also be configured for UDP unicast, or to disable sending of UDP p
 ---
 
 ### Message Types
-RIP1 supports several Protobuf-encoded messages, including:
+RIP2 supports several Protobuf-encoded messages, including:
 
 #### `BitmapImageGreyscale8`
 - 8-bit grayscale; each pixel = signal strength or shaded depth.  
