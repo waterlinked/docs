@@ -18,4 +18,5 @@ Dimensions: 50.6 x 47 x 18.6 mm (Width x Height x Thickness)
 | ---------------------------------------------  | :------- | :------------ |
 | RJ45 (8P8C)                                    | Ethernet | 10/100 BASE T |
 | Screw Terminal or CONN HEADER VERT 3POS 2.54MM | RS 232   |               |
+| CONN HEADER VERT 3POS 2.54MM                   | UART     |               |
 | Molex Micro Fit 3.0 or 5 mm Screw Terminal     | Power    | 10 to 30 VDC  |
