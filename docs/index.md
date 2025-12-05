@@ -40,7 +40,7 @@
       <div class="col-3 col-md-6 col-sm-12">
         <a href="./sonar-3d/sonar-3d-15/">
           <img class="img-fluid"
-               src="https://www.waterlinked.com/web/image/product.template/689/image_512/%5BWL-21045-2%5D%20Sonar%203D-15?unique=935e74a" />
+               src="https://www.waterlinked.com/web/image/product.product/919/image_1024/%5BWL-21045-2%5D%20Sonar%203D-15?unique=6f5242e" />
           <br />
           <h4>Sonar 3D-15</h4>
         </a>

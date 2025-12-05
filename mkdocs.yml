@@ -6,10 +6,17 @@ theme:
   theme_dir: docstheme/material
   logo: img/waterlinked_logo.png
   favicon: img/favicon_water_linked.ico
-  palette:
-    accent: blue
   font:
     text: Open Sans
+  palette:
+    # Light mode
+    - scheme: default
+      primary: "#1D3556"         # Ocean blue
+      accent: "#4BEF8F"          # Signal green light
+      # Background override for light mode
+      background: "#F1F9EE"      # Green white
+      surface: "#2B9C6A"      # Signal green dark
+
 extra:
   social:
     - icon: fontawesome/brands/github
@@ -33,24 +40,36 @@ extra_css:
   - css/extra.css
 nav:
   - Home: index.md
-  - Sonar 3D-15:
-      - Introduction: sonar-3d/sonar-3d-15.md
-      - Quickstart: sonar-3d/sonar-3d-15-quickstart.md
-      - Interface: 
-        - Wiring: sonar-3d/sonar-3d-15-wiring.md
-        - LED: sonar-3d/sonar-3d-15-led.md
-        - GUI: sonar-3d/sonar-3d-15-gui.md
-        - API: sonar-3d/sonar-3d-15-api.md
-      - Integration:
-         - DeepTrekker Pivot: sonar-3d/sonar-3d-15-deep-trekker-rov.md
-         - Blueye X3: sonar-3d/sonar-3d-15-blueye-rov.md
-         - BlueROV2: sonar-3d/sonar-3d-15-bluerov-integration.md
-         - Chasing M2 PRO MAX: sonar-3d/sonar-3d-15-chasing-rov.md
-      - Software Updates: sonar-3d/sonar-3d-15-software-update.md
-      - Settings: sonar-3d/sonar-3d-15-config.md
-      - Networking: sonar-3d/sonar-3d-15-networking.md
-      - Sonar Replay: sonar-3d/sonar-replay.md
-      - FAQ: sonar-3d/sonar-3d-15-faq.md
+
+  - Sonar 3D 15:
+      - Overview: sonar-3d/sonar-3d-15-introduction.md
+      - Get started Quickstart Guide: sonar-3d/sonar-3d-15-quickstart.md
+
+      - Install and connect:
+          - Dimensions & FOV: sonar-3d/sonar-3d-15-mechanical.md
+          - Electrical & LED: sonar-3d/sonar-3d-15-electrical.md
+          - Network Setup: sonar-3d/sonar-3d-15-networking.md
+
+      - Operate the device:
+          - GUI: sonar-3d/sonar-3d-15-gui.md
+          - Settings: sonar-3d/sonar-3d-15-config.md
+          - Replay Sonar Data: sonar-3d/sonar-replay.md
+          - API: sonar-3d/sonar-3d-15-api.md
+          - Software update: sonar-3d/sonar-3d-15-software-update.md
+
+      - Integrate with specific ROV:
+          - DeepTrekker Pivot: sonar-3d/sonar-3d-15-deep-trekker-rov.md
+          - Blueye X3: sonar-3d/sonar-3d-15-blueye-rov.md
+          - BlueROV2: sonar-3d/sonar-3d-15-bluerov-integration.md
+          - Chasing M2 PRO MAX: sonar-3d/sonar-3d-15-chasing-rov.md
+
+      - Troubleshooting:
+          - FAQ: sonar-3d/sonar-3d-15-faq.md
+          - Diagnostic log: sonar-3d/sonar-3d-15-diagnostic-log.md
+
+      - Resources:
+          - Links to Resources: sonar-3d/sonar-3d-15-resources.md
+          - Software Changelog: sonar-3d/sonar-3d-15-software-changelog.md
 
   - Underwater GPS:
       - G2:
@@ -106,6 +125,7 @@ nav:
               - Diagnostic: explorer-kit/gui/diagnostic.md
               - API: explorer-kit/gui/api.md
           - Software updates: explorer-kit/upgrader.md
+
   - DVL:
       - DVL-A50 — Introduction: dvl/dvl-a50.md
       - DVL-A125 — Introduction: dvl/dvl-a125.md
@@ -125,6 +145,7 @@ nav:
       - Software updates: dvl/sw-update.md
       - Troubleshooting: dvl/dvl-troubleshooting.md
       - DVL FAQ: dvl/faq.md
+
   - Modem:
       - Modem-M64 (retired):
           - Introduction: modem-m64/modem-m64.md
@@ -140,8 +161,9 @@ nav:
             - Protocol: modem-m16/modem-m16-protocol.md
             - Diagnostic report structure: modem-m16/modem-m16-diagnostic-report.md
           - M16 FAQ: modem-m16/modem-m16-faq.md
-  - I/O interface cards:
-          - Rev 4: io-interface-cards/rev4/io-interface-rev4.md
+
+  - I/O interface cards: 
+      - Revision 4: io-interface-cards/io-interface-rev4.md
 
 
-copyright: © Water Linked 2018-2024
+copyright: © Water Linked 2018-2026

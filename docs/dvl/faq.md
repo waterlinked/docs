@@ -36,7 +36,7 @@ A great setup for lab work is to keep the DVL submerged in a small bucket of wat
 We realize it may be impractical to avoid air usage altogether when the DVL is mounted. One option is to disable the DVL’s acoustics while it is out of water to reduce heating. This option is available under **Configuration** in the DVL GUI.
 
 !!! Note
-    If you do use the DVL in air, we strongly recommend running software version 2.0.8 or higher, which allows the DVL to shut down safely if it reaches a critical temperature.
+    If you do use the DVL in air, we strongly recommend running software version 2.0.8 or higher so the DVL can shut down safely if it overheats. See [FAQ #9](#9-can-the-dvl-overheat) for shutdown behavior.
 
 ---
 
@@ -75,7 +75,7 @@ If you notice periodic data dropouts or lost connections, there are a few common
 
 3. **Thermal Shutdown**  
 
-    - To protect the DVL from damage due to overheating, it may shut down automatically. This will result in a lost connection until it cools and restarts.
+    - If the DVL overheats it will shut down and drop the link until it cools and restarts. See [FAQ #9](#9-can-the-dvl-overheat) for details on thresholds and restarts.
 
 ---
 
@@ -123,5 +123,10 @@ Yes, the DVL can operate over soft bottoms. However, softer seabeds absorb more 
 
 Most likely your DVL is running an older software version that requires you to set the time before you can update. This is not and issue when updating from version 2.6.5
 For more software update details please see [DVL Software Updates.](sw-update.md)
+
+---
+
+## 15. How should I maintain the DVL?
+After operating in seawater, brackish water, chlorinated pools, or any medium other than freshwater, rinse the DVL thoroughly with fresh water to remove residues and salt deposits. Once dry, wipe the exterior with a clean, dry cloth. Avoid solvents or abrasive cleaners.
 
 ---

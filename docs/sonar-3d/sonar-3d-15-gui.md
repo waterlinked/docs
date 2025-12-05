@@ -1,6 +1,6 @@
 # GUI
 
-The GUI is designed to be user friendly with a clean an intuitive set of controls.
+The GUI provides a simple no-setup solution to view the Sonar 3D-15 data and change its settings.
 
 When you first start the Sonar 3D-15 GUI you will be greeted with a view showing the 3D point cloud and various settings. To get familiar with the interface, click the ![?](../img/Sonar-3D-15-question-mark-solid-transparent-20x20.png) icon (help overlay).
 The 3D view can be controlled via mouse and keyboard, or touch controls.
@@ -9,7 +9,7 @@ The 3D view can be controlled via mouse and keyboard, or touch controls.
 ![Help overlay](../img/Sonar-3D-15-gui-help-overlay-1280-600.png)
 
 The help overlay walks you through common features of the Sonar 3D-15 GUI.
-
+<!-- 
 ![Help overlay 2](../img/Sonar-3D-15-gui-help-overlay-1280-600-2.png)
 
 
@@ -58,4 +58,4 @@ Submit a [support ticket](https://waterlinked.com/support) with the diagnostic l
 ### Update rate
 Show a data update graph as an overlay on 3D view. Useful to determine how fast data is being received from the Sonar.
 ### Factory reset
-Resets all sonar settings to factory defaults. The Sonar will also restart afterwards.
+Resets all sonar settings to factory defaults. The Sonar will also restart afterwards. -->
