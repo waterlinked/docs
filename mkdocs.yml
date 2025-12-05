@@ -1,8 +1,10 @@
 site_name: Documentation
 site_url: https://docs.waterlinked.com
 repo_url: https://github.com/waterlinked/docs
+edit_uri: ""
 theme:
   name: material
+
   theme_dir: docstheme/material
   logo: img/waterlinked_logo.png
   favicon: img/favicon_water_linked.ico
@@ -16,7 +18,8 @@ theme:
       # Background override for light mode
       background: "#F1F9EE"      # Green white
       surface: "#2B9C6A"      # Signal green dark
-
+  features:
+    - content.heading.permalinks
 extra:
   social:
     - icon: fontawesome/brands/github

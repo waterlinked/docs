@@ -33,8 +33,7 @@
 
 <div class="md-content" data-md-component="content">
   <article class="md-content__inner md-typeset">
-    <h1 id="documentation">Documentation</h1>
-    <h3 id="select-your-device">Select your device</h3>
+    <h1 id="documentation">Select your Device!</h1>
     <!-- ROW 1: 3D Sonar, DVL A125, DVL A50 -->
     <div class="grid align">
       <div class="col-3 col-md-6 col-sm-12">
