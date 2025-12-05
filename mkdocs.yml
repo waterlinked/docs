@@ -13,23 +13,9 @@ theme:
     - scheme: default
       primary: "#1D3556"         # Ocean blue
       accent: "#4BEF8F"          # Signal green light
-      toggle:
-        icon: material/weather-night
-        name: Switch to dark mode
       # Background override for light mode
       background: "#F1F9EE"      # Green white
       surface: "#F1F9EE"
-
-    # Dark mode (default)
-    - scheme: slate
-      primary: "#1D3556"         # Ocean blue
-      accent: "#4BEF8F"          # Signal green light
-      toggle:
-        icon: material/weather-sunny
-        name: Switch to light mode
-      # Background override for dark mode
-      background: "#1D3556"
-      surface: "#1D3556"
 
 extra:
   social:
