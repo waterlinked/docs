@@ -15,7 +15,7 @@ theme:
       accent: "#4BEF8F"          # Signal green light
       # Background override for light mode
       background: "#F1F9EE"      # Green white
-      surface: "#F1F9EE"
+      surface: "#2B9C6A"      # Signal green dark
 
 extra:
   social:
