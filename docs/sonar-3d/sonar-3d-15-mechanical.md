@@ -6,7 +6,7 @@ Here you should find all the information needed for a successful mechanical inte
 
 A detailed model (.step) of the Sonar, including the field of view, is available under [Resources](sonar-3d-15-resources.md)
 
-![Sonar 3D 15 Dimensions](../img/Sonar-3D-15-physical-dims-public-alpha-4x.png)
+![Sonar 3D 15 Dimensions](../img/Sonar-3D-15-physical-dims-v3.png)
 ![Sonar 3D 15 Right Side View](../img/Sonar-3D-15-side-right.png)
 The cable can be bent as shown in the image up to 90 degrees without causing any damage.
 ![Sonar 3D 15 Back Dim](../img/Sonar-3D-15-back.png)
