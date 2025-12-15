@@ -20,6 +20,9 @@ theme:
       surface: "#2B9C6A"      # Signal green dark
   features:
     - content.heading.permalinks
+  icon:
+    link: material/link-variant 
+
 extra:
   social:
     - icon: fontawesome/brands/github
@@ -31,7 +34,7 @@ extra:
 
 markdown_extensions:
   - toc:
-      permalink: true
+      permalink: "🔗"
   - admonition
   - def_list
   - footnotes
