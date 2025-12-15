@@ -31,7 +31,7 @@ This procedure works if you have haven't changed the jumpers on the Master-D1, y
 | -    | :------------------- | :------------------- |
 | 1    | Download the software package (.wlup) for your kit | [Download software package](#download-software-package) |
 | 2    | Power off the system |  |
-| 3    | Connect the upgrade plug included in the kit or connect GPIO0 to ground using a jumper cable | ![upgrade_plug](../img/upgrade_plug.jpg)  ![upgrade_jumper](/../img/upgrade_jumper.jpg) |
+| 3    | Connect the upgrade plug included in the kit or connect GPIO0 to ground using a jumper cable | ![upgrade_plug](../img/upgrade_plug.jpg)  ![upgrade_jumper](../img/upgrade_jumper.jpg) |
 | 4    | Power on the system |  |
 | 6    | Open the web gui by typing *http://192.168.2.94* in your web browser.| If you see a blank or partly broken page, try to clean browser cache by pressing Ctrl-F5 or opening the page in "Private"/"Incognito" mode |
 | 7    | Remove the upgade plug or the jumper grounding GP0. |  |
@@ -53,7 +53,7 @@ This procedure works if you don't know how to set a static IP address on your co
 | 3    | Set Master-D1 to DHCP Server. (Remember original setting) | See [network settings](hardware.md) |
 | 4    | Connect a network cable directly from your computer to the Master-D1 | |
 | 5    | Configure the network on your computer to get IP address from DHCP  | (this is default on most computers, so if you haven't set a static ip you're good) |
-| 6    | Connect the upgrade plug included in the kit or connect GPIO0 to ground using a jumper cable | ![upgrade_plug](../img/upgrade_plug.jpg)  ![upgrade_jumper](/../img/upgrade_jumper.jpg) |
+| 6    | Connect the upgrade plug included in the kit or connect GPIO0 to ground using a jumper cable | ![upgrade_plug](../img/upgrade_plug.jpg)  ![upgrade_jumper](../img/upgrade_jumper.jpg) |
 | 7    | Power on the system |  |
 | 8    | In your web browser, open *http://192.168.0.1* | If you see a blank or partly broken page, try to clean browser cache by pressing Ctrl-F5 or opening the page in "Private"/"Incognito" mode |
 | 9    | Remove the grounding of GP0. |  |

@@ -5,13 +5,13 @@ The DVL-A50 and DVL-A125 run a dead reckoning algorithm which estimates the orie
 ## Starting dead reckoning
 
 1. Calibrate the gyroscope by pressing *More -> Calibrate gyro* in the [GUI](../dvl/gui/dashboard.md) whilst the DVL is stationary.
-2. Click the 'Reset' button ![](../img/dvl_gui_icon_reset.png) in the [GUI](../dvl/gui/dashboard.md), or send a reset command over the TCP or serial [protocol](../dvl-protocol).
+2. Click the 'Reset' button ![](../img/dvl_gui_icon_reset.png) in the [GUI](../dvl/gui/dashboard.md), or send a reset command over the TCP or serial [protocol](dvl-protocol.md).
 
 Failure to perform gyro calibration will result in less accurate dead reckoning.
 
 ## Frame
 
-The position, speed, and roll, pitch, and yaw angles outputted by the dead reckoning algorithm are with respect to the frame defined at time zero (the time of the last reset, or else at start up) by the axes of the [vehicle frame](../axes#vehicle-frame).
+The position, speed, and roll, pitch, and yaw angles outputted by the dead reckoning algorithm are with respect to the frame defined at time zero (the time of the last reset, or else at start up) by the axes of the [vehicle frame](axes.md#vehicle-frame).
 
 ## Speed and position
 
@@ -22,17 +22,17 @@ When the DVL fails in its determination of velocity, speed and position are pred
 !!! note
     When the DVL is powered on in the air, its position will drift significantly. This should be ignored, and dead reckoning should be [started](#starting-dead-reckoning) in water when ready.
 
-The position of the DVL can be viewed in the GUI [dashboard](../dvl/gui/dashboard.md) or be fetched by [API](../dvl-protocol/#dead-reckoning-report).
+The position of the DVL can be viewed in the GUI [dashboard](../dvl/gui/dashboard.md) or be fetched by [API](dvl-protocol.md#dead-reckoning-report).
 
 ## Orientation
 
-The calculation of the orientation of the DVL is based upon the accelerometer and gyroscope measurements of its IMU. The orientation is represented by roll, pitch, and yaw angles, and can be viewed in the GUI [dashboard](../dvl/gui/dashboard.md) or be fetched by [API](../dvl-protocol/#dead-reckoning-report).
+The calculation of the orientation of the DVL is based upon the accelerometer and gyroscope measurements of its IMU. The orientation is represented by roll, pitch, and yaw angles, and can be viewed in the GUI [dashboard](../dvl/gui/dashboard.md) or be fetched by [API](dvl-protocol.md#dead-reckoning-report).
 
 - Roll is a rotation around the X axis of the DVL
 - Pitch is a rotation around the Y axis of the DVL
 - Yaw is a rotation around the Z axis of the DVL
 
-For orientation to function correctly, the DVL must be deployed in accordance with its [axis conventions](../axes).
+For orientation to function correctly, the DVL must be deployed in accordance with its [axis conventions](axes.md).
 
 !!! note
     A small tilt in the DVL mounting, though it will result in almost no position error with respect to the X and Y axes, may lead a significant error with respect to the Z axis. This change will be a projection of the true horizontal position onto the Z axis. For example, when the DVL is mounted with 5&#176; tilt and the horizontal displacement of the DVL is 100m since last reset, the total displayed distance in the X, Y plane will be 99.6 m, and the Z position will be &pm;9 m.

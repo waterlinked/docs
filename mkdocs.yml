@@ -30,15 +30,16 @@ extra:
       link: https://www.youtube.com/channel/UCZFmOcapjyWgEnS_l6JgxQg/
 
 markdown_extensions:
-  - markdown.extensions.admonition
-  #  - markdown.extensions.codehilite(guess_lang=false)
-  - markdown.extensions.def_list
-  - markdown.extensions.footnotes
-  - markdown.extensions.meta
+  - toc:
+      permalink: true
+  - admonition
+  - def_list
+  - footnotes
+  - meta
   - pymdownx.superfences
   - pymdownx.details
   - attr_list
-
+  
 extra_css:
   - css/extra.css
 nav:

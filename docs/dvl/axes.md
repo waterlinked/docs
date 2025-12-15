@@ -44,17 +44,17 @@ The body frame axes of the DVL are as follows:
 * X axis is pointing forward (LED is forward, cable backward)
 * Y axis is pointing right
 * Z axis is pointing down (mounting holes are up, transducers are down)
-* Origin is the center of the DVL and 25mm/30mm from the backplate. See [A125](../dvl-a125#dimensions) and [A50](../dvl-a50#dimensions) for their dimensions. 
+* Origin is the center of the DVL and 25mm/30mm from the backplate. See [A125](dvl-a125.md#dimensions) and [A50](dvl-a50.md#dimensions) for their dimensions. 
 
-By default, the body frame and vehicle frame is the same and align with the DVL's [frame](../dead-reckoning#frame) for dead reckoning.
+By default, the body frame and vehicle frame is the same and align with the DVL's [frame](dead-reckoning.md#frame) for dead reckoning.
 
 ## Vehicle frame
 
 The DVL can be mounted at an angle to the forward direction of a vehicle to which it is attached.
 
-To be precise, the clockwise angle θ in degrees around the Z axis (i.e. in the X-Y plane) from the forward axis of the vehicle to the forward axis of the DVL can be entered as a 'mounting rotation offset' in the [GUI](../dvl/gui/configuration.md), or via the TCP or serial [protocols](../dvl-protocol/).
+To be precise, the clockwise angle θ in degrees around the Z axis (i.e. in the X-Y plane) from the forward axis of the vehicle to the forward axis of the DVL can be entered as a 'mounting rotation offset' in the [GUI](../dvl/gui/configuration.md), or via the TCP or serial [protocols](dvl-protocol.md).
 
-The DVL will then output data in the vehicle frame obtained by rotating the [DVL body frame](#body-frame) anti-clockwise around the Z-axis by θ  degrees: the X-axis of the velocities outputted by the DVL will be aligned with the forward axis of the vehicle, and, at time zero, the X-axis of the DVL's [frame](../dead-reckoning#frame) for dead reckoning will be aligned with the forward axis of the vehicle.
+The DVL will then output data in the vehicle frame obtained by rotating the [DVL body frame](#body-frame) anti-clockwise around the Z-axis by θ  degrees: the X-axis of the velocities outputted by the DVL will be aligned with the forward axis of the vehicle, and, at time zero, the X-axis of the DVL's [frame](dead-reckoning.md#frame) for dead reckoning will be aligned with the forward axis of the vehicle.
 
 For example:
 

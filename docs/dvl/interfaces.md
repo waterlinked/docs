@@ -12,7 +12,7 @@ For both the DVL-A50 and the DVL-A125.
 
 * Flashing green light, mostly on (slow, every few seconds): DVL has bottom lock.
 
-* Flashing green light (fast, many times a second): DVL is in [thermal shutdown](dvl-troubleshooting.md#thermal-shutdown---does-the-dvl-look-like-it-is-constantly-powering-on-and-off)
+* Flashing green light (fast, many times a second): DVL is in [thermal shutdown](dvl-troubleshooting.md#thermal-shutdown)
 
 ## Wiring interface
 
@@ -87,11 +87,11 @@ The DVL-A50 has a 3.3 volt UART interface (5V tolerant).
 !!! Warning
 	There can be a momentary (<10 us) power spike (~5 V) on the UART lines when power is applied to the DVL, which may damage equipment which is not 5V tolerant.
 
-See the DVL's [serial protocol](../dvl-protocol#serial-protocol).
+See the DVL's [serial protocol](dvl-protocol.md#serial-protocol).
 
 ## Ethernet Interface
 
-See [networking](../networking) and the DVL's [TCP protocol](../dvl/dvl-protocol.md#json-protocol-tcp).
+See [networking](networking.md) and the DVL's [TCP protocol](dvl-protocol.md#json-protocol-tcp).
 
 
 ## Code examples
