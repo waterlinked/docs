@@ -1,0 +1,80 @@
+.md-header {
+    height:3.7rem;
+    background-color: #1d3556;
+}
+
+/* Always show heading permalinks */
+.md-typeset .headerlink {
+  opacity: 1;
+  visibility: visible;
+  margin-left: 0.3em;
+  cursor: pointer;
+}
+
+.md-flex{
+    margin-top: 1rem;
+}
+
+.md-header-nav {
+  padding-top: 1rem;
+}
+
+.md-header__button.md-logo img {
+    height:3.0rem;
+    width:auto;
+}
+
+.md-container{
+    margin-top: 2rem;
+}
+
+.md-sidebar{
+    margin-top:6rem;
+}
+
+.responsive-video {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+}
+
+.responsive-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.grid{
+    display: flex;
+    display: -ms-flexbox;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-left: -.4rem;
+    margin-right: -.4rem;
+}
+
+/* Dark green for buttons */
+.md-button {
+  background-color: #2B9C6A;
+}
+
+/* Ocean Blue for links */
+a {
+  color: #2B9C6A;
+}
+
+  /* Hide the right hand Table of Contents sidebar */
+.md-sidebar--secondary,
+.md-sidebar[data-md-type="toc"] {
+  display: none;
+}
+
+/* Make the content span the full width when the secondary sidebar is gone */
+@media (min-width: 960px) {
+  .md-main__inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
