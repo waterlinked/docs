@@ -2,9 +2,16 @@
 
 This guide will help you connect and access the Sonar 3D-15 GUI so you can explore its features. You can follow the steps below or watch the accompanying video.
 
-<!-- Insert video here -->
-
-<iframe width="100%" height="420" src="https://www.youtube.com/embed/IxMZxHuacdQ?si=6m16D2UlgL0NQ6lD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<div class="responsive-video">
+  <iframe
+    src="https://www.youtube.com/embed/IxMZxHuacdQ?si=6m16D2UlgL0NQ6lD"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen>
+  </iframe>
+</div>
 
 _Requirements:_
 

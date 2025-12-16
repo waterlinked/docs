@@ -33,7 +33,7 @@ No, there is no software installation needed. Once connected and powered on, you
 ---
 
 ## 6. The performance is not as expected?
-If the performance is not as expected and you can not find a solution in this documentation, please create a [diagnostic log](../sonar-3d-15-diagnostic-log) with your Sonar 3D-15 and submit a [support ticket](https://waterlinked.com/support) with the Sonar 3D diagnostic log file attached. 
+If the performance is not as expected and you can not find a solution in this documentation, please create a [diagnostic log](sonar-3d-15-diagnostic-log.md) with your Sonar 3D-15 and submit a [support ticket](https://waterlinked.com/support) with the Sonar 3D diagnostic log file attached. 
 
 ---
 

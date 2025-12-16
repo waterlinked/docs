@@ -33,12 +33,11 @@
 
 <div class="md-content" data-md-component="content">
   <article class="md-content__inner md-typeset">
-    <h1 id="documentation">Documentation</h1>
-    <h3 id="select-your-device">Select your device</h3>
+    <h1 id="documentation">Select your Device!</h1>
     <!-- ROW 1: 3D Sonar, DVL A125, DVL A50 -->
-    <div class="grid align">
+    <div class="align">
       <div class="col-3 col-md-6 col-sm-12">
-        <a href="./sonar-3d/sonar-3d-15/">
+        <a href="./sonar-3d/sonar-3d-15-introduction/">
           <img class="img-fluid"
                src="https://www.waterlinked.com/web/image/product.product/919/image_1024/%5BWL-21045-2%5D%20Sonar%203D-15?unique=6f5242e" />
           <br />
@@ -63,7 +62,7 @@
       </div>
     </div>
     <!-- ROW 2: Modem M16, Underwater GPS G2, Locator-A1 -->
-    <div class="grid align">
+    <div class="align">
       <div class="col-3 col-md-6 col-sm-12">
         <a href="./modem-m16/modem-m16">
           <img class="img-fluid"
@@ -90,7 +89,7 @@
       </div>
     </div>
     <!-- ROW 3: Remaining locators: U1, D1, Receiver-D1 -->
-    <div class="grid align">
+    <div class="align">
       <div class="col-3 col-md-6 col-sm-12">
         <a href="./underwater-gps/locators/locator-u1/">
           <img class="img-fluid"

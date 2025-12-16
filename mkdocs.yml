@@ -1,8 +1,10 @@
 site_name: Documentation
 site_url: https://docs.waterlinked.com
 repo_url: https://github.com/waterlinked/docs
+edit_uri: ""
 theme:
   name: material
+
   theme_dir: docstheme/material
   logo: img/waterlinked_logo.png
   favicon: img/favicon_water_linked.ico
@@ -16,6 +18,10 @@ theme:
       # Background override for light mode
       background: "#F1F9EE"      # Green white
       surface: "#2B9C6A"      # Signal green dark
+  features:
+    - content.heading.permalinks
+  icon:
+    link: material/link-variant 
 
 extra:
   social:
@@ -27,15 +33,16 @@ extra:
       link: https://www.youtube.com/channel/UCZFmOcapjyWgEnS_l6JgxQg/
 
 markdown_extensions:
-  - markdown.extensions.admonition
-  #  - markdown.extensions.codehilite(guess_lang=false)
-  - markdown.extensions.def_list
-  - markdown.extensions.footnotes
-  - markdown.extensions.meta
+  - toc:
+      permalink: "🔗"
+  - admonition
+  - def_list
+  - footnotes
+  - meta
   - pymdownx.superfences
   - pymdownx.details
   - attr_list
-
+  
 extra_css:
   - css/extra.css
 nav:

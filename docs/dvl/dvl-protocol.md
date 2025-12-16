@@ -44,7 +44,7 @@ The format of each packet is JSON.
 
 A velocity-and-transducer report is sent for each velocity calculation of the DVL. The rate depends on the altitude of the DVL (distance to the sea bottom or other reflecting surface), but will be in the range 2-15 Hz.
 
-The X, Y, and Z axes are with respect to [body frame](../axes#body-frame) of the DVL, or the [vehicle frame](../axes#vehicle-frame) if the DVL is mounted on a vehicle at an angle, specified as a 'mounting rotation offset', from the forward axis of the vehicle.
+The X, Y, and Z axes are with respect to [body frame](axes.md#body-frame) of the DVL, or the [vehicle frame](axes.md#vehicle-frame) if the DVL is mounted on a vehicle at an angle, specified as a 'mounting rotation offset', from the forward axis of the vehicle.
 
 The messages are delimited by newline.
 
@@ -137,7 +137,7 @@ Example of TCP report (indented for legibility)
 
 ### Dead reckoning report
 
-A dead reckoning report outputs the current speed, position, and orientation of the DVL as calculated by [dead reckoning](../dead-reckoning), with respect to a [frame](../dead-reckoning#frame) defined by the axes of the DVL's [body frame](../axes#body-frame), or [vehicle frame](../axes#vehicle-frame) if a mounting rotation offset is set, at the start of the dead reckoning run. The expected update rate is 5 Hz.
+A dead reckoning report outputs the current speed, position, and orientation of the DVL as calculated by [dead reckoning](dead-reckoning.md), with respect to a [frame](dead-reckoning.md#frame) defined by the axes of the DVL's [body frame](axes.md#body-frame), or [vehicle frame](axes.md#vehicle-frame) if a mounting rotation offset is set, at the start of the dead reckoning run. The expected update rate is 5 Hz.
 
 
 
@@ -245,10 +245,10 @@ The response will be as follows if the calibration is successful. If queue is fu
 | Variable | Description |
 |----------|-------------|
 | speed_of_sound | Speed of sound (1000-2000 m/s). Integer  |
-| mounting_rotation_offset | See the definition of the [vehicle frame](../axes#vehicle-frame) of the DVL. Typically 0, but can be set to be non-zero if the forward axis of the DVL is not aligned with the forward axis of a vehicle on which it is mounted (0-360 degrees). Integer |
+| mounting_rotation_offset | See the definition of the [vehicle frame](axes.md#vehicle-frame) of the DVL. Typically 0, but can be set to be non-zero if the forward axis of the DVL is not aligned with the forward axis of a vehicle on which it is mounted (0-360 degrees). Integer |
 | acoustic_enabled | `true` for normal operation of the DVL,`false` when the sending of acoustic waves from the DVL is disabled (e.g. to save power or slow down its heating up in air) |
-| dark_mode_enabled | `false` when the LED operates as [normal](../interfaces#led-signals), `true` for no blinking of the LED (e.g. if the LED is interfering with a camera) |
-| range_mode | `auto` when operating as normal, otherwise see [range mode configuration](../dvl-protocol#range-mode-configuration) |
+| dark_mode_enabled | `false` when the LED operates as [normal](interfaces.md#led-signals), `true` for no blinking of the LED (e.g. if the LED is interfering with a camera) |
+| range_mode | `auto` when operating as normal, otherwise see [range mode configuration](dvl-protocol.md#range-mode-configuration) |
 | periodic_cycling_enabled | `true` for normal operation where the DVL periodically searches for bottom lock shorter than the existing bottom lock, `false` if periodic cycling is disabled |
 
 
@@ -337,13 +337,13 @@ The commands in the table are shown without the checksum and without the mandato
 | `wcw`   | Get product detail | `wrw,`*[name]*,*[version]*,*[chipID]*,*[IP address]* | Where type is dvl, name is product name, version is software version, chip ID is the chip ID and _optionally_ the IP address if connected to DHCP server: eg: `wrw,dvl-a50,2.2.1,0xfedcba98765432` or `wrw,dvl-a50,2.2.1,0xfedcba98765432,10.11.12.140` |
 | `wcs,`*[configuration parameters]*    | Set configuration parameters | `wra` | Successfully set the specified configuration parameters. See [Configuration](#configuration-over-serial) for details |
 | `wcc`   | Get current configuration | `wrc,`*[configuration parameters]* | Entire current configuration. See [Configuration](#configuration-over-serial) for details |
-| `wcr`   | Reset dead reckoning | `wra` | Successfully started a new [dead reckoning](../dead-reckoning#starting-dead-reckoning) run |
+| `wcr`   | Reset dead reckoning | `wra` | Successfully started a new [dead reckoning](dead-reckoning.md#starting-dead-reckoning) run |
 | `wcx`   | Trigger ping | `wra` | Successfully queued a ping |
 | `wcg`   | Calibrate gyro | `wra` | Successfully calibrated gyro |
 | `wcp`   | Change serial output protocol | `wra` | Successfully changed output protocol |
 |         |             | `wrz,`*[details below]* | Velocities calculated |
 |         |             | `wru,`*[details below]* | Transducer information |
-|         |             | `wrp,`*[details below]* | [Dead reckoning](../dead-reckoning) report |
+|         |             | `wrp,`*[details below]* | [Dead reckoning](dead-reckoning.md) report |
 |         |             | `wrx,`*[details below]* | DEPRECATED: Velocities calculated (old format) |
 |         |             | `wrt,`*[details below]* | DEPRECATED: Transducer information (old format) |
 |         |             | `wr?` | Malformed request: packet cannot be understood or no newline received before timeout |
@@ -356,7 +356,7 @@ The commands in the table are shown without the checksum and without the mandato
 
 A velocity report is outputted for each velocity calculation of the DVL. The rate depends on the altitude of the DVL (distance to the sea bottom or other reflecting surface), but will be in the range 2-15 Hz.
 
-The X, Y, and Z axes are with respect to [body frame](../axes#body-frame) of the DVL, or the [vehicle frame](../axes#vehicle-frame) if the DVL is mounted on a vehicle at an angle, specified as a 'mounting rotation offset', from the forward axis of the vehicle.
+The X, Y, and Z axes are with respect to [body frame](axes.md#body-frame) of the DVL, or the [vehicle frame](axes.md#vehicle-frame) if the DVL is mounted on a vehicle at an angle, specified as a 'mounting rotation offset', from the forward axis of the vehicle.
 
 The report has the following format:
 `wrz,`*[vx],[vy],[vz],[valid],[altitude],[fom],[covariance],[time_of_validity],[time_of_transmission],[time],[status]*
@@ -410,7 +410,7 @@ wru,3,1.800,1.35,-58,-96*a3
 
 ### Dead reckoning report (wrp)
 
-A dead reckoning report outputs the current speed, position, and orientation of the DVL as calculated by [dead reckoning](../dead-reckoning), with respect to a [frame](../dead-reckoning#frame) defined by the axes of the DVL's [body frame](../axes#body-frame), or [vehicle frame](../axes#vehicle-frame) if a mounting rotation offset is set, at the start of the dead reckoning run. The expected update rate is 5 Hz.
+A dead reckoning report outputs the current speed, position, and orientation of the DVL as calculated by [dead reckoning](dead-reckoning.md), with respect to a [frame](dead-reckoning.md#frame) defined by the axes of the DVL's [body frame](axes.md#body-frame), or [vehicle frame](axes.md#vehicle-frame) if a mounting rotation offset is set, at the start of the dead reckoning run. The expected update rate is 5 Hz.
 
 The format is:
 `wrp,`*[time_stamp],[x],[y],[z],[pos_std],[roll],[pitch],[yaw],[status]*
@@ -487,11 +487,11 @@ wcp,3
 | Variable | Description |
 |----------|-------------|
 | speed_of_sound | Speed of sound (1000-2000 m/s). Float  |
-| mounting_rotation_offset | See the definition of the [vehicle frame](../axes#vehicle-frame) of the DVL. Typically 0, but can be set to be non-zero if the forward axis of the DVL is not aligned with the forward axis of a vehicle on which it is mounted (0-360 degrees). Float |
+| mounting_rotation_offset | See the definition of the [vehicle frame](axes.md#vehicle-frame) of the DVL. Typically 0, but can be set to be non-zero if the forward axis of the DVL is not aligned with the forward axis of a vehicle on which it is mounted (0-360 degrees). Float |
 | acoustic_enabled | `y` for normal operation of the DVL,`n` when the sending of acoustic waves from the DVL is disabled (e.g. to save power or slow down its heating up in air) |
-| dark_mode_enabled | `n` when the LED operates as [normal](../interfaces#led-signals). `y` for no blinking of LED (e.g. if the LED is interfering with a camera) |
-| range_mode |`auto` when operating as normal, otherwise see [range mode configuration](../dvl-protocol#range-mode-configuration) |
-| periodic_cycling_enabled | `y` when operating as normal, otherwise `n`. See [Configuration over JSON](../dvl-protocol#configuration-over-json) for details
+| dark_mode_enabled | `n` when the LED operates as [normal](interfaces.md#led-signals). `y` for no blinking of LED (e.g. if the LED is interfering with a camera) |
+| range_mode |`auto` when operating as normal, otherwise see [range mode configuration](dvl-protocol.md#range-mode-configuration) |
+| periodic_cycling_enabled | `y` when operating as normal, otherwise `n`. See [Configuration over JSON](dvl-protocol.md#configuration-over-json) for details
 
 !!!note
     For backward compatibility the `range_mode` and `periodic_cycling_enabled` parameters are optional when setting the configuration. They will always be returned when reading the configuration (`wcc`).
