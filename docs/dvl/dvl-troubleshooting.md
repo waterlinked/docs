@@ -26,8 +26,8 @@ If the troubleshooting guide do not help, please check out [FAQ DVL](../dvl/faq.
 1. The Line of sight should be clear of any obstacles including walls, see [Line of sight](dvl-a50.md#line-of-sight).
     - 1.1 One easy way to make sure the Line of sight is clear from any walls is to observe that all beam shows approximately the same distance to the bottom. If some of the beams are flickering or showing another distance it might pick up a reflection from a wall or some other obstacle in the line of sight. Obstacle free radius from the DVL to the wall depending on the distance to the bottom can be calculated with this formula: **Obstacle free radius** = tan(32.5°) × **distance from DVL to bottom**. 
 2. If testing in a pool, tank or bucket it should **not** be made out of a **polished metal** or very clean surfaces. This can introduce more noise and make it harder for the DVL to get a bottom lock.
-3. Check that there are no motors, echo sunders, pumps, running house. This can create noise in the same frequency as the DVL and have an impact on the acoustic signal.
-4. Make sure the environment is not acting on the DVL in a way that makes it pitch and yaw (waves). That will send the acoustic signal in many directions making it hard to achieve a bottom lock.    
+3. Check that there are no motors, echo sunders, pumps, running hose. This can create noise in the same frequency as the DVL and have an impact on the acoustic signals.
+4. Make sure the environment is not acting on the DVL in a way that makes it pitch and yaw (waves). That will send the acoustic signals in many directions making it hard to achieve a bottom lock.    
 
 ## Thermal Shutdown
 The DVL has a thermal shutdown mechanism to avoid damage. It will issue a warning before shutting down at 55℃. Once it cools below 50℃, it automatically restarts. If the overheating issue is not addressed, it may repeat this shutdown/restart cycle.
