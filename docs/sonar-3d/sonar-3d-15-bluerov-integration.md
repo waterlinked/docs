@@ -173,8 +173,6 @@ Proper mounting is critical for accurate sonar performance.
     ![Pixels](../img/sonar3d-integration-bluerov2/bluerov_mounted_sonar.jpg){width="49%"}
     ![Pixels](../img/sonar3d-integration-bluerov2/bluerov_mounted_sonar_behind.jpg)
 
-    !!! Checkpoint
-        Verify the sonar is securely attached and the cable is routed neatly away from thrusters.
 ---
 
 ## 3. Configure Software & Network
