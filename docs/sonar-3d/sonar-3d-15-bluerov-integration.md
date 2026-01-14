@@ -23,36 +23,35 @@ The Sonar 3D-15 from Water Linked is normally shipped with an attached I/O Inter
 
 ---
 
-## What You’ll Need
+## Prerequisites
 
-To follow this guide, you will need the following:
+Before starting the integration, ensure you have all the necessary tools and parts ready.
 
-- [BlueROV2 Roof Rack](https://bluerobotics.com/store/rov/bluerov2-accessories/rov-roof-rack/)
+### Tools Required
+- Soldering iron and solder
+- Wire strippers / cutters
+- Heat gun or lighter (for heat shrink)
+- Small flathead screwdriver
+- Hex key set (for opening ROV and mounting)
 
-- A mount (Sonar 3D-15 to ROV)
-
-    - *An example can be downloaded from here: [3D step file](./stp_files/sonar_mount_1.stp)*
-
-- Correct screws
-
-    - *See the [Mounting](#mounting) section*
-
-- 2 spade connectors *(or ring terminals)*
-
-- A JST 4-pin connector
-
-- WetLink Penetrator 6.5 *(low-compression)*
-
-    - *[WetLink from Blue Robotics](https://bluerobotics.com/store/cables-connectors/penetrators/wlp-vp/)*
-
-- Ethernet Switch board
-
-    - *Make sure you have an Ethernet Switch installed on your BlueROV2. This is needed for the integration of the Sonar 3D-15. The installation guide for the Ethernet Switch can be found here:* [Ethernet Switch Installation Guide from Blue Robotics](https://bluerobotics.com/learn/ethernet-switch-installation-guide-for-the-bluerov2/)
+### Parts Required
+- **[BlueROV2 Roof Rack](https://bluerobotics.com/store/rov/bluerov2-accessories/rov-roof-rack/)**: To mount the sonar.
+- **Sonar Mount**: Custom mount for Sonar 3D-15.
+    - *Download the example [3D step file](./stp_files/sonar_mount_1.stp)*
+- **Mounting Screws**:
+    - 4x M4 screws (length depends on mount thickness) for Sonar-to-Mount.
+    - 4x M4 screws + nuts + washers for Mount-to-ROV.
+- **Connectors**:
+    - 2x Spade connectors (or ring terminals) for power.
+    - 1x JST 4-pin connector (GH type usually used with BlueROV2 devices, verify pitch).
+- **[WetLink Penetrator 6.5mm (Low Compression)](https://bluerobotics.com/store/cables-connectors/penetrators/wlp-vp/)**: For passing cable into the enclosure.
+- **Ethernet Switch**:
+    - Must be installed in the BlueROV2. See [Ethernet Switch Installation Guide](https://bluerobotics.com/learn/ethernet-switch-installation-guide-for-the-bluerov2/).
 
 
 ---
 
-## Connector Setup
+## 1. Prepare the Connectors
 **Testing the Sonar 3D-15 Separately**
 
 If the I/O Interface board is attached, the Sonar 3D-15 can be tested directly using an Ethernet cable and a power supply. If you wish to test the device on its own before integration, follow the general Quickstart tutorial, available here:  [Quickstart](https://docs.waterlinked.com/sonar-3d/sonar-3d-15-quickstart/).
@@ -142,174 +141,98 @@ To install the Sonar 3D-15 for the BlueROV2, perform the following procedure:
 
 ---
 
-## Mounting
-The Sonar 3D-15 needs to be physically attached to the BlueROV2 ROV. A possible option on how to do this will be listed here. There are many different approaches to achieve this, and this approach is only listed to provide an idea.
+## 2. Mount the Sonar
+Proper mounting is critical for accurate sonar performance.
 
-1. **Create or find a suitable mount**
+### Recommended Mounting Procedure
 
-    An example 3D step file of a mount is found here: [Download 3D step file](./stp_files/sonar_mount_1.stp)
+1.  **Prepare the Mount**
+    If you haven't already, print or machine the mount.
+    - [Download 3D step file](./stp_files/sonar_mount_1.stp)
     ![Pixels](../img/sonar3d-integration-deeptrekkerpivot/mount_3d_print_step-fotor2.png)
 
     !!! Note
-        Choose a 3D print material that can withstand the expected operating conditions.
+        Choose a material (like PETG or ABS) that can withstand the marine environment.
 
-2. **Identify the screws and mount to use**
-
-    Use `[M4x (5.0 + X) mm]` screws to attach the Sonar 3D-15 to the mount, and use `[M4x (9.0 + X) mm]` screws with hex nuts and washers to attach the mount to the BlueROV2 Roof Rack. Exchange the *X* with the thickness of your mount.
-
-    For example, for a 3.0mm thick mount *(as the given 3D print)*, the following is sufficient:
+2.  **Attach Sonar to Mount**
+    Secure the Sonar 3D-15 to the mount using **4x M4 screws**.
+    - Length = `5.0mm + Mount Thickness` (e.g., 8mm screws for a 3mm mount).
     
-    - 4x `M4x8.0mm` screws
-    - 4x `M4x12.0mm` screws
-    - 4x `M4` Hex Nuts
-    - 4x `M4` Washers  
-
     ![Pixels](../img/sonar3d-integration-deeptrekkerpivot/sonar_dimentions_screwholes.png)
 
-    !!!Warning
-        To avoid damaging the Sonar 3D-15, make sure the screws are not too long.
-
-3. **Attach the mount to the Sonar 3D-15**
+    !!! Warning
+        **Do not use screws that are too long.** They will penetrate the casing and permanently damage the sonar electronics.
 
     ![Pixels](../img/sonar3d-integration-deeptrekkerpivot/mount_attached_to_sonar.png)
 
-
-4. **Attach the mounted Sonar 3D-15 to the BlueROV2 ROV**
-
-    We recommend putting the Sonar 3D-15 on the BlueROV2 Roof Rack in the front for the BlueROV2. In that way, the Sonar 3D-15 will not block the Sonar 3D-15’s field of view.
+3.  **Attach Assembly to ROV**
+    Mount the assembly to the **BlueROV2 Roof Rack**, preferably at the **front** to ensure a clear field of view.
+    - Use **4x M4 screws, nuts, and washers**.
 
     ![Pixels](../img/sonar3d-integration-bluerov2/bluerov_attatchmentbar.jpg){width="49%"}
     ![Pixels](../img/sonar3d-integration-bluerov2/bluerov_mounted_sonar.jpg){width="49%"}
     ![Pixels](../img/sonar3d-integration-bluerov2/bluerov_mounted_sonar_behind.jpg)
 
-!!! note
-    Make sure the Sonar 3D-15 and cable are neatly and securely attached before use.
 ---
 
-## Connection steps
+## 3. Configure Software & Network
 
+### Step 1: Prepare the ROV
+Power on the BlueROV2 and ensure it is connected to your computer.
+- Follow the [BlueROV2 Software Setup](https://bluerobotics.com/learn/bluerov2-software-setup/) if needed.
+- **Verify**: The Sonar 3D-15 should show a **green light**, indicating it is powered.
 
-### 1. **Make your ROV ready for launch**
+### Step 2: Install BlueOS Extension (Recommended)
+The easiest way to connect is using the **Sonar 3D-15 extension**.
 
-Follow the [BlueROV2 Software Setup](https://bluerobotics.com/learn/bluerov2-software-setup/) guide to make your ROV ready for launch. This shows how to turn on the ROV and what software to install. 
+1.  Open the [BlueOS extension manager](https://blueos.cloud/docs/latest/usage/advanced/#extensions-manager).
+2.  Search for and install **Sonar 3D-15 extension**.
+    ![Pixels](../img/sonar3d-integration-bluerov2/bluerov_Install_sonar_3d-15_extension_example.png)
+3.  Click the extension to open it. It will automatically detect the Sonar IP.
+    ![Pixels](../img/sonar3d-integration-bluerov2/bluerov_extension_sonar_3d-15.png)
 
-The Sonar 3D-15 will now show a green light, indicating it is powered.
+### Step 3: Configure Cockpit
+We recommend using **Cockpit** for the best experience.
 
-### 2. **Access the Sonar 3D-15 GUI**
+1.  Open Cockpit and click the **collapse handle** on the left.
+    ![Pixels](../img/sonar3d-integration-bluerov2/cockpit_sonar1.jpg)
+2.  Click **Edit Interface**.
+    ![Pixels](../img/sonar3d-integration-bluerov2/cockpit_sonar2.png)
+3.  Drag an **IFrame** box onto your layout.
+    ![Pixels](../img/sonar3d-integration-bluerov2/cockpit_sonar3.png)
+4.  Click the **settings icon** for the IFrame.
+    ![Pixels](../img/sonar3d-integration-bluerov2/cockpit_sonar6.png)
+5.  **Enter the Sonar IP Address**:
+    - Use the IP address displayed in the Extension (Step 2), e.g., `http://192.168.2.172`.
+    - Press **Enter**.
+    ![Pixels](../img/sonar3d-integration-bluerov2/cockpit_sonar8.png)
 
-We recommend installing the **[Sonar 3D-15 extension](https://github.com/waterlinked/BlueOS-Sonar-Extension)** found in the [BlueOS extension manager](https://www.google.com/search?q=https://blueos.cloud/docs/latest/usage/advanced/%23extensions-manager). If you use the extension, you can skip directly to **Connection Step 3**. Otherwise, follow the procedure below to connect manually.
+### Step 4: Deploy & Validate
 
-The Sonar 3D-15 GUI can be accessed by entering the Sonar 3D-15's IP-address into the browser running on the computer connected to the ROV.
+1.  **Submerge**: Place the ROV in water.
+    ![Pixels](../img/sonar3d-integration-bluerov2/bluerov_put_into_water.png)
+2.  **Enable Acoustics**: In the Sonar GUI (now visible in Cockpit), click the green **"Enable Acoustics"** button.
 
-You have to determine which IP-address has been automatically assigned to the Sonar 3D-15 by the BlueRov2 system. Steps to find it follows below. Once located, entering it in your browser will display a page like the one below — in this example, the Sonar 3D-15 is assigned the IP-address `192.168.2.172`. 
+    !!! Warning
+        **Never enable acoustics in air.** Only enable when submerged to prevent overheating.
 
+    ![Pixels](../img/sonar3d-integration-bluerov2/cockpit_sonar10.png){width="100%"}
 
-![Pixels](../img/sonar3d-integration-bluerov2/sonar_gui_bluerov.png)
+**Success!** You are now ready to use the Sonar 3D-15.
 
-!!! Warning
-    Don't operate the Sonar 3D-15 out of water for any long periods. To avoid overheating of the Sonar 3D-15, **don’t click the green button “Enable Acoustics”**, until the ROV is submerged in water. 
-    
-    Acoustics is always disabled when first booting up the Sonar 3D-15, and will be turned on once clicking this button. The Sonar 3D-15 will automatically turn itself off if too hot, but will take some time to cool down, it's best to avoid this happening.
+---
 
+## Troubleshooting & Advanced
 
+??? info "How to find the IP Address Manually"
 
-Find the IP-address corresponding to the Sonar 3D-15 on a computer by doing the following:
+    If the extension does not work, you can find the IP manually.
 
-1. **Find the IP-address of your computer on the BlueROV2 network**
-
-    You need your own network IP-address on the BlueROV2 network. 
-    On **Linux** you find it by typing in:
-
-    ```sh
-    ip a
-    ```
-    in the terminal. 
-    
-    On **Windows** you find it by typing in:
-    ```sh
-    ipconfig
-    ```
-    !!!Tip
-        It's easier to find your IP-address if your computer is connected only to the BlueROV2 network.
-
-
-2. **Test and find the Sonar 3D-15's IP-address**
-
-    A quick easy way to see the IP-addresses of the devices on your local network is to use [nmap](https://nmap.org/download.html). Install it for your operating system and go to the terminal and write
-    ```sh
-    nmap -sn <YOUR_IP>
-    ```
-
-    This will scan the BlueROV2 network and show all accessible connected devices and their IPs.
-
-    ![Pixels](../img/sonar3d-integration-bluerov2/nmap_bluerov_cropped.png)
-
-    To find the IP-address of the Sonar 3D-15, try the IP-addresses on the list by typing them into the search bar of your browser. 
-
-    - For example, if you have the list above, try `192.168.2.2`, `192.168.2.136`, `192.168.2.172` and so on. You may try them all safely.
-
-    If the Sonar 3D-15 GUI appears, you have found the correct IP-address.
-
-    !!! Tip
-        You can also access the GUI on the Sonar 3D-15's fallback address `192.168.194.96`. This method is explained in more detail on the general quickstart guide, which can be found at [Quickstart](https://docs.waterlinked.com/sonar-3d/sonar-3d-15-quickstart/) .
-
-### 3. ***(Optional)* Open Cockpit with the Sonar 3D-15 GUI**
-
-We recommend using **Cockpit**, a new, highly customizable ground control station software from Blue Robotics. More information about Cockpit can be found here: [Cockpit Information](https://discuss.bluerobotics.com/t/cockpit-1-0-0-release/17744), and it can be installed from here: [Install Cockpit](https://github.com/bluerobotics/cockpit/releases/tag/v1.15.2).
-
-Once Cockpit is installed and the BlueROV2 is ready for launch, you will see the Cockpit GUI, as shown in the following picture. Click the **collapse handle** on the left to reveal the GUI options.
-
-![Pixels](../img/sonar3d-integration-bluerov2/cockpit_sonar1.jpg)
-
-Click **Edit Interface**.
-
-![Pixels](../img/sonar3d-integration-bluerov2/cockpit_sonar2.png)
-
-Here you can change the layout of the GUI. We will add a frame to display the Sonar 3D-15 GUI. Click and drag an **IFrame** box onto the main screen.
-
-![Pixels](../img/sonar3d-integration-bluerov2/cockpit_sonar3.png)
-
-An *IFrame* box will appear with the standard BlueOS page. 
-
-![Pixels](../img/sonar3d-integration-bluerov2/cockpit_sonar4.png)
-
-Resize it as needed to fit your desired layout.
-
-![Pixels](../img/sonar3d-integration-bluerov2/cockpit_sonar5.png)
-
-Click the **settings icon for the IFrame**.
-
-![Pixels](../img/sonar3d-integration-bluerov2/cockpit_sonar6.png)
-
-The following configuration panel will appear.
-
-![Pixels](../img/sonar3d-integration-bluerov2/cockpit_sonar7.png)
-
-Instead of `http://blueos-avahi.local`, enter the IP-address for the Sonar 3D-15, as found in the previous step. In this example, the IP-address is `http://192.168.2.172`. Press *Enter* on your keyboard, then close the settings panel.
-
-![Pixels](../img/sonar3d-integration-bluerov2/cockpit_sonar8.png)
-
-The Sonar 3D-15 GUI will now appear in the IFrame box within your Cockpit control station.
-
-![Pixels](../img/sonar3d-integration-bluerov2/cockpit_sonar9.png)
-
-!!! Warning
-    To avoid overheating of the Sonar 3D-15, **don’t click the green "Enable Acoustics" button**, until the ROV is submerged in water. 
-
-
-### 4. **Put the ROV into water**
-
-You are now ready to put the ROV into water. 
-
-![Pixels](../img/sonar3d-integration-bluerov2/bluerov_put_into_water.png)
-
-
-### 4. **Enable acoustics**
-
-When ready, click the ”Enable acoustics” button to initiate the Sonar 3D-15. It will display a 3D point cloud in the GUI representing the area in front of the Sonar 3D-15.
-
-
-<!-- ![Pixels](../img/sonar3d-integration-deeptrekkerpivot/sonar_3d_enjoy.png){width="100%"} -->
-![Pixels](../img/sonar3d-integration-bluerov2/cockpit_sonar10.png){width="100%"}
-
-You are now ready to use the Water Linked Sonar 3D-15 with the BlueROV2!
+    1. **Identify your computer's IP** on the BlueROV network (`ip a` on Linux, `ipconfig` on Windows).
+    2. **Scan the network** using `nmap`:
+        ```sh
+        nmap -sn 192.168.2.* ```
+        *(Adjust the subnet to match your BlueROV network)*
+    3. **Try recognized IPs** in a browser until the Sonar GUI loads.
+        - Common subnets: `192.168.2.x`
+        - Fallback IP: `192.168.194.96` See [quickstart](sonar-3d-15-quickstart.md) for details.
