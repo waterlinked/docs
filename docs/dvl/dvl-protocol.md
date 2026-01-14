@@ -29,7 +29,7 @@ This document describes serial protocol version `2.6.x` (major.minor.patch) and 
 | 2.4.0 | 2.5.0 | json_v3.1 | Add ability to trigger pings (JSON/Serial), add configuration for periodic cycling (JSON/Serial)
 | 2.2.1 | 2.4.0 | json_v3 | Add serial output protocol configuration, range mode configuration and calibrate gyro command, Fix missing line ending in configuration (JSON), fix dark mode enabled naming inconsistency (JSON), change speed of sound and mounting rotation offset from integer to float
 | 2.1.0 | 2.3.0 | json_v3 | Add configuration, add time_of_validity/time_of_transmission, add covariance (JSON)
-| 2.0.8 | 2.2.0 | json_v2 | Add position estimation, add IMU output
+| 2.0.8 | 2.2.0 | json_v2 | Add position estimation, Add output of orientation angles
 | 1.6.0 | 2.1.0 | - | Initial (velocity only)
 
 ## JSON protocol (TCP)
