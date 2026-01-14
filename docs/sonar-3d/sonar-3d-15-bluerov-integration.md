@@ -188,7 +188,7 @@ The easiest way to connect is using the **Sonar 3D-15 extension**.
 1.  Open the [BlueOS extension manager](https://blueos.cloud/docs/latest/usage/advanced/#extensions-manager).
 2.  Search for and install **Sonar 3D-15 extension**.
     ![Pixels](../img/sonar3d-integration-bluerov2/bluerov_Install_sonar_3d-15_extension_example.png)
-3.  Click the extension to open it. It will automatically detect the Sonar IP.
+3.  Click the extension to open it. It will automatically detect the Sonar IP. Take note of the IP address displayed at the top of this screen as you will require this for Step 3 below
     ![Pixels](../img/sonar3d-integration-bluerov2/bluerov_extension_sonar_3d-15.png)
 
 ### Step 3: Configure Cockpit
