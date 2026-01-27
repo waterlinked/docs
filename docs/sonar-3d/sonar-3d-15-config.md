@@ -32,10 +32,30 @@ Set how the Sonar 3D-15 is assigned an IP on your network: Automatic IP (DHCP) o
 
 ### Time
 
-Set how the Sonar acquires date and time, NTP Server og Use Computer Time. Default is NTP server (automatically get time sync from the Internet).
+Sonar time can be configured as either "Automatic" or "NTP Server". This setting is saved across restarts. 
 
-!!! Note
-    Using computer time is only valid until the next restart of the Sonar. Saved Time Settings are persistent, meaning it is kept on restart.
+NTP Server is the recommended configuration.
+
+#### Time configuration: Automatic
+
+Automatic configures the Sonar to attempt to achieve time sync with either an NTP server on the internet or with the GUI.
+
+At boot, the Sonar's system time will be some timestamp far in the past.
+The Sonar will continuously attempt to achieve NTP sync with an NTP server on the internet.
+If the GUI is opened, it will check whether the Sonar has achieved NTP sync. If not, it will manually set time to the current system time on the host computer. If the GUI set a manual time, the Sonar will stop attempting to sync with an NTP server on the internet. 
+
+The GUI will warn the user if the host computer's system time is more than 2 seconds away from the Sonar's time.
+
+Automatic is a best-effort time configuration. At the time of writing (release 1.6.0), when configured as automatic, it is recommended to open the GUI on a host on the same network as the Sonar before starting data collection to look for synchronization warnings in the GUI. A future release will give better time sync feedback through the integration API.
+
+#### Time configuration: NTP Server
+
+At boot, the Sonar's system time will be some timestamp far in the past.
+The Sonar will continuously attempt to achieve NTP sync with the configured NTP server.
+
+On serious ROV missions where the Sonar's output is used together with other sensors, it is recommended to configure NTP Server with a common NTP server on the local network of the ROV.
+
+At the time of writing (release 1.6.0), the only way to check whether NTP has synchronized with the configured server is to inspect the timestamps of Sonar output, or to re-apply the NTP server setting and look for errors. A future release will give better time sync feedback through the integration API.
 
 ### Speed of Sound
 
