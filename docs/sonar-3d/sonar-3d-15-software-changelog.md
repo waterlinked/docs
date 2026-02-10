@@ -1,5 +1,9 @@
 # Software Versions
 
+## v1.6.1 (2026-02)
+
+- Improve network stability
+
 ## v1.6.0 (2025-11)
 
 - Improve imaging performance
