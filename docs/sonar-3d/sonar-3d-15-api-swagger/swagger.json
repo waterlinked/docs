@@ -73,6 +73,63 @@
                 }
             }
         },
+        "/api/v1/integration/acoustics/mode": {
+            "get": {
+                "description": "Get acoustics mode (\"low-frequency\" or \"high-frequency\")",
+                "tags": [
+                    "acoustics",
+                    "integrationAPI"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "204": {
+                        "description": "No Content"
+                    }
+                }
+            },
+            "post": {
+                "description": "Set acoustics mode to either \"low-frequency\" or \"high-frequency\"",
+                "tags": [
+                    "acoustics",
+                    "integrationAPI"
+                ],
+                "parameters": [
+                    {
+                        "description": " ",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "\"low-frequency\"",
+                                "\"high-frequency\""
+                            ],
+                            "example": "\"low-frequency\""
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "408": {
+                        "description": "Request Timeout"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        },
         "/api/v1/integration/acoustics/range": {
             "get": {
                 "description": "Get range",
@@ -122,9 +179,66 @@
                 }
             }
         },
+        "/api/v1/integration/acoustics/salinity": {
+            "get": {
+                "description": "Get salinity for automatic speed of sound calculation. \"fresh\" or \"salt\".",
+                "tags": [
+                    "acoustics",
+                    "integrationAPI"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "204": {
+                        "description": "No Content"
+                    }
+                }
+            },
+            "post": {
+                "description": "Set salinity for automatic speed of sound calculation. \"fresh\" or \"salt\".",
+                "tags": [
+                    "acoustics",
+                    "integrationAPI"
+                ],
+                "parameters": [
+                    {
+                        "description": " ",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "\"fresh\"",
+                                "\"salt\""
+                            ],
+                            "example": "\"salt\""
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "408": {
+                        "description": "Request Timeout"
+                    },
+                    "409": {
+                        "description": "Conflict"
+                    }
+                }
+            }
+        },
         "/api/v1/integration/acoustics/speed_of_sound": {
             "get": {
-                "description": "Get speed of sound",
+                "description": "Get speed of sound. 0 means speed of sound is automatically calculated from configured water salinity and water temperature.",
                 "tags": [
                     "acoustics",
                     "integrationAPI"
@@ -142,7 +256,7 @@
                 }
             },
             "post": {
-                "description": "Set speed of sound",
+                "description": "Set speed of sound. 0 means speed of sound is automatically calculated from configured water salinity and water temperature.",
                 "tags": [
                     "acoustics",
                     "integrationAPI"
@@ -294,8 +408,8 @@
                         }
                     ]
                 },
-                "calibration": {
-                    "description": "Calibration is the status of the Sonar calibration",
+                "systems_check": {
+                    "description": "SystemsCheck is the status of internal processing of the Sonar",
                     "allOf": [
                         {
                             "$ref": "#/definitions/integrationapi.GinSystemStatusEntryResponse"
@@ -330,10 +444,10 @@
                     "type": "boolean",
                     "example": true
                 },
-                "severity": {
-                    "description": "Severity is the severity of the status message: info, warning, error",
+                "status": {
+                    "description": "Status is \"ok\", \"warning\", or \"error\"",
                     "type": "string",
-                    "example": "info"
+                    "example": "ok"
                 }
             }
         },

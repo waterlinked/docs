@@ -1,8 +1,15 @@
 # Software Versions
 
-## v1.6.1 (2026-02)
+## v1.7.0 (2026-02)
 
-- Improve network stability
+- Introduce high-frequency 2.4 MHz mode
+- Add estimation of speed of sound based on temperature and salinity
+- Improve accuracy of image timestamp
+- Rework of status API:
+    - Add "systems_check" status
+    - Remove "calibration" status
+    - Replace "severity" with "status": "ok", "warning" or "error"
+- Move changelog to docs.waterlinked.com
 
 ## v1.6.0 (2025-11)
 
