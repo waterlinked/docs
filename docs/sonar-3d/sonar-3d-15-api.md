@@ -34,9 +34,9 @@ This is the structure of a RIP2 packet:
 2. Read packet length.
 3. Read compressed payload and CRC-32, and verify the CRC-32.
 4. Decompress the payload into an encoded protobuf packet.
-5. Decode into the `Packet` message type (see `.proto` [file](#proto-file-excerpt))
+5. Decode into the `Packet` message type (see `.proto` [file](#protobuf-packet-description))
 6. Use `.msg.type_url` to identify the contained message.  
-7. Decode `.msg.value` into that message type (see `.proto` [file](#proto-file-excerpt))
+7. Decode `.msg.value` into that message type (see `.proto` [file](#protobuf-packet-description))
 
 ---
 
