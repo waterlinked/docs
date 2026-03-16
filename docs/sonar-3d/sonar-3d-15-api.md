@@ -5,7 +5,7 @@ The **Water Linked Sonar 3D-15** provides real-time 3D views of underwater envir
 
 The Sonar 3D-15 also exposes a HTTP API for configuration and inspection of system state.
 
-A Python example implementation of the Sonar API is available on [github](https://github.com/waterlinked/Sonar-3D-15-api-example).
+A Python example implementation of the Sonar API is available on [github](https://github.com/waterlinked/wlsonar).
 
 ---
 
@@ -34,9 +34,9 @@ This is the structure of a RIP2 packet:
 2. Read packet length.
 3. Read compressed payload and CRC-32, and verify the CRC-32.
 4. Decompress the payload into an encoded protobuf packet.
-5. Decode into the `Packet` message type (see `.proto` [file](#proto-file-excerpt))
+5. Decode into the `Packet` message type (see `.proto` [file](#protobuf-packet-description))
 6. Use `.msg.type_url` to identify the contained message.  
-7. Decode `.msg.value` into that message type (see `.proto` [file](#proto-file-excerpt))
+7. Decode `.msg.value` into that message type (see `.proto` [file](#protobuf-packet-description))
 
 ---
 
@@ -109,89 +109,16 @@ z = -radius * sin(pitch); // z is downward
 
 ---
 
-### `.proto` File (Excerpt)
-```protobuf
-// Water Linked Sonar 3D-15 protocol
-syntax = "proto3";
+### Protobuf packet description
 
-package waterlinked.sonar.protocol;
-import "google/protobuf/timestamp.proto";
-import "google/protobuf/any.proto";
+The Sonar 3D-15 protobuf messages that are transmitted by the sonar is documented in a [.proto](https://github.com/waterlinked/wlsonar/blob/main/src/wlsonar/range_image_protocol/_proto/WaterLinkedSonarIntegrationProtocol.proto) file. The `.proto` file is used to generate code for decoding the messages in any of the [supported programming languages](https://protobuf.dev/reference/).
 
-// Packet is the top-level message that is sent over the wire.
-message Packet {
-  google.protobuf.Any msg = 1; // Use .type_url to deserialize .value 
-  // into one of the messages defined in this proto file
-}
-
-message Header {
-  google.protobuf.Timestamp timestamp = 1;
-// Sequence id is a monotonically increasing number that identifies
-// each shot of the sonar. It can be used to detect missing shots or
-// to relate messages of different types to each other. The value
-// wraps around to 0 after reaching the maximum value.
-
-  uint32 sequence_id = 2;
-}
-
-enum BitmapImageType {
-// Bitmap image showing for each x,y pixel the strength of the
-// strongest reflection
-SIGNAL_STRENGTH_IMAGE = 0;
-// Bitmap image showing a shaded representation of the depth in the
-// range image. The light source is behind and above the observer.
-// (This is experimental and may be removed in the future)
-SHADED_IMAGE = 1;
-}
-
-// BitmapImageGreyscale8 can be shown to user without further processing.
-// Uncompressed, 8-bit color depth, greyscale.
-
-message BitmapImageGreyscale8 {
-  Header header = 1;
-  float speed_of_sound = 2; // Configured speed of sound in water in m/s 
-  float range = 3; // Configured range in meters
-  uint32 frequency = 4; // Configured imaging frequency in Hz
-  BitmapImageType type = 5; // Identifier for what is shown in the image
-  uint32 width = 6;
-  uint32 height = 7;
-  float fov_horizontal = 8;
-  float fov_vertical = 9;
-  // image pixel data is organized in rows of pixels.Each row is
-  // 'width' wide, and there are 'height' rows. Each pixel is an 8-bit
-  // value that represents the intensity of the pixel, from 0 to 255
-  bytes image_pixel_data = 10;
-}
-
-// RangeImage measures the distance to the strongest reflection
-// for each pixel.
-message RangeImage {
-  Header header = 1;
-  float speed_of_sound = 2; // Configured speed of sound in water in m/s
-  float range = 3; // Configured range in meters
-  uint32 frequency = 4; // Configured imaging frequency in Hz.
-  uint32 width = 5;
-  uint32 height = 6;
-  float fov_horizontal = 7; // In degrees
-  float fov_vertical = 8; // In degrees
-  float image_pixel_scale = 9;
-
-  // image_pixel_data is organized in rows of pixels. Each row is
-  // 'width' wide, and there are 'height' rows.
-  // Each pixel is a 16-bit value that must be multiplied by
-  // image_pixel_scale to obtain the distance in meters from the sonar
-  // to the strongest reflection in that direction.
-  repeated uint32 image_pixel_data = 10;
-}
-```
-
+Refer to the full [protocol specification](https://protobuf.dev/) and the [wlsonar](https://github.com/waterlinked/wlsonar) Python library for an example implementation.
 
 **Compatibility Notes**  
 - Additional message types/fields may be introduced.  
 - Decoders should ignore unrecognized messages.  
 - Major breaking changes will involve a new protocol identifier.
-
-Refer to the full protocol specification and `.proto` file shown above for more information.
 
 ## HTTP API
 
