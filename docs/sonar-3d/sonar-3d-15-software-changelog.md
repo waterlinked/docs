@@ -1,5 +1,14 @@
 # Software Versions
 
+## v1.7.1 (2026-05)
+
+- Added an integration API for NTP configuration and status to provide tighter time synchronisation
+    - Users with a NTP configuration from prior versions must apply this configuration again
+- Improve NTP status feedback in GUI
+- Fix LED not blinking in thermal shutdown
+- Fix source IP of UDP multicast packets in integration API
+- Improve Ethernet stability
+
 ## v1.7.0 (2026-02)
 
 - Introduce high-frequency 2.4 MHz mode

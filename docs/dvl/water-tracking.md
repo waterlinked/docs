@@ -34,7 +34,7 @@ The diagnostic page still shows spatial velocity, per-transducer velocity, and v
 
 ## TCP JSON API
 
-Water tracking is available in TCP JSON API `json_v3.2` for supported models. Use the TCP JSON API configuration method for your model:
+Water tracking is available in TCP JSON API version `json_v3.2` and up for supported models. Use the TCP JSON API configuration method for your model:
 
 * [DVL A50/A125 TCP JSON API configuration](dvl-json-protocol.md#configuration-over-json)
 * DVL A100/A250 TCP JSON API configuration is planned for water tracking and is not available yet.

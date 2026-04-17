@@ -61,6 +61,7 @@ nav:
           - GUI: sonar-3d/sonar-3d-15-gui.md
           - Settings: sonar-3d/sonar-3d-15-config.md
           - Replay Sonar Data: sonar-3d/sonar-replay.md
+          - Time: sonar-3d/sonar-3d-15-time.md
           - API: sonar-3d/sonar-3d-15-api.md
           - Software update: sonar-3d/sonar-3d-15-software-update.md
 
@@ -152,6 +153,7 @@ nav:
           - Axes: dvl/axes.md
           - Range mode: dvl/range-mode.md
           - Water tracking: dvl/water-tracking.md
+          - Time: dvl/time.md
           - Settings and configuration: dvl/configuration.md
           - Diagnostic log: dvl/diagnostic-log.md
           - Dead reckoning: dvl/dead-reckoning.md
