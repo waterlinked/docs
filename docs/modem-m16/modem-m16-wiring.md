@@ -17,10 +17,14 @@ The tables below shows the pinning of the Modem-M16 interface. Depending on whic
 Maximum power consumption for package transmit is in range 390 mW to 1105 mW
 
 !!! Note 
-Shutdown line can be used to control the ON/OFF state of the Modem. 
-If Shutdown is left floating, the Modem is ON. If Shutdown is short to GND, the modem is OFF. 
-Shutdown line can be controlled by an external open-drain, open-collector or relay device.
-DO NOT apply voltage to Shutdown line. 
+    Shutdown line can be used to control the ON/OFF state of the Modem. 
+    If Shutdown is left floating, the Modem is ON. If Shutdown is short to GND, the modem is OFF. 
+    Shutdown line can be controlled by an external open-drain, open-collector or relay device.
+    DO NOT apply voltage to Shutdown line.
+
+    The boot up time when powered on or toggling the shutdown line is approximately 12 ms.  
+
+
 
 
 ## Wiring OEM/Standard

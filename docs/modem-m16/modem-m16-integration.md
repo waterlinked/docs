@@ -131,6 +131,12 @@ Send 2 bytes, then wait at least **1.6 seconds** (the transmission duration) bef
 
 ---
 
+## Power-Up and Initialization
+
+When powering on the modem or releasing the shutdown line from ground, it takes approximately **12 ms** for the modem to boot up and be ready to receive serial commands or data. Attempting to communicate with the modem during this 12 ms window may result in lost data.
+
+---
+
 ## Flash Memory Considerations
 Changing the **modem mode**, **channel**, or **power level** initiates a **flash write operation**, which takes about **1 second**. During this time:
 
