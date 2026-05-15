@@ -55,9 +55,9 @@ The Seacon connector option is available for:
 
 <!-- TODO: Confirm whether a Seacon connector option is available for DVL A100. -->
 
-### DVL A50/A100/A250 Seacon MCOM8M connector
+### DVL A50/A100/A250 Seacon MC8M connector
 
-The table below shows the pinout for the DVL A50/A100/A250 Seacon MCOM8M connector.
+The table below shows the pinout for the DVL A50/A100/A250 Seacon MC8M connector.
 
 | Interface | Pin | Color | Visual |
 | :--- | :--- | :--- | :---: |
@@ -67,8 +67,8 @@ The table below shows the pinout for the DVL A50/A100/A250 Seacon MCOM8M connect
 | ETH RX- | 4 | Green | 🟩 |
 | ETH TX- | 5 | Orange | 🟧 |
 | ETH TX+ | 6 | Orange/White | 🟧⬜ |
-| UART TX | 7 | Brown/White | 🟫⬜ |
-| UART RX | 8 | Brown | 🟫 |
+| Serial TX | 7 | Brown/White | 🟫⬜ |
+| Serial RX | 8 | Brown | 🟫 |
 
 <!-- TODO: Confirm and publish the DVL A250 side-entry Seacon connector pinout before reusing the A50/A125 table for A250. -->
 
@@ -89,13 +89,9 @@ Shielded DVL cable helps protect the communication and power lines from external
 !!! note
     For DVL A50, shielded cables were introduced autumn 2024.
 
-    All DVLs with Seacon MCOM8M connector are delivered with unshielded cable that can be grounded.
-
     All DVL A125 units are delivered with shielded cable.
 
 <!-- TODO: Confirm whether all DVL A250 cable and connector variants use the same shield arrangement. -->
-
-For DVL A100, the side cable entry version has a 3 m shielded cable, and the rear O-ring interface version has a 1 m shielded cable.
 
 ### Connecting the shield
 
