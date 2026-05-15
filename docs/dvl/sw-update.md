@@ -1,41 +1,45 @@
 # Software updates
 
-It is recommended to always run the latest DVL software where possible. The latest software can be obtained [automatically](#automatic-software-update) or [manually](#offline-software-update).
+We recommend running the latest DVL software where possible. Software updates are done from the web GUI **About** page. The latest software can be obtained [automatically](#automatic-software-update) or [manually](#offline-software-update).
 
-The release notes for each release is available in the [GUI](../dvl/gui/dashboard.md) and also in the [GUI demo](https://dvl.demo.waterlinked.com/#/about).
+The release notes for each release are available in the web GUI **About** page. You can also view the public demo About pages:
 
-!!! Warning
-	During the software upgrade, the thermal protection feature is turned off. To prevent the DVL from overheating, it is important to submerge the DVL in water throughout the update process.
-	
-	If the DVL is switched off during an upgrade it might be permanently damaged.”
+* [DVL A50/A125 About page](https://dvl.demo.waterlinked.com/#/about)
+* [DVL A100/A250 About page](https://dvl2.demo.waterlinked.com/#about)
 
+!!! warning
+    During the software update, the thermal protection feature is turned off. To prevent the DVL from overheating, keep the DVL submerged in water throughout the update process.
+
+    If the DVL is switched off during an update, it might be permanently damaged.
 
 ## Automatic software update
 
-The DVL's [GUI](../dvl/gui/dashboard.md) automatically checks and indicates if a new software version is available.
+The DVL web GUI automatically checks and indicates if a new software version is available from the **About** page.
 
-* Connect the DVL over ethernet to a network connected to the internet. If on a personal computer, it may be necessary to make a network bridge between a network interface (such as wifi) which has access to the internet and the ethernet interface through which the DVL is connected.
-* Go to http://[IP_ADDRESS_OF_THE_DVL]:9000 in a web browser.
-* The GUI will automatically check if there is a new version available, and if so, initiate installation of it with a single click.
+* Connect the DVL over Ethernet to a network connected to the internet. If you use a personal computer, it may be necessary to make a network bridge between a network interface with internet access, such as Wi-Fi, and the Ethernet interface connected to the DVL.
+* Open the DVL web GUI in a web browser.
+* Go to the **About** page.
+* If a new version is available, start the software update from the **About** page.
 
 ## Offline software update
 
-If it is not possible to connect the DVL to the internet, one can proceed as follows.
+If it is not possible to connect the DVL to the internet, use an offline software update.
 
-* Find the current version and chip ID of the DVL at *Menu -> About* in the [GUI](../dvl/gui/dashboard.md).
+* Find the current version and chip ID of the DVL on the **About** page in the web GUI.
 * Manually download an update package (`.wlup`) from the [update server](https://update.waterlinked.com/) using the chip ID.
-* Verify if the downloaded version is newer than the currently running version.
-* Set system time as shown below.
-* Navigate to http://[IP_ADDRESS_OF_THE_DVL]:9000 in a web browser.
-* Select 'Manual upload' and then upload the downloaded `.wlup` file.
+* Verify whether the downloaded version is newer than the currently running version.
+* Set the system time as described below.
+* Open the DVL web GUI in a web browser.
+* Go to the **About** page.
+* Select **Manual upload** and then upload the downloaded `.wlup` file.
 
-### Failure during upgrade (set system time)
+### Failure during update (set system time)
 
-When performing an offline software upgrade it the following error might occur: `Failed: Error upgrading: resize: non-zero exit code: exit status 1`. This error is resolved by setting the system time before performing an upgrade. Proceed as follows.
+When performing an offline software update, the following error might occur: `Failed: Error upgrading: resize: non-zero exit code: exit status 1`. This error is resolved by setting the system time before performing an update.
 
-* Go to DVL GUI and click on "Configuration" in left menu
-* Open "Advanced configuration" menu
-* Scroll to "System time configuration"
-* Select "Manual time" in "System time source" and click "Set manual time"
-* Click on "About" in left menu and click "Software upgrade"
-* Perform upgrade again
+* Go to the DVL web GUI and click **Configuration** or **Settings** in the left menu.
+* Open the **Advanced configuration** menu.
+* Scroll to **System time configuration**.
+* Select **Manual time** in **System time source** and click **Set manual time**.
+* Click **About** in the left menu and click **Software upgrade**.
+* Perform the update again.
