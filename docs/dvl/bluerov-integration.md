@@ -1,32 +1,32 @@
 ## Introduction
 
-The Water Linked [DVLs](https://www.waterlinked.com/dvl) are designed to integrate with most ROVs and AUVs through ethernet and/or a serial interface (UART). To minimize the time between receipt of a DVL and having it up and running, the DVLs are shipped with an attached I/O interface, providing ease of connectivity with power, ethernet and serial. However, for most ROVs and AUVs, the DVL has to be integrated with the on-board electronics through a penetrator or a subsea connector.
+The Water Linked [DVLs](https://www.waterlinked.com/dvl) are designed to integrate with most ROVs and AUVs through Ethernet and/or a serial interface (UART). To minimize the time between receipt of a DVL and having it up and running, the DVLs are shipped with an attached I/O interface for power, Ethernet, and serial connectivity. However, for most ROVs and AUVs, the DVL has to be integrated with the on-board electronics through a penetrator or a subsea connector.
 
-This guide details how the [DVL-A50](dvl-a50.md) can be integrated with the BlueROV2. Exactly the same procedure can be carried out for the [DVL-A125](dvl-a125.md).
+This guide details how the [DVL A50](dvl-a50.md) can be integrated with the BlueROV2. The same procedure can be carried out for the [DVL A125](dvl-a125.md).
 
 ## Parts and tools
 
-What parts and tools needed depends on whether you intend to permanently attach the DVL-A50 to the BlueROV2, have it semi-permanently attached, or use a subsea connector for quick installation/removal.
+The parts and tools needed depend on whether you intend to permanently attach the DVL A50 to the BlueROV2, have it semi-permanently attached, or use a subsea connector for quick installation/removal.
 
-This guide details how to permanently attach the DVL-A50 to a BlueROV2.
+This guide details how to permanently attach the DVL A50 to a BlueROV2.
 
 ### You will need
 
-<img src="../../img/WL-21035-3_DVL-A50_Side4_1600_crop.jpg" alt="dvl-a50" width="300" height="300">
+<img src="../img/WL-21035-3_DVL-A50_Side4_1600_crop.jpg" alt="dvl-a50" width="300" height="300">
 
-* [DVL-A50](https://waterlinked.com/shop/dvl-a50-114#attr=8,53)
+* [DVL A50](https://waterlinked.com/shop/dvl-a50-114#attr=8,53)
 
 ![bluerov2_front](../img/bluerov2_front_300x300.png)
 
 * [BlueROV2](https://bluerobotics.com/store/rov/bluerov2/bluerov2/)
 
-<img src="../../img/ETHSWITCH-R1-RP-1024x768.jpg" alt="ETHSWITCH-R1-RP" width="300" height="300">
+<img src="../img/ETHSWITCH-R1-RP-1024x768.jpg" alt="ETHSWITCH-R1-RP" width="300" height="300">
 
-* Small ethernet switch. The one pictured here is from [BlueRobotics](https://bluerobotics.com/store/comm-control-power/tether-interface/ethswitch/), and ideal for use in the BlueROV2.
+* Small Ethernet switch. The one pictured here is from [Blue Robotics](https://bluerobotics.com/store/comm-control-power/tether-interface/ethswitch/), and is ideal for use in the BlueROV2.
 
 <img src="https://waterlinked.com/web/image/product.product/115/image_1024/%5BWL-51000-1%5D%20DVL%20A50%20Mounting%20Bracket?unique=0a09975" alt="dvl-bracket" width="300" height="300">
 
-* [DVL-A50 Bracket](https://waterlinked.com/shop/dvl-a50-mounting-bracket-115#attr=). This is optional, but protects the DVL-A50 and allows for down to 0 cm minimum altitude.
+* [DVL A50 bracket](https://waterlinked.com/shop/dvl-a50-mounting-bracket-115#attr=). This is optional, but protects the DVL A50 and allows for down to 0 cm minimum altitude.
 
 You will also need:
 
@@ -47,34 +47,34 @@ You will also need:
 * Utility knife
 * Wire stripping tool
 * Zip ties
-* 4 x 30 cm (12") wires (options discussed under [Connect DVL-A50 and BlueROV2](#attach-dvl-a50-to-bluerov2)). If possible, use 2 x red and 2 x black wires.
-* 15 cm (6") ethernet cable
+* 4 x 30 cm (12") wires (options discussed under [Connect DVL A50 and BlueROV2](#attach-dvl-a50-to-bluerov2)). If possible, use 2 x red and 2 x black wires.
+* 15 cm (6") Ethernet cable
 
 ## Preparation
 
-### Separate I/O Interface from DVL-A50
+### Separate I/O Interface from DVL A50
 
-The first thing you will have to do before going about any of the installation options is to cut the DVL-A50 cable, separating the I/O Interface board. We recommend you do so near the end where the I/O Interface board is to begin with.
+First, cut the DVL A50 cable to separate the I/O Interface board. We recommend cutting near the I/O Interface board end of the cable.
 
 ![cut-io-interface-rev3](../img/cut-io-interface-rev3.jpeg)
 
-!!! Warning
-	The DVL-A50 cable is permanently attached and non-replaceable inside the DVL-A50. If you cut the cable too short you will either have to splice the cable with another cable, or order a new DVL-A50. Measure twice, cut once!
+!!! warning
+    The DVL A50 cable is permanently attached and non-replaceable inside the DVL A50. If you cut the cable too short, you will either have to splice the cable with another cable or order a new DVL A50. Measure twice, cut once!
 
 ### Attaching the BlueROV2 mounting bracket
 
-* Attach the BlueROV2 mounting bracket to the DVL-A50 using the 4 x M3x6 screws provided with the DVL-A50 BlueROV2 Integration Kit.
+* Attach the BlueROV2 mounting bracket to the DVL A50 using the 4 x M3x6 screws provided with the DVL A50 BlueROV2 Integration Kit.
 
 ![attaching-mounting-bracket-to-dvl](../img/screw_on_dvl_bracket_to_dvl.png)
 
-The BlueROV2 mounting bracket can be attached to the BlueROV2 in one of the 2 places indicated in the image below (standard BlueROV2).
+The BlueROV2 mounting bracket can be attached to the BlueROV2 in one of the two places indicated in the image below (standard BlueROV2).
 
-!!! Note
-	In this configuration the DVL-A50 is pointing backwards meaning both the x-direction and the y-direction are flipped. Multiplying the velocity data in x- and y-direction with -1 will flip coordinates back again to the same perspective frame of the BlueROV2.
+!!! note
+    In this configuration, the DVL A50 is pointing backwards, meaning both the x-direction and y-direction are flipped. Multiplying the velocity data in x- and y-direction by -1 will flip the coordinates back to the same perspective frame as the BlueROV2.
 
 ![attaching-mounting-bracket-to-bluerov-standard](../img/bluerov2-dvl-mounting-positions.png)
 
-If your BlueROV2 has the Heavy Configuration upgrade, the BlueROV2 mounting bracket can be attached such that the DVL-A50 is within the BlueROV2 frame. This allows for a minimum working distance of 0 cm for the DVL-A50.
+If your BlueROV2 has the Heavy Configuration upgrade, the BlueROV2 mounting bracket can be attached such that the DVL A50 is within the BlueROV2 frame. This allows for a minimum working distance of 0 cm for the DVL A50.
 
 ![attaching-mounting-bracket-to-bluerov-heavy](../img/bluerov2-heavy-dvl-mounting-positions.png)
 
@@ -86,14 +86,14 @@ Check that the BlueROV2 mounting bracket will attach properly to the BlueROV2 fr
 
 ![check-a50-bracket-fit](../img/check-a50-bracket-fit.jpeg)
 
-### Final cable lenght
+### Final cable length
 
-With the DVL-A50 now attached to the BlueROV2 frame, find the appropriate cable length needed by leading the cable back to the penetrator end cap of the BlueROV2 and add the length of the electronics enclosure (30 cm) to the cable. This is the *minimum* required cable length.
+With the DVL A50 now attached to the BlueROV2 frame, find the appropriate cable length by leading the cable back to the penetrator end cap of the BlueROV2 and adding the length of the electronics enclosure (30 cm) to the cable. This is the *minimum* required cable length.
 
 ![measure-cable-length-of-a50](../img/measure-cable-length-of-a50.jpeg)
 
-!!! Tip
-	We recommend adding at least another 30 cm to the cable to provide enough service loop in case the penetrator fails or the leads get damaged.
+!!! tip
+    We recommend adding at least another 30 cm to the cable to provide enough service loop in case the penetrator fails or the leads get damaged.
 
 Cut the cable to the final length.
 
@@ -101,7 +101,7 @@ Cut the cable to the final length.
 
 ## Installation
 
-The DVL-A50 will be permanently installed on the BlueROV2 with the I/O Interface board (supplied with the DVL-A50).
+The DVL A50 will be permanently installed on the BlueROV2 with the I/O Interface board supplied with the DVL A50.
 
 ### I/O Interface preparation
 
@@ -124,8 +124,8 @@ Desolder all the cut wires. Use solder wick and/or a desoldering pump to remove 
 
 ![desoldered-io-interface](../img/desoldered-io-interface.jpeg)
 
-!!! Warning
-	Using too much force or heat may delaminate the I/O Interface PCB, rendering the I/O Interface board useless.
+!!! warning
+    Using too much force or heat may delaminate the I/O Interface PCB, rendering the I/O Interface board useless.
 
 ### Adding a penetrator
 
@@ -140,7 +140,7 @@ Strip off 25-30 cm of the cable jacket using a cable jacket stripper, a utility 
 
 ![stripped-a50-cable](../img/stripped-a50-cable.jpeg)
 
-Follow the [WetLink Penetrator Assembly Guide](https://bluerobotics.com/learn/wetlink-penetrator-installation-guide/) by BlueRobotics to add a penetrator on the DVL-A50 cable.
+Follow the [WetLink Penetrator Assembly Guide](https://bluerobotics.com/learn/wetlink-penetrator-installation-guide/) by Blue Robotics to add a penetrator on the DVL A50 cable.
 
 ### Removing a blank penetrator
 
@@ -165,19 +165,19 @@ Remove the Vent Plug from the Vent Penetrator Bolt on the electronics enclosure.
 
 ![bluerov2-remove-vent](../img/bluerov2-remove-vent-1024x1024.jpg)
 
-Remove a blank penetrator, sush as the one pictured below, from the 4” End Cap with the penetrator wrench.
+Remove a blank penetrator, such as the one pictured below, from the 4” End Cap with the penetrator wrench.
 
 ![bluerov2-end-cap-remove](../img/bluerov2-end-cap-remove-1024x576.jpg)
 
-### Install DVL-A50 penetrator
+### Install DVL A50 penetrator
 
 
 !!! note
-	The following images shows the old penetrator from BlueRobotics. The procedure is the same with the new WetLink penetrators.
+    The following images show the old penetrator from Blue Robotics. The procedure is the same with the new WetLink penetrators.
 
-To install DVL-A50 into the end cap, you will need the following parts and tools:
+To install the DVL A50 into the end cap, you will need the following parts and tools:
 
-* DVL-A50 with installed cable penetrator
+* DVL A50 with installed cable penetrator
 * Penetrator O-ring (included with [M10-7.5mm-HC WetLink Penetrator](https://bluerobotics.com/store/cables-connectors/penetrators/wlp-vp/?attribute_for-cable-diameter=WLP-M10-7.5MM-HC+%28for+7.0+mm+%C2%B1+0.3+mm+cable+diameter%29&attribute_package-quantity=1-Pack) from Blue Robotics)
 * [Bulkhead Wrench](https://bluerobotics.com/store/cables-connectors/tools/wlp-bulkhead-wrench/?attribute_bulkhead-size=M10) from Blue Robotics
 * Silicone Grease
@@ -187,40 +187,40 @@ Wipe the exterior surface of the electronics enclosure end cap clean with isopro
 
 Remove the O-ring from the bag
 
-Install the O-ring onto the DVL-A50 cable penetrator and apply silicone grease to it.
+Install the O-ring onto the DVL A50 cable penetrator and apply silicone grease to it.
 
 ![grease-o-ring-on-a50-penetrator](../img/grease-o-ring-on-a50-penetrator.jpeg) ![o-ring-on-a50-penetrator](../img/o-ring-on-a50-penetrator.jpeg)
 
-Push the wires throught the hole in the end cap where you previously removed a blank penetrator from.
+Push the wires through the hole in the end cap where you previously removed a blank penetrator.
 
 ![a50-wires-through-bluerov2-end-cap](../img/a50-wires-through-bluerov2-end-cap.jpeg)
 
-!!! Tip
-	Since the penetrator has to be screwed on, adding a bit of tape around the end of the wires helps them stay untangles while turning. Also twisting the DVL-A50 cable in a clock-wise direction will aid in screwing on the penetrator.
+!!! tip
+    Since the penetrator has to be screwed on, adding a bit of tape around the end of the wires helps them stay untangled while turning. Twisting the DVL A50 cable clockwise will also help when screwing on the penetrator.
 
-Screw on the DVL-A50 cable penetrator to the end cap. Tighten to finger tight, then use the penetrator wrench to tighten it an additional ~1/16 of a turn. If you can’t loosen it with your fingers, it is tight enough.
+Screw the DVL A50 cable penetrator onto the end cap. Tighten to finger tight, then use the penetrator wrench to tighten it an additional ~1/16 of a turn. If you can’t loosen it with your fingers, it is tight enough.
 
 ![screwed-in-a50-penetrator](../img/screwed-in-a50-penetrator.jpeg) ![tightened-a50-penetrator](../img/tightened-a50-penetrator.jpeg)
 
 ### Reinstall I/O Interface Board
 
-To reinstall the I/O Interface Board onto the DVL-A50 cable you will need:
+To reinstall the I/O Interface board onto the DVL A50 cable, you will need:
 
 * Wire stripping tool
 * Soldering iron
 * Solder wire
 * Zip tie
 
-With the DVL-A50 penetrator now through the 4" End Cap, strip off 2-3 mm of the ends of all the wires. Wire sizes are detailed in the table below. The blue pair can be removed as it is not used for the DVL-A50.
+With the DVL A50 penetrator now through the 4" End Cap, strip off 2-3 mm of the ends of all the wires. Wire sizes are detailed in the table below. The blue pair can be removed because it is not used for the DVL A50.
 
 ![stripped-wires-a50](../img/stripped-wires-a50.jpeg)
 
-!!! Warning
-	The two wires of a twisted wire pair are fully colored and fully white (the table below shows the white wires having a stripe of the complementing color, this is **not** the reality and only for reference). Keep track of which white wire is paired with which colored wire! Also note that the wiring in the images below differ from that of the table below. Please follow the table!
+!!! warning
+    The two wires of a twisted wire pair are fully colored and fully white. The table below shows the white wires with a stripe of the complementing color, but this is only for reference. Keep track of which white wire is paired with which colored wire. The wiring in the images below also differs from the table below. Please follow the table.
 
-Re-solder the leads of the DVL-A50 cable to the I/O Interface board following the table below:
+Re-solder the leads of the DVL A50 cable to the I/O Interface board following the table below:
 
-| DVL-A50 cable                                                  | I/O Interface pad | Function       | Diameter (mm) | AWG\# |
+| DVL A50 cable                                                  | I/O Interface pad | Function       | Diameter (mm) | AWG\# |
 | -------------------------------------------------------------- | :--------------- | :------------- | :------------ | :---- |
 | ![4tp2p_black_lead](../img/4tp2p_black_lead.png)               | GND              | Power ground   | 0.6 mm        | 22    |
 | ![4tp2p_red_lead](../img/4tp2p_red_lead.png)                   | VIN              | Power in       | 0.6 mm        | 22    |
@@ -239,14 +239,14 @@ Zip tie the soldered wires to the I/O Interface board to protect the solder join
 
 ### Connect to BlueROV2
 
-To connect the DVL-A50 to the BlueROV2 you will need:
+To connect the DVL A50 to the BlueROV2, you will need:
 
-* 2 x 30 cm (12") wires for power to the DVL-A50
-* [BlueRobotics ethernet switch](https://bluerobotics.com/store/comm-control-power/tether-interface/ethswitch/)
-* 6" ethernet cable
+* 2 x 30 cm (12") wires for power to the DVL A50
+* [Blue Robotics Ethernet switch](https://bluerobotics.com/store/comm-control-power/tether-interface/ethswitch/)
+* 6" Ethernet cable
 * Zip ties
 
-To provide power to the DVL-A50 you can either use (A) a 2-pin [Molex MicroFit3.0 cable assembly](https://octopart.com/214751-2022-molex-109474124), (B) solder on a [Würth screw terminal](https://octopart.com/691137710002-w%C3%BCrth+elektronik-78871135), or (C) directly solder on 2 wires to the power pads.
+To provide power to the DVL A50, you can either use (A) a 2-pin [Molex MicroFit3.0 cable assembly](https://octopart.com/214751-2022-molex-109474124), (B) solder on a [Würth screw terminal](https://octopart.com/691137710002-w%C3%BCrth+elektronik-78871135), or (C) directly solder on 2 wires to the power pads.
 
 ![io_interface_power](../img/io_interface_power.png)
 
@@ -258,15 +258,15 @@ To provide power to the DVL-A50 you can either use (A) a 2-pin [Molex MicroFit3.
 
 ![power_terminal_negative](../img/power_terminal_negative.png)
 
-!!! Warning
-	The Power Terminal Blocks are unregulated and directly connected to the battery. Any short may generate several amps which will fry most circuits. Check that the wires are secured properly in both ends.
+!!! warning
+    The Power Terminal Blocks are unregulated and directly connected to the battery. Any short may generate several amps, which will damage most circuits. Check that the wires are secured properly at both ends.
 
-Install the BlueRobotics ethernet switch following the [Ethernet Switch Installation Guide for the BlueROV2](https://bluerobotics.com/learn/ethernet-switch-installation-guide-for-the-bluerov2/) by BlueRobotics.
+Install the Blue Robotics Ethernet switch following the [Ethernet Switch Installation Guide for the BlueROV2](https://bluerobotics.com/learn/ethernet-switch-installation-guide-for-the-bluerov2/) by Blue Robotics.
 
-With power and ethernet switch now sorted, connect a 6" ethernet cable from the ethernet switch to the IO Interface board.
+With power and the Ethernet switch now sorted, connect a 6" Ethernet cable from the Ethernet switch to the I/O Interface board.
 
-!!! Tip
-	Some thick double-sided sticky tape and zip ties can be used to secure the I/O Interface to the electronics frame inside the BlueROV2.
+!!! tip
+    Some thick double-sided sticky tape and zip ties can be used to secure the I/O Interface to the electronics frame inside the BlueROV2.
 
 
 ### Reassemble BlueROV2 electronics enclosure
@@ -282,19 +282,19 @@ Reinstall 4” Watertight Enclosure onto ROV with the following steps:
 * Apply silicone grease to the two radial O-rings on the O-Ring Flange (4” Series) that is attached to the Electronics Tray.
 * Install the Watertight Enclosure (4” Series) with installed Dome End Cap to the O-Ring Flange (4” Series).
 
-!!! Warning
-	Use caution when sliding the 4" Watertight Enclosure over the electronics as space may be tight (collides with electronics) and wires can get trapped between the 4" tube and the 4" end cap.
+!!! warning
+    Use caution when sliding the 4" Watertight Enclosure over the electronics. Space may be tight, and wires can get trapped between the 4" tube and the 4" end cap.
 
 Mount the Electronics Enclosure to the frame using the M3x16 screws so that the dome is on the same side as the front center panels (the center panels without the 3 large holes). Install the M3x16 screws through the clips and into the Enclosure Cradle (4” Series). It is easier to install these screws if the clips are not fully tightened until all screws are through the clips and threading into the Enclosure Cradle (4” Series). This allows clips to rotate so you can find the threaded hole in the Enclosure Cradle (4” Series) easily.
 
 ![bluerov2-remove-electronic](../img/bluerov2-remove-electronic-1024x743.png)
 
-### Attach DVL-A50 to BlueROV2
+### Attach DVL A50 to BlueROV2
 
 !!! note
-	The following images show the old version of the DVL-A50 with steel housing. The new housing has the same dimensions as the old.
+    The following images show the old version of the DVL A50 with steel housing. The new housing has the same dimensions as the old.
 
-Attach the DVL-A50 to the BlueROV2 using the 2 x M5x16 screws provided with the DVL-A50 BlueROV2 Integration Kit through the two holes you've made previously.
+Attach the DVL A50 to the BlueROV2 using the 2 x M5x16 screws provided with the DVL A50 BlueROV2 Integration Kit through the two holes you made previously.
 
 ![dvl-attached-to-bluerov2](../img/dvl_attached_to_bluerov2.png)
 
@@ -304,17 +304,17 @@ Excess cable can be bundled together and attached to the BlueROV2 frame using zi
 
 ## Software
 
-The DVL-A50 requires an extension in BlueOS to be able to communicate with the autopilot (Pixhawk or Navigator flight controller).
+The DVL A50 requires an extension in BlueOS to communicate with the autopilot (Pixhawk or Navigator flight controller).
 BlueOS has to be updated to **BlueOS 1.1.0** or newer to assure that extensions are supported sufficiently.
 
-* After the update install the latest BlueOS-Water-Linked-DVL extension from the BlueOS extension manager. It is best to disable the BlueOS "Water Linked UGPS"-extension if you have that installed.
+* After the update, install the latest BlueOS-Water-Linked-DVL extension from the BlueOS extension manager. It is best to disable the BlueOS "Water Linked UGPS" extension if you have that installed.
 
-!!! Note
-	If you want to use both DVL and UGPS you can find a detailed guide [here](bluerov-integration-dvl-ugps.md)
+!!! note
+    If you want to use both DVL and UGPS, see the [DVL with UGPS for BlueROV2 guide](bluerov-integration-dvl-ugps.md).
 
 ![bluerov2_blueos_extension_installation_01_extension_manager](../img/bluerov2_blueos_extension_installation_01_extension_manager.png)
 
-* Open the interface of the DVL-extension and click the button "Load parameters for DVL". Those parameters are persistent over reboots, which means that this button only needs to be pressed once and not every time you restart the ROV.
+* Open the interface of the DVL extension and click the button "Load parameters for DVL". Those parameters are persistent over reboots, which means that this button only needs to be pressed once and not every time you restart the ROV.
 
 ![bluerov2_blueos_dvl_extension_dvl_ugps_button_marked](../img/bluerov2_blueos_dvl_extension_buttons_marked.png)
 
@@ -324,5 +324,5 @@ BlueOS has to be updated to **BlueOS 1.1.0** or newer to assure that extensions 
 
 * Set the global vehicle position in the DVL extension every time you start the ROV.
 
-!!! Note
-	There is a known bug where the I2C address of the pressure sensor is set wrong, and so depth is not received properly. This can be fixed by setting the parameter `BARO_PROBE_EXT` to `768` and then reboot the ROV.
+!!! note
+    There is a known bug where the I2C address of the pressure sensor is set wrong, and so depth is not received properly. This can be fixed by setting the parameter `BARO_PROBE_EXT` to `768` and then rebooting the ROV.

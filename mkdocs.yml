@@ -134,24 +134,50 @@ nav:
           - Software updates: explorer-kit/upgrader.md
 
   - DVL:
-      - DVL-A50 — Introduction: dvl/dvl-a50.md
-      - DVL-A125 — Introduction: dvl/dvl-a125.md
-      - Interfaces: dvl/interfaces.md
-      - Networking: dvl/networking.md
-      - Axes: dvl/axes.md
-      - Protocol: dvl/dvl-protocol.md
-      - GUI:
-          - Dashboard: dvl/gui/dashboard.md
-          - Configuration: dvl/gui/configuration.md
-          - Diagnostic report: dvl/gui/diagnostic-report.md
-          - Demo GUI: dvl/gui/demo-gui.md
-      - Dead reckoning: dvl/dead-reckoning.md
+      - Overview: dvl/overview.md
+      - Get started Quickstart guide: dvl/quickstart.md
+
+      - Models:
+          - A50: dvl/dvl-a50.md
+          - A100: dvl/dvl-a100.md
+          - A125: dvl/dvl-a125.md
+          - A250: dvl/dvl-a250.md
+
+      - Install and connect:
+          - Installation: dvl/installation.md
+          - Electrical: dvl/electrical.md
+          - Network setup: dvl/networking.md
+
+      - Operate the device:
+          - Axes: dvl/axes.md
+          - Range mode: dvl/range-mode.md
+          - Water tracking: dvl/water-tracking.md
+          - Settings and configuration: dvl/configuration.md
+          - Diagnostic log: dvl/diagnostic-log.md
+          - Dead reckoning: dvl/dead-reckoning.md
+          - Software updates: dvl/sw-update.md
+          - Web GUI:
+              - DVL A50/A125 web GUI: dvl/dvl-a50_a125-gui.md
+              - DVL A100/A250 web GUI: dvl/dvl-a250_a100-gui.md
+
       - Integration:
+          - Integration overview: dvl/integration.md
+          - TCP JSON API:
+              - A50/A125: dvl/dvl-json-protocol.md
+              - A100/A250: dvl/dvl-a250_a100-json-protocol.md
+          - Serial protocol:
+              - A50/A125: dvl/dvl-serial-protocol.md
+              - A100/A250: dvl/dvl-a250_a100-serial-protocol.md
+          - PD formats: dvl/dvl-pd-formats.md
+          - Triggering and synchronization: dvl/dvl-triggering.md
+          - Software resources: dvl/software-resources.md
           - DVL for BlueROV2: dvl/bluerov-integration.md
           - DVL with UGPS for BlueROV2: dvl/bluerov-integration-dvl-ugps.md
-      - Software updates: dvl/sw-update.md
-      - Troubleshooting: dvl/dvl-troubleshooting.md
-      - DVL FAQ: dvl/faq.md
+
+      - Troubleshooting: 
+          - How to diagnose: dvl/how-to-diagnose.md
+          - Support package checklist: dvl/support-package-checklist.md
+          - FAQ: dvl/faq.md
 
   - Modem:
       - Modem-M64 (retired):
@@ -170,6 +196,8 @@ nav:
           - M16 FAQ: modem-m16/modem-m16-faq.md
 
   - I/O interface cards: 
+      - Revision 2: io-interface-cards/io-interface-rev2.md
+      - Revision 3: io-interface-cards/io-interface-rev3.md
       - Revision 4: io-interface-cards/io-interface-rev4.md
       - Revision 6: io-interface-cards/io-interface-rev6.md
 

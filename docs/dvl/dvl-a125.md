@@ -1,32 +1,29 @@
-# DVL-A125
+# DVL A125
 
-[Buy DVL-A125 here!](https://waterlinked.com/product/dvl-a125/)
+[Buy DVL A125 here](https://waterlinked.com/product/dvl-a125/)
 
 ![dvl_A125](../img/WL-21037-2_DVL-A125_InHand_1600.jpg)
 
 ## Description
-The [DVL-A125](https://www.waterlinked.com/dvl/dvl-a125) is the next step up from the [DVL-A50](https://www.waterlinked.com/dvl/dvl-a50), providing even better performance at greater distances while still keeping a small form factor relative to competing DVLs.
+The [DVL A125](https://www.waterlinked.com/dvl/dvl-a125) is the next step up from the [DVL A50](https://www.waterlinked.com/dvl/dvl-a50), providing better performance at greater distances while still keeping a small form factor relative to competing DVLs.
 
-The DVL-A125 builds on the already impressive feats of the DVL-A50 with its increased performance, small 4 beam setup, open interface protocol and mid-to-low cost.
+The DVL A125 builds on the DVL A50 with increased performance, a small 4-beam setup, an open interface protocol, and mid-to-low cost.
 
-The DVL estimates velocity relative to the sea bottom by sending acoustic waves from the four angled transducers and then measure the frequency shift (doppler effect) from the received echo. By combining the measurements of all four transducers and the time between each acoustic pulse, it is possible to very accurately estimate the speed and direction of movement.
-
-
-!!! Tip
-	Keep the DVL-A125 in a bucket of water to ensure sufficient cooling when using the DVL on a workbench.
+!!! tip
+    Keep the DVL A125 in a bucket of water to ensure sufficient cooling when using the DVL on a workbench.
 
 
 ## Dimensions
 
 ![dvl_A125_dimensions](../img/DVL-A125--Dimensions.png)
 
-###Cable dimensions
-Delivered cable length: 3.0m
+### Cable dimensions
+Delivered cable length: 3.0 m
 
-Cable diameter: 7.8mm +/- 0.2mm
+Cable diameter: 7.8 mm +/- 0.2 mm
 
 
-## Mounting Holes
+## Mounting holes
 
 ![dvl_A125_mounting_holes_drawing](../img/dvl-a125_mounting_holes_drawing.png)
 
@@ -35,6 +32,7 @@ Cable diameter: 7.8mm +/- 0.2mm
 
 ![dvl_A125_transducer_numbering](../img/DVL-A125--Transducer-Numbering.png)
 
+Mechanical drawings number the transducers from 1 to 4. Protocol messages and diagnostic logs use zero-based transducer `id` values from 0 to 3. See [Transducer numbering and protocol IDs](axes.md#transducer-numbering-and-protocol-ids).
 
 ## Transducer beam width
 

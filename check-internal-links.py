@@ -5,6 +5,7 @@ from pathlib import Path
 
 # Regex for Markdown links: [text](target)
 LINK_RE = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
+HEADING_ATTR_ID_RE = re.compile(r"\s*\{[^}]*#([A-Za-z0-9_-]+)[^}]*\}\s*$")
 
 def slugify_heading(text: str) -> str:
     """Convert Markdown heading text to MkDocs anchor format."""
@@ -22,7 +23,11 @@ def extract_headings(md_file: Path):
     for line in md_file.read_text(encoding="utf-8").splitlines():
         if line.startswith("#"):
             heading_text = line.lstrip("#").strip()
-            headings.add(slugify_heading(heading_text))
+            attr_match = HEADING_ATTR_ID_RE.search(heading_text)
+            if attr_match:
+                headings.add(attr_match.group(1))
+            else:
+                headings.add(slugify_heading(heading_text))
     return headings
 
 def check_md_file(md_file: Path):

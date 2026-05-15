@@ -1,3 +1,7 @@
+html {
+  scrollbar-gutter: stable;
+}
+
 .md-header {
     height:3.7rem;
     background-color: #1d3556;
@@ -22,14 +26,6 @@
 .md-header__button.md-logo img {
     height:3.0rem;
     width:auto;
-}
-
-.md-container{
-    margin-top: 2rem;
-}
-
-.md-sidebar{
-    margin-top:6rem;
 }
 
 .responsive-video {
@@ -64,17 +60,4 @@
 /* Ocean Blue for links */
 a {
   color: #2B9C6A;
-}
-
-  /* Hide the right hand Table of Contents sidebar */
-.md-sidebar--secondary,
-.md-sidebar[data-md-type="toc"] {
-  display: none;
-}
-
-/* Make the content span the full width when the secondary sidebar is gone */
-@media (min-width: 960px) {
-  .md-main__inner {
-    grid-template-columns: minmax(0, 1fr);
-  }
 }
