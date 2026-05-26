@@ -72,7 +72,7 @@ RIP2 supports several Protobuf-encoded messages, including:
 ### Coordinate and Image Conventions
 **Axes** (right-handed):
 
-- **Origin**: The point cloud uses a mechanical origin located on the backplate, centered between the mounting screw holes.
+- **Origin**: The point cloud origin (`x = 0`, `y = 0`, `z = 0`) is located at the mechanical center of the front transducer/receiver surface. The front surface is the `x = 0` plane; `y = 0` is centered across the `122 mm` width, and `z = 0` is centered across the `80 mm` height, with positive `z` pointing downward.
 - **x**: forward  
 - **y**: right  
 - **z**: downward  
