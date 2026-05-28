@@ -2,10 +2,10 @@
 
 We recommend running the latest DVL software where possible. Software updates are done from the web GUI **About** page. The latest software can be obtained [automatically](#automatic-software-update) or [manually](#offline-software-update).
 
-The release notes for each release are available in the web GUI **About** page. You can also view the public demo About pages:
+The release notes for each release are found here:
 
-* [DVL A50/A125 About page](https://dvl.demo.waterlinked.com/#/about)
-* [DVL A100/A250 About page](https://dvl2.demo.waterlinked.com/#about)
+* [DVL A50/A125 changelog](./dvl-a50_a125-changelog.md)
+* [DVL A100/A250 changelog](./dvl-a250_a100-changelog.md)
 
 !!! warning
     During the software update, the thermal protection feature is turned off. To prevent the DVL from overheating, keep the DVL submerged in water throughout the update process.
