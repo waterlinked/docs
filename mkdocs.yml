@@ -156,6 +156,9 @@ nav:
           - Diagnostic log: dvl/diagnostic-log.md
           - Dead reckoning: dvl/dead-reckoning.md
           - Software updates: dvl/sw-update.md
+          - Changelog:
+              - DVL A50/A125 changelog: dvl/dvl-a50_a125-changelog.md
+              - DVL A100/A250 changelog: dvl/dvl-a250_a100-changelog.md
           - Web GUI:
               - DVL A50/A125 web GUI: dvl/dvl-a50_a125-gui.md
               - DVL A100/A250 web GUI: dvl/dvl-a250_a100-gui.md
