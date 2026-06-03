@@ -23,6 +23,7 @@ This document describes serial protocol versions `2.6.x` and `2.7.x` (major.mino
 
 | Software release | Serial protocol version | Main protocol improvements |
 | -- | -- | -- |
+| 2.7.2 | 2.8.0 | Add serial time API |
 | 2.7.1 | 2.7.0 | Add water tracking mode and tracking mode field in velocity reports |
 | 2.6.1 | 2.6.0 | Serial baud rate configurable. Add PD4 format support in serial 'wcp' command. Some serial protocol names [changed](#change-serial-output-protocol-wcp). |
 | 2.5.2 | 2.5.0 | Add PD4 format support (experimental)
@@ -73,6 +74,11 @@ The commands in the table are shown without the checksum and without the mandato
 | `wcx`   | Trigger ping | `wra` | Successfully queued a ping |
 | `wcg`   | Calibrate gyro | `wra` | Successfully calibrated gyro |
 | `wcp`   | Change serial output protocol | `wra` | Successfully changed output protocol |
+| `wcn,`*[ntp_address]*  | Set [NTP server configuration](./time.md#ntp-server-address-configuration-auto-or-custom). `ntp_address` is an address, or "auto" | `wra` | Successfully set NTP server |
+| `wcN` | Get [NTP address configuration](./time.md#ntp-server-address-configuration-auto-or-custom) | `wrN,`*[ntp_address]* | Configured NTP server address, or "auto" |
+| `wcm,`*[timestamp]*   | Set [manual time](./time.md#setting-manual-time), where `timestamp` is UTC epoch time in microseconds | `wra` | Successfully set manual time |
+| `wct`   | Get [time status](./time.md#time-status) | `wrs,`*[details below]* | Time status |
+| `wcT,`*[timeout_seconds]*   | [Force NTP sync](./time.md#ntp-force-sync) within given timeout | `wrT,`*[success]* | Where `success` is y if sync was achieved within timeout, and n otherwise |
 |         |             | `wrz,`*[details below]* | Velocities calculated |
 |         |             | `wrs,`*[details below]* | Velocities calculated during water tracking |
 |         |             | `wru,`*[details below]* | Transducer information |
@@ -83,7 +89,25 @@ The commands in the table are shown without the checksum and without the mandato
 |         |             | `wr!` | Malformed request: packet does not match the given checksum |
 |         |             | `wrn` | Not acknowledged (nack): an error occurred when handling the packet |
 
+### Time status (wrs)
 
+[Time status](./time.md#time-status) is returned by the command `wct`.
+
+The report has the following format: `wrs,`*[system_time],[ntp_synced],[ntp_synced_to],[ntp_seconds_since_last_sync]*
+
+| Variable | Description |
+|----------|-------------|
+| system_time | UTC epoch time in microseconds |
+| ntp_synced | `y` if synchronized, `n` if not |
+| ntp_synced_to | NTP server address the DVL is synced to  |
+| ntp_seconds_since_last_sync | Seconds since last sync if synced |
+
+
+Examples:
+```
+wrs,1776409079,0,,
+wrs,1776409079,1,192.168.0.10,45
+```
 
 ### Velocity report (wrz)
 

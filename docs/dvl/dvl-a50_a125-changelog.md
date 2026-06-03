@@ -4,6 +4,15 @@ This page applies to DVL A50 and DVL A125.
 
 See [Software updates](./sw-update.md) for more information on software updates.
 
+## 2.7.2 (2026-06)
+
+- Added an integration API for NTP configuration and status to provide tighter time synchronisation
+    - Users with a NTP configuration from prior versions must apply this configuration again
+- Improve NTP status feedback in GUI
+- Add get_version_info TCP JSON command
+- Fix issue where velocity updates for water tracking mode are not included in 'WL - Serial V2'
+- Move changelog to docs.waterlinked.com
+
 ## 2.7.1 (2026-04)
 
 - Add water tracking support for DVL A125

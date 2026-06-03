@@ -323,6 +323,146 @@
                 }
             }
         },
+        "/api/v1/integration/time/manual": {
+            "post": {
+                "description": "Set time manually. Not allowed if already synchronized. 409 is returned if time is already synchronized.",
+                "tags": [
+                    "integrationAPI",
+                    "time"
+                ],
+                "parameters": [
+                    {
+                        "description": " ",
+                        "name": "payload",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/integrationapi.GinManualTimeRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "409": {
+                        "description": "Already synchronized"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        },
+        "/api/v1/integration/time/ntp": {
+            "get": {
+                "description": "Get the NTP configuration",
+                "tags": [
+                    "integrationAPI",
+                    "time"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/integrationapi.GinNTPConfigurationPayload"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            },
+            "post": {
+                "description": "Set the NTP configuration. Configuration is persisted. After setting configuration the sonar will attempt to reach the configured NTP server.",
+                "tags": [
+                    "integrationAPI",
+                    "time"
+                ],
+                "parameters": [
+                    {
+                        "description": " ",
+                        "name": "payload",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/integrationapi.GinNTPConfigurationPayload"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        },
+        "/api/v1/integration/time/ntp/force-sync": {
+            "post": {
+                "description": "Attempt to force NTP sync within timeout. Return whether sync was achieved, the time status, and a human-readable message. 409 is returned if another force sync request is already ongoing",
+                "tags": [
+                    "integrationAPI",
+                    "time"
+                ],
+                "parameters": [
+                    {
+                        "description": " ",
+                        "name": "payload",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/integrationapi.GinNTPForceSyncRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/integrationapi.GinNTPForceSyncResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "409": {
+                        "description": "Another force sync is already ongoing"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        },
+        "/api/v1/integration/time/status": {
+            "get": {
+                "description": "Get the current time synchronization status",
+                "tags": [
+                    "integrationAPI",
+                    "time"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/integrationapi.GinTimeStatusResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        },
         "/api/v1/integration/udp": {
             "get": {
                 "description": "Get the current UDP configuration for how the Sonar outputs data.",
@@ -397,6 +537,49 @@
                 }
             }
         },
+        "integrationapi.GinManualTimeRequest": {
+            "type": "object",
+            "properties": {
+                "now": {
+                    "description": "Current system time in RFC3339.",
+                    "type": "string"
+                }
+            }
+        },
+        "integrationapi.GinNTPConfigurationPayload": {
+            "type": "object",
+            "properties": {
+                "ntp_address": {
+                    "description": "address or \"auto\"",
+                    "type": "string"
+                }
+            }
+        },
+        "integrationapi.GinNTPForceSyncRequest": {
+            "type": "object",
+            "properties": {
+                "timeout_seconds": {
+                    "description": "number of seconds to wait for sync to be achieved before cancelling the force sync request with success == false",
+                    "type": "number"
+                }
+            }
+        },
+        "integrationapi.GinNTPForceSyncResponse": {
+            "type": "object",
+            "properties": {
+                "message": {
+                    "description": "human-readable message",
+                    "type": "string"
+                },
+                "status": {
+                    "$ref": "#/definitions/integrationapi.GinTimeStatusResponse"
+                },
+                "success": {
+                    "description": "true if NTP sync was achieved within timeout, false otherwise. Important: callers that want to achieve sync with a specific address should check the returned status",
+                    "type": "boolean"
+                }
+            }
+        },
         "integrationapi.GinStatusResponse": {
             "type": "object",
             "properties": {
@@ -418,6 +601,14 @@
                 },
                 "temperature": {
                     "description": "Temperature is the status of the Sonar temperature",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/integrationapi.GinSystemStatusEntryResponse"
+                        }
+                    ]
+                },
+                "time": {
+                    "description": "Time is the status of system time",
                     "allOf": [
                         {
                             "$ref": "#/definitions/integrationapi.GinSystemStatusEntryResponse"
@@ -484,6 +675,27 @@
                 "version_short": {
                     "type": "string",
                     "example": "1.5.1"
+                }
+            }
+        },
+        "integrationapi.GinTimeStatusResponse": {
+            "type": "object",
+            "properties": {
+                "ntp_seconds_since_last_sync": {
+                    "description": "seconds since last NTP sync, or null if not synchronized",
+                    "type": "integer"
+                },
+                "ntp_synced": {
+                    "description": "true if synchronized to NTP source, false otherwise",
+                    "type": "boolean"
+                },
+                "ntp_synced_to": {
+                    "description": "address the sonar is synchronized to if NTP is synchronized, \"\" otherwise",
+                    "type": "string"
+                },
+                "system_time": {
+                    "description": "system time in RFC3339",
+                    "type": "string"
                 }
             }
         },
