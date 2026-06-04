@@ -2,6 +2,20 @@ html {
   scrollbar-gutter: stable;
 }
 
+/* --- Brand colors (palette uses primary/accent: custom; set per color scheme) --- */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color:        #1D3556;  /* Ocean blue */
+  --md-primary-fg-color--light: #2c4a72;
+  --md-primary-fg-color--dark:  #14253b;
+  --md-accent-fg-color:         #2B9C6A;  /* Signal green (dark) */
+}
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color:        #1D3556;  /* keep ocean-blue header + tabs in dark mode */
+  --md-primary-fg-color--light: #2c4a72;
+  --md-primary-fg-color--dark:  #14253b;
+  --md-accent-fg-color:         #4BEF8F;  /* Signal green (light) — readable on dark */
+}
+
 .md-header {
     height:3.7rem;
     background-color: #1d3556;
@@ -57,7 +71,11 @@ html {
   background-color: #2B9C6A;
 }
 
-/* Ocean Blue for links */
-a {
+/* Green for content links — scoped to typeset content so it doesn't tint nav/tab labels */
+.md-typeset a {
   color: #2B9C6A;
+}
+/* Brighter green for content links in dark mode (better contrast on slate) */
+[data-md-color-scheme="slate"] .md-typeset a {
+  color: #4BEF8F;
 }
