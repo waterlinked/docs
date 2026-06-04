@@ -104,7 +104,7 @@ The report has the following format: `wrs,`*[system_time],[ntp_synced],[ntp_sync
 
 
 Examples:
-```
+```text
 wrs,1776409079,0,,
 wrs,1776409079,1,192.168.0.10,45
 ```
@@ -136,7 +136,7 @@ The report has the following format:
 
 Example where all velocities are valid:
 
-```
+```text
 wrz,0.120,-0.400,2.000,y,1.30,1.855,1e-07;0;1.4;0;1.2;0;0.2;0;1e+09,7,14,123.00,1*50
 ```
 
@@ -166,7 +166,7 @@ The report has the following format:
 
 Example where all velocities are valid:
 
-```
+```text
 wrs,0.120,-0.400,2.000,y,1.855,1e-07;0;1.4;0;1.2;0;0.2;0;1e+09,7,14,123.00,1*50
 ```
 
@@ -197,7 +197,7 @@ The report has the following format:
 
 Example where all data is valid:
 
-```
+```text
 wru,0,0.070,1.10,-40,-95*9c
 wru,1,-0.500,1.25,-62,-104*f0
 wru,2,2.200,1.40,-56,-98*18
@@ -226,7 +226,7 @@ status      | Reports if there are any issues with the DVL (0 if no errors, 1 ot
 
 Example:
 
-```
+```text
 wrp,49056.809,0.41,0.15,1.23,0.4,53.9,13.0,19.3,0*de
 wrp,49057.269,0.39,0.18,1.23,0.4,53.9,13.0,19.3,0*e2
 ```
@@ -254,7 +254,7 @@ The reply will be an ack (`wra`) if the command is successful, and a nak (`wrn`)
 
 The serial output protocol in use can be configured by issuing the `wcp` command. The selected protocol is persistent over reboots.
 
-```
+```text
 wcp,[protocol number]
 ```
 
@@ -274,7 +274,7 @@ The reply will be an ack (`wra`) if the protocol change is successful, and a nak
 
 Example setting configuring output to use protocol number 3:
 
-```
+```text
 wcp,3
 ```
 
@@ -305,7 +305,7 @@ The current configuration of the DVL can be obtained by issuing the `wcc` comman
 
 If the configuration is successfully fetched, the response will be in the following format. If not, a nak `wrn` will be returned.
 
-```
+```text
 wrc,[speed_of_sound],[mounting_rotation_offset],[acoustic_enabled],[dark_mode_enabled],[range_mode],[periodic_cycling_enabled]
 ```
 
@@ -314,7 +314,7 @@ wrc,[speed_of_sound],[mounting_rotation_offset],[acoustic_enabled],[dark_mode_en
 Setting of configuration parameters can be carried out by issuing the `wcs` command in the following format.
 
 
-```
+```text
 wcs,[speed_of_sound],[mounting_rotation_offset],[acoustic_enabled],[dark_mode_enabled],[range_mode],[periodic_cycling_enabled]
 ```
 
@@ -322,7 +322,7 @@ Those parameters which are not to be set can be left blank.
 
 Example for setting dark mode without changing the other parameters:
 
-```
+```text
 wcs,,,,y,,
 ```
 
@@ -336,7 +336,7 @@ wcs,,,,,wt,
 
 Example for setting speed of sound to 1450 m/s and disabling acoustics, without changing the other parameters:
 
-```
+```text
 wcs,1450,,n,,,
 ```
 
@@ -364,7 +364,7 @@ Same purpose as the [velocity report](#velocity-report-wrz), but in an older for
 
 Example where velocities are valid:
 
-```
+```text
 wrx,112.83,0.007,0.017,0.006,0.000,0.93,y,0*d2
 wrx,140.43,0.008,0.021,0.012,0.000,0.92,y,0*b7
 wrx,118.47,0.009,0.020,0.013,0.000,0.92,y,0*54
@@ -372,7 +372,7 @@ wrx,118.47,0.009,0.020,0.013,0.000,0.92,y,0*54
 
 Example where velocities and altitude are not valid and a high temperature warning occurs:
 
-```
+```text
 wrx,1075.51,0.000,0.000,0.000,2.707,-1.00,n,1*04
 wrx,1249.29,0.000,0.000,0.000,2.707,-1.00,n,1*6a
 wrx,1164.94,0.000,0.000,0.000,2.707,-1.00,n,1*39
@@ -393,14 +393,14 @@ Same purpose as the [transducer report](#transducer-report-wru), but in an older
 
 Example where all distances are valid:
 
-```
+```text
 wrt,15.00,15.20,14.90,14.20*b1
 wrt,14.90,15.10,14.80,14.10*ac
 ```
 
 Example where distance is not valid for transducer 4:
 
-```
+```text
 wrt,14.90,15.10,14.80,-1.00*53
 wrt,15.00,15.20,14.90,-1.00*71
 ```
@@ -418,7 +418,7 @@ Compatible implementations:
 
 Example for how to verify checksum using Python 3 and [crcmod](https://pypi.org/project/crcmod/):
 
-```
+```python
 crc = crcmod.predefined.mkPredefinedCrcFun("crc-8")
 sentence = b"wrx,1164.94,0.000,0.000,0.000,2.707,-1.00,n,1*39"
 data, checksum = sentence.split(b"*")
@@ -431,7 +431,7 @@ else:
 
 The [crcmod](https://pypi.org/project/crcmod/) python package can generate code in other languages. Here is an example (subject to the [MIT License](https://opensource.org/licenses/MIT)) for C which should be straightforward to adapt to other languages.
 
-```
+```c
 static const uint8_t lookup_table[256] = {
     0x00U,0x07U,0x0EU,0x09U,0x1CU,0x1BU,0x12U,0x15U,
     0x38U,0x3FU,0x36U,0x31U,0x24U,0x23U,0x2AU,0x2DU,
