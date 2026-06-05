@@ -257,13 +257,13 @@ The response will be as follows if the command is accepted. If the queue is full
 
 Get version info by issuing the `get_version_info` command.
 
-```
+```json
 {"command":"get_version_info"}
 ```
 
 A successful response looks like this:
 
-```
+```json
 {
   "response_to": "get_version_info",
   "success": true,
