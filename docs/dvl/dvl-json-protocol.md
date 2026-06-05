@@ -71,7 +71,7 @@ The messages are delimited by newline.
 | time_of_validity | Timestamp of the surface reflection, aka 'center of ping' (Unix timestamp in microseconds) |
 | time_of_transmission | Timestamp from immediately before sending of the report over TCP (Unix timestamp in microseconds) |
 | tracking_mode | Active tracking mode. `bottom` for bottom tracking, `water` for [water tracking](water-tracking.md). Added in `json_v3.2` |
-| format | Format type and version for this report: `json_v3.1` |
+| format | Format type and version for this report: `json_v3.3` |
 | type | Report type: `velocity` or `velocity_water` |
 
 !!! note "Transducer numbering and protocol IDs"
