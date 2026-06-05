@@ -2,6 +2,9 @@
 
 This page covers electrical connection, LED signals, wiring, shielding, and serial interface for all DVLs.
 
+!!! tip "First-time setup"
+    New to the DVL? The [Quickstart](quickstart.md) covers the full setup path (mount, wire, connect, open the web GUI). This page is the detailed wiring reference; to get on the network afterwards, see [Network setup](networking.md).
+
 Most wiring is common across the DVL models. The serial electrical interface differs:
 
 * DVL A50 and DVL A125 use 3.3 V UART, 5 V tolerant.

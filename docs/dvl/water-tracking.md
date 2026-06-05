@@ -1,4 +1,4 @@
-# Water Tracking
+# Water tracking
 
 Water tracking is a mode where the DVL estimates velocity relative to the water column instead of the sea bottom. It can be useful when the DVL cannot get bottom lock, or when the movement of the water itself is relevant.
 

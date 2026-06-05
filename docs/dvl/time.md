@@ -55,7 +55,7 @@ Upon achieving sync, or when the timeout expires, the operation will respond wit
 |`status`|Time status as described [here](#time-status) |
 
 !!! warning
-    `success` true means the DVL acieved NTP sync. To assert the DVL is synchronized to a specific NTP server, check the returned status.
+    `success` true means the DVL achieved NTP sync. To assert the DVL is synchronized to a specific NTP server, check the returned status.
 
 !!! warning
     The operation can cause abrupt jumps in system time, and is not recommended for use while reading DVL output.

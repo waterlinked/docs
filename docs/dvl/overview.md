@@ -1,5 +1,5 @@
 # Overview
-At Water Linked we pride ourselves on building the Worlds smallest DVLs in their respective categories. Our DVLs combine everything that is important in the smallest possible formfactor: Prize and Performance!
+At Water Linked we pride ourselves on building the world's smallest DVLs in their respective categories. Our DVLs combine everything that is important in the smallest possible form factor: price and performance!
 
 ## What is a DVL?
 A DVL estimates velocity relative to the seafloor by sending acoustic waves from four angled transducers and measuring the frequency shift (Doppler effect) of the returned echoes. By combining measurements from all four transducers over time, the DVL can accurately estimate both the speed and direction of movement.

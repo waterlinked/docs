@@ -14,25 +14,23 @@ The axis convention is the same for all DVL models. Velocities and dead reckonin
   </defs>
   <text text-anchor="middle" x="30" y="5" font-size="0.3em">Body frame</text>
   <text text-anchor="middle" x="30" y="25" font-size="0.275em">x (Forward)</text>
-  <text text-anchor="left" x="60" y="55" font-size="0.275em" alignment-baseline="middle">y (Right)</text>
+  <text text-anchor="start" x="60" y="55" font-size="0.275em" alignment-baseline="middle">y (Right)</text>
   <line stroke="black" stroke-width="0.5" marker-start="url(#leftarrowhead)" x1="30" y1="30" x2="30" y2="80"/>
   <line stroke="black" stroke-width="0.5" marker-end="url(#rightarrowhead)" x1="5" y1="55" x2="55" y2="55"/>
-  <text text-anchor="left" x="32" y="50" font-size="0.275em" alignment-baseline="middle">z (Down)</text>
+  <text text-anchor="start" x="32" y="50" font-size="0.275em" alignment-baseline="middle">z (Down)</text>
   <text text-anchor="middle" x="140" y="5" font-size="0.3em">Vehicle frame</text>
   <text text-anchor="middle" x="140" y="25" font-size="0.275em">x (Vehicle)</text>
-  <text text-anchor="left" x="170" y="55" font-size="0.275em" alignment-baseline="middle">y (Vehicle)</text>
+  <text text-anchor="start" x="170" y="55" font-size="0.275em" alignment-baseline="middle">y (Vehicle)</text>
   <line stroke="black" stroke-width="0.5" marker-start="url(#leftarrowhead)" x1="140" y1="30" x2="140" y2="80"/>
   <line stroke="black" stroke-width="0.5" marker-end="url(#rightarrowhead)" x1="115" y1="55" x2="165" y2="55"/>
   <g transform="rotate(30, 140, 55)">
   <line stroke="black" stroke-width="0.5" marker-start="url(#leftarrowhead)" x1="140" y1="30" x2="140" y2="80"/>
   <line stroke="black" stroke-width="0.5" marker-end="url(#rightarrowhead)" x1="115" y1="55" x2="165" y2="55"/>
   <text text-anchor="middle" x="150" y="27.5" font-size="0.275em">x (Body)</text>
-  <text text-anchor="left" x="160" y="50" font-size="0.275em" alignment-baseline="middle">y (Body)</text>
+  <text text-anchor="start" x="160" y="50" font-size="0.275em" alignment-baseline="middle">y (Body)</text>
   </g>
-  <text text-anchor="left" x="142" y="42.5" font-size="0.275em" alignment-baseline="middle">θ</text>
-  <path d="M 140 45 a 4 4 0 0 1 4.5 2" fill="none" stroke="black" stroke-width="0.5"/>
-  <!--- the path above gives an arc-ish figure but i have no idea how to do this properly -->
-</svg>
+  <text text-anchor="start" x="142" y="42.5" font-size="0.275em" alignment-baseline="middle">θ</text>
+  <path d="M 140 45 a 4 4 0 0 1 4.5 2" fill="none" stroke="black" stroke-width="0.5"/></svg>
 
 
 ## Body frame

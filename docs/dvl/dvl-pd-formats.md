@@ -108,8 +108,6 @@ Sentences TS, BI, and BD are filled with relevant numbers. All other sentences a
 
 #### Example output
 
-<!-- Copied from wl-95050/protocols/protocol_pd6_test/TestPD6Encode -->
-
 ```text
 :SA, +0.00, +0.00,  0.00
 :TS,22020812061800, 0.0, +0.0,   0.0,1475.0,  0
