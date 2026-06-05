@@ -11,11 +11,11 @@ Most wiring is common across the DVL models. The serial electrical interface dif
 
 | Visualization | LED signal | Description |
 | :---: | :--- | :--- |
-| ⚫ | **No green light** | Power is off. |
-| 🟢 | **Fixed green light** | The DVL is powering on. Depending on configuration it can take ~30-60 seconds to power on. |
-| 🟢⚫⚫⚫ | **Flashing green light** (mostly off, slow) | DVL looking for bottom lock. |
-| 🟢🟢🟢⚫ | **Flashing green light** (mostly on, slow) | DVL has bottom lock. |
-| 🟢⚫🟢⚫ | **Flashing green light** (fast) | DVL is in [thermal shutdown](how-to-diagnose.md#thermal-shutdown). |
+| <span class="swatch swatch-round c-ledoff"></span> | **No green light** | Power is off. |
+| <span class="swatch swatch-round c-ledon"></span> | **Fixed green light** | The DVL is powering on. Depending on configuration it can take ~30-60 seconds to power on. |
+| <span class="swatch swatch-round c-ledon"></span> <span class="swatch swatch-round c-ledoff"></span> <span class="swatch swatch-round c-ledoff"></span> <span class="swatch swatch-round c-ledoff"></span> | **Flashing green light** (mostly off, slow) | DVL looking for bottom lock. |
+| <span class="swatch swatch-round c-ledon"></span> <span class="swatch swatch-round c-ledon"></span> <span class="swatch swatch-round c-ledon"></span> <span class="swatch swatch-round c-ledoff"></span> | **Flashing green light** (mostly on, slow) | DVL has bottom lock. |
+| <span class="swatch swatch-round c-ledon"></span> <span class="swatch swatch-round c-ledoff"></span> <span class="swatch swatch-round c-ledon"></span> <span class="swatch swatch-round c-ledoff"></span> | **Flashing green light** (fast) | DVL is in [thermal shutdown](how-to-diagnose.md#thermal-shutdown). |
 
 ## Wiring interface
 
@@ -25,22 +25,22 @@ Power and Ethernet wiring are common. The brown and brown/white serial pair depe
 
 | Interface | Color | Visual |
 | :--- | :--- | :---: |
-| Negative/Ground | Black | ⬛ |
-| Positive (10–30 Vdc) | Red | 🟥 |
-| ETH RX+ | Green/White | 🟩⬜ |
-| ETH RX- | Green | 🟩 |
-| ETH TX- | Orange | 🟧 |
-| ETH TX+ | Orange/White | 🟧⬜ |
-| Shielded wire | Naked/silver | ⚪ |
+| Negative/Ground | Black | <span class="swatch c-black"></span> |
+| Positive (10–30 Vdc) | Red | <span class="swatch c-red"></span> |
+| ETH RX+ | Green/White | <span class="swatch c-green-white"></span> |
+| ETH RX- | Green | <span class="swatch c-green"></span> |
+| ETH TX- | Orange | <span class="swatch c-orange"></span> |
+| ETH TX+ | Orange/White | <span class="swatch c-orange-white"></span> |
+| Shielded wire | Naked/silver | <span class="swatch c-silver"></span> |
 
 ### Model-specific serial wires
 
 | Model | Interface | Color | Visual |
 | :--- | :--- | :--- | :---: |
-| DVL A50/A125 | UART TX | Brown/White | 🟫⬜ |
-| DVL A50/A125 | UART RX | Brown | 🟫 |
-| DVL A100/A250 | Serial (RS232) TX | Brown/White | 🟫⬜ |
-| DVL A100/A250 | Serial (RS232) RX | Brown | 🟫 |
+| DVL A50/A125 | UART TX | Brown/White | <span class="swatch c-brown-white"></span> |
+| DVL A50/A125 | UART RX | Brown | <span class="swatch c-brown"></span> |
+| DVL A100/A250 | Serial (RS232) TX | Brown/White | <span class="swatch c-brown-white"></span> |
+| DVL A100/A250 | Serial (RS232) RX | Brown | <span class="swatch c-brown"></span> |
 
 !!! note
     Power must be applied to the power terminals before applying voltage to the serial pins.
@@ -61,14 +61,14 @@ The table below shows the pinout for the DVL A50/A100/A250 Seacon MC8M connector
 
 | Interface | Pin | Color | Visual |
 | :--- | :--- | :--- | :---: |
-| Negative/Ground | 1 | Black | ⬛ |
-| Positive (10–30 Vdc) | 2 | Red | 🟥 |
-| ETH RX+ | 3 | Green/White | 🟩⬜ |
-| ETH RX- | 4 | Green | 🟩 |
-| ETH TX- | 5 | Orange | 🟧 |
-| ETH TX+ | 6 | Orange/White | 🟧⬜ |
-| Serial TX | 7 | Brown/White | 🟫⬜ |
-| Serial RX | 8 | Brown | 🟫 |
+| Negative/Ground | 1 | Black | <span class="swatch c-black"></span> |
+| Positive (10–30 Vdc) | 2 | Red | <span class="swatch c-red"></span> |
+| ETH RX+ | 3 | Green/White | <span class="swatch c-green-white"></span> |
+| ETH RX- | 4 | Green | <span class="swatch c-green"></span> |
+| ETH TX- | 5 | Orange | <span class="swatch c-orange"></span> |
+| ETH TX+ | 6 | Orange/White | <span class="swatch c-orange-white"></span> |
+| Serial TX | 7 | Brown/White | <span class="swatch c-brown-white"></span> |
+| Serial RX | 8 | Brown | <span class="swatch c-brown"></span> |
 
 <!-- TODO: Confirm and publish the DVL A250 side-entry Seacon connector pinout before reusing the A50/A125 table for A250. -->
 

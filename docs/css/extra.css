@@ -100,3 +100,29 @@ html {
 [data-md-color-scheme="slate"] .md-typeset a {
   color: #4BEF8F;
 }
+
+/* Wire-colour / LED swatches — drawn in CSS instead of emoji so they look pixel-identical
+   on every OS & browser. Emoji such as ⬜/⚪ are rendered by each device's own emoji font
+   (white/silver ones can look pink or oddly bordered on some platforms); these boxes don't
+   depend on that font. Used in dvl/electrical.md. Squares = wire colours, circles = LEDs. */
+.swatch {
+  display: inline-block;
+  width: .85em;
+  height: .85em;
+  border: 1px solid rgba(0, 0, 0, .4);
+  border-radius: 3px;
+  vertical-align: -.1em;
+}
+.swatch-round { border-radius: 50%; }
+[data-md-color-scheme="slate"] .swatch { border-color: rgba(255, 255, 255, .5); }
+.c-black        { background: #1a1a1a; }
+.c-red          { background: #d32f2f; }
+.c-green        { background: #2e7d32; }
+.c-orange       { background: #ef6c00; }
+.c-brown        { background: #5d4037; }
+.c-silver       { background: #c0c0c0; }
+.c-ledon        { background: #2ecc40; }
+.c-ledoff       { background: #3a3a3a; }
+.c-green-white  { background: linear-gradient(90deg, #2e7d32 50%, #fff 50%); }
+.c-orange-white { background: linear-gradient(90deg, #ef6c00 50%, #fff 50%); }
+.c-brown-white  { background: linear-gradient(90deg, #5d4037 50%, #fff 50%); }
