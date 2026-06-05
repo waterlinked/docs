@@ -31,4 +31,10 @@ The Modem M16 is a two-way half-duplex 10bps acoustic modem with a robust and us
 | Transducer frequency      | 58.5 kHz                               |
 | Bits per package          | 16                                     |
 | Package duration          | 1.6 seconds                            |
+| Max relative velocity     | 0.8 m/s                                |
+
+!!! note "Relative movement and Doppler shift"
+    The two modems should not move faster than **0.8 m/s relative to each other**. Above
+    this relative velocity, the Doppler shift of the acoustic signal becomes significant
+    and can disrupt the communication link.
 
