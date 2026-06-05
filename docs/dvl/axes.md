@@ -42,9 +42,16 @@ The body frame axes of the DVL are as follows:
 * X axis is pointing forward (LED is forward (only for A50/A125), cable backward)
 * Y axis is pointing right
 * Z axis is pointing down (metal back plate is up, transducers are down, LED is pointing down only for A100/A250)
-* Origin is the center of the DVL on the transducer side.
+* Origin is the point at which the DVL measures velocity. It is the point on the DVL's central axis where the transducer beam axes intersect.
 
-<!-- TODO: Confirm whether a backplate distance should be documented separately for DVL A100 and DVL A250. -->
+In standard mounting orientation (transducers facing down, metal back plate up), the origin sits above the metal back plate. The distance from the back plate to the origin depends on the model:
+
+| Model | Distance from back plate to origin |
+| :--- | :--- |
+| DVL A50 | 28 mm |
+| DVL A100 | 38 mm |
+| DVL A125 | 70 mm |
+| DVL A250 | 84 mm |
 
 By default, the body frame and vehicle frame are the same and align with the frame used for dead reckoning.
 
