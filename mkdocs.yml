@@ -141,7 +141,7 @@ nav:
           - Power supply: explorer-kit/power-supply.md
           - Network settings: explorer-kit/network-settings.md
           - Hardware: explorer-kit/hardware.md
-          - Master-D1: master-d1.md
+          - Master-D1: explorer-kit/master-d1.md
           - Receiver-D1: explorer-kit/receiver-d1.md
           - Locators:
               - Locator-A1: explorer-kit/locators/locator-a1.md
