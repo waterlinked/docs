@@ -42,6 +42,27 @@ html {
     width:auto;
 }
 
+/* The logo (waterlinked_logo.png) is already the "Water Linked" wordmark. Where the logo
+   shows, the site-name text beside it doubles "Water Linked", so show only "Documentation"
+   instead — header reads "WaterLinked Documentation" (clearly a docs site, no doubling).
+   site_name stays "Water Linked Documentation" for the page <title>/search; the page title
+   still slides into the header on scroll (that topic carries data-md-component="header-topic").
+   Scoped to ≥76.25em because Material hides the wordmark logo below that — on mobile/tablet
+   there's no logo, so the full "Water Linked Documentation" text should remain. */
+@media screen and (min-width: 76.25em) {
+  .md-header__title .md-header__topic:not([data-md-component]) .md-ellipsis {
+    position: relative;
+    color: transparent;
+  }
+  .md-header__title .md-header__topic:not([data-md-component]) .md-ellipsis::after {
+    content: "Documentation";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #fff;
+  }
+}
+
 .responsive-video {
   position: relative;
   width: 100%;
