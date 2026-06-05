@@ -22,7 +22,7 @@ This document describes TCP JSON API version `json_v3.3` (major.minor):
 
 | Software release | Ethernet protocol version | Main protocol improvements |
 | -- | -- | -- |
-| 2.7.2 | json_v3.3 | Add TCP JSON time API |
+| 2.7.2 | json_v3.3 | Add TCP JSON time API. Add get_version_info command |
 | 2.7.1 | json_v3.2 | Add water tracking mode and tracking mode field in velocity reports |
 | 2.6.1 | json_v3.1 | Serial baud rate configurable. Add PD4 format support in serial 'wcp' command. Some serial protocol names [changed](dvl-serial-protocol.md#change-serial-output-protocol-wcp). |
 | 2.5.2 | json_v3.1 | Add PD4 format support (experimental)
@@ -248,6 +248,36 @@ The response will be as follows if the command is accepted. If the queue is full
   "success": true,
   "error_message": "",
   "result": null,
+  "format": "json_v3.3",
+  "type": "response"
+}
+```
+
+### Get version info
+
+Get version info by issuing the `get_version_info` command.
+
+```
+{"command":"get_version_info"}
+```
+
+A successful response looks like this:
+
+```
+{
+  "response_to": "get_version_info",
+  "success": true,
+  "error_message": "",
+  "result": {
+    "chipid": "0xf1440c09140b04",
+    "hardware_revision": 4,
+    "product_id": 21035,
+    "product_name": "DVL A50",
+    "variant": "standard",
+    "version_short": "2.7.2",
+    "version": "2.7.2 (v2.7.1b-10-g44e26c7.2026-05-29T12:51:02.882778)",
+    "is_ready": true
+  },
   "format": "json_v3.3",
   "type": "response"
 }
