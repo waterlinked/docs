@@ -42,7 +42,40 @@ The body frame axes of the DVL are as follows:
 * Z axis is pointing down (metal back plate is up, transducers are down, LED is pointing down only for A100/A250)
 * Origin is the point at which the DVL measures velocity. It is the point on the DVL's central axis where the transducer beam axes intersect.
 
-In standard mounting orientation (transducers facing down, metal back plate up), the origin sits above the metal back plate. The distance from the back plate to the origin depends on the model:
+In standard mounting orientation (transducers facing down, metal back plate up), the origin sits above the metal back plate, where the transducer beam axes meet when extended upward:
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 165" fill="currentColor" font-size="0.3em" text-anchor="middle">
+  <defs>
+    <marker id="vmo-beam" markerWidth="6" markerHeight="6" refX="4.5" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z"/>
+    </marker>
+    <marker id="vmo-dim" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto-start-reverse">
+      <path d="M0,0 L6,3 L0,6 Z"/>
+    </marker>
+  </defs>
+  <line x1="100" y1="47" x2="100" y2="148" stroke="currentColor" stroke-width="0.3" stroke-dasharray="1,1.5" opacity="0.5"/>
+  <path d="M58,85 L58,96.9 L88,111.1 L112,111.1 L142,96.9 L142,85 Z" fill="none" stroke="currentColor" stroke-width="0.7"/>
+  <rect x="58" y="82" width="84" height="3" fill="none" stroke="currentColor" stroke-width="0.7"/>
+  <line x1="73" y1="104" x2="100" y2="47" stroke="currentColor" stroke-width="0.5" stroke-dasharray="2,1.5"/>
+  <line x1="127" y1="104" x2="100" y2="47" stroke="currentColor" stroke-width="0.5" stroke-dasharray="2,1.5"/>
+  <line x1="66" y1="101" x2="80" y2="107" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="120" y1="107" x2="134" y2="101" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="73" y1="104" x2="56" y2="140" stroke="currentColor" stroke-width="0.7" marker-end="url(#vmo-beam)"/>
+  <line x1="127" y1="104" x2="144" y2="140" stroke="currentColor" stroke-width="0.7" marker-end="url(#vmo-beam)"/>
+  <circle cx="100" cy="47" r="2"/>
+  <line x1="103" y1="47" x2="154" y2="47" stroke="currentColor" stroke-width="0.3"/>
+  <line x1="142" y1="82" x2="154" y2="82" stroke="currentColor" stroke-width="0.3"/>
+  <line x1="152" y1="47" x2="152" y2="82" stroke="currentColor" stroke-width="0.5" marker-start="url(#vmo-dim)" marker-end="url(#vmo-dim)"/>
+  <text x="100" y="42">Origin</text>
+  <text x="52" y="84" text-anchor="end">Back plate</text>
+  <line x1="54" y1="83.3" x2="58" y2="83.3" stroke="currentColor" stroke-width="0.3"/>
+  <text x="34" y="121" text-anchor="end">Transducers</text>
+  <line x1="36" y1="119.5" x2="68" y2="105" stroke="currentColor" stroke-width="0.3"/>
+  <text x="100" y="150">Beams (to seabed)</text>
+  <text x="157" y="62" text-anchor="start">d</text>
+</svg>
+
+The distance from the top of the back plate to the origin (shown as **d** above) depends on the model:
 
 | Model | Distance from back plate to origin |
 | :--- | :--- |
