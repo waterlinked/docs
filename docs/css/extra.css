@@ -126,3 +126,15 @@ html {
 .c-green-white  { background: linear-gradient(90deg, #2e7d32 50%, #fff 50%); }
 .c-orange-white { background: linear-gradient(90deg, #ef6c00 50%, #fff 50%); }
 .c-brown-white  { background: linear-gradient(90deg, #5d4037 50%, #fff 50%); }
+
+/* Product photos / screenshots have an opaque white background baked into the file, so in
+   dark mode they render as harsh bright blocks (CSS can't make an opaque pixel transparent,
+   and many photos have a dark subject that needs a light backdrop anyway). In dark mode,
+   frame content images as a light "photo card": the white backing keeps any transparent
+   images readable, and the padding + rounded corners make white-background images read as an
+   intentional framed photo instead of a raw white rectangle. */
+[data-md-color-scheme="slate"] .md-typeset img {
+  background-color: #fff;
+  padding: .35rem;
+  border-radius: .25rem;
+}
