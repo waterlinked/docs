@@ -71,7 +71,7 @@ The messages are delimited by newline.
 | time_of_validity | Timestamp of the surface reflection, aka 'center of ping' (Unix timestamp in microseconds) |
 | time_of_transmission | Timestamp from immediately before sending of the report over TCP (Unix timestamp in microseconds) |
 | tracking_mode | Active tracking mode. `bottom` for bottom tracking, `water` for [water tracking](water-tracking.md). Added in `json_v3.2` |
-| format | Format type and version for this report: `json_v3.1` |
+| format | Format type and version for this report: `json_v3.3` |
 | type | Report type: `velocity` or `velocity_water` |
 
 !!! note "Transducer numbering and protocol IDs"
@@ -79,7 +79,7 @@ The messages are delimited by newline.
 
 Example of TCP report (indented for legibility)
 
-```
+```json
 {
   "time": 106.3935775756836,
   "vx": -3.713480691658333e-05,
@@ -171,7 +171,7 @@ format      | Format type and version for this report: `json_v3`
 
 Example of a dead reckoning report.
 
-```
+```json
 {
   "ts": 49056.809,
   "x": 12.43563613697886467,
@@ -192,13 +192,13 @@ Example of a dead reckoning report.
 
 Dead reckoning can be reset by issuing the `reset_dead_reckoning` command:
 
-```
+```json
 {"command": "reset_dead_reckoning"}
 ```
 
 If the request is successfully received the response will have 'success' set to 'true'. The dead reckoning will have a delay of approximately 50ms until the positioning values being zeroed out. If the response is unsuccessful, the 'success' will be 'false' and a non-empty describing text will be returned in 'error_message'.
 
-```
+```json
 {
   "response_to":"reset_dead_reckoning",
   "success": true,
@@ -213,13 +213,13 @@ If the request is successfully received the response will have 'success' set to 
 
 The gyro can be calibrated by issuing the `calibrate_gyro` command:
 
-```
+```json
 {"command":"calibrate_gyro"}
 ```
 
 The response will be as follows if the calibration is successful. If unsuccessful, `success` will be `false`, and a non-empty `error_message` will be provided.
 
-```
+```json
 {
   "response_to": "calibrate_gyro",
   "success": true,
@@ -236,13 +236,13 @@ In setups where multiple acoustic sensors are used it can be useful to control t
 
 See [Integration](integration.md#triggering-and-synchronization) for guidance on using triggering with other acoustic instruments.
 
-```
+```json
 {"command":"trigger_ping"}
 ```
 
 The response will be as follows if the command is accepted. If the queue is full, `success` will be `false`, and a non-empty `error_message` will be provided.
 
-```
+```json
 {
   "response_to": "trigger_ping",
   "success": true,
@@ -257,13 +257,13 @@ The response will be as follows if the command is accepted. If the queue is full
 
 Get version info by issuing the `get_version_info` command.
 
-```
+```json
 {"command":"get_version_info"}
 ```
 
 A successful response looks like this:
 
-```
+```json
 {
   "response_to": "get_version_info",
   "success": true,
@@ -289,7 +289,7 @@ A successful response looks like this:
 
 Set [NTP configuration](./time.md#ntp-server-address-configuration-auto-or-custom) by issuing the `set_time_ntp` command with a `ntp_address` parameter. Set `ntp_address` either to the address of a NTP server, or as "auto".
 
-```
+```json
 {
   "command": "set_time_ntp",
   "parameters": {
@@ -300,7 +300,7 @@ Set [NTP configuration](./time.md#ntp-server-address-configuration-auto-or-custo
 
 A successful response looks like this:
 
-```
+```json
 {
   "response_to": "set_time_ntp",
   "success": true,
@@ -315,7 +315,7 @@ A successful response looks like this:
 
 Get [NTP configuration](./time.md#ntp-server-address-configuration-auto-or-custom) by issuing the `get_time_ntp` command.
 
-```
+```json
 {
   "command": "get_time_ntp"
 }
@@ -323,7 +323,7 @@ Get [NTP configuration](./time.md#ntp-server-address-configuration-auto-or-custo
 
 A successful response looks like this:
 
-```
+```json
 {
   "response_to": "get_time_ntp",
   "success": true,
@@ -342,7 +342,7 @@ Set time manually by issuing the `set_time_manual` command with the `now` parame
 
 For more information see [Setting manual time](./time.md#setting-manual-time).
 
-```
+```json
 {
   "command": "set_time_manual",
   "parameters": {
@@ -353,7 +353,7 @@ For more information see [Setting manual time](./time.md#setting-manual-time).
 
 A successful response looks like this:
 
-```
+```json
 {
   "response_to": "set_time_manual",
   "success": true,
@@ -366,7 +366,7 @@ A successful response looks like this:
 
 In the event the DVL is already synchronized via NTP, the response will look like this:
 
-```
+```json
 {
   "response_to": "set_time_manual",
   "success": false,
@@ -381,7 +381,7 @@ In the event the DVL is already synchronized via NTP, the response will look lik
 
 Get [time status](./time.md#time-status) by issuing the `get_time_status` command.
 
-```
+```json
 {
   "command": "get_time_status"
 }
@@ -398,7 +398,7 @@ The response contains the following fields:
 
 Here is an example response where the DVL is not synchornized with NTP:
 
-```
+```json
 {
   "response_to": "get_time_status",
   "success": true,
@@ -416,7 +416,7 @@ Here is an example response where the DVL is not synchornized with NTP:
 
 Here is an example response where the DVL has achieved sync with NTP:
 
-```
+```json
 {
   "response_to": "get_time_status",
   "success": true,
@@ -436,7 +436,7 @@ Here is an example response where the DVL has achieved sync with NTP:
 
 A [forced NTP sync](./time.md#ntp-force-sync) can be triggered by issuing the `force_sync_ntp` command with the `timeout_seconds` as an integer timeout in seconds.
 
-```
+```json
 {
   "command": "force_sync_ntp",
   "parameters": {
@@ -455,7 +455,7 @@ This will trigger a forced NTP sync in the DVL. The DVL will wait up to `timeout
 
 Here is an example response where the DVL achieved NTP sync:
 
-```
+```json
 {
   "response_to": "force_sync_ntp",
   "success": true,
@@ -477,7 +477,7 @@ Here is an example response where the DVL achieved NTP sync:
 
 Here is an example response where the DVL did not achieve NTP sync:
 
-```
+```json
 {
   "response_to": "force_sync_ntp",
   "success": true,
@@ -514,14 +514,14 @@ Here is an example response where the DVL did not achieve NTP sync:
 
 The current configuration of the DVL can be obtained by issuing the `get_config` command:
 
-```
+```json
 {"command": "get_config"}
 ```
 
 If the configuration is successfully fetched, the response will be in the following format. If not, `success` will be false, a non-empty `error_message` string will be provided, and `result` will be `null`.
 
 
-```
+```json
 {
   "response_to":"get_config",
   "success":true,
@@ -543,14 +543,14 @@ If the configuration is successfully fetched, the response will be in the follow
 
 Setting of configuration parameters can be carried out by issuing a `set_config` in the following format, including those parameters which are to be set:
 
-```
+```json
 {"command":"set_config","parameters":{"speed_of_sound":1480}}
 ```
 
 If the parameters are successfully set, the response will be in the following format. If not, `success` will be false, and a non-empty `error_message` string will be provided.
 
 
-```
+```json
 {
   "response_to": "set_config",
   "success": true,

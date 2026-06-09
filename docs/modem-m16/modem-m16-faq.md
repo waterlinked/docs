@@ -31,3 +31,6 @@ The signal strength from the Modem-M16 is donut-shaped around the transducer.
 
 Below is a simple scetch that illustrates the signal strength in all directions. For shorter distances the mounting is not relevant, as the signal is transmitted in all directions and also reflected at the surface, seabed or other constructions in the water. On long distances or to achieve optimal behaviour, the mounting position might slightly impact the signal range of the modem. 
 ![Signal strength scetch](../img/m16_signal_strength.png)
+
+## 6. How fast can the modems move relative to each other?
+The two modems should not move faster than **0.8 m/s relative to each other**. Above this relative velocity, the Doppler shift of the acoustic signal becomes significant and can disrupt the communication link. See [Acoustics](../modem-m16/modem-m16.md#acoustics).

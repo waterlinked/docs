@@ -77,7 +77,7 @@ The messages are delimited by newline.
 
 Example of TCP report (indented for legibility)
 
-```
+```json
 {
   "time": 106.3935775756836,
   "vx": -3.713480691658333e-05,
@@ -168,7 +168,7 @@ format      | Format type and version for this report: `json_v3`
 
 Example of a dead reckoning report.
 
-```
+```json
 {
   "ts": 49056.809,
   "x": 12.43563613697886467,
@@ -189,13 +189,13 @@ Example of a dead reckoning report.
 
 Dead reckoning can be reset by issuing the `reset_dead_reckoning` command:
 
-```
+```json
 {"command": "reset_dead_reckoning"}
 ```
 
 If the request is successfully received the response will have 'success' set to 'true'. The dead reckoning will have a delay of approximately 50ms until the positioning values being zeroed out. If the response is unsuccessful, the 'success' will be 'false' and a non-empty describing text will be returned in 'error_message'.
 
-```
+```json
 {
   "response_to":"reset_dead_reckoning",
   "success": true,
@@ -212,13 +212,13 @@ Gyro calibration is not needed as a normal setup step for DVL A100/A250.
 
 The gyro can be calibrated by issuing the `calibrate_gyro` command:
 
-```
+```json
 {"command":"calibrate_gyro"}
 ```
 
 The response will be as follows if the calibration is successful. If unsuccessful, `success` will be `false`, and a non-empty `error_message` will be provided.
 
-```
+```json
 {
   "response_to": "calibrate_gyro",
   "success": true,
@@ -235,13 +235,13 @@ In setups where multiple acoustic sensors are used it can be useful to control t
 
 See [Integration](integration.md#triggering-and-synchronization) for guidance on using triggering with other acoustic instruments.
 
-```
+```json
 {"command":"trigger_ping"}
 ```
 
 The response will be as follows if the command is accepted. If the queue is full, `success` will be `false`, and a non-empty `error_message` will be provided.
 
-```
+```json
 {
   "response_to": "trigger_ping",
   "success": true,
@@ -271,14 +271,14 @@ The response will be as follows if the command is accepted. If the queue is full
 
 The current configuration of the DVL can be obtained by issuing the `get_config` command:
 
-```
+```json
 {"command": "get_config"}
 ```
 
 If the configuration is successfully fetched, the response will be in the following format. If not, `success` will be false, a non-empty `error_message` string will be provided, and `result` will be `null`.
 
 
-```
+```json
 {
   "response_to":"get_config",
   "success":true,
@@ -300,14 +300,14 @@ If the configuration is successfully fetched, the response will be in the follow
 
 Setting of configuration parameters can be carried out by issuing a `set_config` in the following format, including those parameters which are to be set:
 
-```
+```json
 {"command":"set_config","parameters":{"speed_of_sound":1480}}
 ```
 
 If the parameters are successfully set, the response will be in the following format. If not, `success` will be false, and a non-empty `error_message` string will be provided.
 
 
-```
+```json
 {
   "response_to": "set_config",
   "success": true,

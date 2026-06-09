@@ -2,6 +2,9 @@
 
 This page gives common installation guidance for all our DVLs. Use it together with the mechanical and electrical page for your specific model.
 
+!!! tip "First-time setup"
+    For the full end-to-end path (mount, wire, connect, open the web GUI), follow the [Quickstart](quickstart.md). This page covers mounting and placement; see also [Electrical](electrical.md) and [Network setup](networking.md).
+
 ## Before installation
 
 1. Check that the DVL, cable, connector, and mounting hardware are undamaged.
