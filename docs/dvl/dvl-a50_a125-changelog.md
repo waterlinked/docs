@@ -61,11 +61,11 @@ See [Software updates](./sw-update.md) for more information on software updates.
 - Update serial output command (wcg) to include configuration for PD4
 - Update serial protocol to version 2.6.0
 - Update serial protocols 'Latest' to 'WL - Serial V2' and 'Backward compatible' to 'WL - Serial V1+V2' for clarity
-- [Beta] Add PD4 protocol support"
+- [Beta] Add PD4 protocol support
 
 Known issues:
 
-- "Chip id not correctly sent over serial"
+- Chip id not correctly sent over serial
 
 ## 2.6.0 (2024-08)
 
@@ -82,7 +82,7 @@ Known issues:
 
 - Improve velocity calculation
 - Fix issue that causes Ethernet connectivity problems with certain switches
-- Fix network configuration incorrectly showing as \"static\" after factory reset
+- Fix network configuration incorrectly showing as "static" after factory reset
 - [Beta] Add support for PD4 protocol endpoint
 
 Known issues:
@@ -194,7 +194,7 @@ Known issues:
 - Add thermal shut down
 - Improve velocity calculation
 - Update serial protocol to version 2.2.0
-- Add output of orientation angels
+- Add output of orientation angles
 - Add position estimation (dead reckoning) (Beta)
 
 ## 1.6.0 (2021-03)
@@ -205,7 +205,7 @@ Known issues:
 
 - Improve velocity valid
 - Improve noise immunity
-- Add tranducer details in serial protocol
+- Add transducer details in serial protocol
 - Add vertical speed visualisation
 - Add ping rate in GUI
 - Improve web gui update rate using websockets

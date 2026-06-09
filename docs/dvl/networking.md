@@ -9,6 +9,9 @@ The DVL has several services available over Ethernet:
 
 Use Ethernet for first setup whenever possible. It gives access to the web GUI, diagnostics, configuration, software updates, and the TCP data stream.
 
+!!! tip "First-time setup"
+    Connect power and wiring first (see [Electrical](electrical.md)), then use this page to get on the network. For the full end-to-end setup path, follow the [Quickstart](quickstart.md).
+
 ## Network configuration
 
 ### Multicast DNS (mDNS)

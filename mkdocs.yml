@@ -1,4 +1,4 @@
-site_name: Documentation
+site_name: Water Linked Documentation
 site_url: https://docs.waterlinked.com
 repo_url: https://github.com/waterlinked/docs
 edit_uri: ""
@@ -11,15 +11,30 @@ theme:
   font:
     text: Open Sans
   palette:
-    # Light mode
-    - scheme: default
-      primary: "#1D3556"         # Ocean blue
-      accent: "#4BEF8F"          # Signal green light
-      # Background override for light mode
-      background: "#F1F9EE"      # Green white
-      surface: "#2B9C6A"      # Signal green dark
+    # Light mode — brand colors are defined in css/extra.css (primary/accent: custom)
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
   features:
     - content.heading.permalinks
+    - content.code.copy
+    - navigation.tabs
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - search.share
   icon:
     link: material/link-variant 
 
@@ -41,7 +56,14 @@ markdown_extensions:
   - meta
   - pymdownx.superfences
   - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
   - attr_list
+  - md_in_html
   
 extra_css:
   - css/extra.css
@@ -119,7 +141,7 @@ nav:
           - Power supply: explorer-kit/power-supply.md
           - Network settings: explorer-kit/network-settings.md
           - Hardware: explorer-kit/hardware.md
-          - Master-D1: master-d1.md
+          - Master-D1: explorer-kit/master-d1.md
           - Receiver-D1: explorer-kit/receiver-d1.md
           - Locators:
               - Locator-A1: explorer-kit/locators/locator-a1.md
@@ -185,20 +207,20 @@ nav:
           - FAQ: dvl/faq.md
 
   - Modem:
-      - Modem-M64 (retired):
-          - Introduction: modem-m64/modem-m64.md
-          - Protocol: modem-m64/modem-m64-protocol.md
       - Modem-M16:
           - Introduction: modem-m16/modem-m16.md
           - Quickstart: modem-m16/modem-m16-quickstart.md
           - Interface:
-            - Wiring interface: modem-m16/modem-m16-wiring.md 
+            - Wiring interface: modem-m16/modem-m16-wiring.md
             - GUI: modem-m16/modem-m16-gui.md
           - Integration:
             - Interface overview: modem-m16/modem-m16-integration.md
             - Protocol: modem-m16/modem-m16-protocol.md
             - Diagnostic report structure: modem-m16/modem-m16-diagnostic-report.md
           - M16 FAQ: modem-m16/modem-m16-faq.md
+      - Modem-M64 (retired):
+          - Introduction: modem-m64/modem-m64.md
+          - Protocol: modem-m64/modem-m64-protocol.md
 
   - I/O interface cards: 
       - Revision 2: io-interface-cards/io-interface-rev2.md

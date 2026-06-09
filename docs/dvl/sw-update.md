@@ -2,6 +2,9 @@
 
 We recommend running the latest DVL software where possible. Software updates are done from the web GUI **About** page. The latest software can be obtained [automatically](#automatic-software-update) or [manually](#offline-software-update).
 
+!!! note
+    Software updates are performed only through the web GUI over the Ethernet (network) connection. The serial interface cannot be used to update the DVL.
+
 The release notes for each release are found here:
 
 * [DVL A50/A125 changelog](./dvl-a50_a125-changelog.md)

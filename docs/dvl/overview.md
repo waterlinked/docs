@@ -1,5 +1,5 @@
 # Overview
-At Water Linked we pride ourselves on building the Worlds smallest DVLs in their respective categories. Our DVLs combine everything that is important in the smallest possible formfactor: Prize and Performance!
+At Water Linked we pride ourselves on building the world's smallest DVLs in their respective categories. Our DVLs combine everything that is important in the smallest possible form factor: price and performance!
 
 ## What is a DVL?
 A DVL estimates velocity relative to the seafloor by sending acoustic waves from four angled transducers and measuring the frequency shift (Doppler effect) of the returned echoes. By combining measurements from all four transducers over time, the DVL can accurately estimate both the speed and direction of movement.
@@ -58,36 +58,40 @@ The DVL A100 and DVL A250 share the same general web GUI, configuration, electri
 
 
 
-## A50
+## Models
 
-* [DVL A50 Documentation & Installation](dvl-a50.md)
+<div class="grid cards" markdown>
 
-The [DVL A50](dvl-a50.md) is one of the world's smallest commercially available Doppler Velocity Logs.
+-   **[DVL A50](dvl-a50.md)**
 
-The A50 established a new market standard with its high performance, ultra-small 4-beam setup, open interface protocol, and low cost.
+    1 MHz · altitude to 50 m · 66 mm diameter
 
-## A100
+    One of the world's smallest commercially available DVLs — an ultra-compact 4-beam unit for size- and payload-limited platforms operating close to the bottom.
 
-* [DVL A100 Documentation & Installation](dvl-a100.md)
+    [Model details](dvl-a50.md)
 
-The [DVL A100](dvl-a100.md) is a compact, high-accuracy Doppler Velocity Log for lightweight and integration-friendly platforms.
+-   **[DVL A100](dvl-a100.md)** *(coming Q4 2026)*
 
-The A100 supports close-range and mid-range operation up to 100 m altitude and shares web GUI, configuration, electrical, protocol, and integration documentation with the DVL A250 where behavior is identical.
+    625 kHz · altitude to 100 m · 90 mm diameter
 
-## A125
+    A compact, high-accuracy DVL for lightweight, integration-friendly platforms that need more range than the A50.
 
-* [DVL A125 Documentation & Installation](dvl-a125.md)
+    [Model details](dvl-a100.md)
 
-The [DVL A125](dvl-a125.md) is the next step up from the [DVL A50](dvl-a50.md), providing better performance at greater distances while still keeping a small form factor relative to competing DVLs.
+-   **[DVL A125](dvl-a125.md)**
 
-The DVL A125 builds on the DVL A50 with increased performance, a small 4-beam setup, an open interface protocol, and mid-to-low cost.
+    420 kHz · altitude to 125 m · 125 mm diameter
 
-## A250
+    The step up from the A50: better performance at greater distances while keeping a small form factor.
 
-* [DVL A250 Documentation & Installation](dvl-a250.md)
+    [Model details](dvl-a125.md)
 
-The [DVL A250](dvl-a250.md) is the most capable DVL in the lineup, delivering long-range performance while maintaining a compact and efficient design.
+-   **[DVL A250](dvl-a250.md)**
 
-Operating at lower frequency for extended reach, the A250 enables reliable velocity measurements at distances up to 250 m, making it suitable for demanding subsea operations.
+    250 kHz · altitude to 250 m · 149 mm diameter
 
-The DVL A250 combines high performance, a compact 4-beam setup, open interface protocol, and a competitive cost, making it a powerful solution for larger vehicles and deep-water applications.
+    The most capable model — long-range, deep-water velocity measurement for larger vehicles and demanding subsea operations.
+
+    [Model details](dvl-a250.md)
+
+</div>

@@ -1,6 +1,6 @@
 # Master-D1 Electronics
 
-![master_components](img/master_components.png)
+![master_components](../img/master_components.png)
 
 ## Description
 
@@ -30,17 +30,17 @@ The LED on the Locator-A1 interface is not in use.
 
 ## Dimensions
 
-![master_dimensions](img/master_dimensions.png)
+![master_dimensions](../img/master_dimensions.png)
 
 The diagrams below shows the mechanical dimensions of the Master-D1 electronics.
 
-![master_dimensions_top](img/master_dimensions_top.png)
+![master_dimensions_top](../img/master_dimensions_top.png)
 
-![master_dimensions_side](img/master_dimensions_side.png)
+![master_dimensions_side](../img/master_dimensions_side.png)
 
 ## Setup
 
-![system_setup](img/system_setup.png)
+![system_setup](../img/system_setup.png)
 
 ## Datasheet
 

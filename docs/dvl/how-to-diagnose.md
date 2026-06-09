@@ -4,6 +4,19 @@ This page applies to all our DVLs unless otherwise noted.
 
 Use this guide when the DVL is not performing as expected, cannot get bottom lock, reports invalid velocity, or produces noisy measurements.
 
+**Jump to a symptom:**
+
+* [Invalid velocity](#invalid-velocity)
+* [Loss of bottom lock](#loss-of-bottom-lock)
+* [Weak signal or noisy measurements](#weak-signal-or-noisy-measurements)
+* [Air bubbles](#air-bubbles)
+* [Thrusters, propellers, and hull turbulence](#thrusters-propellers-and-hull-turbulence)
+* [Mechanical vibration and flexible mounts](#mechanical-vibration-and-flexible-mounts)
+* [Operation close to the water surface](#operation-close-to-the-water-surface)
+* [Obstructed beam paths / line of sight](#obstructed-beam-paths-line-of-sight)
+* [Active acoustic interference from other sensors](#active-acoustic-interference-from-other-sensors)
+* [Thermal shutdown](#thermal-shutdown)
+
 ## Before contacting support
 
 1. Confirm that the DVL is powered and submerged.

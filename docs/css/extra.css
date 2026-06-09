@@ -2,6 +2,20 @@ html {
   scrollbar-gutter: stable;
 }
 
+/* --- Brand colors (palette uses primary/accent: custom; set per color scheme) --- */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color:        #1D3556;  /* Ocean blue */
+  --md-primary-fg-color--light: #2c4a72;
+  --md-primary-fg-color--dark:  #14253b;
+  --md-accent-fg-color:         #2B9C6A;  /* Signal green (dark) */
+}
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color:        #1D3556;  /* keep ocean-blue header + tabs in dark mode */
+  --md-primary-fg-color--light: #2c4a72;
+  --md-primary-fg-color--dark:  #14253b;
+  --md-accent-fg-color:         #4BEF8F;  /* Signal green (light) — readable on dark */
+}
+
 .md-header {
     height:3.7rem;
     background-color: #1d3556;
@@ -26,6 +40,27 @@ html {
 .md-header__button.md-logo img {
     height:3.0rem;
     width:auto;
+}
+
+/* The logo (waterlinked_logo.png) is already the "Water Linked" wordmark. Where the logo
+   shows, the site-name text beside it doubles "Water Linked", so show only "Documentation"
+   instead — header reads "WaterLinked Documentation" (clearly a docs site, no doubling).
+   site_name stays "Water Linked Documentation" for the page <title>/search; the page title
+   still slides into the header on scroll (that topic carries data-md-component="header-topic").
+   Scoped to ≥76.25em because Material hides the wordmark logo below that — on mobile/tablet
+   there's no logo, so the full "Water Linked Documentation" text should remain. */
+@media screen and (min-width: 76.25em) {
+  .md-header__title .md-header__topic:not([data-md-component]) .md-ellipsis {
+    position: relative;
+    color: transparent;
+  }
+  .md-header__title .md-header__topic:not([data-md-component]) .md-ellipsis::after {
+    content: "Documentation";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #fff;
+  }
 }
 
 .responsive-video {
@@ -57,7 +92,92 @@ html {
   background-color: #2B9C6A;
 }
 
-/* Ocean Blue for links */
-a {
+/* Green for content links — scoped to typeset content so it doesn't tint nav/tab labels */
+.md-typeset a {
   color: #2B9C6A;
 }
+/* Brighter green for content links in dark mode (better contrast on slate) */
+[data-md-color-scheme="slate"] .md-typeset a {
+  color: #4BEF8F;
+}
+
+/* Wire-colour / LED swatches — drawn in CSS instead of emoji so they look pixel-identical
+   on every OS & browser. Emoji such as ⬜/⚪ are rendered by each device's own emoji font
+   (white/silver ones can look pink or oddly bordered on some platforms); these boxes don't
+   depend on that font. Used in dvl/electrical.md. Squares = wire colours, circles = LEDs. */
+.swatch {
+  display: inline-block;
+  width: .85em;
+  height: .85em;
+  border: 1px solid rgba(0, 0, 0, .4);
+  border-radius: 3px;
+  vertical-align: -.1em;
+}
+.swatch-round { border-radius: 50%; }
+[data-md-color-scheme="slate"] .swatch { border-color: rgba(255, 255, 255, .5); }
+.c-black        { background: #1a1a1a; }
+.c-red          { background: #d32f2f; }
+.c-green        { background: #2e7d32; }
+.c-orange       { background: #ef6c00; }
+.c-brown        { background: #5d4037; }
+.c-silver       { background: #c0c0c0; }
+.c-ledon        { background: #2ecc40; }
+.c-ledoff       { background: #3a3a3a; }
+.c-green-white  { background: linear-gradient(90deg, #2e7d32 50%, #fff 50%); }
+.c-orange-white { background: linear-gradient(90deg, #ef6c00 50%, #fff 50%); }
+.c-brown-white  { background: linear-gradient(90deg, #5d4037 50%, #fff 50%); }
+
+/* Product photos / screenshots have an opaque white background baked into the file, so in
+   dark mode they render as harsh bright blocks (CSS can't make an opaque pixel transparent,
+   and many photos have a dark subject that needs a light backdrop anyway). In dark mode,
+   frame content images as a light "photo card": the white backing keeps any transparent
+   images readable, and the padding + rounded corners make white-background images read as an
+   intentional framed photo instead of a raw white rectangle. */
+[data-md-color-scheme="slate"] .md-typeset img {
+  background-color: #fff;
+  padding: .35rem;
+  border-radius: .25rem;
+}
+
+/* --- Sticky section tabs ------------------------------------------------------------
+   Keep the top-level section tabs reachable while scrolling. Out of the box (this site runs
+   mkdocs-material 9.x) the tab bar shows only at the very top: the theme's JS toggles the
+   boolean `hidden` attribute on the `.md-tabs` nav as you scroll, which fades the links out.
+   Material's built-in sticky tabs (navigation.tabs.sticky) is an Insiders-only feature, so
+   we pin the bar under the fixed header ourselves and cancel the link fade. Scoped to
+   ≥76.25em because below that the tab bar is hidden (mobile uses the drawer), matching the
+   theme's own tabs breakpoint. */
+@media screen and (min-width: 76.25em) {
+  .md-tabs {
+    position: sticky;
+    top: 3.7rem;             /* sit directly under the fixed header (its height) */
+  }
+  /* The theme adds the `hidden` attribute on scroll, which opacity-fades the links. Cancel
+     that so the links stay clickable while the bar is pinned. (The bar itself stays put
+     because the theme keeps .md-tabs displayed, not display:none, in the hidden state.) */
+  .md-tabs[hidden] {
+    pointer-events: auto;
+  }
+  .md-tabs[hidden] .md-tabs__link {
+    transform: none;
+    opacity: .7;
+  }
+  .md-tabs[hidden] .md-tabs__item--active .md-tabs__link,
+  .md-tabs[hidden] .md-tabs__link:hover,
+  .md-tabs[hidden] .md-tabs__link:focus {
+    opacity: 1;
+  }
+  /* The pinned tab bar covers the band just below the header, so drop the sticky sidebars
+     (left nav + right TOC) to start beneath it, else their tops (the nav title / "Table of
+     contents" label) hide behind the bar. The theme TOGGLES this offset via the
+     `md-header--lifted` class on the header: present at the top (tabs shown → sidebars
+     `top:4.8rem`), but removed on scroll (→ sidebars fall back to the base `top:2.4rem`).
+     Since we keep the tabs pinned in BOTH states, the sidebars must clear the bar in both,
+     so force the offset unconditionally with !important (beats the theme's state-dependent
+     rules at any specificity). Offset = header 3.7rem + tab bar 2.4rem = 6.1rem (measured:
+     header+tabs = 122px at 1rem=20px). */
+  .md-sidebar {
+    top: 6.1rem !important;
+  }
+} 
+
