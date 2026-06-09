@@ -138,3 +138,46 @@ html {
   padding: .35rem;
   border-radius: .25rem;
 }
+
+/* --- Sticky section tabs ------------------------------------------------------------
+   Keep the top-level section tabs reachable while scrolling. Out of the box (this site runs
+   mkdocs-material 9.x) the tab bar shows only at the very top: the theme's JS toggles the
+   boolean `hidden` attribute on the `.md-tabs` nav as you scroll, which fades the links out.
+   Material's built-in sticky tabs (navigation.tabs.sticky) is an Insiders-only feature, so
+   we pin the bar under the fixed header ourselves and cancel the link fade. Scoped to
+   ≥76.25em because below that the tab bar is hidden (mobile uses the drawer), matching the
+   theme's own tabs breakpoint. */
+@media screen and (min-width: 76.25em) {
+  .md-tabs {
+    position: sticky;
+    top: 3.7rem;             /* sit directly under the fixed header (its height) */
+  }
+  /* The theme adds the `hidden` attribute on scroll, which opacity-fades the links. Cancel
+     that so the links stay clickable while the bar is pinned. (The bar itself stays put
+     because the theme keeps .md-tabs displayed, not display:none, in the hidden state.) */
+  .md-tabs[hidden] {
+    pointer-events: auto;
+  }
+  .md-tabs[hidden] .md-tabs__link {
+    transform: none;
+    opacity: .7;
+  }
+  .md-tabs[hidden] .md-tabs__item--active .md-tabs__link,
+  .md-tabs[hidden] .md-tabs__link:hover,
+  .md-tabs[hidden] .md-tabs__link:focus {
+    opacity: 1;
+  }
+  /* The pinned tab bar covers the band just below the header, so drop the sticky sidebars
+     (left nav + right TOC) to start beneath it, else their tops (the nav title / "Table of
+     contents" label) hide behind the bar. The theme TOGGLES this offset via the
+     `md-header--lifted` class on the header: present at the top (tabs shown → sidebars
+     `top:4.8rem`), but removed on scroll (→ sidebars fall back to the base `top:2.4rem`).
+     Since we keep the tabs pinned in BOTH states, the sidebars must clear the bar in both,
+     so force the offset unconditionally with !important (beats the theme's state-dependent
+     rules at any specificity). Offset = header 3.7rem + tab bar 2.4rem = 6.1rem (measured:
+     header+tabs = 122px at 1rem=20px). */
+  .md-sidebar {
+    top: 6.1rem !important;
+  }
+} 
+
