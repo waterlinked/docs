@@ -70,9 +70,8 @@ The messages are delimited by newline.
 | status | 8 bit status mask. Bit 0 is set to 1 for high temperature and DVL will soon enter thermal shutdown. Remaining bits are reserved for future use. |
 | time_of_validity | Timestamp of the surface reflection, aka 'center of ping' (Unix timestamp in microseconds) |
 | time_of_transmission | Timestamp from immediately before sending of the report over TCP (Unix timestamp in microseconds) |
-| tracking_mode | Active tracking mode. `bottom` for bottom tracking, `water` for [water tracking](water-tracking.md). Added in `json_v3.2` |
 | format | Format type and version for this report: `json_v3.3` |
-| type | Report type: `velocity` or `velocity_water` |
+| type | Report type: `velocity` or `velocity_water` for [water tracking](water-tracking.md)|
 
 !!! note "Transducer numbering and protocol IDs"
     Mechanical/transducer diagrams number the transducers from 1 to 4. In protocol messages and diagnostic logs, the transducer `id` uses zero-based numbering from 0 to 3. The `id` is therefore the transducer number minus 1.
@@ -140,7 +139,6 @@ Example of TCP report (indented for legibility)
   ],
   "velocity_valid": true,
   "status": 0,
-  "tracking_mode": "bottom",
   "format": "json_v3.3",
   "type": "velocity",
   "time_of_validity": 1638191471563017,
@@ -507,7 +505,7 @@ Here is an example response where the DVL did not achieve NTP sync:
 | mounting_rotation_offset | See the definition of the [vehicle frame](axes.md#vehicle-frame) of the DVL. Typically 0, but can be set to be non-zero if the forward axis of the DVL is not aligned with the forward axis of a vehicle on which it is mounted (0-360 degrees). Integer |
 | acoustic_enabled | `true` for normal operation of the DVL,`false` when the sending of acoustic waves from the DVL is disabled (e.g. to save power or slow down its heating up in air) |
 | dark_mode_enabled | `false` when the LED operates as [normal](electrical.md#led-signals), `true` for no blinking of the LED (e.g. if the LED is interfering with a camera) |
-| range_mode | `auto` when operating as normal, otherwise see [range mode configuration](range-mode.md)  or activate water tracking |
+| range_mode | `auto` when operating as normal, otherwise see [range mode configuration](range-mode.md)  or activate [water tracking](water-tracking.md) |
 | periodic_cycling_enabled | `true` to enable [periodic cycling](configuration.md#periodic-cycling), `false` to disable it |
 
 #### Fetching current configuration
