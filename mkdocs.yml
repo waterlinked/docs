@@ -31,7 +31,6 @@ theme:
     - content.heading.permalinks
     - content.code.copy
     - navigation.tabs
-    - navigation.top
     - search.suggest
     - search.highlight
     - search.share
@@ -177,7 +176,6 @@ nav:
           - Water tracking: dvl/water-tracking.md
           - Time: dvl/time.md
           - Settings and configuration: dvl/configuration.md
-          - Diagnostic log: dvl/diagnostic-log.md
           - Dead reckoning: dvl/dead-reckoning.md
           - Software updates: dvl/sw-update.md
           - Changelog:
@@ -202,6 +200,7 @@ nav:
           - DVL with UGPS for BlueROV2: dvl/bluerov-integration-dvl-ugps.md
 
       - Troubleshooting: 
+          - Diagnostic log: dvl/diagnostic-log.md
           - How to diagnose: dvl/how-to-diagnose.md
           - Support package checklist: dvl/support-package-checklist.md
           - FAQ: dvl/faq.md

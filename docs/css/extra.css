@@ -21,6 +21,13 @@ html {
     background-color: #1d3556;
 }
 
+/* On scroll the theme adds a drop-shadow under the fixed header (.md-header--shadow). With the
+   pinned section tabs sitting directly below, that shadow reads as a dark line between the logo
+   row and the tab bar. Drop it so the header and tabs stay one flush ocean-blue band. */
+.md-header--shadow {
+    box-shadow: none;
+}
+
 /* Always show heading permalinks */
 .md-typeset .headerlink {
   opacity: 1;
@@ -180,4 +187,35 @@ html {
     top: 6.1rem !important;
   }
 } 
+
+  /* --- Active page / link colour --------------------------------------------------- */
+  /* Make the currently active page/tab stand out with a distinct accent colour. */
+  .md-nav .md-nav__link--active,
+  .md-nav__link--active,
+  .md-nav .md-nav__link.is-active {
+    color: #2B9C6A !important; /* coral */
+    font-weight: 600;
+  }
+
+  /* Header / top navigation active link */
+  .md-header-nav .md-nav__link--active,
+  .md-header-nav .md-nav__link.is-active {
+    color: #2B9C6A !important;
+  }
+
+  /* Tabs (section tabs) active state */
+  .md-tabs__item--active .md-tabs__link,
+  .md-tabs__link:focus,
+  .md-tabs__link:hover {
+    color: #ffffff !important;
+    opacity: 1;
+  }
+
+  /* Dark-scheme adjustment: keep good contrast in slate/dark mode */
+  [data-md-color-scheme="slate"] .md-nav .md-nav__link--active,
+  [data-md-color-scheme="slate"] .md-tabs__item--active .md-tabs__link,
+  [data-md-color-scheme="slate"] .md-header-nav .md-nav__link--active {
+    color: #2B9C6A !important;
+  }
+
 
