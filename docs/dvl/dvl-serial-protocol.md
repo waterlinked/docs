@@ -24,7 +24,7 @@ This document describes serial protocol versions `2.6.x` and `2.7.x` (major.mino
 | Software release | Serial protocol version | Main protocol improvements |
 | -- | -- | -- |
 | 2.7.2 | 2.8.0 | Add serial time API |
-| 2.7.1 | 2.7.0 | Add water tracking mode and tracking mode field in velocity reports |
+| 2.7.1 | 2.7.0 | Add water tracking mode|
 | 2.6.1 | 2.6.0 | Serial baud rate configurable. Add PD4 format support in serial 'wcp' command. Some serial protocol names [changed](#change-serial-output-protocol-wcp). |
 | 2.5.2 | 2.5.0 | Add PD4 format support (experimental)
 | 2.4.4 | 2.5.0 | Change gyro calibration to store persistently. Note: gyro calibration commands now take up to 15 seconds.
