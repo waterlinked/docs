@@ -235,7 +235,7 @@ wcp,3
 | dark_mode_enabled | `n` when the LED operates as [normal](electrical.md#led-signals). `y` for no blinking of LED (e.g. if the LED is interfering with a camera) |
 | range_mode |`auto` when operating as normal, otherwise see [range mode configuration](range-mode.md) |
 | periodic_cycling_enabled | `y` to enable [periodic cycling](configuration.md#periodic-cycling), `n` to disable it. See [Configuration over TCP JSON API](dvl-a250_a100-json-protocol.md#configuration-over-json) for details |
-| hardware_trigger_enabled | `true` to enable [hardware triggering](dvl-triggering.md#hardware-triggering), `false` to disable |
+| hardware_trigger_enabled | `y` to enable [hardware triggering](dvl-triggering.md#hardware-triggering), `n` to disable |
 
 !!!note
     For backward compatibility the `range_mode` and `periodic_cycling_enabled` parameters are optional when setting the configuration. They will always be returned when reading the configuration (`wcc`).
