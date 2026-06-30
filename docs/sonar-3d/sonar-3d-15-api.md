@@ -76,7 +76,7 @@ RIP2 supports several Protobuf-encoded messages, including:
 
 #### `ImuBatch`
 - Raw measurements of specific force and rate of turn from an internal IMU at 100Hz.
-- Measurements are made at the position of the internal IMU within the sonar. The position offset relative to point cloud origin is -22 mm in x, -46 mm in y and 3 mm in z.
+- Measurements are made at the position of the internal IMU within the sonar. The position offset relative to point cloud origin is -22 mm in x, -46 mm in y and -3 mm in z.
 - Output in batches, with latency below 100ms during normal operation.
 - Expect occational spikes in latency.
 - Expect spikes in latency during configuration.
