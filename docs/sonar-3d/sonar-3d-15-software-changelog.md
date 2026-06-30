@@ -1,5 +1,9 @@
 # Software Versions
 
+## v1.8.0 (2026-06)
+
+- Add option to enable raw IMU output
+
 ## v1.7.1 (2026-05)
 
 - Added an integration API for NTP configuration and status to provide tighter time synchronisation
