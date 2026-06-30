@@ -40,10 +40,17 @@ This is the structure of a RIP2 packet:
 
 ---
 
-### Network
-By default, the Sonar 3D-15 uses **UDP Multicast** (`224.0.0.96:4747`), so any device on the local network can receive RIP2 packets without knowing the sonar’s IP.
+### Transmission
 
-The Sonar can also be configured for UDP unicast, or to disable sending of UDP packets. See HTTP API.
+RIP2 transmission is disabled by default. The HTTP API can be used to configure UDP multicast to `224.0.0.96:4747`, or UDP unicast to a given destination address and port. The configuration is persistent, meaning it is kept on restart.
+
+UDP multicast allows transmitting RIP2 packets to devices on the local network without requiring the sonar to know the receiver's IP, and vice versa.
+
+UDP unicast allows transmitting RIP2 packets to a given destination address and port, and can be routed across networks.
+
+Because UDP does not guarantee delivery or ordering, packets may be lost, reordered, or duplicated. Use message sequence numbers to address this.
+
+It is also possible to record RIP2 packets through the GUI.
 
 ---
 
@@ -66,6 +73,15 @@ RIP2 supports several Protobuf-encoded messages, including:
 - Each pixel represents distance (radius) to the strongest reflection.
 - `0` = no valid data.
 - `radius = pixelValue * imagePixelScale`.
+
+#### `ImuBatch`
+- Raw measurements of specific force and rate of turn from an internal IMU at 100Hz.
+- Measurements are made at the position of the internal IMU within the sonar. The position offset relative to point cloud origin is -22 mm in x, -46 mm in y and 3 mm in z.
+- Output in batches, with latency below 100ms during normal operation.
+- Expect occational spikes in latency.
+- Expect spikes in latency during configuration.
+- Output while acoustics are enabled.
+- Disabled by default. Enable using the HTTP API. 
 
 ---
 

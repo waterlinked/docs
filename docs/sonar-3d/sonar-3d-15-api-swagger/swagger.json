@@ -289,6 +289,57 @@
                 }
             }
         },
+        "/api/v1/integration/output/imu-batch/enabled": {
+            "get": {
+                "description": "Get whether ImuBatch output is enabled",
+                "tags": [
+                    "acoustics",
+                    "integrationAPI"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    "204": {
+                        "description": "No Content"
+                    }
+                }
+            },
+            "post": {
+                "description": "Enable/disable ImuBatch output",
+                "tags": [
+                    "integrationAPI"
+                ],
+                "parameters": [
+                    {
+                        "description": " ",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "408": {
+                        "description": "Request Timeout"
+                    },
+                    "409": {
+                        "description": "Conflict"
+                    }
+                }
+            }
+        },
         "/api/v1/integration/status": {
             "get": {
                 "description": "Get the status of the system",
