@@ -102,13 +102,6 @@ Known issues:
 ## 2.4.5 (2024-01)
 
 - Reduce boot time when ethernet is not connected
-- Fix bug where altitudes <0.2m can be unstable (bug introduced in 2.4.0)
-- Add PD6 BS sentence (Bottom track, ship referenced velocity)
-- Add storing gyro calibration automatically when using the API
-- Change gyro calibration to be single button for calibrate and store in the GUI
-- Change warning messages to include a popup in the GUI
-- Improve temperature shutdown warning in GUI
-- Fix minor upgrade issue affecting a minority of users
 
 Known issues:
 
