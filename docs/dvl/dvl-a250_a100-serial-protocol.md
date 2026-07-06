@@ -205,7 +205,7 @@ The supported protocols are:
 | Protocol number | Name | Description |
 | --------------- | ---- | ----------- |
 | 0 | Output disabled | No output on serial. Recommended if serial port is not used to lower latency on Ethernet protocols. |
-| 1 | WL - Serial V1 and V2 | All output including the deprecated `wrx` and `wrt` sentences. |
+| 1 | Not used | Not used |
 | 2 | PD6 | PD6 format output. See [PD6 format description](dvl-pd-formats.md#pd6-protocol-tcpserial) |
 | 3 | WL - Serial V2 | All output excluding the deprecated `wrx` and `wrt` sentences. |
 | 4 | Not used | Not used |
