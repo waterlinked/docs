@@ -171,16 +171,21 @@ html {
 .c-orange-white { background: linear-gradient(90deg, #ef6c00 50%, #fff 50%); }
 .c-brown-white  { background: linear-gradient(90deg, #5d4037 50%, #fff 50%); }
 
-/* Product photos / screenshots have an opaque white background baked into the file, so in
-   dark mode they render as harsh bright blocks (CSS can't make an opaque pixel transparent,
-   and many photos have a dark subject that needs a light backdrop anyway). In dark mode,
-   frame content images as a light "photo card": the white backing keeps any transparent
-   images readable, and the padding + rounded corners make white-background images read as an
-   intentional framed photo instead of a raw white rectangle. */
+/* In dark mode, paint a white backing behind content images so any transparent PNG with
+   dark content (line art, diagrams) stays legible on the dark page; for the many photos and
+   screenshots that already have an opaque white background baked in, it's a no-op.
+   This is a COLOUR-only change: no padding, border, or size, so the image box is identical
+   in light and dark and toggling the theme never shifts layout or resizes imagery. (An
+   earlier version added .35rem padding + rounded corners in dark mode only, which grew every
+   image and boxed inline icons, shifting content on toggle.) */
 [data-md-color-scheme="slate"] .md-typeset img {
   background-color: #fff;
-  padding: .35rem;
-  border-radius: .25rem;
+}
+/* Opt-out for self-coloured icons (e.g. a green help badge) that are already legible on the
+   dark page: the white backing would box them in a jarring white square. Tag such an image
+   with `{ .no-card }` in the Markdown. */
+[data-md-color-scheme="slate"] .md-typeset img.no-card {
+  background-color: transparent;
 }
 
 /* --- Sticky section tabs ------------------------------------------------------------
