@@ -7,13 +7,14 @@ html {
   --md-primary-fg-color:        #1D3556;  /* Ocean blue */
   --md-primary-fg-color--light: #2c4a72;
   --md-primary-fg-color--dark:  #14253b;
-  --md-accent-fg-color:         #2B9C6A;  /* Signal green (dark) */
+  --md-accent-fg-color:         #1F744D;  /* Signal green — WCAG-AA on white (was #2B9C6A, 3.46:1) */
 }
 [data-md-color-scheme="slate"] {
   --md-primary-fg-color:        #1D3556;  /* keep ocean-blue header + tabs in dark mode */
   --md-primary-fg-color--light: #2c4a72;
   --md-primary-fg-color--dark:  #14253b;
   --md-accent-fg-color:         #4BEF8F;  /* Signal green (light) — readable on dark */
+  --md-default-bg-color:        #222;     /* darker page background (was slate blue-grey) */
 }
 
 .md-header {
@@ -94,18 +95,54 @@ html {
     margin-right: -.4rem;
 }
 
-/* Dark green for buttons */
-.md-button {
-  background-color: #2B9C6A;
+/* Buttons: filled dark green with white text — WCAG-AA (white on #1F744D = 5.73:1). The
+   old #2B9C6A gave only ~3.5:1 (a plain button renders the theme's blue text on the green;
+   a primary button, white on #2B9C6A). Hover darkens and keeps white-on-green in BOTH
+   schemes — the theme's default hover pulls --md-accent-fg-color, which in dark mode is the
+   bright #4BEF8F and would drop the text contrast. */
+.md-typeset .md-button {
+  background-color: #1F744D;
+  border-color: #1F744D;
+  color: #fff;
+}
+.md-typeset .md-button:focus,
+.md-typeset .md-button:hover {
+  background-color: #15583A;
+  border-color: #15583A;
+  color: #fff;
 }
 
-/* Green for content links — scoped to typeset content so it doesn't tint nav/tab labels */
+/* Green for content links — scoped to typeset content so it doesn't tint nav/tab labels.
+   #1F744D is a WCAG-AA dark green on the white page (the old #2B9C6A was only 3.46:1). */
 .md-typeset a {
-  color: #2B9C6A;
+  color: #1F744D;
 }
-/* Brighter green for content links in dark mode (better contrast on slate) */
+/* Brighter green for content links in dark mode (readable on the dark background) */
 [data-md-color-scheme="slate"] .md-typeset a {
   color: #4BEF8F;
+}
+
+/* --- Headings -----------------------------------------------------------------------
+   The theme colours headings with an alpha'd foreground variable, so they render
+   semi-transparent and low-contrast. Pin them to solid, WCAG-AA colours and add a little
+   weight so they no longer read as too light. */
+[data-md-color-scheme="default"] .md-typeset h1,
+[data-md-color-scheme="default"] .md-typeset h2,
+[data-md-color-scheme="default"] .md-typeset h3,
+[data-md-color-scheme="default"] .md-typeset h4,
+[data-md-color-scheme="default"] .md-typeset h5,
+[data-md-color-scheme="default"] .md-typeset h6 {
+  color: #1D3556;
+  font-weight: 500;
+}
+[data-md-color-scheme="slate"] .md-typeset h1,
+[data-md-color-scheme="slate"] .md-typeset h2,
+[data-md-color-scheme="slate"] .md-typeset h3,
+[data-md-color-scheme="slate"] .md-typeset h4,
+[data-md-color-scheme="slate"] .md-typeset h5,
+[data-md-color-scheme="slate"] .md-typeset h6 {
+  color: #fff;
+  font-weight: 500;
 }
 
 /* Wire-colour / LED swatches — drawn in CSS instead of emoji so they look pixel-identical
@@ -134,16 +171,21 @@ html {
 .c-orange-white { background: linear-gradient(90deg, #ef6c00 50%, #fff 50%); }
 .c-brown-white  { background: linear-gradient(90deg, #5d4037 50%, #fff 50%); }
 
-/* Product photos / screenshots have an opaque white background baked into the file, so in
-   dark mode they render as harsh bright blocks (CSS can't make an opaque pixel transparent,
-   and many photos have a dark subject that needs a light backdrop anyway). In dark mode,
-   frame content images as a light "photo card": the white backing keeps any transparent
-   images readable, and the padding + rounded corners make white-background images read as an
-   intentional framed photo instead of a raw white rectangle. */
+/* In dark mode, paint a white backing behind content images so any transparent PNG with
+   dark content (line art, diagrams) stays legible on the dark page; for the many photos and
+   screenshots that already have an opaque white background baked in, it's a no-op.
+   This is a COLOUR-only change: no padding, border, or size, so the image box is identical
+   in light and dark and toggling the theme never shifts layout or resizes imagery. (An
+   earlier version added .35rem padding + rounded corners in dark mode only, which grew every
+   image and boxed inline icons, shifting content on toggle.) */
 [data-md-color-scheme="slate"] .md-typeset img {
   background-color: #fff;
-  padding: .35rem;
-  border-radius: .25rem;
+}
+/* Opt-out for self-coloured icons (e.g. a green help badge) that are already legible on the
+   dark page: the white backing would box them in a jarring white square. Tag such an image
+   with `{ .no-card }` in the Markdown. */
+[data-md-color-scheme="slate"] .md-typeset img.no-card {
+  background-color: transparent;
 }
 
 /* --- Sticky section tabs ------------------------------------------------------------
@@ -189,33 +231,35 @@ html {
 } 
 
   /* --- Active page / link colour --------------------------------------------------- */
-  /* Make the currently active page/tab stand out with a distinct accent colour. */
+  /* The active page in the left navigation is a content-side link, so it follows the green
+     link colours: a WCAG-AA dark green on the light sidebar, brighter green on dark. */
   .md-nav .md-nav__link--active,
   .md-nav__link--active,
   .md-nav .md-nav__link.is-active {
-    color: #2B9C6A !important; /* coral */
+    color: #1F744D !important;
     font-weight: 600;
   }
-
-  /* Header / top navigation active link */
-  .md-header-nav .md-nav__link--active,
-  .md-header-nav .md-nav__link.is-active {
-    color: #2B9C6A !important;
+  [data-md-color-scheme="slate"] .md-nav .md-nav__link--active,
+  [data-md-color-scheme="slate"] .md-nav__link--active,
+  [data-md-color-scheme="slate"] .md-nav .md-nav__link.is-active {
+    color: #4BEF8F !important;
   }
 
-  /* Tabs (section tabs) active state */
-  .md-tabs__item--active .md-tabs__link,
+  /* Main menu (ocean-blue header + section tabs). Its background stays ocean blue in both
+     colour schemes, so the active item uses one colour for both modes: a bright green that
+     keeps high contrast on the blue band. */
+  .md-header-nav .md-nav__link--active,
+  .md-header-nav .md-nav__link.is-active,
+  .md-tabs__item--active .md-tabs__link {
+    color: #4BEF8F !important;
+    opacity: 1;
+  }
+
+  /* Tab hover/focus brightens to white (the non-active affordance on the blue band). */
   .md-tabs__link:focus,
   .md-tabs__link:hover {
     color: #ffffff !important;
     opacity: 1;
-  }
-
-  /* Dark-scheme adjustment: keep good contrast in slate/dark mode */
-  [data-md-color-scheme="slate"] .md-nav .md-nav__link--active,
-  [data-md-color-scheme="slate"] .md-tabs__item--active .md-tabs__link,
-  [data-md-color-scheme="slate"] .md-header-nav .md-nav__link--active {
-    color: #2B9C6A !important;
   }
 
 
