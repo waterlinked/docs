@@ -19,7 +19,7 @@ On supported models, the same configuration parameter can also enable [water tra
 | `a<=b`| The DVL searches for bottom lock from range mode `a` through range mode `b`. |
 | `wt` | Enable water tracking on supported software and models. See [Water tracking](water-tracking.md). (Only A50/A125)|
 
-## DVL A50/A125/A100 range modes
+## DVL A50/A125 range modes
 
 | Range mode | Lower altitude (m) | Upper altitude (m) | Update rate per second (Hz) |
 | -- | -- | -- | -- |
@@ -32,15 +32,20 @@ On supported models, the same configuration parameter can also enable [water tra
 
 
 
-## DVL A250 range modes
+## DVL A100/A250 range modes
 
 
 | Range mode | Lower altitude (m) | Upper altitude (m) | Update rate per second (Hz) |
 | -- | -- | -- | -- |
-| 0 | 0.3 | 3.0 | 10 |
-| 1 | 1.5 | 14 | 5 - 6 |
-| 2 | 7.7 | 72 | 7 - 8 |
-| 3 | 15 | max | 2 - 4 |
+| 0 | 0.05 | 0.6 | 15 |
+| 1 | 0.3 | 3.0 | 10 |
+| 2 | 1.5 | 14 | 5 - 6 |
+| 3 | 7.7 | 72 | 7 - 8 |
+| 4 | 31 | max | 2 - 4 |
+| wt (see note) | 1.5 | 4.5 | 2 |
+
+!!! note
+    Water Tracking is experimental for A100/A250
 
 ## Set with TCP JSON API or serial protocol
 
