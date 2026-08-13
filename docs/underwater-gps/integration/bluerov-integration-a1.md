@@ -38,9 +38,12 @@ It contains the following parts (purpose in parentheses)
 
 ![bluerov2_front](../../img/bluerov2_front_300x300.png)
 
-* [M10-6.5mm-LC WetLink Penetrator](https://bluerobotics.com/store/cables-connectors/penetrators/wlp-vp/) from Blue Robotics
+* [M10-5.5mm-LC WetLink Penetrator](https://bluerobotics.com/store/cables-connectors/penetrators/wlp-vp/) from Blue Robotics
 
-![wetlink_penetrator](../../img/WLP-M10-6.5MM-R1-RP-2-300x300.jpg)
+![wetlink_penetrator](../../img/WLP-M10-5.5MM-LC-R1-RP-scaled.jpg)
+
+!!! Note "WetLink Penetrator size"
+	The Locator-A1 cable has an outer diameter of 5.7 mm. We recommend the M10-5.5mm-LC WetLink Penetrator (compatible with 5.2–5.8 mm cables). The M10-6.5mm-HC (compatible with 5.7–6.3 mm cables) might also be an option, but the cable is at the lower edge of its range.
 
 * [WetLink Bulkhead Wrench M10](https://bluerobotics.com/store/cables-connectors/tools/wlp-bulkhead-wrench/?attribute_bulkhead-size=M10) from Blue Robotics
 
@@ -96,7 +99,7 @@ Remove the Vent Plug from the Vent Penetrator Bolt on the electronics enclosure.
 To remove a blank penetrator and install the cable of the Locator-A1 into the end cap, you will need the following parts and tools:
 
 * [Locator-A1](https://waterlinked.com/shop/underwater-gps-g2-locator-a1-120)
-* [M10-6.5mm-LC WetLink Penetrator](https://bluerobotics.com/store/cables-connectors/penetrators/wlp-vp/) from Blue Robotics
+* [M10-5.5mm-LC WetLink Penetrator](https://bluerobotics.com/store/cables-connectors/penetrators/wlp-vp/) from Blue Robotics
 * [Silicone Grease](https://bluerobotics.com/store/watertight-enclosures/enclosure-tools-supplies/molykote/)
 * Isopropyl Alcohol Wipe
 * [WetLink Bulkhead Wrench M10](https://bluerobotics.com/store/cables-connectors/tools/wlp-bulkhead-wrench/?attribute_bulkhead-size=M10) from Blue Robotics
