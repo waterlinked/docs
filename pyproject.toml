@@ -1,0 +1,13 @@
+[project]
+name = "waterlinked-docs"
+version = "0.1.0"
+description = "Water Linked product documentation"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "jinja2==3.1.6",
+    "linkchecker==10.6.0",
+    "mkdocs==1.6.1",
+    "mkdocs-material==9.7.0",
+]
+

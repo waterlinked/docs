@@ -9,18 +9,16 @@ We are using mkdocs to manage our documentation.
 We're really happy if you want to contribute to make the documentation better!
 This is done by creating a pull request.
 
-1. Download, install dependencies
+1. Download and install dependencies
 
-Make sure you have Python3 installed.
+Install [uv](https://docs.astral.sh/uv/getting-started/installation/). It will
+install the required Python version and manage the virtual environment.
 
-```
+```sh
 git clone https://github.com/waterlinked/docs.git
 cd docs
 
-python -m venv venv
-source venv/bin/activate (Linux)
-venv\Scripts\activate.bat (Windows)
-pip install -r requirements.txt
+uv sync --locked
 
 ./install-hooks.sh  # (Optional) To automatically check links on git push
 ```
@@ -29,14 +27,14 @@ pip install -r requirements.txt
 
 3. Test them
 
-```
-mkdocs serve  # Allow you to view the changes on your browser
+```sh
+uv run mkdocs serve  # Allow you to view the changes in your browser
 ```
 * Fire up your browser and go to localhost:8000
 
 Verify links are valid:
 
-```
+```sh
 ./check-links.sh
 ```
 

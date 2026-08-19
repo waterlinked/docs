@@ -6,13 +6,12 @@ set -e
 
 # === Paths ===
 PROJECT_ROOT="$(git rev-parse --show-toplevel)"
-VENV_BIN="$PROJECT_ROOT/venv/bin"
 TMP_BUILD_DIR="$PROJECT_ROOT/.tmp-mkdocs-build"
 DOCS_DIR="$PROJECT_ROOT/docs"
 
-# Activate venv if not already activated
-if [ -f "$VENV_BIN/activate" ]; then
-    . "$VENV_BIN/activate"
+if ! command -v uv >/dev/null 2>&1; then
+    echo "Error: uv is required. See the README for installation instructions."
+    exit 1
 fi
 
 #Checking internal links in markdown files only
@@ -20,7 +19,7 @@ echo "Checking internal links in markdown files..."
 
 set +e
 #Using custom python script for internal link checking:
-python "$PROJECT_ROOT/check-internal-links.py" "$DOCS_DIR"
+uv run --project "$PROJECT_ROOT" python "$PROJECT_ROOT/check-internal-links.py" "$DOCS_DIR"
 RESULT_INTERNAL=$?
 
 set -e
@@ -32,23 +31,17 @@ fi
 
 echo "Internal linkcheck passed!"
 
-# Check if linkchecker exists
-if ! command -v linkchecker >/dev/null 2>&1; then
-    echo "Error: linkchecker executable not found in PATH"
-    exit 1
-fi
-
 # Remove old temp build if it exists
 rm -rf "$TMP_BUILD_DIR"
 
 # Build MkDocs into temporary directory
 echo "Building MkDocs locally into $TMP_BUILD_DIR..."
-python -m mkdocs build -d "$TMP_BUILD_DIR"
+uv run --project "$PROJECT_ROOT" python -m mkdocs build -d "$TMP_BUILD_DIR"
 
 echo "Running LinkChecker on external links against local build..."
 set +e
 # Only report broken links
-linkchecker "file://$TMP_BUILD_DIR/index.html" \
+uv run --project "$PROJECT_ROOT" linkchecker "file://$TMP_BUILD_DIR/index.html" \
     --no-status \
     --check-extern \
     --recursion-level=2 \
