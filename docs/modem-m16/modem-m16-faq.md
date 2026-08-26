@@ -14,12 +14,10 @@ reasons:
   available on the interface. The TX_COMPLETE flag is raised within
   approximately 25 ms after the acoustic transmission, but the exact delay
   varies.
-- **Receive side:** The modem does not use a sync word. The receiver
-  continuously decodes the incoming signal, and the decoding is robust enough
-  to recover a message from as little as half of the acoustic waveform. The
-  point where a packet is registered as received is therefore not fixed
-  relative to the acoustic arrival, and can vary by up to roughly half the
-  duration of the acoustic transmission.
+- **Receive side:** The modem decodes packets continuously and does not use a sync word. The
+  point where a packet is registered as received is therefore not fixed
+  relative to the acoustic arrival, and can vary by up to roughly half the
+  duration of the acoustic transmission.
 
 In water, these timing uncertainties correspond to path errors from tens of
 metres up to several hundred metres, which makes time-of-flight ranging
