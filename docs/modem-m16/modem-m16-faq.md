@@ -6,9 +6,26 @@ Below are some frequently asked questions about the Modem M16. Click on a questi
 
 ## 1. Can the M16 modem measure the range/distance between two modems?
 
-No, the modem's uses an unsynchronized method of sending data meaning that an time of flight estimate would give large errors in the range estimations. The acoustic signal is not synced but known to be within some time frame of 25ms. 
+No. The modems are unsynchronized and the M16 is not designed for time-of-flight
+ranging. Range estimates based on its timing will have large errors, for two
+reasons:
 
-However if looking at the [Signal to noise ratio (SNR)](../modem-m16/modem-m16-diagnostic-report.md) you can use it to indicate that the distance between the modems is fare or close. For example would a grater SNR (better signal) indicate that it is most likely close as it has so good signal.  
+- **Transmit side:** The exact time of the acoustic transmission is not
+  available on the interface. The TX_COMPLETE flag is raised within
+  approximately 25 ms after the acoustic transmission, but the exact delay
+  varies.
+- **Receive side:** The modem decodes packets continuously and does not use a sync word. The
+  point where a packet is registered as received is therefore not fixed
+  relative to the acoustic arrival, and can vary by up to roughly half the
+  duration of the acoustic transmission.
+
+In water, these timing uncertainties correspond to path errors from tens of
+metres up to several hundred metres, which makes time-of-flight ranging
+impractical.
+
+However, the [Signal to noise ratio (SNR)](../modem-m16/modem-m16-diagnostic-report.md)
+can give a rough indication of whether the other modem is near or far: a higher
+SNR generally means the modems are closer to each other.
 
 ---
 
