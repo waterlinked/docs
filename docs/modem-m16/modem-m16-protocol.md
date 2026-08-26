@@ -106,14 +106,14 @@ In parrot mode the modem immediately return the message it just got. This featur
 
 To set parrot mode:
 
-1. Send `"P"` (0x72).  
+1. Send `"P"` (0x70).  
 2. Wait **1 second**.  
-3. Send `"P"` (0x72) again.
+3. Send `"P"` (0x70) again.
 
 
 To reset parrot mode:
 
-1. Send `"p"` (0x72).  
+1. Send `"p"` (0x50).  
 2. Wait **1 second**.  
-3. Send `"p"` (0x72) again.
+3. Send `"p"` (0x50) again.
 ---
