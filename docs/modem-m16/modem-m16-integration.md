@@ -116,7 +116,7 @@ A modem can be set to parrot mode, which might be useful for tests. When a modem
 This can typically be used in range tests with one modem set to parrot mode and one modem sending an acoustic message and wait for it to be returned.
 
 !!! note
-   Do not forget to reset parrot mode after use.
+    Do not forget to reset parrot mode after use.
 
 ---
 
