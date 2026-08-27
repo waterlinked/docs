@@ -11,11 +11,11 @@ The DVL has different options for triggering acoustic pings to perform a velocit
 
 Use the RS232 RX line of the DVL to trigger a ping after enabling hardware triggering in the [configuration](configuration.md#operating-configurations).
 
-The trigger is detected on the **falling edge** of the RX signal. The signal must then remain low for approximately **78.1 µs** before returning high.
+The trigger is detected on the falling edge of the RX signal. The signal must then remain low for approximately 78.1 µs before returning high.
 
-For a UART connection configured as **115200 baud, 8N1**, this pulse corresponds to transmitting a `"NUL"` ASCII character (`0x00`, Ctrl + @).
+For a UART connection configured as 115200 baud, 8N1, this pulse corresponds to transmitting a `"NUL"` ASCII character (`0x00`, Ctrl + @).
 
-Because the trigger is defined by its **pulse timing**, sending a `NUL` character at another baud rate may not produce a valid trigger.
+Because the trigger is defined by its pulse timing, sending a `NUL` character at another baud rate may **not** produce a valid trigger.
 
 The trigger can be sent as often as needed. If the DVL is already transmitting or receiving, incoming trigger signals are discarded.
 
