@@ -39,9 +39,9 @@ On supported models, the same configuration parameter can also enable [water tra
 | -- | -- | -- | -- |
 | 0 | 0.05 | 0.6 | 15 |
 | 1 | 0.3 | 3.0 | 10 |
-| 2 | 1.5 | 14 | 5 - 6 |
-| 3 | 7.7 | 72 | 7 - 8 |
-| 4 | 31 | max | 2 - 4 |
+| 2 | 1.5 | 14 | 10 |
+| 3 | 7.7 | 72 | 2 - 3 |
+| 4 | 31 | max | 1 - 2 |
 | wt (see note) | 1.5 | 4.5 | 2 |
 
 !!! note
