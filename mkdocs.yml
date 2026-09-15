@@ -98,7 +98,8 @@ nav:
 
       - Resources:
           - Links to Resources: sonar-3d/sonar-3d-15-resources.md
-          - Software Changelog: sonar-3d/sonar-3d-15-software-changelog.md
+          
+      - Changelog: sonar-3d/sonar-3d-15-software-changelog.md
 
   - Underwater GPS:
       - G2:
@@ -178,9 +179,6 @@ nav:
           - Settings and configuration: dvl/configuration.md
           - Dead reckoning: dvl/dead-reckoning.md
           - Software updates: dvl/sw-update.md
-          - Changelog:
-              - DVL A50/A125 changelog: dvl/dvl-a50_a125-changelog.md
-              - DVL A100/A250 changelog: dvl/dvl-a250_a100-changelog.md
           - Web GUI:
               - DVL A50/A125 web GUI: dvl/dvl-a50_a125-gui.md
               - DVL A100/A250 web GUI: dvl/dvl-a250_a100-gui.md
@@ -204,6 +202,10 @@ nav:
           - How to diagnose: dvl/how-to-diagnose.md
           - Support package checklist: dvl/support-package-checklist.md
           - FAQ: dvl/faq.md
+          
+      - Changelog:
+          - DVL A50/A125 changelog: dvl/dvl-a50_a125-changelog.md
+          - DVL A100/A250 changelog: dvl/dvl-a250_a100-changelog.md      
 
   - Modem:
       - Modem-M16:
