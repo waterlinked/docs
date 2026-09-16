@@ -1,0 +1,265 @@
+html {
+  scrollbar-gutter: stable;
+}
+
+/* --- Brand colors (palette uses primary/accent: custom; set per color scheme) --- */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color:        #1D3556;  /* Ocean blue */
+  --md-primary-fg-color--light: #2c4a72;
+  --md-primary-fg-color--dark:  #14253b;
+  --md-accent-fg-color:         #1F744D;  /* Signal green — WCAG-AA on white (was #2B9C6A, 3.46:1) */
+}
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color:        #1D3556;  /* keep ocean-blue header + tabs in dark mode */
+  --md-primary-fg-color--light: #2c4a72;
+  --md-primary-fg-color--dark:  #14253b;
+  --md-accent-fg-color:         #4BEF8F;  /* Signal green (light) — readable on dark */
+  --md-default-bg-color:        #222;     /* darker page background (was slate blue-grey) */
+}
+
+.md-header {
+    height:3.7rem;
+    background-color: #1d3556;
+}
+
+/* On scroll the theme adds a drop-shadow under the fixed header (.md-header--shadow). With the
+   pinned section tabs sitting directly below, that shadow reads as a dark line between the logo
+   row and the tab bar. Drop it so the header and tabs stay one flush ocean-blue band. */
+.md-header--shadow {
+    box-shadow: none;
+}
+
+/* Always show heading permalinks */
+.md-typeset .headerlink {
+  opacity: 1;
+  visibility: visible;
+  margin-left: 0.3em;
+  cursor: pointer;
+}
+
+.md-flex{
+    margin-top: 1rem;
+}
+
+.md-header-nav {
+  padding-top: 1rem;
+}
+
+.md-header__button.md-logo img {
+    height:3.0rem;
+    width:auto;
+}
+
+/* The logo (waterlinked_logo.png) is already the "Water Linked" wordmark. Where the logo
+   shows, the site-name text beside it doubles "Water Linked", so show only "Documentation"
+   instead — header reads "WaterLinked Documentation" (clearly a docs site, no doubling).
+   site_name stays "Water Linked Documentation" for the page <title>/search; the page title
+   still slides into the header on scroll (that topic carries data-md-component="header-topic").
+   Scoped to ≥76.25em because Material hides the wordmark logo below that — on mobile/tablet
+   there's no logo, so the full "Water Linked Documentation" text should remain. */
+@media screen and (min-width: 76.25em) {
+  .md-header__title .md-header__topic:not([data-md-component]) .md-ellipsis {
+    position: relative;
+    color: transparent;
+  }
+  .md-header__title .md-header__topic:not([data-md-component]) .md-ellipsis::after {
+    content: "Documentation";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #fff;
+  }
+}
+
+.responsive-video {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+}
+
+.responsive-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.grid{
+    display: flex;
+    display: -ms-flexbox;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-left: -.4rem;
+    margin-right: -.4rem;
+}
+
+/* Buttons: filled dark green with white text — WCAG-AA (white on #1F744D = 5.73:1). The
+   old #2B9C6A gave only ~3.5:1 (a plain button renders the theme's blue text on the green;
+   a primary button, white on #2B9C6A). Hover darkens and keeps white-on-green in BOTH
+   schemes — the theme's default hover pulls --md-accent-fg-color, which in dark mode is the
+   bright #4BEF8F and would drop the text contrast. */
+.md-typeset .md-button {
+  background-color: #1F744D;
+  border-color: #1F744D;
+  color: #fff;
+}
+.md-typeset .md-button:focus,
+.md-typeset .md-button:hover {
+  background-color: #15583A;
+  border-color: #15583A;
+  color: #fff;
+}
+
+/* Green for content links — scoped to typeset content so it doesn't tint nav/tab labels.
+   #1F744D is a WCAG-AA dark green on the white page (the old #2B9C6A was only 3.46:1). */
+.md-typeset a {
+  color: #1F744D;
+}
+/* Brighter green for content links in dark mode (readable on the dark background) */
+[data-md-color-scheme="slate"] .md-typeset a {
+  color: #4BEF8F;
+}
+
+/* --- Headings -----------------------------------------------------------------------
+   The theme colours headings with an alpha'd foreground variable, so they render
+   semi-transparent and low-contrast. Pin them to solid, WCAG-AA colours and add a little
+   weight so they no longer read as too light. */
+[data-md-color-scheme="default"] .md-typeset h1,
+[data-md-color-scheme="default"] .md-typeset h2,
+[data-md-color-scheme="default"] .md-typeset h3,
+[data-md-color-scheme="default"] .md-typeset h4,
+[data-md-color-scheme="default"] .md-typeset h5,
+[data-md-color-scheme="default"] .md-typeset h6 {
+  color: #1D3556;
+  font-weight: 500;
+}
+[data-md-color-scheme="slate"] .md-typeset h1,
+[data-md-color-scheme="slate"] .md-typeset h2,
+[data-md-color-scheme="slate"] .md-typeset h3,
+[data-md-color-scheme="slate"] .md-typeset h4,
+[data-md-color-scheme="slate"] .md-typeset h5,
+[data-md-color-scheme="slate"] .md-typeset h6 {
+  color: #fff;
+  font-weight: 500;
+}
+
+/* Wire-colour / LED swatches — drawn in CSS instead of emoji so they look pixel-identical
+   on every OS & browser. Emoji such as ⬜/⚪ are rendered by each device's own emoji font
+   (white/silver ones can look pink or oddly bordered on some platforms); these boxes don't
+   depend on that font. Used in dvl/electrical.md. Squares = wire colours, circles = LEDs. */
+.swatch {
+  display: inline-block;
+  width: .85em;
+  height: .85em;
+  border: 1px solid rgba(0, 0, 0, .4);
+  border-radius: 3px;
+  vertical-align: -.1em;
+}
+.swatch-round { border-radius: 50%; }
+[data-md-color-scheme="slate"] .swatch { border-color: rgba(255, 255, 255, .5); }
+.c-black        { background: #1a1a1a; }
+.c-red          { background: #d32f2f; }
+.c-green        { background: #2e7d32; }
+.c-orange       { background: #ef6c00; }
+.c-brown        { background: #5d4037; }
+.c-silver       { background: #c0c0c0; }
+.c-ledon        { background: #2ecc40; }
+.c-ledoff       { background: #3a3a3a; }
+.c-green-white  { background: linear-gradient(90deg, #2e7d32 50%, #fff 50%); }
+.c-orange-white { background: linear-gradient(90deg, #ef6c00 50%, #fff 50%); }
+.c-brown-white  { background: linear-gradient(90deg, #5d4037 50%, #fff 50%); }
+
+/* In dark mode, paint a white backing behind content images so any transparent PNG with
+   dark content (line art, diagrams) stays legible on the dark page; for the many photos and
+   screenshots that already have an opaque white background baked in, it's a no-op.
+   This is a COLOUR-only change: no padding, border, or size, so the image box is identical
+   in light and dark and toggling the theme never shifts layout or resizes imagery. (An
+   earlier version added .35rem padding + rounded corners in dark mode only, which grew every
+   image and boxed inline icons, shifting content on toggle.) */
+[data-md-color-scheme="slate"] .md-typeset img {
+  background-color: #fff;
+}
+/* Opt-out for self-coloured icons (e.g. a green help badge) that are already legible on the
+   dark page: the white backing would box them in a jarring white square. Tag such an image
+   with `{ .no-card }` in the Markdown. */
+[data-md-color-scheme="slate"] .md-typeset img.no-card {
+  background-color: transparent;
+}
+
+/* --- Sticky section tabs ------------------------------------------------------------
+   Keep the top-level section tabs reachable while scrolling. Out of the box (this site runs
+   mkdocs-material 9.x) the tab bar shows only at the very top: the theme's JS toggles the
+   boolean `hidden` attribute on the `.md-tabs` nav as you scroll, which fades the links out.
+   Material's built-in sticky tabs (navigation.tabs.sticky) is an Insiders-only feature, so
+   we pin the bar under the fixed header ourselves and cancel the link fade. Scoped to
+   ≥76.25em because below that the tab bar is hidden (mobile uses the drawer), matching the
+   theme's own tabs breakpoint. */
+@media screen and (min-width: 76.25em) {
+  .md-tabs {
+    position: sticky;
+    top: 3.7rem;             /* sit directly under the fixed header (its height) */
+  }
+  /* The theme adds the `hidden` attribute on scroll, which opacity-fades the links. Cancel
+     that so the links stay clickable while the bar is pinned. (The bar itself stays put
+     because the theme keeps .md-tabs displayed, not display:none, in the hidden state.) */
+  .md-tabs[hidden] {
+    pointer-events: auto;
+  }
+  .md-tabs[hidden] .md-tabs__link {
+    transform: none;
+    opacity: .7;
+  }
+  .md-tabs[hidden] .md-tabs__item--active .md-tabs__link,
+  .md-tabs[hidden] .md-tabs__link:hover,
+  .md-tabs[hidden] .md-tabs__link:focus {
+    opacity: 1;
+  }
+  /* The pinned tab bar covers the band just below the header, so drop the sticky sidebars
+     (left nav + right TOC) to start beneath it, else their tops (the nav title / "Table of
+     contents" label) hide behind the bar. The theme TOGGLES this offset via the
+     `md-header--lifted` class on the header: present at the top (tabs shown → sidebars
+     `top:4.8rem`), but removed on scroll (→ sidebars fall back to the base `top:2.4rem`).
+     Since we keep the tabs pinned in BOTH states, the sidebars must clear the bar in both,
+     so force the offset unconditionally with !important (beats the theme's state-dependent
+     rules at any specificity). Offset = header 3.7rem + tab bar 2.4rem = 6.1rem (measured:
+     header+tabs = 122px at 1rem=20px). */
+  .md-sidebar {
+    top: 6.1rem !important;
+  }
+} 
+
+  /* --- Active page / link colour --------------------------------------------------- */
+  /* The active page in the left navigation is a content-side link, so it follows the green
+     link colours: a WCAG-AA dark green on the light sidebar, brighter green on dark. */
+  .md-nav .md-nav__link--active,
+  .md-nav__link--active,
+  .md-nav .md-nav__link.is-active {
+    color: #1F744D !important;
+    font-weight: 600;
+  }
+  [data-md-color-scheme="slate"] .md-nav .md-nav__link--active,
+  [data-md-color-scheme="slate"] .md-nav__link--active,
+  [data-md-color-scheme="slate"] .md-nav .md-nav__link.is-active {
+    color: #4BEF8F !important;
+  }
+
+  /* Main menu (ocean-blue header + section tabs). Its background stays ocean blue in both
+     colour schemes, so the active item uses one colour for both modes: a bright green that
+     keeps high contrast on the blue band. */
+  .md-header-nav .md-nav__link--active,
+  .md-header-nav .md-nav__link.is-active,
+  .md-tabs__item--active .md-tabs__link {
+    color: #4BEF8F !important;
+    opacity: 1;
+  }
+
+  /* Tab hover/focus brightens to white (the non-active affordance on the blue band). */
+  .md-tabs__link:focus,
+  .md-tabs__link:hover {
+    color: #ffffff !important;
+    opacity: 1;
+  }
+
+
