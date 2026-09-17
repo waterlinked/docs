@@ -15,8 +15,8 @@ The power cable comes with a blunt cut end. Strip the jacket and connect the wir
 
 | Wire colour | Connection |
 | ----------- | :--------- |
-| Black       | Negative   |
-| White       | Positive   |
+| <span class="swatch c-black" aria-hidden="true"></span> Black | Negative   |
+| <span class="swatch c-white" aria-hidden="true"></span> White | Positive   |
 
 | Specification          | Value            |
 | ---------------------- | :--------------- |

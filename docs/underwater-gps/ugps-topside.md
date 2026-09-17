@@ -14,18 +14,18 @@
 
 #### LED Indicators
 
-|LED name 	| Description 					 											|
-|-----------|---------------------------------------------------------------------------|
-| Power		| Solid green: Topside has power 											|
-| Ready		| Solid green: Topside has booted successfully								|
-| GPS		| Flashing green: Searching for GPS lock, solid green: Topside has GPS lock |
-| LED 1		| Solid green: Firmware successfully loaded									|
-| LED 2		| Not in use																|
-| Locator	| Solid green: Locator D1 is connected										|
-| Receiver 1| Solid green: Receiver 1 connected											|
-| Receiver 2| Solid green: Receiver 2 connected											|
-| Receiver 3| Solid green: Receiver 3 connected											|
-| Receiver 4| Solid green: Receiver 4 connected											|
+|LED name 	| LED | Description 					 											|
+|-----------|:---:|---------------------------------------------------------------------------|
+| Power		| <span class="led led--on" role="img" aria-label="LED solid green"></span> | Solid green: Topside has power 											|
+| Ready		| <span class="led led--on" role="img" aria-label="LED solid green"></span> | Solid green: Topside has booted successfully								|
+| GPS		| <span class="led led--blink" role="img" aria-label="LED flashing green"></span> <span class="led led--on" role="img" aria-label="LED solid green"></span> | Flashing green: Searching for GPS lock, solid green: Topside has GPS lock |
+| LED 1		| <span class="led led--on" role="img" aria-label="LED solid green"></span> | Solid green: Firmware successfully loaded									|
+| LED 2		| <span class="led led--off" role="img" aria-label="LED off"></span> | Not in use																|
+| Locator	| <span class="led led--on" role="img" aria-label="LED solid green"></span> | Solid green: Locator D1 is connected										|
+| Receiver 1| <span class="led led--on" role="img" aria-label="LED solid green"></span> | Solid green: Receiver 1 connected											|
+| Receiver 2| <span class="led led--on" role="img" aria-label="LED solid green"></span> | Solid green: Receiver 2 connected											|
+| Receiver 3| <span class="led led--on" role="img" aria-label="LED solid green"></span> | Solid green: Receiver 3 connected											|
+| Receiver 4| <span class="led led--on" role="img" aria-label="LED solid green"></span> | Solid green: Receiver 4 connected											|
 
 !!! Note 
 	There is **No** indication when the **Antenna** is connected.
@@ -122,7 +122,7 @@ Fits Molex Micro-Fit 3.0 43645 series.
 
 * If using the Locator-A1, connect this to the bulkhead marked "Locator" on the housing.
 
-* If using the Locator-U1, no connections to the housing is needed. Just power the Locator and make sure both status leds on U1 and Master-D1 are solid green.
+* If using the Locator-U1, no connections to the housing is needed. Just power the Locator and make sure both status LEDs on U1 and Master-D1 are solid green.
 
 ![pelicase_cables_connected](../img/topside-with-locator-and-receivers.jpg)
 

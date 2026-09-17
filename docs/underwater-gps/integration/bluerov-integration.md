@@ -11,7 +11,7 @@ The Water Linked Underwater GPS G2 (from now UGPS) system can be integrated with
 ## Alternative integration methods
 * If you wish to use a [Locator-A1](../locators/locator-a1.md), however you wish to avoid purchasing the full integration kit then this can be done. The Locator-A1 must be installed on the ROV and connected to the G2 Topside and then it is necessary to set-up a network bridge. The steps in these sections are relevant
     * [Modifications to the BlueROV2](bluerov-integration-a1.md#modifications-to-the-bluerov2)
-    * [Modifications to the FXTI](bluerov-integration-a1.md#modifications-to-the-fxti) with the deviation that the blue/white twisted pair between Tether Connection PCB and Binder-connector-pigtail-assembly does not need to be connected.
+    * [Modifications to the FXTI](bluerov-integration-a1.md#modifications-to-the-fxti) with the deviation that the blue/white <span class="swatch c-blue" aria-hidden="true"></span><span class="swatch c-white" aria-hidden="true"></span> twisted pair between Tether Connection PCB and Binder-connector-pigtail-assembly does not need to be connected.
     * [Establish a network connection with a network bridge](bluerov-integration-u1.md#establish-a-network-connection-between-ugps-topside-bluerov2-and-topside-computer)
     * [Final steps](#final-steps-of-integration-independent-of-locator)
 
@@ -19,7 +19,7 @@ The Water Linked Underwater GPS G2 (from now UGPS) system can be integrated with
 * If you wish to use the [Locator-U1](../locators/locator-u1.md), however you wish to avoid the complication in setting up a network bridge, it is possible to integrate by using the [BlueROV2 Integration Kit](https://waterlinked.com/shop/underwater-gps-g2-bluerov2-integration-kit-103). The steps in these sections are relevant
     * [Mount the Locator-U1 to the BlueROV2 frame](bluerov-integration-u1.md#mount-the-locator-u1-to-the-bluerov2-frame)
     * [Modifications to the UGPS Topside](bluerov-integration-a1.md#modifications-to-the-ugps-topside)
-    * [Modifications to the FXTI](bluerov-integration-a1.md#modifications-to-the-fxti) with the deviation that the green/white twisted pair between tether and Binder-connector-pigtail-assembly does not need to be connected.
+    * [Modifications to the FXTI](bluerov-integration-a1.md#modifications-to-the-fxti) with the deviation that the green/white <span class="swatch c-green" aria-hidden="true"></span><span class="swatch c-white" aria-hidden="true"></span> twisted pair between tether and Binder-connector-pigtail-assembly does not need to be connected.
     * [Establish a network connection with powerline communication](bluerov-integration-a1.md#establish-a-network-connection-between-ugps-topside-bluerov2-and-topside-computer)
     * [Final steps](#final-steps-of-integration-independent-of-locator)
 
