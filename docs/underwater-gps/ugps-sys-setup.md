@@ -13,9 +13,9 @@ The antenna can be placed anywhere up to 10m from the topside housing (limited b
     By the _antenna base_ is meant the joining point of the three prongs with the receivers at their ends.
 
 
-|                     |                      |
+| Consideration       | Guidance             |
 | ------------------- | :------------------- |
-| **Alignment**       | Ensure that the 'Forward' direction of the antenna as defined by a label on one of its prongs (see also the figure below) is aligned with the 'Forward' direction of the topside housing (indicated by a label on the lid). <br><br>If it is not possible to physically align them, in *Baseline -> Antenna configuration -> Advanced settings*, specify the clockwise angle in degrees from the forward axis of the topside to the forward axis of the antenna. <br><br>If this alignment is not carried out, the [global](../underwater-gps/reference-frames.md#global-frame) position outputted by UGPS G2 will be incorrect.
+| **Alignment**       | Ensure that the 'Forward' direction of the antenna as defined by a label on one of its prongs (see also the figure below) is aligned with the 'Forward' direction of the topside housing (indicated by a label on the lid). <br><br>If it is not possible to physically align them, in *Baseline -> Antenna configuration -> Advanced settings*, specify the clockwise angle in degrees from the forward axis of the topside to the forward axis of the antenna. <br><br>If this alignment is not carried out, the [global](../underwater-gps/reference-frames.md#global-frame) position outputted by UGPS G2 will be incorrect. |
 | **Line-of-sight**   | Ensure that there will be line-of-sight between the antenna and locator.  |
 | **Antenna depth**  | Ensure that the base of the antenna is at a depth of at least one metre (as indicated by a label upon the top folding joint of the pole of the antenna), to avoid acoustic disturbance. <br><br>The depth of the antenna base (relative to the sea surface) must be specified in *Baseline -> Antenna configuration -> Advanced settings -> Antenna depth*. If it is not, both the [acoustic](./reference-frames.md#acoustic-frame) and [global](../underwater-gps/reference-frames.md#global-frame) positions may be incorrect.  |
 | **Antenna stability** | Secure the antenna tightly to the vessel using the provided Ram Mount. |
@@ -25,15 +25,14 @@ The antenna can be placed anywhere up to 10m from the topside housing (limited b
 </div>
 
 !!! Note
-
- **Directivity** : the antenna and locators are omnidirectional, that is, signal strength should be good in all directions
+    **Directivity** : the antenna and locators are omnidirectional, that is, signal strength should be good in all directions
 
 
 ## Receivers
 
 Loose receivers can be placed anywhere up to 100m from the topside housing. Go through the following, and configure the placement of the receivers in the graphical pane at *Baseline -> Receiver and range configuration* so that their positions relative to the origin and their depths are correct. See [System Configuration](../underwater-gps/ugps-sysconfig.md#baseline-settings)
 
-|                     |                      |
+| Consideration       | Guidance             |
 | ------------------- | :------------------- |
 | **Line-of-sight**   | Ensure that all the receivers will have line-of-sight to the locator. |
 | **Separation** | Ensure that the receivers are not too close, and are not all in a line. A grid of 2x2 metres should typically be sufficient for good performance, but experiment with different configurations if you experience sub-optimal performance.  |
@@ -56,7 +55,7 @@ Select the type of locator ([U1](../underwater-gps/locators/locator-u1.md), [A1]
 
 No matter which locator is in use, it always needs to be placed within line of sight of the receivers. In most cases this will be somewhere on top of the unit that is to be tracked.
 
-| | [Locator-U1](../underwater-gps/locators/locator-u1.md) | [Locator-A1](../underwater-gps/locators/locator-a1.md) | [Locator-D1](../underwater-gps/locators/locator-d1.md) |
+| Feature | [Locator-U1](../underwater-gps/locators/locator-u1.md) | [Locator-A1](../underwater-gps/locators/locator-a1.md) | [Locator-D1](../underwater-gps/locators/locator-d1.md) |
 |---|---|---|---|
 | **Connection** | Wireless, battery powered | Cable to the topside, directly or through a vehicle integration | 50 m or 100 m integrated cable to the topside |
 | **Depth** | Internal depth sensor | No depth sensor. Depth must be provided through the [API](../underwater-gps/integration/api.md) | Internal depth sensor |

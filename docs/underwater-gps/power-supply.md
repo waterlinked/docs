@@ -13,10 +13,13 @@ The Underwater GPS G2 can be powered using either the provided power cable conne
 
 The power cable comes with a blunt cut end. Strip the jacket and connect the wires to your favorite 12V power source.
 
-|                        |                  |
+| Wire colour | Connection |
+| ----------- | :--------- |
+| Black       | Negative   |
+| White       | Positive   |
+
+| Specification          | Value            |
 | ---------------------- | :--------------- |
-| Black                  | Negative         |
-| White                  | Positive         |
 | Input voltage          | 10V – 30V        |
 | Current consumption    | 0.25A at 12V     |
 | Power-on current surge | 2.30A at 12V     |

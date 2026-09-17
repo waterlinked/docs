@@ -9,12 +9,12 @@ The Underwater GPS GUI is web based, and can be accessed using your favorite web
 
 The local Underwater GPS WiFi is configured as:
 
-|            |               |
-| ---------- | :------------ |
-| Mode     : | Access Point  |
-| SSID     : | UnderwaterGPS |
-| Password : | waterlinked   |
-| Security : | WPA2-Personal | 
+| Setting  | Value         |
+| -------- | :------------ |
+| Mode     | Access Point  |
+| SSID     | UnderwaterGPS |
+| Password | waterlinked   |
+| Security | WPA2-Personal |
 
 To connect to the UGPS over it's local wifi
 - Power on the UGPS and wait for GPS lock and the Ready LED to be lit.

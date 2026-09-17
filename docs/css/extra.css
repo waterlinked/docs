@@ -241,8 +241,7 @@ html {
 .md-typeset .led-wave--breathe    { background: repeating-linear-gradient(90deg, var(--led-off) 0, var(--led-on) 2.25rem, var(--led-off) 4.5rem); }
 
 /* Keep the LED column of indicator tables narrow and centred. */
-.md-typeset table td:has(> .led-wave),
-.md-typeset table td:has(> .led + .led) { white-space: nowrap; }
+.md-typeset table td:has(> .led-wave) { white-space: nowrap; }
 
 /* In dark mode, paint a white backing behind content images so any transparent PNG with
    dark content (line art, diagrams) stays legible on the dark page; for the many photos and

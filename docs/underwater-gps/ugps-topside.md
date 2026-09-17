@@ -17,8 +17,8 @@
 |LED name 	| Description 					 											|
 |-----------|---------------------------------------------------------------------------|
 | Power		| Solid green: Topside has power 											|
-| Ready		| Solid Green: Topside has booted successfully								|
-| GPS		| Blinking green: Searching for GPS lock, solid green: Topside has GPS lock |
+| Ready		| Solid green: Topside has booted successfully								|
+| GPS		| Flashing green: Searching for GPS lock, solid green: Topside has GPS lock |
 | LED 1		| Solid green: Firmware successfully loaded									|
 | LED 2		| Not in use																|
 | Locator	| Solid green: Locator D1 is connected										|
@@ -41,25 +41,25 @@
 
 | Signal    | Pin | Pin | Signal    | Function |
 | --------- | --: | :-- | :-------- | :-------: |
-| GPIO 2\*  | 1   | 2   | GPIO 3    |  |
+| GPIO 2\*  | 1   | 2   | GPIO 3    | GPIO |
 | D1 TX+    | 3   | 4   | D1 TX-    | Locator-D1 |
-| D1 RX+    | 5   | 6   | D1 RX-    | \| |
+| D1 RX+    | 5   | 6   | D1 RX-    | Locator-D1 |
 | **GND**   | 7   | 8   | **12 V**  | Power out |
 | R1 TX+    | 9   | 10  | R1 TX-    | Receiver-D1 |
-| R1 RX+    | 11  | 12  | R1 RX-    | \| |
+| R1 RX+    | 11  | 12  | R1 RX-    | Receiver-D1 |
 | **GND**   | 13  | 14  | **12 V**  | Power out |
 | R2 TX+    | 15  | 16  | R2 TX-    | Receiver-D1 |
-| R2 RX+    | 17  | 18  | R2 RX-    | \| |
+| R2 RX+    | 17  | 18  | R2 RX-    | Receiver-D1 |
 | **GND**   | 19  | 20  | **12 V**  | Power out |
 | R3 TX+    | 21  | 22  | R3 TX-    | Receiver-D1 |
-| R3 RX+    | 23  | 24  | R3 RX-    | \| |
+| R3 RX+    | 23  | 24  | R3 RX-    | Receiver-D1 |
 | **GND**   | 25  | 26  | **12 V**  | Power out |
 | R4 TX+    | 27  | 28  | R4 TX-    | Receiver-D1 |
-| R4 RX+    | 29  | 30  | R4 RX-    | \| |
+| R4 RX+    | 29  | 30  | R4 RX-    | Receiver-D1 |
 | ANT RX 1+ | 31  | 32  | ANT RX 1- | Antenna  |
-| ANT RX 2+ | 33  | 34  | ANT RX 2- | \| |
-| ANT RX 3+ | 35  | 36  | ANT RX 3- | \| |
-| ANT RX 4+ | 37  | 38  | ANT RX 4- | \| |
+| ANT RX 2+ | 33  | 34  | ANT RX 2- | Antenna |
+| ANT RX 3+ | 35  | 36  | ANT RX 3- | Antenna |
+| ANT RX 4+ | 37  | 38  | ANT RX 4- | Antenna |
 | A1 TX+    | 39  | 40  | A1 TX-    | Locator-A1 |
 
 \* *Used to control relays for switching between Receivers and Antenna.*
@@ -77,7 +77,7 @@
 | Signal           | Pin | Pin | Signal |
 | ---------------- | --: | :-- | :----- |
 | **GND**          | 1   | 2   | **12 V** |
-| NMEAS COMPASS TX | 3   | 4   | NMEA COMPASS RX |
+| NMEA COMPASS TX | 3   | 4   | NMEA COMPASS RX |
 | *NC*             | 5   | 6   | **GND** |
 
 #### 6 pin NMEA 0183 Out (not currently implemented)
