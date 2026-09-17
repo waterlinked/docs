@@ -14,18 +14,18 @@
 
 #### LED Indicators
 
-|LED name 	| Description 					 											|
-|-----------|---------------------------------------------------------------------------|
-| Power		| Solid green: Topside has power 											|
-| Ready		| Solid Green: Topside has booted successfully								|
-| GPS		| Blinking green: Searching for GPS lock, solid green: Topside has GPS lock |
-| LED 1		| Solid green: Firmware successfully loaded									|
-| LED 2		| Not in use																|
-| Locator	| Solid green: Locator D1 is connected										|
-| Receiver 1| Solid green: Receiver 1 connected											|
-| Receiver 2| Solid green: Receiver 2 connected											|
-| Receiver 3| Solid green: Receiver 3 connected											|
-| Receiver 4| Solid green: Receiver 4 connected											|
+|LED name 	| LED | Description 					 											|
+|-----------|:---:|---------------------------------------------------------------------------|
+| Power		| <span class="led led--on" role="img" aria-label="LED solid green"></span> | Solid green: Topside has power 											|
+| Ready		| <span class="led led--on" role="img" aria-label="LED solid green"></span> | Solid green: Topside has booted successfully								|
+| GPS		| <span class="led led--blink" role="img" aria-label="LED flashing green"></span> <span class="led led--on" role="img" aria-label="LED solid green"></span> | Flashing green: Searching for GPS lock, solid green: Topside has GPS lock |
+| LED 1		| <span class="led led--on" role="img" aria-label="LED solid green"></span> | Solid green: Firmware successfully loaded									|
+| LED 2		| <span class="led led--off" role="img" aria-label="LED off"></span> | Not in use																|
+| Locator	| <span class="led led--on" role="img" aria-label="LED solid green"></span> | Solid green: Locator D1 is connected										|
+| Receiver 1| <span class="led led--on" role="img" aria-label="LED solid green"></span> | Solid green: Receiver 1 connected											|
+| Receiver 2| <span class="led led--on" role="img" aria-label="LED solid green"></span> | Solid green: Receiver 2 connected											|
+| Receiver 3| <span class="led led--on" role="img" aria-label="LED solid green"></span> | Solid green: Receiver 3 connected											|
+| Receiver 4| <span class="led led--on" role="img" aria-label="LED solid green"></span> | Solid green: Receiver 4 connected											|
 
 !!! Note 
 	There is **No** indication when the **Antenna** is connected.
@@ -41,25 +41,25 @@
 
 | Signal    | Pin | Pin | Signal    | Function |
 | --------- | --: | :-- | :-------- | :-------: |
-| GPIO 2\*  | 1   | 2   | GPIO 3    |  |
+| GPIO 2\*  | 1   | 2   | GPIO 3    | GPIO |
 | D1 TX+    | 3   | 4   | D1 TX-    | Locator-D1 |
-| D1 RX+    | 5   | 6   | D1 RX-    | \| |
+| D1 RX+    | 5   | 6   | D1 RX-    | Locator-D1 |
 | **GND**   | 7   | 8   | **12 V**  | Power out |
 | R1 TX+    | 9   | 10  | R1 TX-    | Receiver-D1 |
-| R1 RX+    | 11  | 12  | R1 RX-    | \| |
+| R1 RX+    | 11  | 12  | R1 RX-    | Receiver-D1 |
 | **GND**   | 13  | 14  | **12 V**  | Power out |
 | R2 TX+    | 15  | 16  | R2 TX-    | Receiver-D1 |
-| R2 RX+    | 17  | 18  | R2 RX-    | \| |
+| R2 RX+    | 17  | 18  | R2 RX-    | Receiver-D1 |
 | **GND**   | 19  | 20  | **12 V**  | Power out |
 | R3 TX+    | 21  | 22  | R3 TX-    | Receiver-D1 |
-| R3 RX+    | 23  | 24  | R3 RX-    | \| |
+| R3 RX+    | 23  | 24  | R3 RX-    | Receiver-D1 |
 | **GND**   | 25  | 26  | **12 V**  | Power out |
 | R4 TX+    | 27  | 28  | R4 TX-    | Receiver-D1 |
-| R4 RX+    | 29  | 30  | R4 RX-    | \| |
+| R4 RX+    | 29  | 30  | R4 RX-    | Receiver-D1 |
 | ANT RX 1+ | 31  | 32  | ANT RX 1- | Antenna  |
-| ANT RX 2+ | 33  | 34  | ANT RX 2- | \| |
-| ANT RX 3+ | 35  | 36  | ANT RX 3- | \| |
-| ANT RX 4+ | 37  | 38  | ANT RX 4- | \| |
+| ANT RX 2+ | 33  | 34  | ANT RX 2- | Antenna |
+| ANT RX 3+ | 35  | 36  | ANT RX 3- | Antenna |
+| ANT RX 4+ | 37  | 38  | ANT RX 4- | Antenna |
 | A1 TX+    | 39  | 40  | A1 TX-    | Locator-A1 |
 
 \* *Used to control relays for switching between Receivers and Antenna.*
@@ -77,7 +77,7 @@
 | Signal           | Pin | Pin | Signal |
 | ---------------- | --: | :-- | :----- |
 | **GND**          | 1   | 2   | **12 V** |
-| NMEAS COMPASS TX | 3   | 4   | NMEA COMPASS RX |
+| NMEA COMPASS TX | 3   | 4   | NMEA COMPASS RX |
 | *NC*             | 5   | 6   | **GND** |
 
 #### 6 pin NMEA 0183 Out (not currently implemented)
@@ -122,7 +122,7 @@ Fits Molex Micro-Fit 3.0 43645 series.
 
 * If using the Locator-A1, connect this to the bulkhead marked "Locator" on the housing.
 
-* If using the Locator-U1, no connections to the housing is needed. Just power the Locator and make sure both status leds on U1 and Master-D1 are solid green.
+* If using the Locator-U1, no connections to the housing is needed. Just power the Locator and make sure both status LEDs on U1 and Master-D1 are solid green.
 
 ![pelicase_cables_connected](../img/topside-with-locator-and-receivers.jpg)
 
