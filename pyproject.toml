@@ -5,9 +5,13 @@ description = "Water Linked product documentation"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
+    "beautifulsoup4==4.15.0",
     "jinja2==3.1.6",
     "linkchecker==10.6.0",
     "mkdocs==1.6.1",
     "mkdocs-material==9.7.0",
+    "playwright==1.63.0",
+    "pillow==12.0.0",
+    "pypdf==6.19.0",
 ]
 
