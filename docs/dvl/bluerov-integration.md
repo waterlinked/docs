@@ -14,7 +14,7 @@ This guide details how to permanently attach the DVL A50 to a BlueROV2.
 
 ### You will need
 
-<img src="../img/WL-21035-3_DVL-A50_Side4_1600_crop.jpg" alt="dvl-a50" width="300" height="300">
+<img src="../../img/WL-21035-3_DVL-A50_Side4_1600_crop.jpg" alt="dvl-a50" width="300" height="300">
 
 * [DVL A50](https://waterlinked.com/shop/dvl-a50-114#attr=8,53)
 
@@ -22,7 +22,7 @@ This guide details how to permanently attach the DVL A50 to a BlueROV2.
 
 * [BlueROV2](https://bluerobotics.com/store/rov/bluerov2/bluerov2/)
 
-<img src="../img/ETHSWITCH-R1-RP-1024x768.jpg" alt="ETHSWITCH-R1-RP" width="300" height="300">
+<img src="../../img/ETHSWITCH-R1-RP-1024x768.jpg" alt="ETHSWITCH-R1-RP" width="300" height="300">
 
 * Small Ethernet switch. The one pictured here is from [Blue Robotics](https://bluerobotics.com/store/comm-control-power/tether-interface/ethswitch/), and is ideal for use in the BlueROV2.
 
