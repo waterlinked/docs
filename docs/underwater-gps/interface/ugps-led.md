@@ -31,9 +31,9 @@ Only the topside box and the Locator-U1 have LED indicators.
 
 When powered on by screwing on the cap, the Locator-U1 LED shows the GPS lock status:
 
-| LED | Signal | Meaning | Ready to dive? |
+| LED | Signal | Meaning | Ready to use? |
 |:---:|--------|---------|:--------------:|
-| <span class="led led--off" role="img" aria-label="LED off"></span> <span class="led-wave led-wave--off" aria-hidden="true"></span> | **No light** | Power is off. | No |
+| <span class="led led--off" role="img" aria-label="LED off"></span> <span class="led-wave led-wave--off" aria-hidden="true"></span> | **No light** | Power is off, or the battery is empty. | No |
 | <span class="led led--blink" role="img" aria-label="LED flashing once per second"></span> <span class="led-wave led-wave--blink" aria-hidden="true"></span> | **Flashing green light** (once per second) | Searching for GPS lock. | No |
 | <span class="led led--on" role="img" aria-label="LED solid green"></span> <span class="led-wave led-wave--on" aria-hidden="true"></span> | **Solid green light** | GPS lock acquired. | **Yes** |
 | <span class="led led--blink-slow" role="img" aria-label="LED flashing slowly"></span> <span class="led-wave led-wave--blink-slow" aria-hidden="true"></span> | **Flashing green light** (slow) | GPS lock was acquired but has since been lost. | **Yes** |
@@ -46,6 +46,6 @@ When connected to a charger, the LED behavior depends on the serial number (SN):
 | **0556 and higher** | The Locator-U1 only charges and does not power on. <span class="led led--breathe" role="img" aria-label="LED breathing green"></span> Breathing green: charging. <span class="led led--on" role="img" aria-label="LED solid green"></span> Solid green: fully charged. |
 | **0555 and lower** | The Locator-U1 powers on while charging. The LED does **not** show the battery or charging status. |
 
-Always charge the Locator-U1 for at least 7 hours with a 5 V / 2 A wall adapter before use.
+Charge the Locator-U1 with a 5 V / 2 A wall adapter before use: on SN: 0556 and higher until the LED is solid green, on SN: 0555 and lower for at least 7 hours.
 
-See [Locator-U1](../locators/locator-u1.md#led-signals) for full details on the LED signals and [charging](../locators/locator-u1.md#charging).
+The serial number is printed on the flat side of the Locator-U1, where the bracket is mounted. See [Locator-U1](../locators/locator-u1.md#led-signals) for full details on the LED signals and [charging](../locators/locator-u1.md#charging).
