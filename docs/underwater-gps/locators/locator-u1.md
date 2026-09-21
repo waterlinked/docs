@@ -8,6 +8,8 @@ The Locator-U1 is a battery-powered, digital hydroacoustic locator device. It in
 
 The Locator-U1 has its own pressure sensor and measures its own depth. The topside uses this depth together with the acoustic signal to calculate the position of the Locator-U1.
 
+The Locator-U1 uses GPS only to synchronize its clock, not to find its own position. The topside needs GPS as well: for its own position and for the same clock synchronization. Both clocks must be synchronized for the topside to position the Locator-U1. The synchronization of the Locator-U1 is what its status LED reports, and it is often called *GPS lock*.
+
 !!! Note
     You will need GPS lock on the topside as well when using the U1. This is for timing purposes, it will not help to use only external GPS position as this can not be used for time synchronization. It is not enough to only have GPS lock on the U1.
 
@@ -19,8 +21,8 @@ Use this checklist to get the Locator-U1 ready. Each step links to the detailed 
 |:----:|------------|:---:|
 | 1 | [Charge](#charging) the Locator-U1 with a 5 V / 2 A wall adapter, within 24 hours before use. On SN: 0556 and higher the LED turns solid green when the battery is full; on SN: 0555 and lower, charge for 7 hours. | <span class="led led--breathe" role="img" aria-label="LED breathing green"></span> → <span class="led led--on" role="img" aria-label="LED solid green"></span><br><small>SN: 0556 and higher</small> |
 | 2 | Unplug the charger. With the cap off, set the [channel](#channel-selection) on the rotary switch to the same channel as in the GUI. | |
-| 3 | Check that the O-ring in the cap is clean and undamaged, then [screw the cap on](#powering-on-and-off) to power on. The Locator-U1 searches for GPS lock. | <span class="led led--blink" role="img" aria-label="LED flashing once per second"></span> |
-| 4 | Keep the Locator-U1 in open sky until the LED turns solid green. It now has GPS lock and is ready to use. | <span class="led led--on" role="img" aria-label="LED solid green"></span> |
+| 3 | Check that the O-ring in the cap is clean and undamaged, then [screw the cap on](#powering-on-and-off) to power on. The Locator-U1 searches for a GPS signal to synchronize its clock. | <span class="led led--blink" role="img" aria-label="LED flashing once per second"></span> |
+| 4 | Keep the Locator-U1 in open sky until the LED turns solid green. Its clock is now synchronized and it is ready to use. | <span class="led led--on" role="img" aria-label="LED solid green"></span> |
 | 5 | Make sure the topside also has GPS lock, then deploy. Recover the Locator-U1 within about [6 hours](#operating-time). | |
 
 ## Charging
@@ -55,9 +57,9 @@ The LED behavior while charging depends on the serial number (SN) of your Locato
     | LED | Signal | Meaning |
     |:---:|--------|---------|
     | <span class="led led--breathe" role="img" aria-label="LED breathing green"></span> <span class="led-wave led-wave--breathe" aria-hidden="true"></span> | **Breathing green light** (slowly fading in and out) | The Locator-U1 is charging. |
-    | <span class="led led--on" role="img" aria-label="LED solid green"></span> <span class="led-wave led-wave--on" aria-hidden="true"></span> | **Solid green light** | The battery is full. Here solid green means *fully charged*, not GPS lock. |
+    | <span class="led led--on" role="img" aria-label="LED solid green"></span> <span class="led-wave led-wave--on" aria-hidden="true"></span> | **Solid green light** | The battery is full. Here solid green means *fully charged*, not time synchronized. |
 
-    Screw the cap on to power the Locator-U1 on. The LED then shows the GPS lock status instead, as described in [LED behavior while in use](#led-signals).
+    Screw the cap on to power the Locator-U1 on. The LED then shows the time synchronization status instead, as described in [LED behavior while in use](#led-signals).
 
 === "SN: 0555 and lower"
 
@@ -65,26 +67,26 @@ The LED behavior while charging depends on the serial number (SN) of your Locato
 
     | LED | Signal | Meaning |
     |:---:|--------|---------|
-    | <span class="led led--blink" role="img" aria-label="LED flashing green"></span> <span class="led-wave led-wave--blink" aria-hidden="true"></span> | **Flashing green light** | The Locator-U1 is powered on and working normally, for example searching for GPS lock. This does **not** reflect charging status. |
-    | <span class="led led--on" role="img" aria-label="LED solid green"></span> <span class="led-wave led-wave--on" aria-hidden="true"></span> | **Solid green light** | The Locator-U1 is powered on and has GPS lock. This does **not** mean it is fully charged. Keep charging for the full 7 hours. |
+    | <span class="led led--blink" role="img" aria-label="LED flashing green"></span> <span class="led-wave led-wave--blink" aria-hidden="true"></span> | **Flashing green light** | The Locator-U1 is powered on and working normally, for example searching for a GPS signal. This does **not** reflect charging status. |
+    | <span class="led led--on" role="img" aria-label="LED solid green"></span> <span class="led-wave led-wave--on" aria-hidden="true"></span> | **Solid green light** | The Locator-U1 is powered on and its clock is synchronized. This does **not** mean it is fully charged. Keep charging for the full 7 hours. |
 
 ## Powering on and off
 
-- **To power on** the Locator-U1, securely tighten the cap over the charging port. The LED will begin flashing to indicate that it is searching for a GPS lock. Once the LED stops flashing and becomes solid, the Locator-U1 has acquired a GPS lock and is ready for use.  
+- **To power on** the Locator-U1, securely tighten the cap over the charging port. The LED will begin flashing to indicate that it is searching for a GPS signal. Once the LED stops flashing and becomes solid, the clock of the Locator-U1 is synchronized and it is ready for use.  
   Ensure the O-ring in the cap is undamaged before submerging the device.
 
 - **To power off** the Locator-U1, unscrew the cap until the LED turns off.
 
 ## LED behavior while in use { #led-signals }
 
-These signals apply when the Locator-U1 is powered on by screwing on the cap. For the LED while connected to a charger, see [LED behavior while charging](#led-behavior-while-charging).
+These signals apply when the Locator-U1 is powered on by screwing on the cap. The LED shows whether the clock of the Locator-U1 is synchronized with GPS time, which it needs in order to be positioned by the topside (the topside must be synchronized too). For the LED while connected to a charger, see [LED behavior while charging](#led-behavior-while-charging).
 
 | LED | Signal | Meaning | Ready to use? |
 |:---:|--------|---------|:--------------:|
 | <span class="led led--off" role="img" aria-label="LED off"></span> <span class="led-wave led-wave--off" aria-hidden="true"></span> | **No light** | Power is off, or the battery is empty. | No |
-| <span class="led led--blink" role="img" aria-label="LED flashing once per second"></span> <span class="led-wave led-wave--blink" aria-hidden="true"></span> | **Flashing green light** (once per second) | Searching for GPS lock. | No |
-| <span class="led led--on" role="img" aria-label="LED solid green"></span> <span class="led-wave led-wave--on" aria-hidden="true"></span> | **Solid green light** | GPS lock acquired. | **Yes** |
-| <span class="led led--blink-slow" role="img" aria-label="LED flashing slowly"></span> <span class="led-wave led-wave--blink-slow" aria-hidden="true"></span> | **Flashing green light** (slow) | GPS lock was acquired but has since been lost. | **Yes** |
+| <span class="led led--blink" role="img" aria-label="LED flashing once per second"></span> <span class="led-wave led-wave--blink" aria-hidden="true"></span> | **Flashing green light** (once per second) | Searching for a GPS signal. The clock is not synchronized yet. | No |
+| <span class="led led--on" role="img" aria-label="LED solid green"></span> <span class="led-wave led-wave--on" aria-hidden="true"></span> | **Solid green light** | The clock is synchronized with GPS time. | **Yes** |
+| <span class="led led--blink-slow" role="img" aria-label="LED flashing slowly"></span> <span class="led-wave led-wave--blink-slow" aria-hidden="true"></span> | **Flashing green light** (slow) | The GPS signal has been lost, for example because the Locator-U1 is in the water. The time synchronization is still valid, so the Locator-U1 keeps working. | **Yes** |
 | <span class="led led--blink-fast" role="img" aria-label="LED flashing fast"></span> <span class="led-wave led-wave--blink-fast" aria-hidden="true"></span> | **Fast flashing green light** (multiple times per second) | Error. See [Error indication](#error-indication). | No |
 
 !!! Note
@@ -101,7 +103,7 @@ If the LED also stays dark when the Locator-U1 is connected to the charger, the 
 A fast flashing LED often means one of the following:
 
 - The Locator-U1 has exceeded its [operating time](#operating-time) and the pressure sensor needs to dry. Charging the Locator-U1 helps the sensor dry more quickly.
-- The battery is very low. [Charge](#charging) the Locator-U1.
+- Another internal failure. If the LED keeps flashing fast after the pressure sensor has dried, contact [support](https://support.waterlinked.com/en/knowledge).
 
 ## Channel selection
 
@@ -123,8 +125,8 @@ The Locator-U1 can be used for about 6 hours at a time. After this it needs to b
 | Problem | What to check |
 |---------|---------------|
 | The LED is dark when the cap is screwed on | Make sure the cap is fully tightened. If the LED stays dark, see [Empty battery](#empty-battery). |
-| LED keeps flashing once per second | The Locator-U1 has not found GPS lock. Move it outdoors with a clear view of the sky. Indoors, a GPS repeater or similar is needed. |
-| No signal from the Locator-U1 in the GUI | Check that the Locator-U1 has GPS lock, that the topside has GPS lock, and that the channel on the rotary switch matches the GUI. See also [Warnings](../interface/warnings.md). |
+| LED keeps flashing once per second | The Locator-U1 has not synchronized with GPS time yet. Move it outdoors with a clear view of the sky. Indoors, a GPS repeater or similar is needed. |
+| No signal from the Locator-U1 in the GUI | Check that the LED of the Locator-U1 is solid or slowly flashing green, that the topside has GPS lock, and that the channel on the rotary switch matches the GUI. See also [Warnings](../interface/warnings.md). |
 | Fast flashing LED | See [Error indication](#error-indication). |
 | Battery runs out sooner than expected | Charge within 24 hours before use with a 5 V / 2 A wall adapter, not a computer. The battery also lasts shorter in cold water. |
 

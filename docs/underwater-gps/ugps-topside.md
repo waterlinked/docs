@@ -18,7 +18,7 @@
 |-----------|:---:|---------------------------------------------------------------------------|
 | Power		| <span class="led led--on" role="img" aria-label="LED solid green"></span> | Solid green: Topside has power 											|
 | Ready		| <span class="led led--on" role="img" aria-label="LED solid green"></span> | Solid green: Topside has booted successfully								|
-| GPS		| <span class="led led--blink" role="img" aria-label="LED flashing green"></span> <span class="led led--on" role="img" aria-label="LED solid green"></span> | Flashing green: Searching for GPS lock, solid green: Topside has GPS lock |
+| GPS		| <span class="led led--blink" role="img" aria-label="LED flashing green"></span> <span class="led led--on" role="img" aria-label="LED solid green"></span> | Flashing green: Searching for GPS lock, solid green: Topside has GPS lock. The topside uses GPS both for its own position and to synchronize its clock |
 | LED 1		| <span class="led led--on" role="img" aria-label="LED solid green"></span> | Solid green: Firmware successfully loaded									|
 | LED 2		| <span class="led led--off" role="img" aria-label="LED off"></span> | Not in use																|
 | Locator	| <span class="led led--on" role="img" aria-label="LED solid green"></span> | Solid green: Locator D1 is connected										|

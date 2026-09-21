@@ -7,7 +7,7 @@ Only the topside box and the Locator-U1 have LED indicators.
 |-----------|:---:|---------------------------------------------------------------------------|
 | Power		| <span class="led led--on" role="img" aria-label="LED solid green"></span> | Solid green: Topside has power 											|
 | Ready		| <span class="led led--on" role="img" aria-label="LED solid green"></span> | Solid green: Topside has booted successfully								|
-| GPS		| <span class="led led--blink" role="img" aria-label="LED flashing green"></span> <span class="led led--on" role="img" aria-label="LED solid green"></span> | Flashing green: Searching for GPS lock, solid green: Topside has GPS lock |
+| GPS		| <span class="led led--blink" role="img" aria-label="LED flashing green"></span> <span class="led led--on" role="img" aria-label="LED solid green"></span> | Flashing green: Searching for GPS lock, solid green: Topside has GPS lock. The topside uses GPS both for its own position and to synchronize its clock |
 | LED 1		| <span class="led led--on" role="img" aria-label="LED solid green"></span> | Solid green: Firmware successfully loaded									|
 | LED 2		| <span class="led led--off" role="img" aria-label="LED off"></span> | Not in use																|
 | Locator	| <span class="led led--on" role="img" aria-label="LED solid green"></span> | Solid green: Locator D1 is connected										|
@@ -29,15 +29,15 @@ Only the topside box and the Locator-U1 have LED indicators.
 
 ## Locator-U1
 
-When powered on by screwing on the cap, the Locator-U1 LED shows the GPS lock status:
+When powered on by screwing on the cap, the LED of the Locator-U1 shows whether its clock is synchronized with GPS time. The Locator-U1 uses GPS only for this time synchronization, not to find its own position.
 
 | LED | Signal | Meaning | Ready to use? |
 |:---:|--------|---------|:--------------:|
 | <span class="led led--off" role="img" aria-label="LED off"></span> <span class="led-wave led-wave--off" aria-hidden="true"></span> | **No light** | Power is off, or the battery is empty. | No |
-| <span class="led led--blink" role="img" aria-label="LED flashing once per second"></span> <span class="led-wave led-wave--blink" aria-hidden="true"></span> | **Flashing green light** (once per second) | Searching for GPS lock. | No |
-| <span class="led led--on" role="img" aria-label="LED solid green"></span> <span class="led-wave led-wave--on" aria-hidden="true"></span> | **Solid green light** | GPS lock acquired. | **Yes** |
-| <span class="led led--blink-slow" role="img" aria-label="LED flashing slowly"></span> <span class="led-wave led-wave--blink-slow" aria-hidden="true"></span> | **Flashing green light** (slow) | GPS lock was acquired but has since been lost. | **Yes** |
-| <span class="led led--blink-fast" role="img" aria-label="LED flashing fast"></span> <span class="led-wave led-wave--blink-fast" aria-hidden="true"></span> | **Fast flashing green light** (multiple times per second) | Error. Often the dive time has been exceeded and the pressure sensor needs to dry, or the battery is very low. Charging the Locator-U1 helps the sensor dry more quickly. | No |
+| <span class="led led--blink" role="img" aria-label="LED flashing once per second"></span> <span class="led-wave led-wave--blink" aria-hidden="true"></span> | **Flashing green light** (once per second) | Searching for a GPS signal. The clock is not synchronized yet. | No |
+| <span class="led led--on" role="img" aria-label="LED solid green"></span> <span class="led-wave led-wave--on" aria-hidden="true"></span> | **Solid green light** | The clock is synchronized with GPS time. | **Yes** |
+| <span class="led led--blink-slow" role="img" aria-label="LED flashing slowly"></span> <span class="led-wave led-wave--blink-slow" aria-hidden="true"></span> | **Flashing green light** (slow) | The GPS signal has been lost, for example because the Locator-U1 is in the water. The time synchronization is still valid, so the Locator-U1 keeps working. | **Yes** |
+| <span class="led led--blink-fast" role="img" aria-label="LED flashing fast"></span> <span class="led-wave led-wave--blink-fast" aria-hidden="true"></span> | **Fast flashing green light** (multiple times per second) | Error. Often the operating time has been exceeded and the pressure sensor needs to dry; charging the Locator-U1 helps the sensor dry more quickly. It can also be another internal failure. | No |
 
 When connected to a charger, the LED behavior depends on the serial number (SN):
 
