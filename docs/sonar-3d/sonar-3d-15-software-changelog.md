@@ -1,5 +1,9 @@
 # Software Versions
 
+## v1.8.1 (2026-09)
+
+- Internal improvements
+
 ## v1.8.0 (2026-06)
 
 - Add option to enable raw IMU output
