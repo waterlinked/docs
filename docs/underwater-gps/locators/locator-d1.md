@@ -4,7 +4,7 @@
 
 ## Description
 
-The Locator-D1 carries its own depth sensor and can therefore operate fully stand-alone and independent of the device you want to position.
+The Locator-D1 carries its own depth sensor and can therefore operate fully stand-alone and independent of the device you want to position. It is offered with a 50 m or 100 m integrated cable that connects directly to the topside box.
 
 !!! warning
     The Locator-D1 can only be submerged for about 6 hours. It then needs to dry the pressure sensor in order to give correct depth readings.
@@ -12,7 +12,7 @@ The Locator-D1 carries its own depth sensor and can therefore operate fully stan
 
 ## Wiring interface
 
-The tables below shows the pinning of the D1 interface connectors.
+The tables below show the pinning of the D1 interface connectors.
 
 ![d1_connector_gh](../../img/d1_connector_gh.png)
 

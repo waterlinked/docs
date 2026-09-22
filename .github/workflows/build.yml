@@ -22,7 +22,10 @@ jobs:
 
     # Always build docs, e.g. for testing
     - name: Build docs
-      run: uv run mkdocs build --strict
+      run: |
+        uv run mkdocs build --strict
+        uv run python check-images.py site
+        ./check-links.sh
 
     # One PDF manual per product, generated from the site that was just built, so the PDFs
     # always contain the same pages and content as the website. The script fails the build if

@@ -13,7 +13,7 @@ Describes the Water Linked DVL serial protocol for DVL A100 and DVL A250. For PD
 
 ## Version
 
-This document describes serial protocol version `2.6.x` (major.minor.patch):
+This document describes serial protocol version `3.1.x` (major.minor.patch):
 
 - MAJOR version increments represent incompatible API changes
 - MINOR version increments represent additional backwards-compatible functionality
@@ -23,22 +23,15 @@ This document describes serial protocol version `2.6.x` (major.minor.patch):
 
 | Software release | Serial protocol version | Main protocol improvements |
 | -- | -- | -- |
-| 2.7.1 | 3.0.0 | Hardware trigger capabilities added.
-| 2.6.1 | 2.6.0 | Serial baud rate configurable. Add PD4 format support in serial 'wcp' command. Some serial protocol names [changed](#change-serial-output-protocol-wcp). |
-| 2.5.2 | 2.5.0 | Add PD4 format support (experimental)
-| 2.4.4 | 2.5.0 | Change gyro calibration to store persistently. Note: gyro calibration commands now take up to 15 seconds.
-| 2.4.0 | 2.5.0 | Add ability to trigger pings (TCP JSON API/serial), add configuration for periodic cycling (TCP JSON API/serial)
-| 2.2.1 | 2.4.0 | Add serial output protocol configuration, range mode configuration and calibrate gyro command, Fix missing line ending in configuration (TCP JSON API), fix dark mode enabled naming inconsistency (TCP JSON API), change speed of sound and mounting rotation offset from integer to float
-| 2.1.0 | 2.3.0 | Add configuration, add time_of_validity/time_of_transmission, add covariance (TCP JSON API)
-| 2.0.8 | 2.2.0 | Add position estimation, Add output of orientation angles
-| 1.6.0 | 2.1.0 | Initial (velocity only)
+| 3.3.0 | 3.1.0 | Add serial time API. Add water tracking mode. Remove deprecated protocol "WL - Serial V1 and V2". |
+| 3.2.0 | 3.0.0 | Initial public release. |
 
 
 ## Serial protocol
 
 ### Overview
 
-The default serial communication format is 115200 8-N-1 (no hardware flow control). Release 2.6.1 and later allow different baud rates through web GUI configuration.
+The default serial communication format is 115200 8-N-1 (no hardware flow control). Different baud rates can be configured through the web GUI.
 
 DVL A100 and DVL A250 use RS232. See [DVL A100/A250 serial interface](electrical.md#dvl-a100-and-dvl-a250-serial-interface).
 
@@ -65,8 +58,8 @@ The commands in the table are shown without the checksum and without the mandato
 
 | Command | Description | Response | Description |
 |---------|-------------|----------|-------------|
-| `wcv`   | Get protocol version | `wrv,`*[major],[minor],[patch]* | Protocol version. eg: `wrv,2.5.0` |
-| `wcw`   | Get product detail | `wrw,`*[name]*,*[version]*,*[chipID]*,*[IP address]* | Where type is dvl, name is product name, version is software version, chip ID is the chip ID and _optionally_ the IP address if connected to DHCP server: eg: `wrw,dvl-a50,2.2.1,0xfedcba98765432` or `wrw,dvl-a50,2.2.1,0xfedcba98765432,10.11.12.140` |
+| `wcv`   | Get protocol version | `wrv,`*[major],[minor],[patch]* | Protocol version. eg: `wrv,3.1.0` |
+| `wcw`   | Get product detail | `wrw,`*[name]*,*[version]*,*[chipID]*,*[IP address]* | Where type is dvl, name is product name, version is software version, chip ID is the chip ID and _optionally_ the IP address if connected to DHCP server: eg: `wrw,dvl-a250,3.4.0,0xfedcba98765432` or `wrw,dvl-a250,3.4.0,0xfedcba98765432,10.11.12.140` |
 | `wcs,`*[configuration parameters]*    | Set configuration parameters | `wra` | Successfully set the specified configuration parameters. See [Configuration](#configuration-over-serial) for details |
 | `wcc`   | Get current configuration | `wrc,`*[configuration parameters]* | Entire current configuration. See [Configuration](#configuration-over-serial) for details |
 | `wcr`   | Reset dead reckoning | `wra` | Successfully started a new [dead reckoning](dead-reckoning.md#starting-dead-reckoning) run |
@@ -74,10 +67,9 @@ The commands in the table are shown without the checksum and without the mandato
 | `wcg`   | Calibrate gyro | `wra` | Successfully calibrated gyro |
 | `wcp`   | Change serial output protocol | `wra` | Successfully changed output protocol |
 |         |             | `wrz,`*[details below]* | Velocities calculated |
+|         |             | `wrs,`*[details below]* | Velocities calculated during water tracking |
 |         |             | `wru,`*[details below]* | Transducer information |
 |         |             | `wrp,`*[details below]* | [Dead reckoning](dead-reckoning.md) report |
-|         |             | `wrx,`*[details below]* | DEPRECATED: Velocities calculated (old format) |
-|         |             | `wrt,`*[details below]* | DEPRECATED: Transducer information (old format) |
 |         |             | `wr?` | Malformed request: packet cannot be understood or no newline received before timeout |
 |         |             | `wr!` | Malformed request: packet does not match the given checksum |
 |         |             | `wrn` | Not acknowledged (nack): an error occurred when handling the packet |
@@ -112,6 +104,42 @@ Example where all velocities are valid:
 
 ```text
 wrz,0.120,-0.400,2.000,y,1.30,1.855,1e-07;0;1.4;0;1.2;0;0.2;0;1e+09,7,14,123.00,1*50
+```
+
+### Velocity report (wrs)
+
+A velocity report is output for each velocity calculation of the DVL in this format when water tracking is activated. The update rate will be 2 Hz.
+
+The X, Y, and Z axes are with respect to the [body frame](axes.md#body-frame) of the DVL, or the [vehicle frame](axes.md#vehicle-frame) if the DVL is mounted on a vehicle at an angle, specified as a mounting rotation offset, from the forward axis of the vehicle.
+
+The report has the following format:
+`wrs,`*[vx],[vy],[vz],[valid],[fom],[covariance],[time_of_validity],[time_of_transmission],[time],[status]*
+
+
+| Variable | Description |
+|----------|-------------|
+| vx | Velocity in x direction (m/s) |
+| vy | Velocity in y direction (m/s) |
+| vz | Velocity in z direction (m/s) |
+| valid | If `y`, the DVL has a lock on the reflecting surface, and the velocities are valid (y/n) |
+| fom | Figure of merit, a measure of the accuracy of the velocities (m/s) |
+| covariance | Covariance matrix for the velocities. The figure of merit is calculated from this. 9 entries ((m/s)^2) separated by ; |
+| time_of_validity | Timestamp of the surface reflection, aka 'center of ping' (Unix timestamp in microseconds) |
+| time_of_transmission | Timestamp from immediately before sending of the report over TCP (Unix timestamp in microseconds)  |
+| time | Milliseconds since last velocity report (ms) |
+| status | 8 bit status mask. Bit 0 is set to 1 for high temperature and DVL will soon enter thermal shutdown. Remaining bits are reserved for future use. |
+
+
+Example where all velocities are valid:
+
+```text
+wrs,0.120,-0.400,2.000,y,1.855,1e-07;0;1.4;0;1.2;0;0.2;0;1e+09,7,14,123.00,1*7b
+```
+
+Water tracking is enabled by setting `range_mode` to `wt`:
+
+```text
+wcs,,,,,wt,,
 ```
 
 ### Transducer report (wru)
@@ -207,7 +235,7 @@ The supported protocols are:
 | 0 | Output disabled | No output on serial. Recommended if serial port is not used to lower latency on Ethernet protocols. |
 | 1 | Not used | Not used |
 | 2 | PD6 | PD6 format output. See [PD6 format description](dvl-pd-formats.md#pd6-protocol-tcpserial) |
-| 3 | WL - Serial V2 | All output excluding the deprecated `wrx` and `wrt` sentences. |
+| 3 | WL - Serial V2 | All Water Linked serial output, including velocity, transducer, and dead reckoning reports. |
 | 4 | Not used | Not used |
 | 5 | Not used | Not used |
 | 6 | PD4 | PD4 format output. See [PD4 format description](dvl-pd-formats.md#pd4-protocol-tcpserial) |
@@ -220,9 +248,6 @@ Example setting configuring output to use protocol number 3:
 wcp,3
 ```
 
-!!!note
-    Prior to release 2.6.1 protocol number 1 was named `Backward compatible` and protocol number 3 was named `Latest`. There is no change in functionality.
-
 ### Configuration over serial
 
 #### Configuration parameters
@@ -233,13 +258,12 @@ wcp,3
 | mounting_rotation_offset | See the definition of the [vehicle frame](axes.md#vehicle-frame) of the DVL. Typically 0, but can be set to be non-zero if the forward axis of the DVL is not aligned with the forward axis of a vehicle on which it is mounted (0-360 degrees). Float |
 | acoustic_enabled | `y` for normal operation of the DVL,`n` when the sending of acoustic waves from the DVL is disabled (e.g. to save power or slow down its heating up in air) |
 | dark_mode_enabled | `n` when the LED operates as [normal](electrical.md#led-signals). `y` for no blinking of LED (e.g. if the LED is interfering with a camera) |
-| range_mode |`auto` when operating as normal, otherwise see [range mode configuration](range-mode.md) |
+| range_mode |`auto` when operating as normal, otherwise see [range mode configuration](range-mode.md) or activate [water tracking](water-tracking.md) |
 | periodic_cycling_enabled | `y` to enable [periodic cycling](configuration.md#periodic-cycling), `n` to disable it. See [Configuration over TCP JSON API](dvl-a250_a100-json-protocol.md#configuration-over-json) for details |
 | hardware_trigger_enabled | `y` to enable [hardware triggering](dvl-triggering.md#hardware-triggering), `n` to disable |
 
 !!!note
     For backward compatibility the `range_mode` and `periodic_cycling_enabled` parameters are optional when setting the configuration. They will always be returned when reading the configuration (`wcc`).
-    Speed of sound and mounting rotation was changed from integer to float in serial protocol 2.4.0
 
 ####  Fetching current configuration
 
@@ -269,76 +293,23 @@ Example for setting dark mode without changing the other parameters:
 wcs,,,,y,,,
 ```
 
+Example of setting water tracking:
+
+Water tracking is enabled by setting `range_mode` to `wt`:
+
+```text
+wcs,,,,,wt,,
+```
+
 Example for setting speed of sound to 1450 m/s and disabling acoustics, without changing the other parameters:
 
 ```text
 wcs,1450,,n,,,,
 ```
 
-The response will be an ack `wra` if the parameters are successfully set, a nak `wrn` if the command was successfully parsed but the parameters were not successfully set, and a malformed request `wr?` if the command was not successfully parsed, e.g. if the wrong number of parameters was used, or either `speed_of_sound` or `mounting_rotation_offset` was not an integer.
+The response will be an ack `wra` if the parameters are successfully set, a nak `wrn` if the command was successfully parsed but the parameters were not successfully set, and a malformed request `wr?` if the command was not successfully parsed, e.g. if the wrong number of parameters was used, or either `speed_of_sound` or `mounting_rotation_offset` was not a float.
 
 The new configuration will not be returned in the response, but can be obtained by issuing a `wcc` command as above.
-
-
-### Velocity report, old format (wrx) [Deprecated]
-
-Same purpose as the [velocity report](#velocity-report-wrz), but in an older format:
-
-`wrx,`*[time],[vx],[vy],[vz],[fom],[altitude],[valid],[status]*
-
-| Variable | Description |
-|----------|-------------|
-| time | Milliseconds since last velocity report (ms) |
-| vx | Velocity in x direction (m/s) |
-| vy | Velocity in y direction (m/s) |
-| vz | Velocity in z direction (m/s) |
-| fom | Figure of merit, a measure of the accuracy of the velocities  (m/s) |
-| altitude | Distance to the reflecting surface along Z axis (m) |
-| valid | If `y`, the DVL has lock on the reflecting surface, and the altitude and velocities are valid (y/n) |
-| status | 8 bit status mask. Bit 0 is set to 1 for high temperature and DVL will soon enter thermal shutdown. Remaining bits are reserved for future use. |
-
-Example where velocities are valid:
-
-```text
-wrx,112.83,0.007,0.017,0.006,0.000,0.93,y,0*d2
-wrx,140.43,0.008,0.021,0.012,0.000,0.92,y,0*b7
-wrx,118.47,0.009,0.020,0.013,0.000,0.92,y,0*54
-```
-
-Example where velocities and altitude are not valid and a high temperature warning occurs:
-
-```text
-wrx,1075.51,0.000,0.000,0.000,2.707,-1.00,n,1*04
-wrx,1249.29,0.000,0.000,0.000,2.707,-1.00,n,1*6a
-wrx,1164.94,0.000,0.000,0.000,2.707,-1.00,n,1*39
-```
-
-### Transducer report, old format (wrt) [Deprecated]
-
-Same purpose as the [transducer report](#transducer-report-wru), but in an older format, and combining the data of all four transducers:
-
-`wrt,`*[dist_1],[dist_2],[dist_3],[dist_4]*
-
-| Variable | Description |
-|----------|-------------|
-| dist_1 | Distance (parallel to the transducer beam, i.e. not the vertical distance) to reflecting surface from transducer 1 (m) |
-| dist_2 | Distance to reflecting surface from transducer 2 (m) |
-| dist_3 | Distance to reflecting surface from transducer 3 (m) |
-| dist_4 | Distance to reflecting surface from transducer 4 (m) |
-
-Example where all distances are valid:
-
-```text
-wrt,15.00,15.20,14.90,14.20*b1
-wrt,14.90,15.10,14.80,14.10*ac
-```
-
-Example where distance is not valid for transducer 4:
-
-```text
-wrt,14.90,15.10,14.80,-1.00*53
-wrt,15.00,15.20,14.90,-1.00*71
-```
 
 
 ### Checksum
@@ -355,7 +326,7 @@ Example for how to verify checksum using Python 3 and [crcmod](https://pypi.org/
 
 ```python
 crc = crcmod.predefined.mkPredefinedCrcFun("crc-8")
-sentence = b"wrx,1164.94,0.000,0.000,0.000,2.707,-1.00,n,1*39"
+sentence = b"wrz,0.120,-0.400,2.000,y,1.30,1.855,1e-07;0;1.4;0;1.2;0;0.2;0;1e+09,7,14,123.00,1*50"
 data, checksum = sentence.split(b"*")
 
 if crc(data) == int(checksum, 16):

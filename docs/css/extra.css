@@ -148,7 +148,7 @@ html {
 /* Wire-colour / LED swatches — drawn in CSS instead of emoji so they look pixel-identical
    on every OS & browser. Emoji such as ⬜/⚪ are rendered by each device's own emoji font
    (white/silver ones can look pink or oddly bordered on some platforms); these boxes don't
-   depend on that font. Used in dvl/electrical.md. Squares = wire colours, circles = LEDs. */
+   depend on that font. Used in dvl/electrical.md and the underwater-gps pages. Squares = wire colours, circles = LEDs. */
 .swatch {
   display: inline-block;
   width: .85em;
@@ -165,11 +165,86 @@ html {
 .c-orange       { background: #ef6c00; }
 .c-brown        { background: #5d4037; }
 .c-silver       { background: #c0c0c0; }
+.c-white        { background: #fff; }
+.c-blue         { background: #1565c0; }
 .c-ledon        { background: #2ecc40; }
 .c-ledoff       { background: #3a3a3a; }
 .c-green-white  { background: linear-gradient(90deg, #2e7d32 50%, #fff 50%); }
 .c-orange-white { background: linear-gradient(90deg, #ef6c00 50%, #fff 50%); }
 .c-brown-white  { background: linear-gradient(90deg, #5d4037 50%, #fff 50%); }
+.c-blue-white   { background: linear-gradient(90deg, #1565c0 50%, #fff 50%); }
+
+/* --- Animated LED indicators ---------------------------------------------------------
+   Visualise how a status LED behaves (solid, blinking, breathing) next to its written
+   description. Pure CSS, no JavaScript. Usage in Markdown:
+     <span class="led led--blink" role="img" aria-label="LED flashing once per second"></span>
+   Modifiers: led--off, led--on, led--blink (1 Hz), led--blink-slow, led--blink-fast, led--breathe.
+   Timings are illustrative, not exact firmware values. Used in underwater-gps/locators/locator-u1.md
+   and underwater-gps/interface/ugps-led.md. Under prefers-reduced-motion the animations stop and
+   each pattern is shown as a static half-lit LED with a dashed ring, so the text carries the meaning. */
+.md-typeset .led {
+  --led-on:   #2ecc40;
+  --led-off:  #3a3a3a;
+  --led-glow: 0 0 .35em .1em rgba(46, 204, 64, .75);
+  display: inline-block;
+  width: .9rem;
+  height: .9rem;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, .45);
+  background: var(--led-off);
+  vertical-align: middle;
+}
+[data-md-color-scheme="slate"] .md-typeset .led { border-color: rgba(255, 255, 255, .5); }
+.md-typeset .led--on         { background: var(--led-on); box-shadow: var(--led-glow); }
+.md-typeset .led--blink      { animation: led-blink 1s    steps(1, end) infinite; }
+.md-typeset .led--blink-slow { animation: led-blink 2.5s  steps(1, end) infinite; }
+.md-typeset .led--blink-fast { animation: led-blink .25s  steps(1, end) infinite; }
+.md-typeset .led--breathe    { animation: led-breathe 3s ease-in-out infinite; }
+@keyframes led-blink {
+  0%   { background: var(--led-on);  box-shadow: var(--led-glow); }
+  50%  { background: var(--led-off); box-shadow: none; }
+}
+@keyframes led-breathe {
+  0%, 100% { background: var(--led-off); box-shadow: none; }
+  50%      { background: var(--led-on);  box-shadow: var(--led-glow); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .md-typeset .led--blink,
+  .md-typeset .led--blink-slow,
+  .md-typeset .led--blink-fast,
+  .md-typeset .led--breathe {
+    animation: none;
+    background: linear-gradient(90deg, var(--led-on) 50%, var(--led-off) 50%);
+    outline: 1px dashed currentColor;
+    outline-offset: 2px;
+  }
+}
+/* Static timing strip shown next to an animated LED: 3 seconds of the pattern drawn as a bar
+   (green = on, dark = off), so patterns can be compared at a glance, in print, and with reduced
+   motion. Decorative: mark it aria-hidden, the LED span carries the accessible label.
+     <span class="led-wave led-wave--blink" aria-hidden="true"></span>
+   Scale: the strip is 4.5rem wide = 3 s, so 1 s = 1.5rem. */
+.md-typeset .led-wave {
+  --led-on:  #2ecc40;
+  --led-off: #3a3a3a;
+  display: inline-block;
+  width: 4.5rem;
+  height: .5rem;
+  margin-left: .4rem;
+  border-radius: .15rem;
+  border: 1px solid rgba(0, 0, 0, .45);
+  background: var(--led-off);
+  vertical-align: middle;
+}
+[data-md-color-scheme="slate"] .md-typeset .led-wave { border-color: rgba(255, 255, 255, .5); }
+.md-typeset .led-wave--on         { background: var(--led-on); }
+.md-typeset .led-wave--blink      { background: repeating-linear-gradient(90deg, var(--led-on) 0 .75rem, var(--led-off) .75rem 1.5rem); }
+.md-typeset .led-wave--blink-slow { background: repeating-linear-gradient(90deg, var(--led-on) 0 1.875rem, var(--led-off) 1.875rem 3.75rem); }
+.md-typeset .led-wave--blink-fast { background: repeating-linear-gradient(90deg, var(--led-on) 0 .1875rem, var(--led-off) .1875rem .375rem); }
+.md-typeset .led-wave--breathe    { background: repeating-linear-gradient(90deg, var(--led-off) 0, var(--led-on) 2.25rem, var(--led-off) 4.5rem); }
+
+/* Keep the LED column of indicator tables narrow and centred. */
+.md-typeset table td:has(> .led-wave) { white-space: nowrap; }
 
 /* In dark mode, paint a white backing behind content images so any transparent PNG with
    dark content (line art, diagrams) stays legible on the dark page; for the many photos and

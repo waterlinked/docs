@@ -25,7 +25,7 @@ Cofigurations of the topside and locator settings is conducted in [Settings](../
 Select the type of locator ([U1](./locators/locator-u1.md), [A1](./locators/locator-a1.md), or [D1](./locators/locator-d1.md)) which you are using, and which [channel](#channel-overview) you wish to use.
 
 !!! Note
-    If using the [U1](./locators/locator-u1.md) locator, the channel must match the rotary switch at the back of the U1 (screw the lid completely off to access the switch).
+    If using the [U1](./locators/locator-u1.md) locator, the channel must match the rotary switch at the back of the U1 (screw the cap completely off to access the switch).
 
 !!! Note
     If using the [A1](./locators/locator-a1.md) locator, the depth of the locator must be inputted by means of the UGPS [API](./integration/api.md).

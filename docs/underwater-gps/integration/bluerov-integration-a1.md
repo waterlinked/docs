@@ -15,8 +15,8 @@ It contains the following parts (purpose in parentheses)
     * rubber pad
     * 2 M4x35 Socket head cap screws
     * 2 M4 Lock Nuts
-2.  A female-to-female jumper wire, white/Blue (for locator connection in FXTI)
-3.  A Binder-connector-pigtail-assembly, with [Binder 770 Series NNC Miniature Cable Connector](https://octopart.com/99-0771-002-08-binder-39031370), pins 1/2: white/blue, pin 7/8: white/brown (analog connection and Powerline connection in FXTI)
+2.  A female-to-female jumper wire, white/blue <span class="swatch c-white" aria-hidden="true"></span><span class="swatch c-blue" aria-hidden="true"></span> (for locator connection in FXTI)
+3.  A Binder-connector-pigtail-assembly, with [Binder 770 Series NNC Miniature Cable Connector](https://octopart.com/99-0771-002-08-binder-39031370), pins 1/2: white/blue <span class="swatch c-white" aria-hidden="true"></span><span class="swatch c-blue" aria-hidden="true"></span>, pin 7/8: white/brown <span class="swatch c-white" aria-hidden="true"></span><span class="swatch c-brown" aria-hidden="true"></span> (analog connection and Powerline connection in FXTI)
 4.  Powerline communication (PLC) module [LX200V30](https://www.rakwireless.com/en-us/products/plc-boards-and-modules/lx200v30-plc-homeplug-av-module) (for Powerline communication in UGPS Topside)
 5.  30cm Cat5e cable (for Powerline connection in UGPS Topside)
 6.  8 m cable with [Binder 770 connectors](https://www.binder-connector.com/en/products/miniature-circular-connectors/bayonet-ncc-1/99-0771-002-08-bayonet-ncc-male-cable-connector-contacts-8-60-80-mm-unshielded-solder-ip67) "deck extension cable"(for analog connection and Powerline communication between FXTI and UGPS Topside))
@@ -73,7 +73,7 @@ It contains the following parts (purpose in parentheses)
 
 ## Modifications to the BlueROV2
 
-The Locator-A1 will use one of the spare cable penetrators in the back of the BlueROV2 and will connect to the spare green and white twisted pair in the tether. The locator is attached with a mounting bracket included in the BlueROV2 Integration Kit.
+The Locator-A1 will use one of the spare cable penetrators in the back of the BlueROV2 and will connect to the spare green and white <span class="swatch c-green" aria-hidden="true"></span><span class="swatch c-white" aria-hidden="true"></span> twisted pair in the tether. The locator is attached with a mounting bracket included in the BlueROV2 Integration Kit.
 
 ### Open the electronics enclosure
 
@@ -132,7 +132,7 @@ Install the WetLink penetrator with the Locator-A1 cable onto the end cap in the
 
 ### Connect Locator-A1 wires to ROV tether
 
-One pair of twisted wires from the Locator-A1 (blue/white) must be connected to a spare twisted pair on the BlueROV2 tether. To solder the wires together you will need:
+One pair of twisted wires from the Locator-A1 (blue/white <span class="swatch c-blue" aria-hidden="true"></span><span class="swatch c-white" aria-hidden="true"></span>) must be connected to a spare twisted pair on the BlueROV2 tether. To solder the wires together you will need:
 
 * A soldering iron and solder
 * A utility knife, or a sharp blade
@@ -146,7 +146,7 @@ Remove 5mm wire insulation on both the tether wires and the locator wires with a
 
 Put heat shrink tube onto the wires before soldering.
 
-Connect the Locator-A1 wires (blue/white) to a spare twisted pair of the tether (recommended: green/white) by soldering.
+Connect the Locator-A1 wires (blue/white <span class="swatch c-blue" aria-hidden="true"></span><span class="swatch c-white" aria-hidden="true"></span>) to a spare twisted pair of the tether (recommended: green/white <span class="swatch c-green" aria-hidden="true"></span><span class="swatch c-white" aria-hidden="true"></span>) by soldering.
 
 Pull the the heat shrink tube over the solder-connection and shrink it with a hot air gun or alternatively with your soldering iron turned to low.
 
@@ -260,7 +260,7 @@ In this step the FXTI will be modified to firstly connect the analog signal of t
 In order to make these connections, you will need the following parts and tools:
 
 * Binder-connector-pigtail-assembly (included in the BlueROV2 Integration Kit)
-* A female-to-female jumper wire, white/green (included in the BlueROV2 Integration Kit)
+* A female-to-female jumper wire, white/green <span class="swatch c-white" aria-hidden="true"></span><span class="swatch c-green" aria-hidden="true"></span> (included in the BlueROV2 Integration Kit)
 * 2 mm hex key
 
 Unscrew the connector panel from the FXTI with the hex key and remove one of the black plastic plugs from one of the auxiliary ports.
@@ -271,11 +271,11 @@ Thread the Binder-connector-pigtail-assembly into the open port and secure in pl
 
 ![fxti-add-bulkhead](../../img/fxti-add-bulkhead.png)
 
-Connect the green and white twisted pair of the tether connector to the brown and brown/white pair on the new Binder-connector-pigtail-assembly with the included female-to-female jumper wire.
+Connect the green and white <span class="swatch c-green" aria-hidden="true"></span><span class="swatch c-white" aria-hidden="true"></span> twisted pair of the tether connector to the brown and brown/white <span class="swatch c-brown" aria-hidden="true"></span><span class="swatch c-brown-white" aria-hidden="true"></span> pair on the new Binder-connector-pigtail-assembly with the included female-to-female jumper wire.
 
 ![fxti-connect-locator-a1](../../img/fxti-connect-locator-a1.png)
 
-Connect the blue and white twisted pair of the Binder-connector-pigtail-assembly to the FXTI Tether Connection PCB, matching the orientation of the pre-installed blue and white wire connections.
+Connect the blue and white <span class="swatch c-blue" aria-hidden="true"></span><span class="swatch c-white" aria-hidden="true"></span> twisted pair of the Binder-connector-pigtail-assembly to the FXTI Tether Connection PCB, matching the orientation of the pre-installed blue and white <span class="swatch c-blue" aria-hidden="true"></span><span class="swatch c-white" aria-hidden="true"></span> wire connections.
 
 ![fxti-connect-plc](../../img/fxti-connect-plc.png)
 

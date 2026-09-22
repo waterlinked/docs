@@ -38,6 +38,21 @@ rm -rf "$TMP_BUILD_DIR"
 echo "Building MkDocs locally into $TMP_BUILD_DIR..."
 uv run --project "$PROJECT_ROOT" python -m mkdocs build -d "$TMP_BUILD_DIR"
 
+# Images in raw HTML <img> tags are not validated by mkdocs, so check them against the build
+echo "Checking images..."
+set +e
+uv run --project "$PROJECT_ROOT" python "$PROJECT_ROOT/check-images.py" "$TMP_BUILD_DIR"
+RESULT_IMAGES=$?
+set -e
+
+if [ $RESULT_IMAGES -ne 0 ]; then
+    rm -rf "$TMP_BUILD_DIR"
+    echo "Image check failed! Please fix the image paths before pushing."
+    exit 1
+fi
+
+echo "Image check passed!"
+
 echo "Running LinkChecker on external links against local build..."
 set +e
 # Only report broken links
