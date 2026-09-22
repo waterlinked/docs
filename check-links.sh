@@ -64,7 +64,8 @@ uv run --project "$PROJECT_ROOT" linkchecker "file://$TMP_BUILD_DIR/index.html" 
     --ignore-url='https://github.com/.*/edit/' \
     --ignore-url='https://www.youtube.com/' \
     --ignore-url='.*/assets/.*' \
-    --ignore-url='.*/images/.*'
+    --ignore-url='.*/images/.*' \
+    --ignore-url='.*/pdf/waterlinked-.*\.pdf$'  # PDF manuals: verified by scripts/build_pdf.py
 
 
 RESULT_EXTERNAL=$?

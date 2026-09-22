@@ -6,6 +6,7 @@ theme:
   name: material
 
   theme_dir: docstheme/material
+  custom_dir: overrides   # "Download PDF" button, see overrides/partials/pdf-download.html
   logo: img/waterlinked_logo.png
   favicon: img/favicon_water_linked.ico
   font:

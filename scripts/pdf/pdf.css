@@ -1,0 +1,155 @@
+/* Print stylesheet for the PDF manuals built by scripts/build_pdf.py.
+   Loaded after the website's own stylesheets (theme, palette, css/extra.css), so all
+   content components (admonitions, tables, code, LEDs, swatches) look like the website.
+   This file only adds the page layout: A4 pages, cover, contents and chapter styling.
+   Brand colours match css/extra.css: ocean blue #1D3556, signal green #1F744D / #4BEF8F. */
+
+:root {
+  /* Same fonts as the website (mkdocs.yml: theme.font). */
+  --md-text-font: "Open Sans";
+  --md-code-font: "Roboto Mono";
+  --wl-blue: #1D3556;
+  --wl-blue-light: #2c4a72;
+  --wl-green: #1F744D;
+  --wl-green-light: #4BEF8F;
+  --wl-grey: #5f6b7a;
+}
+
+html { font-size: 16px !important; }            /* body text .8rem = 9.6 pt on paper */
+body { margin: 0; background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+/* --- Pages ------------------------------------------------------------------------- */
+@page {
+  size: A4;
+  margin: 20mm 16mm 18mm 16mm;
+  @top-left     { content: "Water Linked"; font: 700 8pt "Open Sans", sans-serif; color: var(--wl-blue); }
+  @top-right    { font: 8pt "Open Sans", sans-serif; color: var(--wl-grey); }
+  @bottom-left  { content: "docs.waterlinked.com"; font: 8pt "Open Sans", sans-serif; color: var(--wl-grey); }
+  @bottom-right { content: "Page " counter(page) " of " counter(pages); font: 8pt "Open Sans", sans-serif; color: var(--wl-grey); }
+}
+@page cover {
+  margin: 0;
+  @top-left { content: none; } @top-right { content: none; }
+  @bottom-left { content: none; } @bottom-right { content: none; }
+}
+
+/* --- Cover ------------------------------------------------------------------------- */
+.pdf-cover {
+  page: cover;
+  height: 297mm;
+  display: flex;
+  flex-direction: column;
+  font-family: "Open Sans", sans-serif;
+  break-after: page;
+}
+.pdf-cover__band {
+  background: var(--wl-blue);
+  color: #fff;
+  padding: 34mm 22mm 20mm;
+  position: relative;
+}
+.pdf-cover__logo { width: 72mm; display: block; margin-left: -3mm; }
+.pdf-cover__kicker {
+  margin-top: 26mm;
+  font-size: 13pt;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--wl-green-light);
+}
+.pdf-cover__title { margin: 3mm 0 0; font-size: 36pt; font-weight: 700; line-height: 1.1; color: #fff; }
+.pdf-cover__accent {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 3mm;
+  background: linear-gradient(90deg, var(--wl-green-light), var(--wl-green));
+}
+.pdf-cover__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16mm 22mm 20mm;
+}
+.pdf-cover__product { max-width: 120mm; max-height: 95mm; object-fit: contain; align-self: center; }
+.pdf-cover__info { font-size: 9.5pt; color: var(--wl-grey); border-top: 1px solid #d8dde3; padding-top: 5mm; }
+.pdf-cover__info p { margin: 0 0 2mm; }
+.pdf-cover__info a { color: var(--wl-green); text-decoration: none; }
+.pdf-cover__version { font-size: 8.5pt; }
+
+/* --- Table of contents ------------------------------------------------------------- */
+.pdf-toc { font-family: "Open Sans", sans-serif; break-after: page; }
+.pdf-toc__heading {
+  font-size: 22pt; font-weight: 600; color: var(--wl-blue);
+  margin: 0 0 6mm; padding-bottom: 2mm; border-bottom: 2px solid var(--wl-green);
+}
+.pdf-toc__row {
+  display: flex; align-items: baseline;
+  font-size: 10pt; line-height: 1.55; color: #222; text-decoration: none;
+  break-inside: avoid;
+}
+.pdf-toc__group { font-weight: 700; color: var(--wl-blue); margin-top: 2.5mm; }
+.pdf-toc__row--l0 { padding-left: 0; }
+.pdf-toc__row--l1 { padding-left: 6mm; }
+.pdf-toc__row--l2 { padding-left: 12mm; }
+.pdf-toc__row--l3 { padding-left: 18mm; }
+.pdf-toc__dots { flex: 1; border-bottom: 1px dotted #9aa5b1; margin: 0 2mm; transform: translateY(-.3em); }
+.pdf-toc__num { min-width: 8mm; text-align: right; font-variant-numeric: tabular-nums; color: var(--wl-blue); }
+
+/* --- Chapters (one website page each) --------------------------------------------- */
+.pdf-content { font-size: .8rem; }
+.pdf-chapter { break-before: page; }
+.pdf-chapter__meta {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 4mm;
+  font-size: 7.5pt; color: var(--wl-grey);
+  border-bottom: 1px solid #d8dde3; padding-bottom: 1.5mm; margin-bottom: 4mm;
+}
+.pdf-crumbs { text-transform: uppercase; letter-spacing: .04em; }
+.md-typeset .pdf-online { color: var(--wl-grey); text-decoration: none; }
+/* Invisible marker used by the build script to find the page each chapter starts on. */
+.pdf-marker { font-size: 1px; color: #fff; line-height: 0; }
+
+.md-typeset h1 {
+  font-size: 1.9em; font-weight: 600; color: var(--wl-blue);
+  margin: 0 0 1em; padding-bottom: .25em; border-bottom: 2px solid var(--wl-green);
+}
+.md-typeset h2 { font-size: 1.45em; margin-top: 1.6em; }
+.md-typeset h1, .md-typeset h2, .md-typeset h3, .md-typeset h4 { break-after: avoid; }
+.md-typeset p, .md-typeset li { orphans: 3; widows: 3; }
+
+/* Images: never wider than the page, never split. */
+.md-typeset img { max-width: 100% !important; height: auto; max-height: 160mm; object-fit: contain; }
+.md-typeset img, .md-typeset figure, .md-typeset .admonition, .md-typeset details { break-inside: avoid; }
+
+/* Tables: full width, no scroll containers on paper, rows kept together. */
+.md-typeset__scrollwrap, .md-typeset__table { overflow: visible !important; margin: 0 !important; display: block !important; }
+.md-typeset table:not([class]) {
+  display: table !important; width: 100%; font-size: .72rem;
+  border-collapse: collapse; box-shadow: none; border: 1px solid #d8dde3;
+}
+.md-typeset table:not([class]) th { background: #eef2f6; color: var(--wl-blue); }
+.md-typeset table:not([class]) td, .md-typeset table:not([class]) th { overflow-wrap: anywhere; }
+.md-typeset tr { break-inside: avoid; }
+.md-typeset thead { display: table-header-group; }   /* repeat header row on each page */
+
+/* Code: wrap instead of cutting off at the page edge. */
+.md-typeset pre > code { white-space: pre-wrap !important; overflow-wrap: anywhere; overflow: visible !important; }
+.md-typeset .highlight { break-inside: auto; }
+
+/* Links: keep the website green; underline so they are recognisable on paper. */
+.md-typeset a { color: var(--wl-green); text-decoration: underline; text-decoration-thickness: .06em; }
+
+/* Content tabs are flattened: every tab shown under its own label. */
+.pdf-tab { margin: 1em 0; padding: 0 0 .2em; }
+.pdf-tab__title {
+  font-weight: 700; color: var(--wl-blue); font-size: .85rem;
+  border-bottom: 2px solid var(--wl-green); padding-bottom: .15em; margin-bottom: .6em;
+  break-after: avoid;
+}
+
+/* Embedded videos are replaced by a link. */
+.pdf-video { border-left: 3px solid var(--wl-green); background: #f2f7f4; padding: .5em .8em; margin: 1em 0; font-size: .72rem; }
+
+/* Animated LED indicators (css/extra.css) are drawn lit on paper; the timing strip beside
+   them shows the pattern. */
+.md-typeset .led--blink, .md-typeset .led--blink-slow, .md-typeset .led--blink-fast {
+  animation: none !important; background: var(--led-on) !important; box-shadow: var(--led-glow) !important; outline: none !important;
+}
+.md-typeset .led--breathe { animation: none !important; background: #1f8a33 !important; box-shadow: none !important; outline: none !important; }

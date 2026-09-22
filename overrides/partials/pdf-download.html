@@ -1,0 +1,41 @@
+{#-
+  "Download PDF" button. Every top-level section of the nav (one per product) has its own PDF,
+  built by scripts/build_pdf.py into pdf/waterlinked-<slug>.pdf. The slug rule below must match
+  pdf_slug() in that script. The PDF build strips this block (.pdf-download) from the manual.
+-#}
+{% macro pdf_href(title) -%}
+  {{ base_url }}/pdf/waterlinked-{{ title | lower | replace("/", "") | replace(" ", "-") }}.pdf
+{%- endmacro %}
+
+{% if page.is_homepage %}
+  <div class="pdf-download pdf-download--home">
+    <div class="pdf-download__heading">
+      <span class="twemoji">{% include ".icons/material/file-pdf-box.svg" %}</span>
+      PDF manuals
+    </div>
+    <p>Every product manual is also available as a PDF with the same content as this website, for offline use or printing.</p>
+    <div class="pdf-download__list">
+      {% for item in nav if item.is_section %}
+        <a class="pdf-download__chip" href="{{ pdf_href(item.title) }}" download>
+          <span class="twemoji">{% include ".icons/material/download.svg" %}</span>{{ item.title }}
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+{% elif page.ancestors %}
+  {% set section = page.ancestors | last %}
+  <div class="pdf-download">
+    <a class="pdf-download__button" href="{{ pdf_href(section.title) }}" download
+       title="Download the complete {{ section.title }} documentation as one PDF">
+      <span class="twemoji">{% include ".icons/material/file-pdf-box.svg" %}</span>
+      <span class="pdf-download__text">
+        <strong>Download PDF</strong>
+        <small>Complete {{ section.title }} manual</small>
+      </span>
+    </a>
+    <button class="pdf-download__print" type="button" onclick="window.print()" title="Print this page">
+      <span class="twemoji">{% include ".icons/material/printer-outline.svg" %}</span>
+      <span>Print page</span>
+    </button>
+  </div>
+{% endif %}

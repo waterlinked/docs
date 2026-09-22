@@ -337,4 +337,92 @@ html {
     opacity: 1;
   }
 
+/* --- "Download PDF" button (overrides/partials/pdf-download.html) ------------------
+   Shown at the top right of every page; links to the PDF manual of the current product,
+   which is built by scripts/build_pdf.py. Ocean blue with the signal-green PDF icon, so it
+   stands out without competing with the page title. Hidden when printing. */
+.md-typeset .pdf-download {
+  float: right;
+  display: flex;
+  gap: .4rem;
+  align-items: stretch;
+  margin: 0 0 1rem 1rem;
+}
+.md-typeset .pdf-download__button,
+.md-typeset .pdf-download__print {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  border-radius: .4rem;
+  font-size: .7rem;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: background-color 125ms, border-color 125ms, box-shadow 125ms;
+}
+.md-typeset .pdf-download__button {
+  padding: .45rem .8rem .45rem .6rem;
+  background: #1D3556;
+  border: 1px solid #1D3556;
+  color: #fff;
+  box-shadow: 0 .1rem .35rem rgba(29, 53, 86, .25);
+}
+.md-typeset .pdf-download__button .twemoji svg { width: 1.4rem; height: 1.4rem; fill: #4BEF8F; }
+.md-typeset .pdf-download__text { display: flex; flex-direction: column; }
+.md-typeset .pdf-download__text small { font-size: .6rem; opacity: .8; }
+.md-typeset .pdf-download__button:hover,
+.md-typeset .pdf-download__button:focus-visible {
+  background: #2c4a72;
+  border-color: #4BEF8F;
+  color: #fff;
+}
+.md-typeset .pdf-download__print {
+  padding: .45rem .7rem;
+  background: transparent;
+  border: 1px solid rgba(29, 53, 86, .35);
+  color: #1D3556;
+  font-family: inherit;
+}
+.md-typeset .pdf-download__print .twemoji svg { width: 1rem; height: 1rem; fill: currentColor; }
+.md-typeset .pdf-download__print:hover,
+.md-typeset .pdf-download__print:focus-visible { border-color: #1F744D; color: #1F744D; }
+[data-md-color-scheme="slate"] .md-typeset .pdf-download__button,
+[data-md-color-scheme="slate"] .md-typeset .pdf-download__chip { color: #fff; }
+[data-md-color-scheme="slate"] .md-typeset .pdf-download__button { border-color: #4BEF8F; box-shadow: none; }
+[data-md-color-scheme="slate"] .md-typeset .pdf-download__print { color: #fff; border-color: rgba(255, 255, 255, .45); }
+[data-md-color-scheme="slate"] .md-typeset .pdf-download__print:hover { color: #4BEF8F; border-color: #4BEF8F; }
+
+/* Home page: a row with one download chip per product. */
+.md-typeset .pdf-download--home {
+  float: none;
+  display: block;
+  margin: 2rem 0 0;
+  padding: .9rem 1.1rem 1.1rem;
+  border: 1px solid rgba(29, 53, 86, .2);
+  border-left: .25rem solid #1F744D;
+  border-radius: .4rem;
+}
+.md-typeset .pdf-download__heading { display: flex; align-items: center; gap: .4rem; font-weight: 600; color: #1D3556; }
+.md-typeset .pdf-download__heading .twemoji svg { width: 1.3rem; height: 1.3rem; fill: #1F744D; }
+.md-typeset .pdf-download--home p { margin: .3rem 0 .7rem; }
+.md-typeset .pdf-download__list { display: flex; flex-wrap: wrap; gap: .5rem; }
+.md-typeset .pdf-download__chip {
+  display: inline-flex; align-items: center; gap: .35rem;
+  padding: .35rem .75rem; border-radius: 1rem;
+  background: #1D3556; color: #fff; font-size: .7rem;
+}
+.md-typeset .pdf-download__chip .twemoji svg { width: .9rem; height: .9rem; fill: #4BEF8F; }
+.md-typeset .pdf-download__chip:hover, .md-typeset .pdf-download__chip:focus-visible { background: #2c4a72; color: #fff; }
+[data-md-color-scheme="slate"] .md-typeset .pdf-download__heading { color: #fff; }
+[data-md-color-scheme="slate"] .md-typeset .pdf-download__heading .twemoji svg { fill: #4BEF8F; }
+[data-md-color-scheme="slate"] .md-typeset .pdf-download--home { border-color: rgba(255, 255, 255, .2); border-left-color: #4BEF8F; }
+
+/* Small screens: full-width buttons above the title instead of floating beside it. */
+@media screen and (max-width: 44.9375em) {
+  .md-typeset .pdf-download { float: none; margin: 0 0 1rem; }
+  .md-typeset .pdf-download__button { flex: 1; }
+  .md-typeset .pdf-download__print { display: none; }   /* printing from a phone is rare */
+}
+@media print {
+  .md-typeset .pdf-download { display: none; }
+}
 
