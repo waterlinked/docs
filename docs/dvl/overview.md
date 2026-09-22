@@ -15,7 +15,7 @@ Here is a quick overview of the differences between the DVL models:
 | **Altitude range**** | 5 cm to 50 m |5 cm to 100 m | 5 cm to 125 m| 30 cm to 250 m |
 | **Maximum velocity** | 3.75 m/s | 5 m/s | 9 m/s | 15 m/s |
 | **Frequency** | 1 MHz | 625 kHz | 420 kHz | 250 kHz |
-| **Water tracking** | Yes | Planned | Yes | Planned |
+| **Water tracking** | Yes | Yes | Yes | Yes |
 | **Diameter / height** | 66 mm / 25 mm | 90 mm / 34 mm | 125 mm / 30 mm | 149 mm / 40 mm |
 | **Weight in air / water** | 170 g / 105 g | 200 g / 125 g | 750 g / 500 g | 1650 g / 750 g |
 | **Power consumption** | 4 W (average) | 8 W (average) | 4 W (average) | 8 W (average) |

@@ -28,7 +28,7 @@ For DVL A50/A125, output protocol settings are also available in a separate [pre
 | Dark mode | Disable the LED to avoid interference with cameras. |
 | Range mode | Limit the altitude range used when searching for bottom lock. See [Range mode](range-mode.md). |
 | Periodic cycling | Periodically validate that the DVL is locked to the real bottom. See [Periodic cycling](#periodic-cycling). |
-| Water tracking | Use velocity relative to the water column instead of the bottom when supported. See [Water tracking](water-tracking.md). |
+| Water tracking | Use velocity relative to the water column instead of the bottom. See [Water tracking](water-tracking.md). |
 | Hardware trigger | Activate [hardware triggering](dvl-triggering.md#hardware-triggering). Only for A100/A250. |
 
 !!! warning

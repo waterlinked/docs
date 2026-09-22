@@ -4,14 +4,18 @@ Water tracking is a mode where the DVL estimates velocity relative to the water 
 
 ## Supported models
 
-| Model | Water tracking |
-| :--- | :--- |
-| DVL A50 | Supported |
-| DVL A100 | Planned, not available yet |
-| DVL A125 | Supported |
-| DVL A250 | Planned, not available yet |
+| Model | Water tracking | Available from software version |
+| :--- | :--- | :--- |
+| DVL A50 | Supported | 2.7.0 |
+| DVL A100 | Supported | 3.4.0 |
+| DVL A125 | Supported | 2.7.1 |
+| DVL A250 | Supported | 3.3.0 |
 
-Water tracking requires a software version with water tracking support. See [Software updates](sw-update.md) for update instructions. For DVL A100 and DVL A250, water tracking is planned but not available yet.
+Water tracking requires a software version with water tracking support. See [Software updates](sw-update.md) for update instructions.
+
+Water tracking works the same way on all models.
+
+<!-- TODO: Confirm the A100 water-tracking availability version. Water tracking was added in 3.3.0, but A100 support was added in 3.4.0. -->
 
 ## Mode of operation
 
@@ -38,10 +42,12 @@ Water tracking is enabled by setting `range_mode` to `wt`. Select the interface 
 
 === "TCP JSON API"
 
-    Available in TCP JSON API version `json_v3.2` and up for supported models. Use the TCP JSON API configuration method for your model:
+    Available in TCP JSON API version `json_v3.2` and up on DVL A50/A125, and `json_v4.1` and up on DVL A100/A250. The commands and reports are identical on both model families; only the version numbering differs, because DVL A100/A250 have additional capabilities such as hardware triggering.
+
+    Use the TCP JSON API configuration method for your model:
 
     * [DVL A50/A125 TCP JSON API configuration](dvl-json-protocol.md#configuration-over-json)
-    * DVL A100/A250 TCP JSON API configuration is planned for water tracking and is not available yet.
+    * [DVL A100/A250 TCP JSON API configuration](dvl-a250_a100-json-protocol.md#configuration-over-json)
 
     Enable water tracking by setting `range_mode` to `wt`:
 
@@ -60,25 +66,43 @@ Water tracking is enabled by setting `range_mode` to `wt`. Select the interface 
     See the TCP JSON API for your model for the report fields:
 
     * [DVL A50/A125 TCP JSON API velocity-and-transducer report](dvl-json-protocol.md#velocity-and-transducer-report)
-    * DVL A100/A250 TCP JSON API water-tracking report fields are planned and are not available yet.
+    * [DVL A100/A250 TCP JSON API velocity-and-transducer report](dvl-a250_a100-json-protocol.md#velocity-and-transducer-report)
 
 === "Serial API"
 
-    Available in serial protocol >= `2.7.0` for supported models. Use the serial configuration method for your model:
+    Available in serial protocol `2.7.0` and up on DVL A50/A125, and `3.1.0` and up on DVL A100/A250. The commands and reports are identical on both model families; only the version numbering differs, because DVL A100/A250 have additional capabilities such as hardware triggering.
+
+    Use the serial configuration method for your model:
 
     * [DVL A50/A125 serial configuration](dvl-serial-protocol.md#configuration-over-serial)
-    * DVL A100/A250 serial configuration for water tracking is planned and is not available yet.
+    * [DVL A100/A250 serial configuration](dvl-a250_a100-serial-protocol.md#configuration-over-serial)
 
-    Enable water tracking by setting `range_mode` to `wt` using the `wcs` command:
+    Enable water tracking by setting `range_mode` to `wt` using the `wcs` command. The `wcs` command takes one more parameter on DVL A100/A250 than on DVL A50/A125, so the number of commas differs between the model families.
+
+    On DVL A50/A125:
 
     ```text
     wcs,,,,,wt,
     ```
 
-    Set `range_mode` back to `auto` to return to automatic bottom tracking:
+    On DVL A100/A250:
+
+    ```text
+    wcs,,,,,wt,,
+    ```
+
+    Set `range_mode` back to `auto` to return to automatic bottom tracking.
+
+    On DVL A50/A125:
 
     ```text
     wcs,,,,,auto,
+    ```
+
+    On DVL A100/A250:
+
+    ```text
+    wcs,,,,,auto,,
     ```
 
     Water tracking introduces a serial report called `wrs`, which is similar to the `wrz` report but does not include altitude data. Use this data when water tracking is activated.
@@ -90,4 +114,7 @@ Water tracking is enabled by setting `range_mode` to `wt`. Select the interface 
     See the serial protocol for your model for the report format:
 
     * [DVL A50/A125 serial velocity report](dvl-serial-protocol.md#velocity-report-wrs)
-    * DVL A100/A250 serial water-tracking reports are planned and are not available yet.
+    * [DVL A100/A250 serial velocity report](dvl-a250_a100-serial-protocol.md#velocity-report-wrs)
+
+    !!! warning "`wrs` is used for two different reports on DVL A50/A125"
+        On DVL A50/A125 the `wrs` prefix is used for both the [time status](dvl-serial-protocol.md#time-status-wrs) response and the water tracking velocity report. Inspect the fields after the prefix to tell them apart: a water tracking velocity report begins with a decimal velocity (e.g. `wrs,0.120,...`), while a time status report begins with an integer epoch timestamp (e.g. `wrs,1776409079,...`).
