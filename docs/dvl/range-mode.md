@@ -8,7 +8,7 @@ The range-mode concept applies to all DVLs. The table below documents the curren
 
 <!-- TODO: Confirm final DVL A100 and DVL A250 range mode altitude boundaries and update this page with a model-specific table or model column. -->
 
-On supported models, the same configuration parameter can also enable [water tracking](water-tracking.md).
+The same configuration parameter can also enable [water tracking](water-tracking.md).
 
 ## Configuration format
 
@@ -17,7 +17,7 @@ On supported models, the same configuration parameter can also enable [water tra
 | `auto` | The DVL searches for bottom lock in its full operational area. This is the default. |
 | `=a` | The DVL is locked to range mode `a`, where `a` is a number from `0` to `4`. |
 | `a<=b`| The DVL searches for bottom lock from range mode `a` through range mode `b`. |
-| `wt` | Enable water tracking on supported software and models. See [Water tracking](water-tracking.md). (Only A50/A125)|
+| `wt` | Enable water tracking on supported software. See [Water tracking](water-tracking.md). |
 
 ## DVL A50/A125 range modes
 
@@ -42,10 +42,7 @@ On supported models, the same configuration parameter can also enable [water tra
 | 2 | 1.5 | 14 | 10 |
 | 3 | 7.7 | 72 | 2 - 3 |
 | 4 | 31 | max | 1 - 2 |
-| wt (see note) | 1.5 | 4.5 | 2 |
-
-!!! note
-    Water Tracking is experimental for A100/A250
+| wt | 1.5 | 4.5 | 2 |
 
 ## Set with TCP JSON API or serial protocol
 

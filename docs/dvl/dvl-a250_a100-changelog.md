@@ -7,13 +7,13 @@ See [Software updates](./sw-update.md) for more information on software updates.
 ## 3.4.0 (2026-07-02)
 
 - Add support for A100
-- Add periodic cycling configuration
+- Add periodic cycling configuration in the GUI (already configurable through the API)
 - Accessibility improvement (WCAG2 Compliant)
 - Improve dead-reckoning positioning
 
 ## 3.3.0 (2026-06-18)
 
-- Add water tracking (experimental)
+- Add water tracking
 - Improve dead-reckoning positioning
 - Time API v2
 

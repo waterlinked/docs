@@ -89,6 +89,9 @@ The commands in the table are shown without the checksum and without the mandato
 |         |             | `wr!` | Malformed request: packet does not match the given checksum |
 |         |             | `wrn` | Not acknowledged (nack): an error occurred when handling the packet |
 
+!!! warning "`wrs` is used for two different reports"
+    The `wrs` prefix is used for both the [time status](#time-status-wrs) response and the [water tracking velocity report](#velocity-report-wrs). You must inspect the fields after the prefix to tell them apart: a water tracking velocity report begins with a decimal velocity (e.g. `wrs,0.120,...`), while a time status report begins with an integer epoch timestamp (e.g. `wrs,1776409079,...`).
+
 ### Time status (wrs)
 
 [Time status](./time.md#time-status) is returned by the command `wct`.
@@ -147,7 +150,7 @@ A velocity report is output for each velocity calculation of the DVL in this for
 The X, Y, and Z axes are with respect to [body frame](axes.md#body-frame) of the DVL, or the [vehicle frame](axes.md#vehicle-frame) if the DVL is mounted on a vehicle at an angle, specified as a 'mounting rotation offset', from the forward axis of the vehicle.
 
 The report has the following format:
-`wrz,`*[vx],[vy],[vz],[valid],[fom],[covariance],[time_of_validity],[time_of_transmission],[time],[status]
+`wrs,`*[vx],[vy],[vz],[valid],[fom],[covariance],[time_of_validity],[time_of_transmission],[time],[status]
 
 
 | Variable | Description |
@@ -167,7 +170,7 @@ The report has the following format:
 Example where all velocities are valid:
 
 ```text
-wrs,0.120,-0.400,2.000,y,1.855,1e-07;0;1.4;0;1.2;0;0.2;0;1e+09,7,14,123.00,1*50
+wrs,0.120,-0.400,2.000,y,1.855,1e-07;0;1.4;0;1.2;0;0.2;0;1e+09,7,14,123.00,1*7b
 ```
 
 Water tracking is enabled by setting `range_mode` to `wt`:

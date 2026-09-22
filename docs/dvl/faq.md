@@ -103,11 +103,13 @@ See [Periodic cycling](configuration.md#periodic-cycling).
 
 ## 10. What is the difference between bottom tracking and water tracking? { #what-is-the-difference-between-bottom-tracking-and-water-tracking }
 
-Applies to: model-specific
+Applies to: all DVL models
 
 Bottom tracking estimates velocity relative to the seabed or another reflecting surface. Water tracking estimates velocity relative to the water column.
 
 Water tracking can be useful when bottom lock is not available or when velocity relative to the water column is required. It should not be treated as bottom-relative velocity.
+
+Water tracking is available on all DVL models, and behaves the same way on all of them.
 
 See [Water tracking](water-tracking.md).
 
