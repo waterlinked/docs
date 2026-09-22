@@ -38,6 +38,15 @@ Verify links are valid:
 ./check-links.sh
 ```
 
+This also checks that all images resolve. Images written as raw HTML (`<img src="...">`) are not
+checked by mkdocs, so they are verified against the built site by `check-images.py`. Note that such
+paths are relative to the *page URL*, not to the markdown file: a page `docs/dvl/foo.md` is served
+as `/dvl/foo/`, so an image in `docs/img/` is reached with `../../img/`. To run the check alone:
+
+```sh
+uv run mkdocs build -d /tmp/site && uv run python check-images.py /tmp/site
+```
+
 ## Deploy changes to server
 After the changes have been tested and they work, push the changes to a branch, and make a merge request. The documentation site will built automatically and links will be verified.
 

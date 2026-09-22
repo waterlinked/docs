@@ -22,6 +22,7 @@ jobs:
     - name: Build docs
       run: |
         uv run mkdocs build --strict
+        uv run python check-images.py site
         ./check-links.sh
 
     # Only deploy on master
