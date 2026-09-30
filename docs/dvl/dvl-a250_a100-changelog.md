@@ -4,6 +4,15 @@ This page applies to DVL A100 and DVL A250.
 
 See [Software updates](./sw-update.md) for more information on software updates.
 
+## 3.5.2 (2026-09-29)
+
+- Disable serial output by default
+- Add output protocol configuration
+- Add option to configure range mode
+- Improve diagnostic log dialog
+- Improve charts and plotting
+- Improve dead-reckoning positioning
+
 ## 3.4.0 (2026-07-02)
 
 - Add support for A100
