@@ -6,7 +6,7 @@ theme:
   name: material
 
   theme_dir: docstheme/material
-  logo: img/waterlinked_logo.png
+  logo: img/waterlinked_logo_norbit.svg
   favicon: img/favicon_water_linked.ico
   font:
     text: Open Sans
