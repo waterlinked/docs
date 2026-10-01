@@ -337,7 +337,7 @@ class ManualBuilder:
         first = page_url(self.section.pages[0].md)
         image = self.cover_images.get(first.split("/")[0], "")
         img_html = f'<img class="pdf-cover__product" src="{image}" alt="">' if image else ""
-        logo = (self.site_dir / "img" / "waterlinked_logo.png").resolve().as_uri()
+        logo = (self.site_dir / "img" / "waterlinked_logo_norbit.svg").resolve().as_uri()
         online = self.site_url + first
         return f"""
 <section class="pdf-cover">
