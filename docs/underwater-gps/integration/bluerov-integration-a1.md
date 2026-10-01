@@ -234,22 +234,43 @@ Press the PLC module into the socket, making sure that the press-fit standoffs l
 
 ### Modify Interface Electronics
 
-!!! Note
-	This step is only necessary for Underwater GPS G2 bought *before* June 2021. For units produced after June 2021, this step is not necessary.
+Whether this step applies depends on the hardware configuration of the Interface Electronics board in your UGPS Topside, not on the purchase date. Two configurations exist:
+
+* **Original configuration:** The positions R2 and R3 are populated with 0 ohm resistors (solder links). This configuration was used on units produced before about June 2021.
+* **Updated configuration:** The positions R2 and R3 are populated with small inductors. This configuration has been used on units produced since about June 2021. The PCB designators still read R2 and R3.
+
+!!! Note "Not sure which configuration you have?"
+	The transition date is approximate. If you are unsure which configuration your unit has, in particular for units produced around the transition, contact [Water Linked Support](https://waterlinked.com/support) with the serial number of your UGPS Topside *before* modifying the board.
+
+	Populated R2/R3 positions and a voltage reading do not by themselves identify the hardware configuration. See also the [Underwater GPS FAQ](../ugps-faq.md#4-my-ugps-topside-is-newer-but-r2r3-are-fitted-and-i-measure-12-v-on-the-locator-connector-should-i-remove-them).
+
+Both configurations connect the internal 12 V supply of the Underwater GPS to the PLC pair of the bulkhead connector labelled "Locator" (pin 1 (GND) and pin 2 (12 V)). In the documented integration the PLC pair is carried on the blue/white <span class="swatch c-blue" aria-hidden="true"></span><span class="swatch c-white" aria-hidden="true"></span> wires (pins 1/2) of the Binder-connector-pigtail-assembly, while the Locator-A1 signal is carried on a separate pair, the white/brown <span class="swatch c-white" aria-hidden="true"></span><span class="swatch c-brown" aria-hidden="true"></span> wires (pins 7/8). With the wiring described in this guide the PLC supply is therefore not applied to the Locator-A1 signal pair.
 
 !!! Warning
-	Skipping this step leaves a regulated 12V power source from the Underwater GPS on the PLC lines (pins 1 (GND) and 2 (12V) on the Locator bulkhead connector). Connecting non-isolated equipment to the PLC lines may damage the Underwater GPS or any external equipment.
+	Approximately 12 V DC from the Underwater GPS can be present on the PLC pair (pins 1 and 2 of the "Locator" bulkhead connector) in the updated configuration, and in the original configuration until R2 and R3 have been removed. Connecting unsuitable or non-isolated external equipment to the PLC pair may damage the Underwater GPS or the external equipment. The updated inductors do not provide galvanic isolation from the internal supply and do not make arbitrary external equipment safe to connect.
+
+	This warning does not mean that the inductors of the updated configuration must be removed. The documented integration with the BlueROV2 Integration Kit and the wiring in this guide works with the updated configuration as delivered.
 
 !!! Note
-	Locator-D1 cannot be used unless the resistors are soldered back on to the Interface Electronics.
+	Disconnect the power supply from the UGPS Topside before modifying the Interface Electronics board.
 
-<!-- TODO customer to add replacement parts ?-->
+#### Original configuration (0 ohm resistors)
 
-The Interface Electronics board in the Underwater GPS housing comes with resistors R2 and R3 which put GND on pin 1 and 12V on pin 2 of the bulkhead connector with the label “Locator”. The configuration of the FXTI, BlueROV2 and the Underwater GPS G2 *are* affected by leaving these resistors on the board, so they *must* be removed for normal operation.
+This step is required for the original configuration. The 0 ohm resistors R2 and R3 connect the 12 V supply directly to the PLC pair. This lets the power supply load the high-frequency PLC signal and interfere with the communication between the FXTI, the BlueROV2 and the Underwater GPS G2. For the documented integration, the resistors *must* be removed.
 
-Remove the resistors with a soldering iron.
+Remove the resistors R2 and R3 with a soldering iron.
 
-![topside-interface-resistors](../../img/topside-interface-resistors.png)
+![Original configuration: R2 and R3 (0 ohm resistors) to be removed on Interface Electronics produced before about June 2021](../../img/topside-interface-resistors.png)
+
+!!! Note
+	Removing R2 and R3 disconnects the 12 V supply from the "Locator" bulkhead connector. A Locator-D1 can then not be used with this UGPS Topside unless the resistors are soldered back on. Note that the Locator-D1 is not compatible with the BlueROV2 Integration Kit in any case, see the [BlueROV2 integration overview](bluerov-integration.md).
+
+#### Updated configuration (inductors)
+
+No modification is required. Leave the inductors in the positions R2 and R3 fitted. They reduce the loading of the PLC signal by the 12 V supply, which is why removing them is not needed for the documented integration. They still provide a DC connection, so approximately 12 V between pins 1 and 2 of the "Locator" bulkhead connector remains expected on a powered unit.
+
+!!! Note
+	Populated R2/R3 positions and a 12 V reading do not by themselves indicate the original configuration. See the [Underwater GPS FAQ](../ugps-faq.md#4-my-ugps-topside-is-newer-but-r2r3-are-fitted-and-i-measure-12-v-on-the-locator-connector-should-i-remove-them) if you are unsure whether the components should be removed.
 
 ## Modifications to the FXTI
 

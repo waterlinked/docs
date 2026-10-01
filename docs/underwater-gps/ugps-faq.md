@@ -30,3 +30,14 @@ To help the support team analyzing your systems behaviour, you should record a d
 
 
 ---
+
+## 4. My UGPS Topside is newer, but R2/R3 are fitted and I measure 12 V on the Locator connector. Should I remove them?
+No. This question concerns the "Modify Interface Electronics" step of the [BlueROV2 Locator-A1 integration guide](../underwater-gps/integration/bluerov-integration-a1.md#modify-interface-electronics).
+
+On the updated Interface Electronics, the positions R2 and R3 are populated with small inductors instead of the original 0 ohm resistors. The PCB designators still read R2 and R3. The inductors reduce the loading of the PLC signal by the 12 V supply, but they still provide a DC connection. Approximately 12 V DC between pins 1 and 2 of the "Locator" bulkhead connector is therefore expected on a powered unit with the updated configuration.
+
+Populated R2/R3 positions and a 12 V reading are both consistent with the updated design. Neither observation by itself indicates the original configuration or justifies removing the components. The documented integration with the BlueROV2 Integration Kit works with the updated configuration as delivered.
+
+If you cannot identify the hardware configuration of your unit with certainty, contact [Water Linked Support](https://waterlinked.com/support) with the serial number of your UGPS Topside before modifying the board.
+
+---
