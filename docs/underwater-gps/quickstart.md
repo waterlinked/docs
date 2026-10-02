@@ -12,6 +12,8 @@ The UGPS system consists of three components:
 
  In addition you need a [power supply](../underwater-gps/power-supply.md)
 
+If you have not decided which locator, baseline or range edition to use, see [Choose your UGPS G2 setup](../underwater-gps/system-selector.md).
+
 
 ## A quick guide on how to start using the Underwater GPS system:
 

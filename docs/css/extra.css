@@ -338,3 +338,126 @@ html {
   }
 
 
+/* --- UGPS system selector (docs/js/system-selector.js) ------------------------------
+   Styles for the interactive "Choose your UGPS G2 setup" guide. Class names are the contract
+   in loop/G001_ugps-system-selector/round-1/plan.md §3(c). Colours come from the theme
+   variables (readable in both colour schemes) plus Material's warning orange for .sel-warning;
+   the brand green #1F744D / #4BEF8F is reused for the panel accent via --md-accent-fg-color. */
+.md-typeset .sel [hidden] {
+  display: none !important;          /* `hidden` must beat any display rule on fieldset/div */
+}
+.md-typeset .sel-progress {
+  font-size: .7rem;
+  color: var(--md-default-fg-color--light);
+  margin: 0 0 .6rem;
+}
+.md-typeset .sel-q {
+  margin: 0 0 .8rem;
+  padding: .6rem .8rem .4rem;
+  border: .05rem solid var(--md-default-fg-color--lightest);
+  border-radius: .2rem;
+  background: var(--md-code-bg-color);
+}
+.md-typeset .sel-q legend {
+  font-weight: 700;
+  padding: 0 .3rem;
+  color: var(--md-default-fg-color);
+}
+.md-typeset .sel-q label {
+  display: block;
+  padding: .3rem .4rem;
+  margin: 0 -.4rem;
+  border-radius: .2rem;
+  cursor: pointer;
+  line-height: 1.5;
+}
+.md-typeset .sel-q label:hover {
+  background: var(--md-default-fg-color--lightest);
+}
+.md-typeset .sel-q input[type="radio"] {
+  margin: 0 .5rem 0 .1rem;
+  accent-color: var(--md-primary-fg-color);
+}
+[data-md-color-scheme="slate"] .md-typeset .sel-q input[type="radio"] {
+  accent-color: var(--md-accent-fg-color);
+}
+/* Keyboard focus: a solid 2 px accent ring on radios and on the button. The radio ring is
+   drawn on the input itself (block labels would otherwise hide where focus is). */
+.md-typeset .sel-q input[type="radio"]:focus-visible,
+.md-typeset .sel-reset:focus-visible {
+  outline: .15rem solid var(--md-accent-fg-color);
+  outline-offset: .15rem;
+}
+.md-typeset .sel-q label:has(input:focus-visible) {
+  background: var(--md-default-fg-color--lightest);
+}
+.md-typeset .md-button.sel-reset {
+  margin: 0 0 1rem;
+  background-color: transparent;
+  border-color: var(--md-default-fg-color--light);
+  color: var(--md-default-fg-color);
+}
+.md-typeset .md-button.sel-reset:hover,
+.md-typeset .md-button.sel-reset:focus {
+  background-color: var(--md-default-fg-color--lightest);
+  border-color: var(--md-default-fg-color);
+  color: var(--md-default-fg-color);
+}
+/* Result panel: accent left border + faint tint; the theme variables keep text readable in
+   both schemes (no hard-coded white). */
+.md-typeset .sel-result {
+  margin: 1rem 0;
+  padding: .8rem 1rem;
+  border-left: .25rem solid var(--md-accent-fg-color);
+  border-radius: .2rem;
+  background: var(--md-code-bg-color);
+}
+.md-typeset .sel-summary {
+  font-size: .9rem;
+  font-weight: 700;
+  margin: 0 0 .6rem;
+}
+.md-typeset .sel-result .sel-block h3 {
+  font-size: .8rem;
+  margin: 1rem 0 .3rem;
+}
+.md-typeset .sel-result .sel-block ul {
+  margin: 0 0 .4rem;
+  padding-left: 1.2em;               /* bullets stay inside the panel, text aligns with h3 */
+}
+.md-typeset .sel-result .sel-block li {
+  margin-left: 0;
+}
+.md-typeset .sel-result .sel-block > ul,
+.md-typeset .sel-result .sel-block > div {
+  font-size: .75rem;
+}
+/* Warnings: Material's warning orange, as in `!!! warning` admonitions */
+.md-typeset .sel-warning {
+  list-style: none;
+  margin: 0 0 .4rem -1.2em;          /* flush with the headings; cancels the ul padding */
+  padding: .4rem .6rem;
+  border-left: .2rem solid #ff9100;
+  border-radius: .1rem;
+  background: rgba(255, 145, 0, .1);
+}
+.md-typeset .sel-warning strong {
+  color: inherit;
+}
+/* Withheld recommendation: emphasise the summary line */
+.md-typeset .sel-withheld {
+  border-left-color: #ff9100;
+}
+.md-typeset .sel-withheld .sel-summary {
+  color: #b35f00;
+}
+[data-md-color-scheme="slate"] .md-typeset .sel-withheld .sel-summary {
+  color: #ffb050;
+}
+@media screen and (max-width: 30em) {
+  .md-typeset .sel-q,
+  .md-typeset .sel-result {
+    padding-left: .6rem;
+    padding-right: .6rem;
+  }
+}
