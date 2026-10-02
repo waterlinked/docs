@@ -11,6 +11,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0   # full history: the PDF covers use the date of the last change per product
 
     - name: Install uv
       uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
@@ -25,7 +27,30 @@ jobs:
         uv run python check-images.py site
         ./check-links.sh
 
-    # Only deploy on master
+    # One PDF manual per product, generated from the site that was just built, so the PDFs
+    # always contain the same pages and content as the website. The script fails the build if
+    # a page from the nav is missing in a PDF, or on broken internal links / missing images.
+    - name: Install Chromium for PDF generation
+      run: uv run playwright install --with-deps chromium
+
+    - name: Build and verify PDF manuals
+      run: uv run python scripts/build_pdf.py --site-dir site --out-dir docs/pdf
+
+    - name: Check links
+      run: ./check-links.sh
+
+    # Makes the PDFs of every branch downloadable from the workflow run, for review before merging.
+    - name: Upload PDF manuals
+      if: always()   # also when verification fails, so the problem can be inspected
+      uses: actions/upload-artifact@v4
+      with:
+        name: pdf-manuals
+        path: docs/pdf/*.pdf
+        if-no-files-found: ignore
+        retention-days: 30
+
+    # Only deploy on master. The deploy step builds the site again; the PDFs in docs/pdf/ are
+    # copied into the published site at /pdf/, where the "Download PDF" buttons link to.
     - name: Deploy docs
       if: github.ref == 'refs/heads/master'
       uses: mhausenblas/mkdocs-deploy-gh-pages@master

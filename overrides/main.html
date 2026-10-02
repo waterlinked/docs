@@ -1,0 +1,8 @@
+{#- Adds the "Download PDF" button (overrides/partials/pdf-download.html) to every page. -#}
+{% extends "base.html" %}
+
+{% block content %}
+  {% if not page.is_homepage %}{% include "partials/pdf-download.html" %}{% endif %}
+  {{ super() }}
+  {% if page.is_homepage %}{% include "partials/pdf-download.html" %}{% endif %}
+{% endblock %}

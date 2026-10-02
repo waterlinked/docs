@@ -4,3 +4,6 @@ venv/
 
 # PDF generated markdown
 *.pdf
+
+# Generated PDF manuals (scripts/build_pdf.py)
+docs/pdf/
