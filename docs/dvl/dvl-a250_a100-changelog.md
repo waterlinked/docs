@@ -11,6 +11,7 @@ See [Software updates](./sw-update.md) for more information on software updates.
 - Add option to configure range mode
 - Improve diagnostic log dialog
 - Improve charts and plotting
+- Improve dashboard layout and eligibility on smaller screens
 - Improve dead-reckoning positioning
 
 ## 3.4.0 (2026-07-02)
