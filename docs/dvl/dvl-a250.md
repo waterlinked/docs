@@ -33,7 +33,9 @@ Use the drawings below as mechanical reference for the two A250 interface varian
 
 ### Cable dimensions
 
-<!-- TODO: Add A250 cable dimensions, including side-entry and rear-entry variants if they differ. -->
+Cable diameter: 7.8 mm +/- 0.2 mm
+
+The cable diameter is the same for the side-entry, rear O-ring interface and connector versions.
 
 The DVL A250 is available with side-entry cable and rear O-ring interface options. A Seacon connector option is available for side-entry versions only.
 

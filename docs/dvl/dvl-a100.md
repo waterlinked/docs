@@ -40,6 +40,12 @@ The DVL A100 is available in these physical interface versions:
 * Side cable entry version with 3 m shielded cable.
 * Rear O-ring interface version with 1 m shielded cable.
 
+### Cable dimensions
+
+Cable diameter: 7.8 mm +/- 0.2 mm
+
+The cable diameter is the same for the side-entry, rear O-ring interface and connector versions.
+
 <!-- TODO: Add DVL A100 cable dimensions drawing, including side cable entry and rear O-ring interface variants. -->
 
 ## Mounting holes
