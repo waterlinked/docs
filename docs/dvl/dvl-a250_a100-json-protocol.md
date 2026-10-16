@@ -245,37 +245,46 @@ The response will be as follows if the command is accepted. If the queue is full
 }
 ```
 
-### Version info
+### Get version info
 
-Retrieving the version information is performed with the `get_version_info` command.
+Get version info by issuing the `get_version_info` command.
 
 ```json
 {"command":"get_version_info"}
 ```
 
-The response will be as follows:
+A successful response looks like this:
 
 ```json
 {
   "response_to": "get_version_info",
   "success": true,
   "error_message": "",
-  "result":
-   {"chipid":"0x123456789",
+  "result": {
+    "chipid": "0x123456789",
     "hardware_revision": 1,
     "product_id": 21062,
     "product_name": "DVL A100",
-    "variant":"standard",
-    "version_short":"3.4.5",
-    "version":"3.4.5 (v3.4.5-rc6.2026-03-27T10:49:10.704464)",
-    "is_ready":true
+    "variant": "standard",
+    "version_short": "3.4.5",
+    "version": "3.4.5 (v3.4.5-rc6.2026-03-27T10:49:10.704464)",
+    "is_ready": true
   },
   "format": "json_v4.1",
   "type": "response"
 }
 ```
 
-The `is_ready` parameter is set to true when the DVL is fully operational.
+| Variable | Description |
+|----------|-------------|
+| chipid | Chip ID of the DVL. Also shown on the About page in the web GUI, and used to download offline [software updates](sw-update.md#offline-software-update) |
+| hardware_revision | Hardware revision of the DVL |
+| product_id | Water Linked product number: 21062 for DVL A100, 21061 for DVL A250 |
+| product_name | Product name: `DVL A100` or `DVL A250` |
+| variant | Product variant |
+| version_short | Software version |
+| version | Software version including build information |
+| is_ready | `true` when the DVL is fully operational |
 
 ### Configuration over TCP JSON API { #configuration-over-json }
 
