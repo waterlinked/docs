@@ -43,13 +43,13 @@ The default serial communication format is 115200 8-N-1 (no hardware flow contro
 
 DVL A50 and DVL A125 use a 3.3 V UART interface that is 5 V tolerant. See [DVL A50/A125 serial interface](electrical.md#dvl-a50-and-dvl-a125-serial-interface).
 
-Packets sent to and received from the DVL start with a `w` and end with LF, CR+LF, or CR. The packet format is:
+Packets sent to and received from the DVL start with a `w` and end with CR+LF, or CR. The packet format is:
 
 | Start byte | Direction        | Command  | Options (0 to many)  | Checksum | End byte       |
 |------------|------------------|----------|----------------------|----------|----------------|
-| `w`        | `c` or `r`       | `x`      | `,[option]`          | `*xx`    | `\n`, `\r\n`, or `\r` |
+| `w`        | `c` or `r`       | `x`      | `,[option]`          | `*xx`    | `\n` or `\r\n` |
 
-`Direction` is `c` (short for 'command') for packets sent to the DVL, and `r` (short for 'response') for packets sent from the DVL.
+`Direction` is `c` (short for 'command') for packets sent to the DVL, and `r` (short for 'response') for packets sent from the DVL. The DVL always replies with CR+LF as the line ending.
 The commands can be sent from a terminal program that supports sending a full line at a time. The timeout between characters is approximately 10 ms.
 
 !!!note
