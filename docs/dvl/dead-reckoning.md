@@ -11,9 +11,9 @@ Reset dead reckoning before using the local position estimate.
 For DVL A50/A125:
 
 1. Calibrate the gyroscope by pressing *More -> Calibrate gyro* in the [web GUI](dvl-a50_a125-gui.md) while the DVL is stationary.
-2. Click the **Reset** button ![](../img/dvl_gui_icon_reset.png) in the [dashboard](dvl-a50_a125-gui.md#dashboard-live-data), or send a reset command over the [TCP JSON API](dvl-json-protocol.md#reset-dead-reckoning) or [serial protocol](dvl-serial-protocol.md#reset-dead-reckoning-wcr).
+2. Click the **Reset** button ![](../img/dvl_gui_icon_reset.png) in the [dashboard](dvl-a50_a125-gui.md#dashboard-live-data), or send a reset command over the [TCP JSON API](software-integration/dvl-json-protocol.md#reset-dead-reckoning) or [serial protocol](software-integration/dvl-serial-protocol.md#reset-dead-reckoning-wcr).
 
-For DVL A100/A250, gyro calibration is not needed. Reset commands over the [TCP JSON API](dvl-a250_a100-json-protocol.md#reset-dead-reckoning) or [serial protocol](dvl-a250_a100-serial-protocol.md#reset-dead-reckoning-wcr) are included for backward compatibility and do not affect dead reckoning on DVL A100/A250.
+For DVL A100/A250, gyro calibration is not needed. Reset commands over the [TCP JSON API](software-integration/dvl-a250_a100-json-protocol.md#reset-dead-reckoning) or [serial protocol](software-integration/dvl-a250_a100-serial-protocol.md#reset-dead-reckoning-wcr) are included for backward compatibility and do not affect dead reckoning on DVL A100/A250.
 
 ## Frame
 
@@ -32,8 +32,8 @@ The position of the DVL can be viewed in the web GUI dashboard or fetched by API
 
 * [DVL A50/A125 web GUI dashboard](dvl-a50_a125-gui.md#dashboard-live-data)
 * [DVL A100/A250 web GUI dashboard](dvl-a250_a100-gui.md#velocity-and-navigation)
-* [DVL A50/A125 TCP JSON API](dvl-json-protocol.md#dead-reckoning-report)
-* [DVL A100/A250 TCP JSON API](dvl-a250_a100-json-protocol.md#dead-reckoning-report)
+* [DVL A50/A125 TCP JSON API](software-integration/dvl-json-protocol.md#dead-reckoning-report)
+* [DVL A100/A250 TCP JSON API](software-integration/dvl-a250_a100-json-protocol.md#dead-reckoning-report)
 
 ## Orientation
 

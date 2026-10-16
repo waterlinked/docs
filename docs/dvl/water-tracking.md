@@ -46,8 +46,8 @@ Water tracking is enabled by setting `range_mode` to `wt`. Select the interface 
 
     Use the TCP JSON API configuration method for your model:
 
-    * [DVL A50/A125 TCP JSON API configuration](dvl-json-protocol.md#configuration-over-json)
-    * [DVL A100/A250 TCP JSON API configuration](dvl-a250_a100-json-protocol.md#configuration-over-json)
+    * [DVL A50/A125 TCP JSON API configuration](software-integration/dvl-json-protocol.md#configuration-over-json)
+    * [DVL A100/A250 TCP JSON API configuration](software-integration/dvl-a250_a100-json-protocol.md#configuration-over-json)
 
     Enable water tracking by setting `range_mode` to `wt`:
 
@@ -65,8 +65,8 @@ Water tracking is enabled by setting `range_mode` to `wt`. Select the interface 
 
     See the TCP JSON API for your model for the report fields:
 
-    * [DVL A50/A125 TCP JSON API velocity-and-transducer report](dvl-json-protocol.md#velocity-and-transducer-report)
-    * [DVL A100/A250 TCP JSON API velocity-and-transducer report](dvl-a250_a100-json-protocol.md#velocity-and-transducer-report)
+    * [DVL A50/A125 TCP JSON API velocity-and-transducer report](software-integration/dvl-json-protocol.md#velocity-and-transducer-report)
+    * [DVL A100/A250 TCP JSON API velocity-and-transducer report](software-integration/dvl-a250_a100-json-protocol.md#velocity-and-transducer-report)
 
 === "Serial API"
 
@@ -74,8 +74,8 @@ Water tracking is enabled by setting `range_mode` to `wt`. Select the interface 
 
     Use the serial configuration method for your model:
 
-    * [DVL A50/A125 serial configuration](dvl-serial-protocol.md#configuration-over-serial)
-    * [DVL A100/A250 serial configuration](dvl-a250_a100-serial-protocol.md#configuration-over-serial)
+    * [DVL A50/A125 serial configuration](software-integration/dvl-serial-protocol.md#configuration-over-serial)
+    * [DVL A100/A250 serial configuration](software-integration/dvl-a250_a100-serial-protocol.md#configuration-over-serial)
 
     Enable water tracking by setting `range_mode` to `wt` using the `wcs` command. The `wcs` command takes one more parameter on DVL A100/A250 than on DVL A50/A125, so the number of commas differs between the model families.
 
@@ -113,8 +113,8 @@ Water tracking is enabled by setting `range_mode` to `wt`. Select the interface 
 
     See the serial protocol for your model for the report format:
 
-    * [DVL A50/A125 serial velocity report](dvl-serial-protocol.md#velocity-report-wrs)
-    * [DVL A100/A250 serial velocity report](dvl-a250_a100-serial-protocol.md#velocity-report-wrs)
+    * [DVL A50/A125 serial velocity report](software-integration/dvl-serial-protocol.md#velocity-report-wrs)
+    * [DVL A100/A250 serial velocity report](software-integration/dvl-a250_a100-serial-protocol.md#velocity-report-wrs)
 
     !!! warning "`wrs` is used for two different reports on DVL A50/A125"
-        On DVL A50/A125 the `wrs` prefix is used for both the [time status](dvl-serial-protocol.md#time-status-wrs) response and the water tracking velocity report. Inspect the fields after the prefix to tell them apart: a water tracking velocity report begins with a decimal velocity (e.g. `wrs,0.120,...`), while a time status report begins with an integer epoch timestamp (e.g. `wrs,1776409079,...`).
+        On DVL A50/A125 the `wrs` prefix is used for both the [time status](software-integration/dvl-serial-protocol.md#time-status-wrs) response and the water tracking velocity report. Inspect the fields after the prefix to tell them apart: a water tracking velocity report begins with a decimal velocity (e.g. `wrs,0.120,...`), while a time status report begins with an integer epoch timestamp (e.g. `wrs,1776409079,...`).

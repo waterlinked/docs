@@ -9,7 +9,7 @@ The DVL has different options for triggering acoustic pings to perform a velocit
 
 ## Hardware triggering
 
-Use the RS232 RX line of the DVL to trigger a ping after enabling hardware triggering in the [configuration](configuration.md#operating-configurations).
+Use the RS232 RX line of the DVL to trigger a ping after enabling hardware triggering in the [configuration](../configuration.md#operating-configurations).
 
 The trigger is detected on the falling edge of the RX signal. The signal must then remain low for approximately 78.1 µs before returning high.
 
@@ -29,7 +29,7 @@ Software triggering is available for all DVL models. It triggers a ping over the
 
 Software triggering differs from hardware triggering because it is sent as a request to the DVL and placed in a ping queue. The queue can store up to 15 requests, which are executed one after another until the queue is empty.
 
-See the software ping command in [Commands](configuration.md#commands).
+See the software ping command in [Commands](../configuration.md#commands).
 
 Because this method depends on the internal state of the DVL, the ping queue, and Ethernet jitter if Ethernet is used, the exact ping time is less predictable than with hardware triggering.
 

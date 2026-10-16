@@ -41,15 +41,15 @@ This document describes serial protocol versions `2.6.x` and `2.7.x` (major.mino
 
 The default serial communication format is 115200 8-N-1 (no hardware flow control). Release 2.6.1 and later allow different baud rates through web GUI configuration.
 
-DVL A50 and DVL A125 use a 3.3 V UART interface that is 5 V tolerant. See [DVL A50/A125 serial interface](electrical.md#dvl-a50-and-dvl-a125-serial-interface).
+DVL A50 and DVL A125 use a 3.3 V UART interface that is 5 V tolerant. See [DVL A50/A125 serial interface](../hardware-integration/electrical.md#dvl-a50-and-dvl-a125-serial-interface).
 
-Packets sent to and received from the DVL start with a `w` and end with LF, CR+LF, or CR. The packet format is:
+Packets sent to and received from the DVL start with a `w` and end with LF or CR+LF. The packet format is:
 
 | Start byte | Direction        | Command  | Options (0 to many)  | Checksum | End byte       |
 |------------|------------------|----------|----------------------|----------|----------------|
-| `w`        | `c` or `r`       | `x`      | `,[option]`          | `*xx`    | `\n`, `\r\n`, or `\r` |
+| `w`        | `c` or `r`       | `x`      | `,[option]`          | `*xx`    | `\n` or `\r\n` |
 
-`Direction` is `c` (short for 'command') for packets sent to the DVL, and `r` (short for 'response') for packets sent from the DVL.
+`Direction` is `c` (short for 'command') for packets sent to the DVL, and `r` (short for 'response') for packets sent from the DVL. The DVL always replies with CR+LF as the line ending.
 The commands can be sent from a terminal program that supports sending a full line at a time. The timeout between characters is approximately 10 ms.
 
 !!!note
@@ -62,7 +62,7 @@ The commands can be sent from a terminal program that supports sending a full li
 
 ### Command overview
 
-The commands in the table are shown without the checksum and without the mandatory line ending (any of `\n`, `\r\n`, or `\r`) for readability. In all cases, the response to a submitted command may be `wrn`, `wr?`, or `wr!` (see below for details), but only the format of a successful response is listed.
+The commands in the table are shown without the checksum and without the mandatory line ending (`\n` or `\r\n`) for readability. In all cases, the response to a submitted command may be `wrn`, `wr?`, or `wr!` (see below for details), but only the format of a successful response is listed.
 
 | Command | Description | Response | Description |
 |---------|-------------|----------|-------------|
@@ -70,19 +70,19 @@ The commands in the table are shown without the checksum and without the mandato
 | `wcw`   | Get product detail | `wrw,`*[name]*,*[version]*,*[chipID]*,*[IP address]* | Where type is dvl, name is product name, version is software version, chip ID is the chip ID and _optionally_ the IP address if connected to DHCP server: eg: `wrw,dvl-a50,2.2.1,0xfedcba98765432` or `wrw,dvl-a50,2.2.1,0xfedcba98765432,10.11.12.140` |
 | `wcs,`*[configuration parameters]*    | Set configuration parameters | `wra` | Successfully set the specified configuration parameters. See [Configuration](#configuration-over-serial) for details |
 | `wcc`   | Get current configuration | `wrc,`*[configuration parameters]* | Entire current configuration. See [Configuration](#configuration-over-serial) for details |
-| `wcr`   | Reset dead reckoning | `wra` | Successfully started a new [dead reckoning](dead-reckoning.md#starting-dead-reckoning) run |
+| `wcr`   | Reset dead reckoning | `wra` | Successfully started a new [dead reckoning](../dead-reckoning.md#starting-dead-reckoning) run |
 | `wcx`   | Trigger ping | `wra` | Successfully queued a ping |
 | `wcg`   | Calibrate gyro | `wra` | Successfully calibrated gyro |
 | `wcp`   | Change serial output protocol | `wra` | Successfully changed output protocol |
-| `wcn,`*[ntp_address]*  | Set [NTP server configuration](./time.md#ntp-server-address-configuration-auto-or-custom). `ntp_address` is an address, or "auto" | `wra` | Successfully set NTP server |
-| `wcN` | Get [NTP address configuration](./time.md#ntp-server-address-configuration-auto-or-custom) | `wrN,`*[ntp_address]* | Configured NTP server address, or "auto" |
-| `wcm,`*[timestamp]*   | Set [manual time](./time.md#setting-manual-time), where `timestamp` is UTC epoch time in microseconds | `wra` | Successfully set manual time |
-| `wct`   | Get [time status](./time.md#time-status) | `wrs,`*[details below]* | Time status |
-| `wcT,`*[timeout_seconds]*   | [Force NTP sync](./time.md#ntp-force-sync) within given timeout | `wrT,`*[success]* | Where `success` is y if sync was achieved within timeout, and n otherwise |
+| `wcn,`*[ntp_address]*  | Set [NTP server configuration](../time.md#ntp-server-address-configuration-auto-or-custom). `ntp_address` is an address, or "auto" | `wra` | Successfully set NTP server |
+| `wcN` | Get [NTP address configuration](../time.md#ntp-server-address-configuration-auto-or-custom) | `wrN,`*[ntp_address]* | Configured NTP server address, or "auto" |
+| `wcm,`*[timestamp]*   | Set [manual time](../time.md#setting-manual-time), where `timestamp` is UTC epoch time in microseconds | `wra` | Successfully set manual time |
+| `wct`   | Get [time status](../time.md#time-status) | `wrs,`*[details below]* | Time status |
+| `wcT,`*[timeout_seconds]*   | [Force NTP sync](../time.md#ntp-force-sync) within given timeout | `wrT,`*[success]* | Where `success` is y if sync was achieved within timeout, and n otherwise |
 |         |             | `wrz,`*[details below]* | Velocities calculated |
 |         |             | `wrs,`*[details below]* | Velocities calculated during water tracking |
 |         |             | `wru,`*[details below]* | Transducer information |
-|         |             | `wrp,`*[details below]* | [Dead reckoning](dead-reckoning.md) report |
+|         |             | `wrp,`*[details below]* | [Dead reckoning](../dead-reckoning.md) report |
 |         |             | `wrx,`*[details below]* | DEPRECATED: Velocities calculated (old format) |
 |         |             | `wrt,`*[details below]* | DEPRECATED: Transducer information (old format) |
 |         |             | `wr?` | Malformed request: packet cannot be understood or no newline received before timeout |
@@ -94,7 +94,7 @@ The commands in the table are shown without the checksum and without the mandato
 
 ### Time status (wrs)
 
-[Time status](./time.md#time-status) is returned by the command `wct`.
+[Time status](../time.md#time-status) is returned by the command `wct`.
 
 The report has the following format: `wrs,`*[system_time],[ntp_synced],[ntp_synced_to],[ntp_seconds_since_last_sync]*
 
@@ -116,7 +116,7 @@ wrs,1776409079,1,192.168.0.10,45
 
 A velocity report is output for each velocity calculation of the DVL. The rate depends on the altitude of the DVL (distance to the sea bottom or other reflecting surface), but will be in the range 2-15 Hz.
 
-The X, Y, and Z axes are with respect to [body frame](axes.md#body-frame) of the DVL, or the [vehicle frame](axes.md#vehicle-frame) if the DVL is mounted on a vehicle at an angle, specified as a 'mounting rotation offset', from the forward axis of the vehicle.
+The X, Y, and Z axes are with respect to [body frame](../axes.md#body-frame) of the DVL, or the [vehicle frame](../axes.md#vehicle-frame) if the DVL is mounted on a vehicle at an angle, specified as a 'mounting rotation offset', from the forward axis of the vehicle.
 
 The report has the following format:
 `wrz,`*[vx],[vy],[vz],[valid],[altitude],[fom],[covariance],[time_of_validity],[time_of_transmission],[time],[status]
@@ -147,7 +147,7 @@ wrz,0.120,-0.400,2.000,y,1.30,1.855,1e-07;0;1.4;0;1.2;0;0.2;0;1e+09,7,14,123.00,
 
 A velocity report is output for each velocity calculation of the DVL in this format when water tracking is activated. The update rate will be 2 Hz.
 
-The X, Y, and Z axes are with respect to [body frame](axes.md#body-frame) of the DVL, or the [vehicle frame](axes.md#vehicle-frame) if the DVL is mounted on a vehicle at an angle, specified as a 'mounting rotation offset', from the forward axis of the vehicle.
+The X, Y, and Z axes are with respect to [body frame](../axes.md#body-frame) of the DVL, or the [vehicle frame](../axes.md#vehicle-frame) if the DVL is mounted on a vehicle at an angle, specified as a 'mounting rotation offset', from the forward axis of the vehicle.
 
 The report has the following format:
 `wrs,`*[vx],[vy],[vz],[valid],[fom],[covariance],[time_of_validity],[time_of_transmission],[time],[status]
@@ -210,7 +210,7 @@ wru,3,1.800,1.35,-58,-96*a3
 
 ### Dead reckoning report (wrp)
 
-A dead reckoning report outputs the current speed, position, and orientation of the DVL as calculated by [dead reckoning](dead-reckoning.md), with respect to a [frame](dead-reckoning.md#frame) defined by the axes of the DVL's [body frame](axes.md#body-frame), or [vehicle frame](axes.md#vehicle-frame) if a mounting rotation offset is set, at the start of the dead reckoning run. The expected update rate is 5 Hz.
+A dead reckoning report outputs the current speed, position, and orientation of the DVL as calculated by [dead reckoning](../dead-reckoning.md), with respect to a [frame](../dead-reckoning.md#frame) defined by the axes of the DVL's [body frame](../axes.md#body-frame), or [vehicle frame](../axes.md#vehicle-frame) if a mounting rotation offset is set, at the start of the dead reckoning run. The expected update rate is 5 Hz.
 
 The format is:
 `wrp,`*[time_stamp],[x],[y],[z],[pos_std],[roll],[pitch],[yaw],[status]*
@@ -291,11 +291,11 @@ wcp,3
 | Variable | Description |
 |----------|-------------|
 | speed_of_sound | Speed of sound (1000-2000 m/s). Float  |
-| mounting_rotation_offset | See the definition of the [vehicle frame](axes.md#vehicle-frame) of the DVL. Typically 0, but can be set to be non-zero if the forward axis of the DVL is not aligned with the forward axis of a vehicle on which it is mounted (0-360 degrees). Float |
+| mounting_rotation_offset | See the definition of the [vehicle frame](../axes.md#vehicle-frame) of the DVL. Typically 0, but can be set to be non-zero if the forward axis of the DVL is not aligned with the forward axis of a vehicle on which it is mounted (0-360 degrees). Float |
 | acoustic_enabled | `y` for normal operation of the DVL,`n` when the sending of acoustic waves from the DVL is disabled (e.g. to save power or slow down its heating up in air) |
-| dark_mode_enabled | `n` when the LED operates as [normal](electrical.md#led-signals). `y` for no blinking of LED (e.g. if the LED is interfering with a camera) |
-| range_mode |`auto` when operating as normal, otherwise see [range mode configuration](range-mode.md) |
-| periodic_cycling_enabled | `y` to enable [periodic cycling](configuration.md#periodic-cycling), `n` to disable it. See [Configuration over TCP JSON API](dvl-json-protocol.md#configuration-over-json) for details |
+| dark_mode_enabled | `n` when the LED operates as [normal](../hardware-integration/electrical.md#led-signals). `y` for no blinking of LED (e.g. if the LED is interfering with a camera) |
+| range_mode |`auto` when operating as normal, otherwise see [range mode configuration](../range-mode.md) |
+| periodic_cycling_enabled | `y` to enable [periodic cycling](../configuration.md#periodic-cycling), `n` to disable it. See [Configuration over TCP JSON API](dvl-json-protocol.md#configuration-over-json) for details |
 
 !!!note
     For backward compatibility the `range_mode` and `periodic_cycling_enabled` parameters are optional when setting the configuration. They will always be returned when reading the configuration (`wcc`).
@@ -343,7 +343,7 @@ Example for setting speed of sound to 1450 m/s and disabling acoustics, without 
 wcs,1450,,n,,,
 ```
 
-The response will be an ack `wra` if the parameters are successfully set, a nak `wrn` if the command was successfully parsed but the parameters were not successfully set, and a malformed request `wr?` if the command was not successfully parsed, e.g. if the wrong number of parameters was used, or either `speed_of_sound` or `mounting_rotation_offset` was not an integer.
+The response will be an ack `wra` if the parameters are successfully set, a nak `wrn` if the command was successfully parsed but the parameters were not successfully set, and a malformed request `wr?` if the command was not successfully parsed, e.g. if the wrong number of parameters was used, or either `speed_of_sound` or `mounting_rotation_offset` was not a float.
 
 The new configuration will not be returned in the response, but can be obtained by issuing a `wcc` command as above.
 

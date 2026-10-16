@@ -3,7 +3,7 @@
 This page gives common installation guidance for all our DVLs. Use it together with the mechanical and electrical page for your specific model.
 
 !!! tip "First-time setup"
-    For the full end-to-end path (mount, wire, connect, open the web GUI), follow the [Quickstart](quickstart.md). This page covers mounting and placement; see also [Electrical](electrical.md) and [Network setup](networking.md).
+    For the full end-to-end path (mount, wire, connect, open the web GUI), follow the [Quickstart](../quickstart.md). This page covers mounting and placement; see also [Electrical](electrical.md) and [Network setup](../software-integration/networking.md).
 
 ## Before installation
 
@@ -27,10 +27,10 @@ When mounting the DVL:
 
 See the model pages for line-of-sight drawings:
 
-* [DVL A50 line of sight](dvl-a50.md#line-of-sight)
-* [DVL A100 line of sight](dvl-a100.md#line-of-sight)
-* [DVL A125 line of sight](dvl-a125.md#line-of-sight)
-* [DVL A250 line of sight](dvl-a250.md#line-of-sight)
+* [DVL A50 line of sight](../dvl-a50.md#line-of-sight)
+* [DVL A100 line of sight](../dvl-a100.md#line-of-sight)
+* [DVL A125 line of sight](../dvl-a125.md#line-of-sight)
+* [DVL A250 line of sight](../dvl-a250.md#line-of-sight)
 
 <!-- TODO: Add final DVL A100 line-of-sight asset when available. -->
 <!-- TODO: Add final DVL A250 line-of-sight asset when available. -->
@@ -39,7 +39,9 @@ See the model pages for line-of-sight drawings:
 
 Velocity and dead reckoning output use the configured vehicle frame. If the DVL is not mounted with its forward direction aligned with the vehicle forward direction, configure the mounting rotation offset.
 
-See [Axes](axes.md) for the common DVL axis convention and mounting rotation offset.
+See [Axes](../axes.md) for the common DVL axis convention and mounting rotation offset.
+
+For the rear O-ring interface versions, see [DVL A100 rear O-ring mounting](dvl-a100-rear-oring-mounting.md) and [DVL A250 rear O-ring mounting](dvl-a250-rear-oring-mounting.md) for the vehicle mounting interface, the seal, and how to align the DVL with a defined angular placement accuracy.
 
 !!! warning
     Incorrect mounting rotation can make valid DVL data appear to point in the wrong direction.
@@ -96,7 +98,7 @@ If several acoustic instruments are used together:
 
 1. Test each instrument by itself first.
 2. Check DVL performance with the other instruments active.
-3. Use trigger or synchronization options when needed. See [Integration](integration.md#triggering-and-synchronization).
+3. Use trigger or synchronization options when needed. See [Integration](../software-integration/integration.md#triggering-and-synchronization).
 
 ## Grounding, power, and cable considerations
 
@@ -122,4 +124,4 @@ General checks:
 5. Check velocity, altitude, and transducer distances.
 6. If the output looks wrong, verify mounting rotation, range mode, line of sight, bubbles, vibration, and acoustic interference.
 
-See [How to diagnose](how-to-diagnose.md) if the DVL does not behave as expected.
+See [How to diagnose](../how-to-diagnose.md) if the DVL does not behave as expected.

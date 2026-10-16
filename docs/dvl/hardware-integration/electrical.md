@@ -3,7 +3,7 @@
 This page covers electrical connection, LED signals, wiring, shielding, and serial interface for all DVLs.
 
 !!! tip "First-time setup"
-    New to the DVL? The [Quickstart](quickstart.md) covers the full setup path (mount, wire, connect, open the web GUI). This page is the detailed wiring reference; to get on the network afterwards, see [Network setup](networking.md).
+    New to the DVL? The [Quickstart](../quickstart.md) covers the full setup path (mount, wire, connect, open the web GUI). This page is the detailed wiring reference; to get on the network afterwards, see [Network setup](../software-integration/networking.md).
 
 Most wiring is common across the DVL models. The serial electrical interface differs:
 
@@ -18,7 +18,7 @@ Most wiring is common across the DVL models. The serial electrical interface dif
 | <span class="swatch swatch-round c-ledon"></span> | **Fixed green light** | The DVL is powering on. Depending on configuration it can take ~30-60 seconds to power on. |
 | <span class="swatch swatch-round c-ledon"></span> <span class="swatch swatch-round c-ledoff"></span> <span class="swatch swatch-round c-ledoff"></span> <span class="swatch swatch-round c-ledoff"></span> | **Flashing green light** (mostly off, slow) | DVL looking for bottom lock. |
 | <span class="swatch swatch-round c-ledon"></span> <span class="swatch swatch-round c-ledon"></span> <span class="swatch swatch-round c-ledon"></span> <span class="swatch swatch-round c-ledoff"></span> | **Flashing green light** (mostly on, slow) | DVL has bottom lock. |
-| <span class="swatch swatch-round c-ledon"></span> <span class="swatch swatch-round c-ledoff"></span> <span class="swatch swatch-round c-ledon"></span> <span class="swatch swatch-round c-ledoff"></span> | **Flashing green light** (fast) | DVL is in [thermal shutdown](how-to-diagnose.md#thermal-shutdown). |
+| <span class="swatch swatch-round c-ledon"></span> <span class="swatch swatch-round c-ledoff"></span> <span class="swatch swatch-round c-ledon"></span> <span class="swatch swatch-round c-ledoff"></span> | **Flashing green light** (fast) | DVL is in [thermal shutdown](../how-to-diagnose.md#thermal-shutdown). |
 
 ## Wiring interface
 
@@ -125,7 +125,7 @@ DVL A50 and DVL A125 use the same 3.3 V UART interface, 5 V tolerant.
 !!! warning
     There can be a momentary (<10 us) power spike (~5 V) on the UART lines when power is applied to the DVL, which may damage equipment that is not 5 V tolerant.
 
-See the [DVL A50/A125 serial protocol](dvl-serial-protocol.md#serial-protocol).
+See the [DVL A50/A125 serial protocol](../software-integration/dvl-serial-protocol.md#serial-protocol).
 
 ### DVL A100 and DVL A250 serial interface { #dvl-a100-and-dvl-a250-serial-interface }
 
@@ -138,4 +138,4 @@ DVL A100 and DVL A250 use a standard RS232 serial interface.
 | Data/parity/stop | 8N1 |
 | Flow control | None |
 
-See the [DVL A100/A250 serial protocol](dvl-a250_a100-serial-protocol.md#serial-protocol).
+See the [DVL A100/A250 serial protocol](../software-integration/dvl-a250_a100-serial-protocol.md#serial-protocol).

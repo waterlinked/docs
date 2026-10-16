@@ -11,10 +11,10 @@ Open the DVL web GUI and go to the settings or configuration page for your model
 
 Configuration can also be performed by protocol:
 
-* [DVL A50/A125 TCP JSON API configuration](dvl-json-protocol.md#configuration-over-json)
-* [DVL A50/A125 serial configuration](dvl-serial-protocol.md#configuration-over-serial)
-* [DVL A100/A250 TCP JSON API configuration](dvl-a250_a100-json-protocol.md#configuration-over-json)
-* [DVL A100/A250 serial configuration](dvl-a250_a100-serial-protocol.md#configuration-over-serial)
+* [DVL A50/A125 TCP JSON API configuration](software-integration/dvl-json-protocol.md#configuration-over-json)
+* [DVL A50/A125 serial configuration](software-integration/dvl-serial-protocol.md#configuration-over-serial)
+* [DVL A100/A250 TCP JSON API configuration](software-integration/dvl-a250_a100-json-protocol.md#configuration-over-json)
+* [DVL A100/A250 serial configuration](software-integration/dvl-a250_a100-serial-protocol.md#configuration-over-serial)
 
 For DVL A50/A125, output protocol settings are also available in a separate [preview of the output configuration on the demo site](https://dvl.demo.waterlinked.com/#/outputs). 
 
@@ -29,7 +29,7 @@ For DVL A50/A125, output protocol settings are also available in a separate [pre
 | Range mode | Limit the altitude range used when searching for bottom lock. See [Range mode](range-mode.md). |
 | Periodic cycling | Periodically validate that the DVL is locked to the real bottom. See [Periodic cycling](#periodic-cycling). |
 | Water tracking | Use velocity relative to the water column instead of the bottom. See [Water tracking](water-tracking.md). |
-| Hardware trigger | Activate [hardware triggering](dvl-triggering.md#hardware-triggering). Only for A100/A250. |
+| Hardware trigger | Activate [hardware triggering](software-integration/dvl-triggering.md#hardware-triggering). Only for A100/A250. |
 
 !!! warning
     Incorrect speed of sound, mounting rotation, range mode, tracking mode, or output protocol settings can cause the DVL data to appear incorrect, even when the hardware is functioning properly.
@@ -67,7 +67,7 @@ Electrical interfaces differ by model:
 * DVL A50 and DVL A125 use a 3.3 V UART interface that is 5 V tolerant.
 * DVL A100 and DVL A250 use RS232.
 
-See [DVL electrical connection](electrical.md#terminal-serial-interface) and [Integration](integration.md) before connecting external equipment.
+See [DVL electrical connection](hardware-integration/electrical.md#terminal-serial-interface) and [Integration](software-integration/integration.md) before connecting external equipment.
 
 
 ## Commands
@@ -84,7 +84,7 @@ Actions that can be performed on the DVL.
 
 | Setting | Use |
 | --- | --- |
-| Network configuration | Use DHCP or a static IP address. See [Network Setup](networking.md). |
+| Network configuration | Use DHCP or a static IP address. See [Network Setup](software-integration/networking.md). |
 | System time configuration | Configure NTP or set time manually. |
 | Factory reset | Reset all configuration. Reboot is required. |
 | Reboot | Restart the DVL. |

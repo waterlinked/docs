@@ -148,7 +148,7 @@ html {
 /* Wire-colour / LED swatches — drawn in CSS instead of emoji so they look pixel-identical
    on every OS & browser. Emoji such as ⬜/⚪ are rendered by each device's own emoji font
    (white/silver ones can look pink or oddly bordered on some platforms); these boxes don't
-   depend on that font. Used in dvl/electrical.md and the underwater-gps pages. Squares = wire colours, circles = LEDs. */
+   depend on that font. Used in dvl/hardware-integration/electrical.md and the underwater-gps pages. Squares = wire colours, circles = LEDs. */
 .swatch {
   display: inline-block;
   width: .85em;
@@ -426,3 +426,11 @@ html {
   .md-typeset .pdf-download { display: none; }
 }
 
+
+/* PPM tables on the DVL rear O-ring mounting pages. A cell is green when the tolerance model
+   predicts 7 PPM or fewer outside the angular limit (the report's Cpk 1.5 target), red when
+   it predicts more. Markdown tables cannot colour cells, so these tables are written in HTML. */
+.md-typeset table.ppm td.ppm-ok   { background: rgba(46, 125, 50, .28); }
+.md-typeset table.ppm td.ppm-fail { background: rgba(211, 47, 47, .28); }
+.md-typeset table.ppm td, .md-typeset table.ppm th { text-align: right; padding: .5em .8em; }
+.md-typeset table.ppm td:first-child, .md-typeset table.ppm th:first-child { text-align: left; white-space: nowrap; }

@@ -17,7 +17,7 @@ The DVL should be submerged before it is powered. This prevents overheating and 
 
 Secure the DVL to your vehicle using the mounting holes and make sure the transducers have a clear line of sight to the bottom.
 
-See [Installation](installation.md) for common guidance on orientation, line of sight, vibration, bubbles, turbulence, and boat-mounted use cases.
+See [Installation](hardware-integration/installation.md) for common guidance on orientation, line of sight, vibration, bubbles, turbulence, and boat-mounted use cases.
 
 | Model | Mounting and dimensions |
 | :--- | :--- |
@@ -34,14 +34,14 @@ Serial is available for vehicle integrations where a direct serial data stream i
 
 | Model | Electrical interface | Recommended interface | Optional serial interface |
 | :--- | :--- | :--- | :--- |
-| DVL A50 | [Electrical connection](electrical.md) | Ethernet | UART TTL |
-| DVL A100 | [Electrical connection](electrical.md) | Ethernet | RS232 |
-| DVL A125 | [Electrical connection](electrical.md) | Ethernet | UART TTL |
-| DVL A250 | [Electrical connection](electrical.md) | Ethernet | RS232 |
+| DVL A50 | [Electrical connection](hardware-integration/electrical.md) | Ethernet | UART TTL |
+| DVL A100 | [Electrical connection](hardware-integration/electrical.md) | Ethernet | RS232 |
+| DVL A125 | [Electrical connection](hardware-integration/electrical.md) | Ethernet | UART TTL |
+| DVL A250 | [Electrical connection](hardware-integration/electrical.md) | Ethernet | RS232 |
 
 ## 5. Configure network
 
-Configure your computer to reach the DVL over Ethernet. See [Network Setup](networking.md) for mDNS, fallback IP, static IP, and TCP information.
+Configure your computer to reach the DVL over Ethernet. See [Network Setup](software-integration/networking.md) for mDNS, fallback IP, static IP, and TCP information.
 
 ## 6. Access the web GUI
 

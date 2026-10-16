@@ -38,10 +38,10 @@ Where a repository README states model support, use that scope as the source of 
 * [DVL A100/A250 serial protocol](dvl-a250_a100-serial-protocol.md)
 * [PD formats](dvl-pd-formats.md)
 * [PD integration overview](integration.md#pd0-pd4-and-pd6)
-* [Electrical connection](electrical.md)
+* [Electrical connection](../hardware-integration/electrical.md)
 * [Network setup](networking.md)
-* [DVL diagnostic log](diagnostic-log.md)
-* [How to diagnose](how-to-diagnose.md)
+* [DVL diagnostic log](../diagnostic-log.md)
+* [How to diagnose](../how-to-diagnose.md)
 
 ## Notes
 

@@ -10,7 +10,7 @@ The DVL A250 combines high performance, a compact 4-beam setup, open interface p
 
 ## Dimensions and FOV
 
-Use the mechanical information together with the common [Installation](installation.md) guidance. Verify dimensions, mounting hole placement, cable routing, and line of sight against the latest product drawing or datasheet.
+Use the mechanical information together with the common [Installation](hardware-integration/installation.md) guidance. Verify dimensions, mounting hole placement, cable routing, and line of sight against the latest product drawing or datasheet.
 
 ### Dimensions
 
@@ -44,6 +44,8 @@ The DVL A250 is available with side-entry cable and rear O-ring interface option
 Use a rigid mount so the DVL moves with the vehicle or boat. Avoid flexible poles, unsupported brackets, and mounts that can vibrate.
 
 Use the mechanical drawings above as the reference for mounting-hole placement.
+
+For the rear O-ring interface version, the piston seal plug and the FWD slot can be used to locate the DVL with a defined angular placement accuracy. See [DVL A250 rear O-ring mounting](hardware-integration/dvl-a250-rear-oring-mounting.md) for the vehicle mounting interface, the installation steps, the seal, and the angular placement accuracy you can expect for standard and precision mounting.
 
 ## Transducer numbering
 

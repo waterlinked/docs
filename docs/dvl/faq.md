@@ -8,7 +8,7 @@ Applies to: all DVL models
 
 Connect power and Ethernet, then open the DVL address in a web browser. Ethernet is recommended for first setup because it gives access to the web GUI, diagnostics, configuration, software updates, and the TCP data stream.
 
-See [Network setup](networking.md) for mDNS, fallback IP, direct Ethernet connection, and TCP data stream information.
+See [Network setup](software-integration/networking.md) for mDNS, fallback IP, direct Ethernet connection, and TCP data stream information.
 
 ---
 
@@ -25,7 +25,7 @@ Check:
 * The fallback IP address if mDNS does not resolve.
 * Whether the DVL is in thermal shutdown.
 
-See [Network setup](networking.md), [DVL electrical connection](electrical.md), and [How to diagnose](how-to-diagnose.md).
+See [Network setup](software-integration/networking.md), [DVL electrical connection](hardware-integration/electrical.md), and [How to diagnose](how-to-diagnose.md).
 
 ---
 
@@ -35,7 +35,7 @@ Applies to: all DVL models
 
 Common causes include insufficient power, poor cable or connector contact, thermal shutdown, and network configuration issues.
 
-Check [Network setup](networking.md), [DVL electrical connection](electrical.md), and [How to diagnose](how-to-diagnose.md).
+Check [Network setup](software-integration/networking.md), [DVL electrical connection](hardware-integration/electrical.md), and [How to diagnose](how-to-diagnose.md).
 
 ---
 
@@ -45,7 +45,7 @@ Applies to: all DVL models
 
 Bottom lock depends on altitude, bottom conditions, line of sight, acoustic noise, vehicle motion, and range mode. If bottom lock is lost, check that the bottom is within the selected range, all beams have a clear path, and the DVL is not operating in bubbles or disturbed water.
 
-See [Loss of bottom lock](how-to-diagnose.md#loss-of-bottom-lock) and [Installation](installation.md).
+See [Loss of bottom lock](how-to-diagnose.md#loss-of-bottom-lock) and [Installation](hardware-integration/installation.md).
 
 ---
 
@@ -121,7 +121,7 @@ Applies to: all DVL models
 
 Yes. Air bubbles can scatter or block the acoustic signal and cause weak signal, noisy measurements, invalid velocity, or loss of bottom lock.
 
-Check for bubbles from thrusters, propellers, pumps, hull turbulence, waves, or the DVL moving in and out of the water. See [Air bubbles](how-to-diagnose.md#air-bubbles) and [Installation](installation.md#thrusters-propellers-hulls-and-bubbles).
+Check for bubbles from thrusters, propellers, pumps, hull turbulence, waves, or the DVL moving in and out of the water. See [Air bubbles](how-to-diagnose.md#air-bubbles) and [Installation](hardware-integration/installation.md#thrusters-propellers-hulls-and-bubbles).
 
 ---
 
@@ -141,7 +141,7 @@ Applies to: all DVL models
 
 Yes. Loose brackets, flexible poles, or vibrating mounts can make measurements noisy because the DVL moves relative to the vehicle or boat.
 
-Use a rigid mount and check whether motors, pumps, or thrusters excite the bracket. See [Mechanical vibration and flexible mounts](how-to-diagnose.md#mechanical-vibration-and-flexible-mounts) and [Rigid mounting and vibration](installation.md#rigid-mounting-and-vibration).
+Use a rigid mount and check whether motors, pumps, or thrusters excite the bracket. See [Mechanical vibration and flexible mounts](how-to-diagnose.md#mechanical-vibration-and-flexible-mounts) and [Rigid mounting and vibration](hardware-integration/installation.md#rigid-mounting-and-vibration).
 
 ---
 
@@ -151,7 +151,7 @@ Applies to: all DVL models
 
 Yes, but the installation should keep the DVL rigidly mounted, fully submerged, and away from aerated or turbulent flow. Verify bottom lock and velocity at the intended boat speed before relying on the data.
 
-See [Boat-mounted installations](how-to-diagnose.md#boat-mounted-installations) and [Boat-mounted use](installation.md#boat-mounted-use).
+See [Boat-mounted installations](how-to-diagnose.md#boat-mounted-installations) and [Boat-mounted use](hardware-integration/installation.md#boat-mounted-use).
 
 ---
 
@@ -161,7 +161,7 @@ Applies to: all DVL models
 
 The DVL should stay fully submerged during operation. Near the surface, waves, air ingestion, turbulence, and bubbles can affect the acoustic signal. Exact surface-clearance limits depend on the installation and operating conditions.
 
-See [Operation close to the water surface](how-to-diagnose.md#operation-close-to-the-water-surface) and [Operation close to the surface](installation.md#operation-close-to-the-surface).
+See [Operation close to the water surface](how-to-diagnose.md#operation-close-to-the-water-surface) and [Operation close to the surface](hardware-integration/installation.md#operation-close-to-the-surface).
 
 ---
 
@@ -171,7 +171,7 @@ Applies to: all DVL models
 
 Yes. Other acoustic instruments can interfere if they transmit at overlapping times or create strong acoustic noise in the DVL operating environment.
 
-Test the DVL with the other instruments off, then on. If performance changes, consider physical separation, beam geometry, or trigger/synchronization. See [Active acoustic interference from other sensors](how-to-diagnose.md#active-acoustic-interference-from-other-sensors) and [Triggering and synchronization](integration.md#triggering-and-synchronization).
+Test the DVL with the other instruments off, then on. If performance changes, consider physical separation, beam geometry, or trigger/synchronization. See [Active acoustic interference from other sensors](how-to-diagnose.md#active-acoustic-interference-from-other-sensors) and [Triggering and synchronization](software-integration/integration.md#triggering-and-synchronization).
 
 ---
 
@@ -183,7 +183,7 @@ Use Ethernet and the web GUI for first setup, diagnostics, configuration, and te
 
 Use PD4 or PD6 only when the receiving system already supports that format. PD0 is planned for DVL A100 and DVL A250, but is not available yet.
 
-See [Integration overview](integration.md), [PD formats](dvl-pd-formats.md), [DVL electrical connection](electrical.md), and the protocol pages for your model.
+See [Integration overview](software-integration/integration.md), [PD formats](software-integration/dvl-pd-formats.md), [DVL electrical connection](hardware-integration/electrical.md), and the protocol pages for your model.
 
 ---
 
@@ -195,7 +195,7 @@ DVL A50 and DVL A125 do not use RS232. They use a 3.3 V UART electrical interfac
 
 DVL A100 and DVL A250 use RS232.
 
-The serial data protocol is separate from the electrical interface. See [DVL electrical connection](electrical.md#terminal-serial-interface), [DVL A50/A125 serial protocol](dvl-serial-protocol.md), and [DVL A100/A250 serial protocol](dvl-a250_a100-serial-protocol.md).
+The serial data protocol is separate from the electrical interface. See [DVL electrical connection](hardware-integration/electrical.md#terminal-serial-interface), [DVL A50/A125 serial protocol](software-integration/dvl-serial-protocol.md), and [DVL A100/A250 serial protocol](software-integration/dvl-a250_a100-serial-protocol.md).
 
 ---
 
@@ -207,7 +207,7 @@ In our measurements, TCP JSON message latency was typically around 4 ms average,
 
 This is not a hard real-time guarantee. Actual latency can depend on network setup, host system, load, and integration method.
 
-See [Integration](integration.md#ethernet-jsontcp), [DVL A50/A125 TCP JSON API](dvl-json-protocol.md), and [DVL A100/A250 TCP JSON API](dvl-a250_a100-json-protocol.md).
+See [Integration](software-integration/integration.md#ethernet-jsontcp), [DVL A50/A125 TCP JSON API](software-integration/dvl-json-protocol.md), and [DVL A100/A250 TCP JSON API](software-integration/dvl-a250_a100-json-protocol.md).
 
 ---
 
@@ -217,7 +217,7 @@ Applies to: model-specific
 
 Triggering lets an external system control DVL pinging. This can be useful when several acoustic instruments are installed on the same vehicle and should avoid transmitting at the same time.
 
-Triggering and synchronization are handled through the integration interface, not as a web GUI workflow. See [Integration overview](integration.md#triggering-and-synchronization) and the protocol page for your model.
+Triggering and synchronization are handled through the integration interface, not as a web GUI workflow. See [Integration overview](software-integration/integration.md#triggering-and-synchronization) and the protocol page for your model.
 
 <!-- TODO: Confirm exact timing requirements and supported trigger configurations before publishing detailed trigger setup rules. -->
 

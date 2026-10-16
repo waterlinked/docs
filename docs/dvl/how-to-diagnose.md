@@ -21,17 +21,17 @@ Use this guide when the DVL is not performing as expected, cannot get bottom loc
 
 1. Confirm that the DVL is powered and submerged.
 2. Check the LED status:
-    * [LED signals](electrical.md#led-signals)
+    * [LED signals](hardware-integration/electrical.md#led-signals)
 3. Check wiring and cable condition:
-    * [DVL electrical connection](electrical.md)
-    * [DVL A50/A125 serial interface](electrical.md#dvl-a50-and-dvl-a125-serial-interface)
-    * [DVL A100/A250 serial interface](electrical.md#dvl-a100-and-dvl-a250-serial-interface)
+    * [DVL electrical connection](hardware-integration/electrical.md)
+    * [DVL A50/A125 serial interface](hardware-integration/electrical.md#dvl-a50-and-dvl-a125-serial-interface)
+    * [DVL A100/A250 serial interface](hardware-integration/electrical.md#dvl-a100-and-dvl-a250-serial-interface)
 4. Open the web GUI:
     * [DVL A50/A125 web GUI](dvl-a50_a125-gui.md)
     * [DVL A100/A250 web GUI](dvl-a250_a100-gui.md)
 5. Confirm that the software is up to date:
     * [Software updates](sw-update.md)
-6. Review [Installation](installation.md) for mounting, bubbles, vibration, and acoustic interference.
+6. Review [Installation](hardware-integration/installation.md) for mounting, bubbles, vibration, and acoustic interference.
 7. Use the [Support package checklist](support-package-checklist.md) before contacting Water Linked support.
 
 ## Download diagnostic log { #download-diagnostics }
@@ -137,7 +137,7 @@ For boat-mounted DVLs:
 * Check for vibration in the pole or bracket.
 * Verify bottom lock and velocity at the intended speed before relying on the data.
 
-See [Installation](installation.md#boat-mounted-use).
+See [Installation](hardware-integration/installation.md#boat-mounted-use).
 
 ## Obstructed beam paths / line of sight
 
@@ -163,7 +163,7 @@ Check:
 
 1. Run the DVL with other acoustic instruments off.
 2. Run the DVL with the other instruments on.
-3. If performance changes, consider trigger or synchronization. See [Integration](integration.md#triggering-and-synchronization).
+3. If performance changes, consider trigger or synchronization. See [Integration](software-integration/integration.md#triggering-and-synchronization).
 
 ## Thermal shutdown
 

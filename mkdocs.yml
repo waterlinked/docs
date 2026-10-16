@@ -167,10 +167,29 @@ nav:
           - A125: dvl/dvl-a125.md
           - A250: dvl/dvl-a250.md
 
-      - Install and connect:
-          - Installation: dvl/installation.md
-          - Electrical: dvl/electrical.md
-          - Network setup: dvl/networking.md
+      - Hardware integration:
+          - Installation: dvl/hardware-integration/installation.md
+          - DVL A100 rear O-ring mounting: dvl/hardware-integration/dvl-a100-rear-oring-mounting.md
+          - DVL A250 rear O-ring mounting: dvl/hardware-integration/dvl-a250-rear-oring-mounting.md
+          - Electrical: dvl/hardware-integration/electrical.md
+
+      - Software integration:
+          - Integration overview: dvl/software-integration/integration.md
+          - Network setup: dvl/software-integration/networking.md
+          - TCP JSON API:
+              - A50/A125: dvl/software-integration/dvl-json-protocol.md
+              - A100/A250: dvl/software-integration/dvl-a250_a100-json-protocol.md
+          - Serial protocol:
+              - A50/A125: dvl/software-integration/dvl-serial-protocol.md
+              - A100/A250: dvl/software-integration/dvl-a250_a100-serial-protocol.md
+          - PD formats: dvl/software-integration/dvl-pd-formats.md
+          - Triggering and synchronization: dvl/software-integration/dvl-triggering.md
+          - Software resources: dvl/software-integration/software-resources.md
+
+      - Vehicle integration:
+          - BlueROV2:
+              - DVL for BlueROV2: dvl/vehicle-integration/bluerov2/bluerov-integration.md
+              - DVL with UGPS for BlueROV2: dvl/vehicle-integration/bluerov2/bluerov-integration-dvl-ugps.md
 
       - Operate the device:
           - Axes: dvl/axes.md
@@ -183,20 +202,6 @@ nav:
           - Web GUI:
               - DVL A50/A125 web GUI: dvl/dvl-a50_a125-gui.md
               - DVL A100/A250 web GUI: dvl/dvl-a250_a100-gui.md
-
-      - Integration:
-          - Integration overview: dvl/integration.md
-          - TCP JSON API:
-              - A50/A125: dvl/dvl-json-protocol.md
-              - A100/A250: dvl/dvl-a250_a100-json-protocol.md
-          - Serial protocol:
-              - A50/A125: dvl/dvl-serial-protocol.md
-              - A100/A250: dvl/dvl-a250_a100-serial-protocol.md
-          - PD formats: dvl/dvl-pd-formats.md
-          - Triggering and synchronization: dvl/dvl-triggering.md
-          - Software resources: dvl/software-resources.md
-          - DVL for BlueROV2: dvl/bluerov-integration.md
-          - DVL with UGPS for BlueROV2: dvl/bluerov-integration-dvl-ugps.md
 
       - Troubleshooting: 
           - Diagnostic log: dvl/diagnostic-log.md

@@ -33,15 +33,15 @@ Before successful sensor fusion of Underwater GPS and DVL, the following conditi
   * Make sure you are running version 1.0.7 or newer of the [BlueOS Water Linked DVL extension](https://github.com/bluerobotics/BlueOS-Water-Linked-DVL).
   The extension version can be checked / updated in BlueOS by going to Extensions > Installed. The version is shown next to the extension name, see below figure.
 
-![bluerov2_blueos_installed_extensions_ugps_dvl_version_marked](../img/bluerov2_blueos_installed_extensions_ugps_dvl_version_marked.png)
+![bluerov2_blueos_installed_extensions_ugps_dvl_version_marked](../../../img/bluerov2_blueos_installed_extensions_ugps_dvl_version_marked.png)
 
-* The Underwater GPS is installed, configured, and tested successfully. The latest UGPS integration guide can be found [here](../underwater-gps/integration/bluerov-integration.md).
+* The Underwater GPS is installed, configured, and tested successfully. The latest UGPS integration guide can be found [here](../../../underwater-gps/integration/bluerov-integration.md).
 * Make sure you are running version 1.0.7 or newer of the [BlueOS Water Linked UGPS extension](https://github.com/waterlinked/blueos-ugps-extension).
 * The accelerometer, gyroscope, compass and pressure sensor must be calibrated: Calibration of all sensors can be performed from QGroundControl. Detailed steps are described in the [BlueROV Software Setup](https://bluerobotics.com/learn/bluerov2-software-setup/#sensor-calibration)
 * Make sure that the compass calibration was successful by comparing the ROV orientation shown in the map in QGroundControl to the actual ROV orientation. Landmarks like a coastline or an analog compass can help.
 
 !!! note
-    When you want to use the position estimate for *control* of the ROV and the UGPS Topside is on land, it is highly recommended to set up the Underwater GPS to use static position and static heading mode. Alternatively, when the UGPS Topside position is not static (on a boat or similar), you need to input heading and position data from an external GPS compass. [Details can be found here](../underwater-gps/ugps-sysconfig.md#topside-settings).
+    When you want to use the position estimate for *control* of the ROV and the UGPS Topside is on land, it is highly recommended to set up the Underwater GPS to use static position and static heading mode. Alternatively, when the UGPS Topside position is not static (on a boat or similar), you need to input heading and position data from an external GPS compass. [Details can be found here](../../../underwater-gps/ugps-sysconfig.md#topside-settings).
 
     If you don't follow this advice, the position provided by the Underwater GPS will have more noise ("jump" too much) and also drift over time. This might cause the position hold mode to not work properly.
 
@@ -51,15 +51,15 @@ The steps to enable sensor fusion are:
 
 * To enable fusion of Underwater GPS and DVL, enable both the "Water Linked DVL" extension and "Water Linked UGPS" extension in the extensions manager. You see that they are running when an uptime is shown.
 
-![bluerov2_blueos_installed_extensions_ugps_dvl_running_marked](../img/bluerov2_blueos_installed_extensions_ugps_dvl_running_marked.png)
+![bluerov2_blueos_installed_extensions_ugps_dvl_running_marked](../../../img/bluerov2_blueos_installed_extensions_ugps_dvl_running_marked.png)
 
 * Open the interface of the DVL extension and click the button "Load parameters for DVL+UGPS". This will set parameters for the Kalman filter to consider both sensors. Those parameters are persistent over reboots, which means that this button only needs to be pressed once and not every time you restart the ROV.
 
-![bluerov2_blueos_dvl_extension_buttons_marked](../img/bluerov2_blueos_dvl_extension_buttons_marked.png)
+![bluerov2_blueos_dvl_extension_buttons_marked](../../../img/bluerov2_blueos_dvl_extension_buttons_marked.png)
 
 * Restart the autopilot for the parameter changes to take effect. It is not necessary to reboot BlueOS.
 
-![bluerov2_blueos_restart_autopilot_marked](../img/bluerov2_blueos_restart_autopilot_marked.png)
+![bluerov2_blueos_restart_autopilot_marked](../../../img/bluerov2_blueos_restart_autopilot_marked.png)
 
 * If both Underwater GPS and DVL are connected, it is not necessary to set the vehicle position manually in the DVL extension.
 
@@ -69,22 +69,22 @@ Now both sensors should be considered for the position estimate of the ROV. You 
 
 This mode can be useful when you experience issues with sensor fusion (Mode "DVL+UGPS" above), or when not all the described conditions in the section above are met. Otherwise, we recommend using Mode "DVL+UGPS".
 
-In this configuration, the BlueROV will base its position estimate *updates* on velocity input from the DVL as well as accelerometer, gyroscope, compass, and pressure sensor data, but not the Underwater GPS. Although the Underwater GPS is connected and running, it will only be used to *initialize* the global ROV position at the beginning. QGroundControl (or the new Cockpit) will show the ROV position estimate based on the DVL only, while the [Underwater GPS GUI](../underwater-gps/interface/ugps-gui.md#position) will show the position based on the Underwater GPS.
+In this configuration, the BlueROV will base its position estimate *updates* on velocity input from the DVL as well as accelerometer, gyroscope, compass, and pressure sensor data, but not the Underwater GPS. Although the Underwater GPS is connected and running, it will only be used to *initialize* the global ROV position at the beginning. QGroundControl (or the new Cockpit) will show the ROV position estimate based on the DVL only, while the [Underwater GPS GUI](../../../underwater-gps/interface/ugps-gui.md#position) will show the position based on the Underwater GPS.
 
 !!! note
     The setup procedure below is very similar to when you only use the DVL without a running Underwater GPS. That case is described [here](bluerov-integration.md#software).
 
 * Enable both the "Water Linked DVL" extension and "Water Linked UGPS" extension in the extensions manager. You see that they are running when an uptime is shown. Make sure you use the latest versions of both extensions.
 
-![bluerov2_blueos_installed_extensions_ugps_dvl_running_marked](../img/bluerov2_blueos_installed_extensions_ugps_dvl_running_marked.png)
+![bluerov2_blueos_installed_extensions_ugps_dvl_running_marked](../../../img/bluerov2_blueos_installed_extensions_ugps_dvl_running_marked.png)
 
 * Open the interface of the DVL extension and click the button "Load parameters for DVL". This will set parameters for the Kalman filter to ignore the Underwater GPS input. Those parameters are persistent over reboots, which means that this button only needs to be pressed once and not every time you restart the ROV.
 
-![bluerov2_blueos_dvl_extension_dvl_ugps_button_marked](../img/bluerov2_blueos_dvl_extension_buttons_marked.png)
+![bluerov2_blueos_dvl_extension_dvl_ugps_button_marked](../../../img/bluerov2_blueos_dvl_extension_buttons_marked.png)
 
 * Restart the autopilot for the parameter changes to take effect. It is not necessary to reboot BlueOS.
 
-![bluerov2_blueos_restart_autopilot_marked](../img/bluerov2_blueos_restart_autopilot_marked.png)
+![bluerov2_blueos_restart_autopilot_marked](../../../img/bluerov2_blueos_restart_autopilot_marked.png)
 
 * If both Underwater GPS and DVL are connected, it is not necessary to set the vehicle position manually in the DVL extension.
 
@@ -137,7 +137,7 @@ This section is for advanced users and developers who try to understand what hap
 
 * This figure illustrates which events trigger which function calls and which mavlink messages:
 
-![bluerov2_blueos_dvl_extension_messages](../img/bluerov2_blueos_dvl_extension_messages.png)
+![bluerov2_blueos_dvl_extension_messages](../../../img/bluerov2_blueos_dvl_extension_messages.png)
 
 * When the user sets the vehicle location on the extension map the first time, the origin of the autopilot global position estimate is set (SET_GPS_GLOBAL_ORIGIN). When the latter is already set, the position estimate is updated with GLOBAL_VISION_POSITION_ESTIMATE.
 

@@ -11,7 +11,7 @@ The DVL A100/A250 web GUI can be used to check live status, configure settings, 
 3. Open a web browser and go to the DVL address:
     * `http://waterlinked-dvl` when mDNS is available.
     * `http://192.168.194.95` when using the fallback IP.
-4. See [Network Setup](networking.md) if the web GUI does not open.
+4. See [Network Setup](software-integration/networking.md) if the web GUI does not open.
 
 ## Demo GUI
 
@@ -68,7 +68,7 @@ The DVL A100/A250 web GUI does not have a separate Outputs page.
 
 Use the configuration page and the protocol references for output configuration until the final GUI labels are confirmed.
 
-See [Settings and configuration](configuration.md#output-settings), [Integration](integration.md), [DVL A100/A250 TCP JSON API](dvl-a250_a100-json-protocol.md), and [DVL A100/A250 serial protocol](dvl-a250_a100-serial-protocol.md).-->
+See [Settings and configuration](configuration.md#output-settings), [Integration](software-integration/integration.md), [DVL A100/A250 TCP JSON API](software-integration/dvl-a250_a100-json-protocol.md), and [DVL A100/A250 serial protocol](software-integration/dvl-a250_a100-serial-protocol.md).-->
 
 <!-- TODO: Confirm final DVL A100/A250 web GUI label and workflow for output configuration. -->
 

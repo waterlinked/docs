@@ -9,7 +9,7 @@ The DVL A50/A125 web GUI can be used to check live status, configure settings, s
 1. Connect power and Ethernet to the DVL.
 2. Make sure the DVL is submerged before normal operation.
 3. Open a web browser and go to the DVL address.
-4. See [Network Setup](networking.md) if the web GUI does not open.
+4. See [Network Setup](software-integration/networking.md) if the web GUI does not open.
 
 ## Demo GUI
 
@@ -62,7 +62,7 @@ Open the public [outputs demo page](https://dvl.demo.waterlinked.com/#/outputs).
 4. Save the configuration.
 5. Reconnect or restart the receiving system if required by the integration.
 
-See [Settings and configuration](configuration.md#output-settings), [Integration](integration.md), [DVL A50/A125 TCP JSON API](dvl-json-protocol.md), and [DVL A50/A125 serial protocol](dvl-serial-protocol.md).
+See [Settings and configuration](configuration.md#output-settings), [Integration](software-integration/integration.md), [DVL A50/A125 TCP JSON API](software-integration/dvl-json-protocol.md), and [DVL A50/A125 serial protocol](software-integration/dvl-serial-protocol.md).
 
 ## Configuration
 

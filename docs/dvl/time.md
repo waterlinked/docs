@@ -68,10 +68,10 @@ On supported models there is a "System time configuration" section in the Config
 
 Time configuration is available in TCP JSON API `json_v3.3` and up for supported models:
 
-* [DVL A50/A125 TCP JSON time API](./dvl-json-protocol.md#time)
+* [DVL A50/A125 TCP JSON time API](software-integration/dvl-json-protocol.md#time)
 
 ## Serial API
 
 Time configuration is available in serial protocol `2.8.0` and up for supported models:
 
-* [DVL A50/A125 Serial time API](./dvl-serial-protocol.md)
+* [DVL A50/A125 Serial time API](software-integration/dvl-serial-protocol.md)

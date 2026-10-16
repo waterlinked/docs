@@ -10,7 +10,7 @@ The diagnostic log is most useful when it is recorded in the same setup and envi
 2. Open the web GUI and look for changes on the diagnostics or status page while the issue is happening.
 3. If possible, compare with another DVL of the same type, another vehicle, or a simpler test setup.
 4. If the issue only happens in one vehicle or environment, collect one diagnostic log when the DVL works as expected and one when the issue is visible.
-5. Review [Installation](installation.md) for mounting, bubbles, vibration, line of sight, and acoustic interference.
+5. Review [Installation](hardware-integration/installation.md) for mounting, bubbles, vibration, line of sight, and acoustic interference.
 
 !!! note
     Many DVL issues are caused by the installation, vehicle, or acoustic environment. A support package helps Water Linked separate DVL behavior from vehicle and environment effects.

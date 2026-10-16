@@ -31,8 +31,8 @@ Use the Water Linked serial protocol when the vehicle controller expects a direc
 
 Electrical interfaces differ by model:
 
-* DVL A50 and DVL A125 use the same UART electrical interface. See [DVL A50/A125 serial interface](electrical.md#dvl-a50-and-dvl-a125-serial-interface).
-* DVL A100 and DVL A250 use RS232. See [DVL A100/A250 serial interface](electrical.md#dvl-a100-and-dvl-a250-serial-interface).
+* DVL A50 and DVL A125 use the same UART electrical interface. See [DVL A50/A125 serial interface](../hardware-integration/electrical.md#dvl-a50-and-dvl-a125-serial-interface).
+* DVL A100 and DVL A250 use RS232. See [DVL A100/A250 serial interface](../hardware-integration/electrical.md#dvl-a100-and-dvl-a250-serial-interface).
 
 Protocol references:
 
@@ -81,5 +81,5 @@ If the integration does not behave as expected, collect a diagnostic log from th
 
 See:
 
-* [DVL diagnostic log](diagnostic-log.md)
-* [How to diagnose](how-to-diagnose.md)
+* [DVL diagnostic log](../diagnostic-log.md)
+* [How to diagnose](../how-to-diagnose.md)

@@ -78,7 +78,7 @@ Sentences TS, BI, and BD are filled with relevant numbers. All other sentences a
 | S | Status of velocity | A = good. V = bad |
 
 !!! note
-    Axis used in the BI sentence is the [vehicle frame](axes.md#vehicle-frame).
+    Axis used in the BI sentence is the [vehicle frame](../axes.md#vehicle-frame).
 
 #### Bottom track, earth referenced distance data (BD)
 
@@ -178,7 +178,7 @@ To use BM1-BM4 correctly, use this translation. The numbering comes from the tra
 !!! note "Transducer numbering and protocol IDs"
     Mechanical/transducer diagrams number the transducers from 1 to 4. In protocol messages and diagnostic logs, the transducer `id` uses zero-based numbering from 0 to 3. The `id` is therefore the transducer number minus 1.
 
-![dvl_a50_transducer_numbering](../img/WL-21035-3_DVL-A50_Front_1600_transducers_crop.jpg)
+![dvl_a50_transducer_numbering](../../img/WL-21035-3_DVL-A50_Front_1600_transducers_crop.jpg)
 
 [^pd4_system_config]: Indicates that the velocities are in ship coordinates, tilt is used, three-beam is not computed, and the frequency is 600 kHz.
 

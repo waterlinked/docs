@@ -1,6 +1,6 @@
-# DVL A50/A125 TCP JSON API
+# DVL A100/A250 TCP JSON API
 
-The DVL TCP JSON API sends JSON messages over TCP on port 16171. This page applies to DVL A50 and DVL A125.
+The DVL TCP JSON API sends JSON messages over TCP on port 16171. This page applies to DVL A100 and DVL A250.
 
 ## Terminology
 
@@ -13,7 +13,7 @@ The DVL TCP JSON API sends JSON messages over TCP on port 16171. This page appli
 
 ## Version
 
-This document describes TCP JSON API version `json_v3.3` (major.minor):
+This document describes TCP JSON API `json_v4.1` (major.minor):
 
 - MAJOR version increments represent incompatible API changes
 - MINOR version increments represent additional backwards-compatible functionality
@@ -22,16 +22,8 @@ This document describes TCP JSON API version `json_v3.3` (major.minor):
 
 | Software release | Ethernet protocol version | Main protocol improvements |
 | -- | -- | -- |
-| 2.7.2 | json_v3.3 | Add TCP JSON time API. Add get_version_info command |
-| 2.7.1 | json_v3.2 | Add water tracking mode |
-| 2.6.1 | json_v3.1 | Serial baud rate configurable. Add PD4 format support in serial 'wcp' command. Some serial protocol names [changed](dvl-serial-protocol.md#change-serial-output-protocol-wcp). |
-| 2.5.2 | json_v3.1 | Add PD4 format support (experimental)
-| 2.4.4 | json_v3.1 | Change gyro calibration to store persistently. Note: gyro calibration commands now take up to 15 seconds.
-| 2.4.0 | json_v3.1 | Add ability to trigger pings (TCP JSON API/serial), add configuration for periodic cycling (TCP JSON API/serial)
-| 2.2.1 | json_v3 | Add serial output protocol configuration, range mode configuration and calibrate gyro command, Fix missing line ending in configuration (TCP JSON API), fix dark mode enabled naming inconsistency (TCP JSON API), change speed of sound and mounting rotation offset from integer to float
-| 2.1.0 | json_v3 | Add configuration, add time_of_validity/time_of_transmission, add covariance (TCP JSON API)
-| 2.0.8 | json_v2 | Add position estimation, Add output of orientation angles
-| 1.6.0 | - | Initial (velocity only)
+| 3.3.0 | json_v4.1 | Add TCP JSON time API. Add get_version_info command. Add water tracking mode. |
+| 3.2.0 | json_v4.0 | Initial public release. |
 
 
 ## TCP JSON API { #json-protocol-tcp }
@@ -46,13 +38,13 @@ In our measurements, TCP JSON message latency was typically around 4 ms average,
 
 ### PD formats over TCP
 
-PD4 and PD6 are also supported over TCP for all DVL models. See [PD formats](dvl-pd-formats.md) for the canonical PD format descriptions.
+PD4 and PD6 are also supported over TCP for all DVL models. PD0 is planned for DVL A100 and DVL A250 over TCP and serial, but is not available yet. See [PD formats](dvl-pd-formats.md) for the canonical PD format descriptions.
 
 ### Velocity-and-transducer report
 
-A velocity-and-transducer report is sent for each velocity calculation of the DVL. The rate depends on the altitude of the DVL (distance to the sea bottom or other reflecting surface), but will be in the range 2-15 Hz.
+A velocity-and-transducer report is sent for each velocity calculation of the DVL. The rate depends on the model, altitude, and configuration. See the model page and [Range mode](../range-mode.md) for product-specific operating limits.
 
-The X, Y, and Z axes are with respect to [body frame](axes.md#body-frame) of the DVL, or the [vehicle frame](axes.md#vehicle-frame) if the DVL is mounted on a vehicle at an angle, specified as a 'mounting rotation offset', from the forward axis of the vehicle.
+The X, Y, and Z axes are with respect to the [body frame](../axes.md#body-frame) of the DVL, or the [vehicle frame](../axes.md#vehicle-frame) if the DVL is mounted on a vehicle at an angle, specified as a mounting rotation offset, from the forward axis of the vehicle.
 
 The messages are delimited by newline.
 
@@ -70,8 +62,8 @@ The messages are delimited by newline.
 | status | 8 bit status mask. Bit 0 is set to 1 for high temperature and DVL will soon enter thermal shutdown. Remaining bits are reserved for future use. |
 | time_of_validity | Timestamp of the surface reflection, aka 'center of ping' (Unix timestamp in microseconds) |
 | time_of_transmission | Timestamp from immediately before sending of the report over TCP (Unix timestamp in microseconds) |
-| format | Format type and version for this report: `json_v3.3` |
-| type | Report type: `velocity` or `velocity_water` for [water tracking](water-tracking.md)|
+| format | Format type and version for this report: `json_v4.1` |
+| type | Report type: `velocity` or `velocity_water` for [water tracking](../water-tracking.md)|
 
 !!! note "Transducer numbering and protocol IDs"
     Mechanical/transducer diagrams number the transducers from 1 to 4. In protocol messages and diagnostic logs, the transducer `id` uses zero-based numbering from 0 to 3. The `id` is therefore the transducer number minus 1.
@@ -139,7 +131,7 @@ Example of TCP report (indented for legibility)
   ],
   "velocity_valid": true,
   "status": 0,
-  "format": "json_v3.3",
+  "format": "json_v4.1",
   "type": "velocity",
   "time_of_validity": 1638191471563017,
   "time_of_transmission": 1638191471752336
@@ -148,7 +140,7 @@ Example of TCP report (indented for legibility)
 
 ### Dead reckoning report
 
-A dead reckoning report outputs the current speed, position, and orientation of the DVL as calculated by [dead reckoning](dead-reckoning.md), with respect to a [frame](dead-reckoning.md#frame) defined by the axes of the DVL's [body frame](axes.md#body-frame), or [vehicle frame](axes.md#vehicle-frame) if a mounting rotation offset is set, at the start of the dead reckoning run. The expected update rate is 5 Hz.
+A dead reckoning report outputs the current speed, position, and orientation of the DVL as calculated by [dead reckoning](../dead-reckoning.md), with respect to a [frame](../dead-reckoning.md#frame) defined by the axes of the DVL's [body frame](../axes.md#body-frame), or [vehicle frame](../axes.md#vehicle-frame) if a mounting rotation offset is set, at the start of the dead reckoning run. The expected update rate is 5 Hz.
 
 
 
@@ -164,7 +156,7 @@ pitch       | Rotation around Y axis (degrees)
 yaw         | Rotation around Z axis, i.e. heading (degrees)
 type        | Report type: `position_local`
 status      | Reports if there are any issues with the DVL (0 if no errors, 1 otherwise)
-format      | Format type and version for this report: `json_v3`
+format      | Format type and version for this report: `json_v4.1`
 
 
 Example of a dead reckoning report.
@@ -181,7 +173,7 @@ Example of a dead reckoning report.
   "yaw": 0.6173566579818726,
   "type": "position_local",
   "status": 0,
-  "format": "json_v3.3"
+  "format": "json_v4.1"
 }
 
 ```
@@ -202,12 +194,14 @@ If the request is successfully received the response will have 'success' set to 
   "success": true,
   "error_message": "",
   "result": null,
-  "format": "json_v3.3",
+  "format": "json_v4.1",
   "type": "response"
 }
 ```
 
 ### Calibrate gyro
+
+Gyro calibration is not needed as a normal setup step for DVL A100/A250.
 
 The gyro can be calibrated by issuing the `calibrate_gyro` command:
 
@@ -223,7 +217,7 @@ The response will be as follows if the calibration is successful. If unsuccessfu
   "success": true,
   "error_message": "",
   "result": null,
-  "format": "json_v3.3",
+  "format": "json_v4.1",
   "type": "response"
 }
 ```
@@ -246,251 +240,7 @@ The response will be as follows if the command is accepted. If the queue is full
   "success": true,
   "error_message": "",
   "result": null,
-  "format": "json_v3.3",
-  "type": "response"
-}
-```
-
-### Get version info
-
-Get version info by issuing the `get_version_info` command.
-
-```json
-{"command":"get_version_info"}
-```
-
-A successful response looks like this:
-
-```json
-{
-  "response_to": "get_version_info",
-  "success": true,
-  "error_message": "",
-  "result": {
-    "chipid": "0xf1440c09140b04",
-    "hardware_revision": 4,
-    "product_id": 21035,
-    "product_name": "DVL A50",
-    "variant": "standard",
-    "version_short": "2.7.2",
-    "version": "2.7.2 (v2.7.1b-10-g44e26c7.2026-05-29T12:51:02.882778)",
-    "is_ready": true
-  },
-  "format": "json_v3.3",
-  "type": "response"
-}
-```
-
-### Time
-
-#### Setting NTP configuration
-
-Set [NTP configuration](./time.md#ntp-server-address-configuration-auto-or-custom) by issuing the `set_time_ntp` command with a `ntp_address` parameter. Set `ntp_address` either to the address of a NTP server, or as "auto".
-
-```json
-{
-  "command": "set_time_ntp",
-  "parameters": {
-    "ntp_address": "192.168.0.10"
-  }
-}
-```
-
-A successful response looks like this:
-
-```json
-{
-  "response_to": "set_time_ntp",
-  "success": true,
-  "error_message": "",
-  "result": null,
-  "format": "json_v3.3",
-  "type": "response"
-}
-```
-
-#### Getting NTP configuration
-
-Get [NTP configuration](./time.md#ntp-server-address-configuration-auto-or-custom) by issuing the `get_time_ntp` command.
-
-```json
-{
-  "command": "get_time_ntp"
-}
-```
-
-A successful response looks like this:
-
-```json
-{
-  "response_to": "get_time_ntp",
-  "success": true,
-  "error_message": "",
-  "result": {
-    "ntp_address": "auto"
-  },
-  "format": "json_v3.3",
-  "type": "response"
-}
-```
-
-#### Setting manual time
-
-Set time manually by issuing the `set_time_manual` command with the `now` parameter as a RFC3339 timestamp string.
-
-For more information see [Setting manual time](./time.md#setting-manual-time).
-
-```json
-{
-  "command": "set_time_manual",
-  "parameters": {
-    "now": "2026-04-20T09:04:13Z"
-  }
-}
-```
-
-A successful response looks like this:
-
-```json
-{
-  "response_to": "set_time_manual",
-  "success": true,
-  "error_message": "",
-  "result": null,
-  "format": "json_v3.3",
-  "type": "response"
-}
-```
-
-In the event the DVL is already synchronized via NTP, the response will look like this:
-
-```json
-{
-  "response_to": "set_time_manual",
-  "success": false,
-  "error_message": "Manual time not allowed when NTP is synchronized",
-  "result": null,
-  "format": "json_v3.3",
-  "type": "response"
-}
-```
-
-#### Getting time status
-
-Get [time status](./time.md#time-status) by issuing the `get_time_status` command.
-
-```json
-{
-  "command": "get_time_status"
-}
-```
-
-The response contains the following fields:
-
-|Field|Description|
-|-|-|
-| `system_time` | system time in RFC3339 |
-| `ntp_synced` | true if synchronized to NTP source, false otherwise |
-| `ntp_synced_to` |address the sonar is synchronized to if NTP is synchronized, "" otherwise |
-| `ntp_seconds_since_last_sync` | seconds since last NTP sync, or null if not synchronized |
-
-Here is an example response where the DVL is not synchornized with NTP:
-
-```json
-{
-  "response_to": "get_time_status",
-  "success": true,
-  "error_message": "",
-  "result": {
-    "system_time": "2026-04-20T08:48:25Z",
-    "ntp_synced": false,
-    "ntp_synced_to": "",
-    "ntp_seconds_since_last_sync": null
-  },
-  "format": "json_v3.3",
-  "type": "response"
-}
-```
-
-Here is an example response where the DVL has achieved sync with NTP:
-
-```json
-{
-  "response_to": "get_time_status",
-  "success": true,
-  "error_message": "",
-  "result": {
-    "system_time": "2026-04-20T08:48:25Z",
-    "ntp_synced": true,
-    "ntp_synced_to": "192.168.0.10",
-    "ntp_seconds_since_last_sync": 5
-  },
-  "format": "json_v3.3",
-  "type": "response"
-}
-```
-
-#### Forcing NTP sync
-
-A [forced NTP sync](./time.md#ntp-force-sync) can be triggered by issuing the `force_sync_ntp` command with the `timeout_seconds` as an integer timeout in seconds.
-
-```json
-{
-  "command": "force_sync_ntp",
-  "parameters": {
-    "timeout_seconds": 10
-  }
-}
-```
-
-This will trigger a forced NTP sync in the DVL. The DVL will wait up to `timeout_seconds` for sync to be achieved, finally responding with the following fields:
-
-|Field|Description|
-|-|-|
-|`success`|true if NTP sync was achieved within timeout, false otherwise. Important: callers that want to achieve sync with a specific address should check the returned status|
-|`message`|human-readable message|
-|`status`|[time status response body](#getting-time-status)|
-
-Here is an example response where the DVL achieved NTP sync:
-
-```json
-{
-  "response_to": "force_sync_ntp",
-  "success": true,
-  "error_message": "",
-  "result": {
-    "success": true,
-    "message": "NTP force-sync successful",
-    "status": {
-      "system_time": "2026-04-20T09:04:13Z",
-      "ntp_synced": true,
-      "ntp_synced_to": "192.168.0.10",
-      "ntp_seconds_since_last_sync": 0
-    }
-  },
-  "format": "json_v3.3",
-  "type": "response"
-}
-```
-
-Here is an example response where the DVL did not achieve NTP sync:
-
-```json
-{
-  "response_to": "force_sync_ntp",
-  "success": true,
-  "error_message": "",
-  "result": {
-    "success": false,
-    "message": "NTP force-sync not successful within timeout",
-    "status": {
-      "system_time": "2026-04-20T09:04:13Z",
-      "ntp_synced": false,
-      "ntp_synced_to": "",
-      "ntp_seconds_since_last_sync": null
-    }
-  },
-  "format": "json_v3.3",
+  "format": "json_v4.1",
   "type": "response"
 }
 ```
@@ -501,12 +251,14 @@ Here is an example response where the DVL did not achieve NTP sync:
 
 | Variable | Description |
 |----------|-------------|
-| speed_of_sound | Speed of sound (1000-2000 m/s). Integer  |
-| mounting_rotation_offset | See the definition of the [vehicle frame](axes.md#vehicle-frame) of the DVL. Typically 0, but can be set to be non-zero if the forward axis of the DVL is not aligned with the forward axis of a vehicle on which it is mounted (0-360 degrees). Integer |
+| speed_of_sound | Speed of sound (1000-2000 m/s). Float  |
+| mounting_rotation_offset | See the definition of the [vehicle frame](../axes.md#vehicle-frame) of the DVL. Typically 0, but can be set to be non-zero if the forward axis of the DVL is not aligned with the forward axis of a vehicle on which it is mounted (0-360 degrees). Float |
 | acoustic_enabled | `true` for normal operation of the DVL,`false` when the sending of acoustic waves from the DVL is disabled (e.g. to save power or slow down its heating up in air) |
-| dark_mode_enabled | `false` when the LED operates as [normal](electrical.md#led-signals), `true` for no blinking of the LED (e.g. if the LED is interfering with a camera) |
-| range_mode | `auto` when operating as normal, otherwise see [range mode configuration](range-mode.md)  or activate [water tracking](water-tracking.md) |
-| periodic_cycling_enabled | `true` to enable [periodic cycling](configuration.md#periodic-cycling), `false` to disable it |
+| dark_mode_enabled | `false` when the LED operates as [normal](../hardware-integration/electrical.md#led-signals), `true` for no blinking of the LED (e.g. if the LED is interfering with a camera) |
+| range_mode | `auto` when operating as normal, otherwise see [range mode configuration](../range-mode.md) or activate [water tracking](../water-tracking.md) |
+| periodic_cycling_enabled | `true` to enable [periodic cycling](../configuration.md#periodic-cycling), `false` to disable it |
+| hardware_trigger_enabled | `true` to enable [hardware triggering](dvl-triggering.md#hardware-triggering), `false` to disable |
+
 
 #### Fetching current configuration
 
@@ -532,7 +284,7 @@ If the configuration is successfully fetched, the response will be in the follow
     "range_mode":"auto",
     "periodic_cycling_enabled":true
   },
-  "format":"json_v3.3",
+  "format":"json_v4.1",
   "type":"response"
 }
 ```
@@ -554,7 +306,7 @@ If the parameters are successfully set, the response will be in the following fo
   "success": true,
   "error_message": "",
   "result" :null,
-  "format": "json_v3.3",
+  "format": "json_v4.1",
   "type": "response"
 }
 ```

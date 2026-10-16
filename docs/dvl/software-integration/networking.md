@@ -5,12 +5,12 @@ The DVL has several services available over Ethernet:
 * [Multicast DNS](#multicast-dns-mdns) (mDNS) for easy discovery
 * Web GUI for live data, configuration, diagnostics, and software updates
 * [TCP data stream](#tcp-data-stream)
-* [Software updates](sw-update.md)
+* [Software updates](../sw-update.md)
 
 Use Ethernet for first setup whenever possible. It gives access to the web GUI, diagnostics, configuration, software updates, and the TCP data stream.
 
 !!! tip "First-time setup"
-    Connect power and wiring first (see [Electrical](electrical.md)), then use this page to get on the network. For the full end-to-end setup path, follow the [Quickstart](quickstart.md).
+    Connect power and wiring first (see [Electrical](../hardware-integration/electrical.md)), then use this page to get on the network. For the full end-to-end setup path, follow the [Quickstart](../quickstart.md).
 
 ## Network configuration
 

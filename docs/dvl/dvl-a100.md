@@ -20,7 +20,7 @@ The DVL A100 is part of the same product family as the DVL A250. From a web GUI,
 
 ## Mechanical and installation overview
 
-Use the mechanical information together with the common [Installation](installation.md) guidance. Before final drawings are added, verify dimensions, mounting hole placement, cable routing, and line of sight against the latest product drawing or datasheet.
+Use the mechanical information together with the common [Installation](hardware-integration/installation.md) guidance. Before final drawings are added, verify dimensions, mounting hole placement, cable routing, and line of sight against the latest product drawing or datasheet.
 
 ### Dimensions
 
@@ -51,6 +51,8 @@ The cable diameter is the same for the side-entry, rear O-ring interface and con
 ## Mounting holes
 
 Use a rigid mount so the DVL moves with the vehicle or boat. Avoid flexible poles, unsupported brackets, and mounts that can vibrate.
+
+For the rear O-ring interface version, see [DVL A100 rear O-ring mounting](hardware-integration/dvl-a100-rear-oring-mounting.md) for the vehicle mounting interface, the installation steps, the seal, and the angular placement accuracy you can expect for standard and precision mounting.
 
 <!-- TODO: Add DVL A100 mounting holes drawing. -->
 

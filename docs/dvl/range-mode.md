@@ -47,9 +47,9 @@ The same configuration parameter can also enable [water tracking](water-tracking
 ## Set with TCP JSON API or serial protocol
 
 ### TCP JSON API
-* [DVL A50/A125 TCP JSON API configuration](dvl-json-protocol.md#configuration-over-json)
-* [DVL A100/A250 TCP JSON API configuration](dvl-a250_a100-json-protocol.md#configuration-over-json)
+* [DVL A50/A125 TCP JSON API configuration](software-integration/dvl-json-protocol.md#configuration-over-json)
+* [DVL A100/A250 TCP JSON API configuration](software-integration/dvl-a250_a100-json-protocol.md#configuration-over-json)
 
 ### Serial
-* [DVL A50/A125 serial configuration](dvl-serial-protocol.md#setting-configuration-parameters)
-* [DVL A100/A250 serial configuration](dvl-a250_a100-serial-protocol.md#setting-configuration-parameters)
+* [DVL A50/A125 serial configuration](software-integration/dvl-serial-protocol.md#setting-configuration-parameters)
+* [DVL A100/A250 serial configuration](software-integration/dvl-a250_a100-serial-protocol.md#setting-configuration-parameters)
