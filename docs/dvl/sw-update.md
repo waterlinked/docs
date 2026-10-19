@@ -28,7 +28,7 @@ The DVL web GUI automatically checks and indicates if a new software version is 
 
 If it is not possible to connect the DVL to the internet, use an offline software update.
 
-* Find the current version and chip ID of the DVL on the **About** page in the web GUI.
+* Find the current version and chip ID of the DVL on the **About** page in the web GUI. Integrators can also read them with the `get_version_info` command over the TCP JSON API, see [DVL A50/A125](dvl-json-protocol.md#get-version-info) or [DVL A100/A250](dvl-a250_a100-json-protocol.md#get-version-info).
 * Manually download an update package (`.wlup`) from the [update server](https://update.waterlinked.com/) using the chip ID.
 * Verify whether the downloaded version is newer than the currently running version.
 * Set the system time as described below.
