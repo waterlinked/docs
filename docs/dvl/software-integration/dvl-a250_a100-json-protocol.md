@@ -277,7 +277,7 @@ A successful response looks like this:
 
 | Variable | Description |
 |----------|-------------|
-| chipid | Chip ID of the DVL. Also shown on the About page in the web GUI, and used to download offline [software updates](sw-update.md#offline-software-update) |
+| chipid | Chip ID of the DVL. Also shown on the About page in the web GUI, and used to download offline [software updates](../sw-update.md#offline-software-update) |
 | hardware_revision | Hardware revision of the DVL |
 | product_id | Water Linked product number: 21062 for DVL A100, 21061 for DVL A250 |
 | product_name | Product name: `DVL A100` or `DVL A250` |
