@@ -98,8 +98,8 @@ The report has the following format: `wrs,`*[system_time],[ntp_synced],[ntp_sync
 
 Examples:
 ```text
-wrs,1776409079,0,,
-wrs,1776409079,1,192.168.0.10,45
+wrs,1776409079,n,,
+wrs,1776409079,y,192.168.0.10,45
 ```
 
 ### Velocity report (wrz)
