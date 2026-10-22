@@ -50,4 +50,13 @@ Below is a simple scetch that illustrates the signal strength in all directions.
 ![Signal strength scetch](../img/m16_signal_strength.png)
 
 ## 6. How fast can the modems move relative to each other?
-The two modems should not move faster than **0.8 m/s relative to each other**. Above this relative velocity, the Doppler shift of the acoustic signal becomes significant and can disrupt the communication link. See [Acoustics](../modem-m16/modem-m16.md#acoustics).
+The two modems should not move faster than **0.8 m/s relative to each other**. See [Acoustics](../modem-m16/modem-m16.md#acoustics).
+
+The limit comes from the Doppler effect. When two modems move towards or away from each other, the received signal shifts slightly in frequency. The M16 gets its long range on very little power by using a narrow frequency band and long packets, so it can only correct for a small shift. Up to about 0.8 m/s that works fine. Above that, packets start to fail and are dropped.
+
+Two things help in practice:
+
+* Only the speed directly towards or away from the other modem counts. Moving sideways around it has almost no effect.
+* It is the relative speed between the two modems that matters, not speed over ground. Two vehicles traveling together at the same speed are not affected.
+
+Situations like a winch lowering a modem quickly, or a boat moving up and down in waves, can be enough to go over the limit on their own. If you need to communicate while under way, slow down or hold position for the duration of the transmission, which is 1.6 seconds per packet.
