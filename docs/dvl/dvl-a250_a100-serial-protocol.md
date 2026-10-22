@@ -66,6 +66,11 @@ The commands in the table are shown without the checksum and without the mandato
 | `wcx`   | Trigger ping | `wra` | Successfully queued a ping |
 | `wcg`   | Calibrate gyro | `wra` | Successfully calibrated gyro |
 | `wcp`   | Change serial output protocol | `wra` | Successfully changed output protocol |
+| `wcn,`*[ntp_address]*  | Set [NTP server configuration](./time.md#ntp-server-address-configuration-auto-or-custom). `ntp_address` is an address, or "auto" | `wra` | Successfully set NTP server |
+| `wcN` | Get [NTP address configuration](./time.md#ntp-server-address-configuration-auto-or-custom) | `wrN,`*[ntp_address]* | Configured NTP server address, or "auto" |
+| `wcm,`*[timestamp]*   | Set [manual time](./time.md#setting-manual-time), where `timestamp` is UTC epoch time in microseconds | `wra` | Successfully set manual time |
+| `wct`   | Get [time status](./time.md#time-status) | `wrs,`*[details below]* | Time status |
+| `wcT,`*[timeout_seconds]*   | [Force NTP sync](./time.md#ntp-force-sync) within given timeout | `wrT,`*[success]* | Where `success` is y if sync was achieved within timeout, and n otherwise |
 |         |             | `wrz,`*[details below]* | Velocities calculated |
 |         |             | `wrs,`*[details below]* | Velocities calculated during water tracking |
 |         |             | `wru,`*[details below]* | Transducer information |
@@ -74,7 +79,28 @@ The commands in the table are shown without the checksum and without the mandato
 |         |             | `wr!` | Malformed request: packet does not match the given checksum |
 |         |             | `wrn` | Not acknowledged (nack): an error occurred when handling the packet |
 
+!!! warning "`wrs` is used for two different reports"
+    The `wrs` prefix is used for both the [time status](#time-status-wrs) response and the [water tracking velocity report](#velocity-report-wrs). You must inspect the fields after the prefix to tell them apart: a water tracking velocity report begins with a decimal velocity (e.g. `wrs,0.120,...`), while a time status report begins with an integer epoch timestamp (e.g. `wrs,1776409079,...`).
 
+### Time status (wrs)
+
+[Time status](./time.md#time-status) is returned by the command `wct`.
+
+The report has the following format: `wrs,`*[system_time],[ntp_synced],[ntp_synced_to],[ntp_seconds_since_last_sync]*
+
+| Variable | Description |
+|----------|-------------|
+| system_time | UTC epoch time in microseconds |
+| ntp_synced | `y` if synchronized, `n` if not |
+| ntp_synced_to | NTP server address the DVL is synced to  |
+| ntp_seconds_since_last_sync | Seconds since last sync if synced |
+
+
+Examples:
+```text
+wrs,1776409079,0,,
+wrs,1776409079,1,192.168.0.10,45
+```
 
 ### Velocity report (wrz)
 

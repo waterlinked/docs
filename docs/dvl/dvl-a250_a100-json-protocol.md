@@ -286,6 +286,221 @@ A successful response looks like this:
 | version | Software version including build information |
 | is_ready | `true` when the DVL is fully operational |
 
+### Time
+
+#### Setting NTP configuration
+
+Set [NTP configuration](./time.md#ntp-server-address-configuration-auto-or-custom) by issuing the `set_time_ntp` command with a `ntp_address` parameter. Set `ntp_address` either to the address of a NTP server, or as "auto".
+
+```json
+{
+  "command": "set_time_ntp",
+  "parameters": {
+    "ntp_address": "192.168.0.10"
+  }
+}
+```
+
+A successful response looks like this:
+
+```json
+{
+  "response_to": "set_time_ntp",
+  "success": true,
+  "error_message": "",
+  "result": null,
+  "format": "json_v4.1",
+  "type": "response"
+}
+```
+
+#### Getting NTP configuration
+
+Get [NTP configuration](./time.md#ntp-server-address-configuration-auto-or-custom) by issuing the `get_time_ntp` command.
+
+```json
+{
+  "command": "get_time_ntp"
+}
+```
+
+A successful response looks like this:
+
+```json
+{
+  "response_to": "get_time_ntp",
+  "success": true,
+  "error_message": "",
+  "result": {
+    "ntp_address": "auto"
+  },
+  "format": "json_v4.1",
+  "type": "response"
+}
+```
+
+#### Setting manual time
+
+Set time manually by issuing the `set_time_manual` command with the `now` parameter as a RFC3339 timestamp string.
+
+For more information see [Setting manual time](./time.md#setting-manual-time).
+
+```json
+{
+  "command": "set_time_manual",
+  "parameters": {
+    "now": "2026-04-20T09:04:13Z"
+  }
+}
+```
+
+A successful response looks like this:
+
+```json
+{
+  "response_to": "set_time_manual",
+  "success": true,
+  "error_message": "",
+  "result": null,
+  "format": "json_v4.1",
+  "type": "response"
+}
+```
+
+In the event the DVL is already synchronized via NTP, the response will look like this:
+
+```json
+{
+  "response_to": "set_time_manual",
+  "success": false,
+  "error_message": "Manual time not allowed when NTP is synchronized",
+  "result": null,
+  "format": "json_v4.1",
+  "type": "response"
+}
+```
+
+#### Getting time status
+
+Get [time status](./time.md#time-status) by issuing the `get_time_status` command.
+
+```json
+{
+  "command": "get_time_status"
+}
+```
+
+The response contains the following fields:
+
+|Field|Description|
+|-|-|
+| `system_time` | system time in RFC3339 |
+| `ntp_synced` | true if synchronized to NTP source, false otherwise |
+| `ntp_synced_to` |address the sonar is synchronized to if NTP is synchronized, "" otherwise |
+| `ntp_seconds_since_last_sync` | seconds since last NTP sync, or null if not synchronized |
+
+Here is an example response where the DVL is not synchornized with NTP:
+
+```json
+{
+  "response_to": "get_time_status",
+  "success": true,
+  "error_message": "",
+  "result": {
+    "system_time": "2026-04-20T08:48:25Z",
+    "ntp_synced": false,
+    "ntp_synced_to": "",
+    "ntp_seconds_since_last_sync": null
+  },
+  "format": "json_v4.1",
+  "type": "response"
+}
+```
+
+Here is an example response where the DVL has achieved sync with NTP:
+
+```json
+{
+  "response_to": "get_time_status",
+  "success": true,
+  "error_message": "",
+  "result": {
+    "system_time": "2026-04-20T08:48:25Z",
+    "ntp_synced": true,
+    "ntp_synced_to": "192.168.0.10",
+    "ntp_seconds_since_last_sync": 5
+  },
+  "format": "json_v4.1",
+  "type": "response"
+}
+```
+
+#### Forcing NTP sync
+
+A [forced NTP sync](./time.md#ntp-force-sync) can be triggered by issuing the `force_sync_ntp` command with the `timeout_seconds` as an integer timeout in seconds.
+
+```json
+{
+  "command": "force_sync_ntp",
+  "parameters": {
+    "timeout_seconds": 10
+  }
+}
+```
+
+This will trigger a forced NTP sync in the DVL. The DVL will wait up to `timeout_seconds` for sync to be achieved, finally responding with the following fields:
+
+|Field|Description|
+|-|-|
+|`success`|true if NTP sync was achieved within timeout, false otherwise. Important: callers that want to achieve sync with a specific address should check the returned status|
+|`message`|human-readable message|
+|`status`|[time status response body](#getting-time-status)|
+
+Here is an example response where the DVL achieved NTP sync:
+
+```json
+{
+  "response_to": "force_sync_ntp",
+  "success": true,
+  "error_message": "",
+  "result": {
+    "success": true,
+    "message": "NTP force-sync successful",
+    "status": {
+      "system_time": "2026-04-20T09:04:13Z",
+      "ntp_synced": true,
+      "ntp_synced_to": "192.168.0.10",
+      "ntp_seconds_since_last_sync": 0
+    }
+  },
+  "format": "json_v4.1",
+  "type": "response"
+}
+```
+
+Here is an example response where the DVL did not achieve NTP sync:
+
+```json
+{
+  "response_to": "force_sync_ntp",
+  "success": true,
+  "error_message": "",
+  "result": {
+    "success": false,
+    "message": "NTP force-sync not successful within timeout",
+    "status": {
+      "system_time": "2026-04-20T09:04:13Z",
+      "ntp_synced": false,
+      "ntp_synced_to": "",
+      "ntp_seconds_since_last_sync": null
+    }
+  },
+  "format": "json_v4.1",
+  "type": "response"
+}
+```
+
+
 ### Configuration over TCP JSON API { #configuration-over-json }
 
 #### Configuration parameters
