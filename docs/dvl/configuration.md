@@ -36,7 +36,7 @@ All settings are stored in the DVL and kept across reboots and power cycles. The
 | Range mode | Limit the altitude range used when searching for bottom lock. See [Range mode](range-mode.md). |
 | Periodic cycling | Periodically validate that the DVL is locked to the real bottom. See [Periodic cycling](#periodic-cycling). |
 | Water tracking | Use velocity relative to the water column instead of the bottom. See [Water tracking](water-tracking.md). |
-| Hardware trigger | Activate [hardware triggering](dvl-triggering.md#hardware-triggering). Only for A100/A250. |
+| Hardware trigger | Activate [hardware triggering](dvl-triggering.md#hardware-triggering). Disabled by default; trigger pulses on the RX line are ignored until enabled. Only for A100/A250. |
 
 !!! warning
     Incorrect speed of sound, mounting rotation, range mode, tracking mode, or output protocol settings can cause the DVL data to appear incorrect, even when the hardware is functioning properly.

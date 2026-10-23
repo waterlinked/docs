@@ -87,9 +87,7 @@ See:
 
 ### RX-line trigger
 
-For DVL A100 and DVL A250, sending a NULL character over the RS232 RX line triggers a pulse on the falling edge.
-
-<!-- TODO: Engineering review: confirm timing requirements and valid baud/configuration assumptions for A100/A250 RX-line triggering. -->
+For DVL A100 and DVL A250, sending a NUL character at 115200 baud over the RS232 RX line triggers a ping. The DVL recognizes the 78.1 µs ± 4.3 µs positive pulse on the wire and triggers the ping when the pulse ends. Hardware triggering must be enabled in the configuration first, otherwise the pulses are ignored. See [Hardware triggering](dvl-triggering.md#hardware-triggering) for the pulse timing and a drawing.
 
 ## Diagnostics during integration
 

@@ -243,9 +243,7 @@ In setups where multiple acoustic sensors are used it can be useful to control t
 
 See [Integration](integration.md#triggering-and-synchronization) for guidance on using triggering with other acoustic instruments.
 
-For DVL A100 and DVL A250 hardware triggering, sending a NULL character over the RS232 RX line triggers a pulse on the falling edge.
-
-<!-- TODO: Engineering review: confirm RX-line trigger timing requirements and valid serial configuration assumptions. -->
+For DVL A100 and DVL A250 hardware triggering, sending a NUL character at 115200 baud over the RS232 RX line triggers a ping. The DVL recognizes the 78.1 µs ± 4.3 µs positive pulse on the wire and triggers the ping when the pulse ends. Hardware triggering must be enabled with `hardware_trigger_enabled` first, otherwise the pulses are ignored. See [Hardware triggering](dvl-triggering.md#hardware-triggering) for the pulse timing and a drawing.
 
 The reply will be an ack (`wra`) if the command is successful, and a nak (`wrn`) if queue is full.
 
