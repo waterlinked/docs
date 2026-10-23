@@ -19,6 +19,8 @@ Because the trigger is defined by its pulse timing, sending a `NUL` character at
 
 The trigger can be sent as often as needed. If the DVL is already transmitting or receiving, incoming trigger signals are discarded.
 
+Hardware triggering works even when the [serial output is disabled](integration.md#serial-output-is-disabled-by-default-on-dvl-a100a250), which is the default on DVL A100/A250. Disabling the serial output stops only the report stream, not the RX line.
+
 !!! warning
 
     Acoustics must be enabled. Hardware triggering will not work while acoustics are disabled.

@@ -62,6 +62,8 @@ Use output settings when an external system needs a specific serial protocol, TC
 3. Save the configuration.
 4. Reconnect or restart the receiving system if required by the integration.
 
+The serial output protocol setting also enables or disables the serial output. It is disabled by default on DVL A100/A250 and enabled by default on DVL A50/A125. The setting is available in the web GUI and over the serial protocol with the `wcp` command, but not over the TCP JSON API. Disabling the serial output stops only the report stream; serial commands, and hardware triggering on DVL A100/A250, keep working. See [Integration](integration.md#serial-output-is-disabled-by-default-on-dvl-a100a250).
+
 Electrical interfaces differ by model:
 
 * DVL A50 and DVL A125 use a 3.3 V UART interface that is 5 V tolerant.

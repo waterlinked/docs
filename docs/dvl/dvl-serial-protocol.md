@@ -281,6 +281,10 @@ Example setting configuring output to use protocol number 3:
 wcp,3
 ```
 
+The serial output is enabled by default on DVL A50 and DVL A125. The same setting is available in the web GUI, but not over the TCP JSON API.
+
+Protocol number 0 only stops the stream of reports from the DVL. The DVL still receives serial commands and replies to them, so the output can be enabled again with `wcp` from the serial port.
+
 !!!note
     Prior to release 2.6.1 protocol number 1 was named `Backward compatible` and protocol number 3 was named `Latest`. There is no change in functionality.
 

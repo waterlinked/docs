@@ -193,7 +193,7 @@ Applies to: model-specific
 
 DVL A50 and DVL A125 do not use RS232. They use a 3.3 V UART electrical interface that is 5 V tolerant.
 
-DVL A100 and DVL A250 use RS232.
+DVL A100 and DVL A250 use RS232. The serial output is disabled by default on these models. See [Why do I get no data on the serial port?](#why-do-i-get-no-data-on-the-serial-port).
 
 The serial data protocol is separate from the electrical interface. See [DVL electrical connection](electrical.md#terminal-serial-interface), [DVL A50/A125 serial protocol](dvl-serial-protocol.md), and [DVL A100/A250 serial protocol](dvl-a250_a100-serial-protocol.md).
 
@@ -343,3 +343,15 @@ See [Overview](overview.md#dvl-comparison) for the product comparison table and 
 Applies to: all DVL models
 
 After operating in seawater, brackish water, chlorinated pools, or any medium other than freshwater, rinse the DVL thoroughly with fresh water to remove residues and salt deposits. Once dry, wipe the exterior with a clean, dry cloth. Avoid solvents or abrasive cleaners.
+
+---
+
+## 34. Why do I get no data on the serial port? { #why-do-i-get-no-data-on-the-serial-port }
+
+Applies to: DVL A100 and DVL A250, and any model where the serial output has been disabled
+
+On DVL A100 and DVL A250 the serial output is disabled by default, so no velocity, transducer, or dead reckoning reports are sent on the RS232 interface until you enable it. On DVL A50 and DVL A125 it is enabled by default but can have been disabled.
+
+Enable the serial output in the web GUI, or send the `wcp` command over serial. The DVL answers serial commands even when the output is disabled, so you can do this from the serial port itself. The setting is not available over the TCP JSON API.
+
+If commands get no reply either, check the wiring, baud rate, and electrical interface for your model. See [DVL electrical connection](electrical.md#terminal-serial-interface), [DVL A50/A125 serial protocol](dvl-serial-protocol.md#change-serial-output-protocol-wcp), and [DVL A100/A250 serial protocol](dvl-a250_a100-serial-protocol.md#change-serial-output-protocol-wcp).

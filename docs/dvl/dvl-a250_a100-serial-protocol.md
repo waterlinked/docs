@@ -35,6 +35,9 @@ The default serial communication format is 115200 8-N-1 (no hardware flow contro
 
 DVL A100 and DVL A250 use RS232. See [DVL A100/A250 serial interface](electrical.md#dvl-a100-and-dvl-a250-serial-interface).
 
+!!! note "Serial output is disabled by default"
+    DVL A100 and DVL A250 do not send velocity, transducer, or dead reckoning reports over serial until the serial output is enabled. Enable it in the web GUI or with the [`wcp` command](#change-serial-output-protocol-wcp) over serial. It cannot be enabled over the TCP JSON API. Serial commands and their replies work regardless of this setting, so `wcp` can be sent from the serial port itself.
+
 Packets sent to and received from the DVL start with a `w` and end with LF or CR+LF. The packet format is:
 
 | Start byte | Direction        | Command  | Options (0 to many)  | Checksum | End byte       |
@@ -273,6 +276,10 @@ Example setting configuring output to use protocol number 3:
 ```text
 wcp,3
 ```
+
+The serial output is disabled (protocol number 0) by default on DVL A100 and DVL A250. The same setting is available in the web GUI, but not over the TCP JSON API.
+
+Protocol number 0 only stops the stream of reports from the DVL. The DVL still receives serial commands and replies to them, and [hardware triggering](dvl-triggering.md#hardware-triggering) over the RS232 RX line still works.
 
 ### Configuration over serial
 
