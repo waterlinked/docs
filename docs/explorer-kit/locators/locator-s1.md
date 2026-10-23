@@ -30,10 +30,10 @@ The tables below shows the pinning of the S1 interface.
 
 | Interface           | Color |
 | :------------------ | :-- |
-| Positive (10-18V) | Orange  |
-| Negative | Orange/White   |
-| UART RX | Brown  |
-| UART TX | Brown/White   |
+| Positive (10-18V) | Orange   <span class="swatch c-orange"></span>|
+| Negative | Orange/White    <span class="swatch c-orange-white"></span>|
+| UART RX | Brown   <span class="swatch c-brown"></span>|
+| UART TX | Brown/White    <span class="swatch c-brown-white"></span>|
 
 ## Terminal Interface
 

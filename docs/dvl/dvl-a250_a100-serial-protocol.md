@@ -35,6 +35,9 @@ The default serial communication format is 115200 8-N-1 (no hardware flow contro
 
 DVL A100 and DVL A250 use RS232. See [DVL A100/A250 serial interface](electrical.md#dvl-a100-and-dvl-a250-serial-interface).
 
+!!! note "Serial output is disabled by default"
+    DVL A100 and DVL A250 do not send velocity, transducer, or dead reckoning reports over serial until the serial output is enabled. Enable it in the web GUI or with the [`wcp` command](#change-serial-output-protocol-wcp) over serial. It cannot be enabled over the TCP JSON API. Serial commands and their replies work regardless of this setting, so `wcp` can be sent from the serial port itself.
+
 Packets sent to and received from the DVL start with a `w` and end with LF or CR+LF. The packet format is:
 
 | Start byte | Direction        | Command  | Options (0 to many)  | Checksum | End byte       |
@@ -66,6 +69,11 @@ The commands in the table are shown without the checksum and without the mandato
 | `wcx`   | Trigger ping | `wra` | Successfully queued a ping |
 | `wcg`   | Calibrate gyro | `wra` | Successfully calibrated gyro |
 | `wcp`   | Change serial output protocol | `wra` | Successfully changed output protocol |
+| `wcn,`*[ntp_address]*  | Set [NTP server configuration](./time.md#ntp-server-address-configuration-auto-or-custom). `ntp_address` is an address, or "auto" | `wra` | Successfully set NTP server |
+| `wcN` | Get [NTP address configuration](./time.md#ntp-server-address-configuration-auto-or-custom) | `wrN,`*[ntp_address]* | Configured NTP server address, or "auto" |
+| `wcm,`*[timestamp]*   | Set [manual time](./time.md#setting-manual-time), where `timestamp` is UTC epoch time in microseconds | `wra` | Successfully set manual time |
+| `wct`   | Get [time status](./time.md#time-status) | `wrs,`*[details below]* | Time status |
+| `wcT,`*[timeout_seconds]*   | [Force NTP sync](./time.md#ntp-force-sync) within given timeout | `wrT,`*[success]* | Where `success` is y if sync was achieved within timeout, and n otherwise |
 |         |             | `wrz,`*[details below]* | Velocities calculated |
 |         |             | `wrs,`*[details below]* | Velocities calculated during water tracking |
 |         |             | `wru,`*[details below]* | Transducer information |
@@ -74,7 +82,28 @@ The commands in the table are shown without the checksum and without the mandato
 |         |             | `wr!` | Malformed request: packet does not match the given checksum |
 |         |             | `wrn` | Not acknowledged (nack): an error occurred when handling the packet |
 
+!!! warning "`wrs` is used for two different reports"
+    The `wrs` prefix is used for both the [time status](#time-status-wrs) response and the [water tracking velocity report](#velocity-report-wrs). You must inspect the fields after the prefix to tell them apart: a water tracking velocity report begins with a decimal velocity (e.g. `wrs,0.120,...`), while a time status report begins with an integer epoch timestamp (e.g. `wrs,1776409079,...`).
 
+### Time status (wrs)
+
+[Time status](./time.md#time-status) is returned by the command `wct`.
+
+The report has the following format: `wrs,`*[system_time],[ntp_synced],[ntp_synced_to],[ntp_seconds_since_last_sync]*
+
+| Variable | Description |
+|----------|-------------|
+| system_time | UTC epoch time in microseconds |
+| ntp_synced | `y` if synchronized, `n` if not |
+| ntp_synced_to | NTP server address the DVL is synced to  |
+| ntp_seconds_since_last_sync | Seconds since last sync if synced |
+
+
+Examples:
+```text
+wrs,1776409079,n,,
+wrs,1776409079,y,192.168.0.10,45
+```
 
 ### Velocity report (wrz)
 
@@ -214,9 +243,7 @@ In setups where multiple acoustic sensors are used it can be useful to control t
 
 See [Integration](integration.md#triggering-and-synchronization) for guidance on using triggering with other acoustic instruments.
 
-For DVL A100 and DVL A250 hardware triggering, sending a NULL character over the RS232 RX line triggers a pulse on the falling edge.
-
-<!-- TODO: Engineering review: confirm RX-line trigger timing requirements and valid serial configuration assumptions. -->
+For DVL A100 and DVL A250 hardware triggering, sending a NUL character at 115200 baud over the RS232 RX line triggers a ping. The DVL recognizes the 78.1 µs ± 4.3 µs positive pulse on the wire and triggers the ping when the pulse ends. Hardware triggering must be enabled with `hardware_trigger_enabled` first, otherwise the pulses are ignored. See [Hardware triggering](dvl-triggering.md#hardware-triggering) for the pulse timing and a drawing.
 
 The reply will be an ack (`wra`) if the command is successful, and a nak (`wrn`) if queue is full.
 
@@ -247,6 +274,10 @@ Example setting configuring output to use protocol number 3:
 ```text
 wcp,3
 ```
+
+The serial output is disabled (protocol number 0) by default on DVL A100 and DVL A250. The same setting is available in the web GUI, but not over the TCP JSON API.
+
+Protocol number 0 only stops the stream of reports from the DVL. The DVL still receives serial commands and replies to them, and [hardware triggering](dvl-triggering.md#hardware-triggering) over the RS232 RX line still works.
 
 ### Configuration over serial
 

@@ -64,12 +64,12 @@ The most common solution is to terminate a Chasing connector to the cable of the
 
     | Sonar Cable Type | Sonar Cable Color | Chasing Cable Color | CHASING connector male |
     |------------------|-------------------|---------------------|------------------------|
-    | DC-              | Black             | Black               | 1                      |
-    | DC+              | Red               | Red                 | 2                      |
-    | RX+              | Green/White       | White               | 6                      |
-    | RX-              | Green             | Brown               | 5                      |
-    | TX+              | Orange/White      | Green               | 4                      |
-    | TX-              | Orange            | Yellow              | 3                      |
+    | DC-              | Black              <span class="swatch c-black"></span>| Black                <span class="swatch c-black"></span>| 1                      |
+    | DC+              | Red                <span class="swatch c-red"></span>| Red                  <span class="swatch c-red"></span>| 2                      |
+    | RX+              | Green/White        <span class="swatch c-green-white"></span>| White                <span class="swatch c-white"></span>| 6                      |
+    | RX-              | Green              <span class="swatch c-green"></span>| Brown                <span class="swatch c-brown"></span>| 5                      |
+    | TX+              | Orange/White       <span class="swatch c-orange-white"></span>| Green                <span class="swatch c-green"></span>| 4                      |
+    | TX-              | Orange             <span class="swatch c-orange"></span>| Yellow               <span class="swatch c-yellow"></span>| 3                      |
     | NC               | NC                | NC                  | 7                      |
 
     The following is a picture of the pins for the male Chasing connector face:

@@ -18,6 +18,13 @@ Configuration can also be performed by protocol:
 
 For DVL A50/A125, output protocol settings are also available in a separate [preview of the output configuration on the demo site](https://dvl.demo.waterlinked.com/#/outputs). 
 
+## Settings are saved
+
+All settings are stored in the DVL and kept across reboots and power cycles. They are also carried over when the DVL is updated to a newer software version. Only a [factory reset](#network-and-maintenance) clears them.
+
+!!! tip "Check settings after a software update"
+    After updating to a newer software version, open the configuration page and check that the settings are still as expected. The settings are designed to carry over, but a check takes a minute and confirms nothing was lost in the update.
+
 ## Operating configurations
 
 | Setting | Use |
@@ -29,7 +36,7 @@ For DVL A50/A125, output protocol settings are also available in a separate [pre
 | Range mode | Limit the altitude range used when searching for bottom lock. See [Range mode](range-mode.md). |
 | Periodic cycling | Periodically validate that the DVL is locked to the real bottom. See [Periodic cycling](#periodic-cycling). |
 | Water tracking | Use velocity relative to the water column instead of the bottom. See [Water tracking](water-tracking.md). |
-| Hardware trigger | Activate [hardware triggering](dvl-triggering.md#hardware-triggering). Only for A100/A250. |
+| Hardware trigger | Activate [hardware triggering](dvl-triggering.md#hardware-triggering). Disabled by default; trigger pulses on the RX line are ignored until enabled. Only for A100/A250. |
 
 !!! warning
     Incorrect speed of sound, mounting rotation, range mode, tracking mode, or output protocol settings can cause the DVL data to appear incorrect, even when the hardware is functioning properly.
@@ -61,6 +68,8 @@ Use output settings when an external system needs a specific serial protocol, TC
 2. Configure serial settings if the integration uses the serial interface.
 3. Save the configuration.
 4. Reconnect or restart the receiving system if required by the integration.
+
+The serial output protocol setting also enables or disables the serial output. It is disabled by default on DVL A100/A250 and enabled by default on DVL A50/A125. The setting is available in the web GUI and over the serial protocol with the `wcp` command, but not over the TCP JSON API. Disabling the serial output stops only the report stream; serial commands, and hardware triggering on DVL A100/A250, keep working. See [Integration](integration.md#serial-output-is-disabled-by-default-on-dvl-a100a250).
 
 Electrical interfaces differ by model:
 

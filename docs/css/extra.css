@@ -161,7 +161,7 @@ html {
 /* Wire-colour / LED swatches — drawn in CSS instead of emoji so they look pixel-identical
    on every OS & browser. Emoji such as ⬜/⚪ are rendered by each device's own emoji font
    (white/silver ones can look pink or oddly bordered on some platforms); these boxes don't
-   depend on that font. Used in dvl/electrical.md and the underwater-gps pages. Squares = wire colours, circles = LEDs. */
+   depend on that font. Used in the wiring tables of the DVL, Sonar 3D-15, Modem M16/M64, Locator and underwater-gps pages. Squares = wire colours, circles = LEDs. */
 .swatch {
   display: inline-block;
   width: .85em;
@@ -180,6 +180,7 @@ html {
 .c-silver       { background: #c0c0c0; }
 .c-white        { background: #fff; }
 .c-blue         { background: #1565c0; }
+.c-yellow       { background: #fdd835; }
 .c-ledon        { background: #2ecc40; }
 .c-ledoff       { background: #3a3a3a; }
 .c-green-white  { background: linear-gradient(90deg, #2e7d32 50%, #fff 50%); }
