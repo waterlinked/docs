@@ -355,3 +355,13 @@ On DVL A100 and DVL A250 the serial output is disabled by default, so no velocit
 Enable the serial output in the web GUI, or send the `wcp` command over serial. The DVL answers serial commands even when the output is disabled, so you can do this from the serial port itself. The setting is not available over the TCP JSON API.
 
 If commands get no reply either, check the wiring, baud rate, and electrical interface for your model. See [DVL electrical connection](electrical.md#terminal-serial-interface), [DVL A50/A125 serial protocol](dvl-serial-protocol.md#change-serial-output-protocol-wcp), and [DVL A100/A250 serial protocol](dvl-a250_a100-serial-protocol.md#change-serial-output-protocol-wcp).
+
+---
+
+## 35. Are my settings kept after a reboot or software update? { #are-my-settings-kept-after-a-reboot-or-software-update }
+
+Applies to: all DVL models
+
+Yes. Settings are stored in the DVL and kept across reboots, power cycles, and software updates to a newer version. Only a factory reset clears them.
+
+We still recommend opening the configuration page after a software update and checking that the settings are as expected. See [Settings are saved](configuration.md#settings-are-saved) and [Software updates](sw-update.md).

@@ -18,6 +18,13 @@ Configuration can also be performed by protocol:
 
 For DVL A50/A125, output protocol settings are also available in a separate [preview of the output configuration on the demo site](https://dvl.demo.waterlinked.com/#/outputs). 
 
+## Settings are saved
+
+All settings are stored in the DVL and kept across reboots and power cycles. They are also carried over when the DVL is updated to a newer software version. Only a [factory reset](#network-and-maintenance) clears them.
+
+!!! tip "Check settings after a software update"
+    After updating to a newer software version, open the configuration page and check that the settings are still as expected. The settings are designed to carry over, but a check takes a minute and confirms nothing was lost in the update.
+
 ## Operating configurations
 
 | Setting | Use |

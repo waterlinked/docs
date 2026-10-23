@@ -15,6 +15,9 @@ The release notes for each release are found here:
 
     If the DVL is switched off during an update, it might be permanently damaged.
 
+!!! note "Settings are kept"
+    The DVL keeps its [settings](configuration.md#settings-are-saved) through a software update. We still recommend checking the configuration after updating to a newer version, to confirm that all settings were carried over correctly.
+
 ## Automatic software update
 
 The DVL web GUI automatically checks and indicates if a new software version is available from the **About** page.
@@ -23,6 +26,7 @@ The DVL web GUI automatically checks and indicates if a new software version is 
 * Open the DVL web GUI in a web browser.
 * Go to the **About** page.
 * If a new version is available, start the software update from the **About** page.
+* After the update, check the configuration page to confirm the settings are as expected.
 
 ## Offline software update
 
@@ -35,6 +39,7 @@ If it is not possible to connect the DVL to the internet, use an offline softwar
 * Open the DVL web GUI in a web browser.
 * Go to the **About** page.
 * Select **Manual upload** and then upload the downloaded `.wlup` file.
+* After the update, check the configuration page to confirm the settings are as expected.
 
 ### Failure during update (set system time)
 
