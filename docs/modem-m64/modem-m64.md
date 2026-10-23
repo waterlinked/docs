@@ -23,10 +23,10 @@ The tables below shows the pinning of the Modem-M64 interface. Depending on whic
 
 | Interface           | Color (Belden) | Color (4TP1P) |
 | :------------------ | :------------- | :------------ |
-| Positive (10-18V)   | Orange         | Red |
-| Negative/Ground     | Orange/White   | Black |
-| UART RX             | Brown          | Brown |
-| UART TX             | Brown/White    | Brown/White |
+| Positive (10-18V)   | Orange          <span class="swatch c-orange"></span>| Red  <span class="swatch c-red"></span>|
+| Negative/Ground     | Orange/White    <span class="swatch c-orange-white"></span>| Black  <span class="swatch c-black"></span>|
+| UART RX             | Brown           <span class="swatch c-brown"></span>| Brown  <span class="swatch c-brown"></span>|
+| UART TX             | Brown/White     <span class="swatch c-brown-white"></span>| Brown/White  <span class="swatch c-brown-white"></span>|
 
 !!! Note
 	Power must be applied to the power terminals before applying voltage to UART pins

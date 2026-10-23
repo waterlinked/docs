@@ -95,12 +95,12 @@ To install the Sonar 3D-15 for the BlueROV2, perform the following procedure:
 
     | Sonar Cable Type | Sonar Cable Color |
     |------------------|-------------------|
-    | DC-              | Black             |
-    | DC+              | Red               |
-    | RX+              | Green/White       |
-    | RX-              | Green             |
-    | TX+              | Orange/White      |
-    | TX-              | Orange            |
+    | DC-              | Black              <span class="swatch c-black"></span>|
+    | DC+              | Red                <span class="swatch c-red"></span>|
+    | RX+              | Green/White        <span class="swatch c-green-white"></span>|
+    | RX-              | Green              <span class="swatch c-green"></span>|
+    | TX+              | Orange/White       <span class="swatch c-orange-white"></span>|
+    | TX-              | Orange             <span class="swatch c-orange"></span>|
 
 4. **Solder the spade connectors** onto the black and red power cables. 
 
@@ -110,10 +110,10 @@ To install the Sonar 3D-15 for the BlueROV2, perform the following procedure:
 
     | Pin Order | Wire Color     | Sonar Cable Type |
     |-----------|----------------|------------------|
-    | 1         | Green/White    | RX+              |
-    | 2         | Orange/White   | TX+              |
-    | 3         | Green          | RX-              |
-    | 4         | Orange         | TX-              |
+    | 1         | Green/White     <span class="swatch c-green-white"></span>| RX+              |
+    | 2         | Orange/White    <span class="swatch c-orange-white"></span>| TX+              |
+    | 3         | Green           <span class="swatch c-green"></span>| RX-              |
+    | 4         | Orange          <span class="swatch c-orange"></span>| TX-              |
 
 
     ![Pixels](../img/sonar3d-integration-bluerov2/JST_cconnection2.jpg){width="66%"}

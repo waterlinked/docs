@@ -4,13 +4,13 @@ The tables below shows the pinning of the Sonar 3D-15 interface.
 
 | Interface         | Color         |
 | :-----------------| :-------------|
-| Negative/Ground   | Black         |
-| Positive (10-30V) | Red           |
-| ETH RX+           | Green/White   |
-| ETH RX-           | Green         |
-| ETH TX-           | Orange        |
-| ETH TX+           | Orange/White  |
-| Shielded wire     | Naked (silver)| 
+| Negative/Ground   | Black          <span class="swatch c-black"></span>|
+| Positive (10-30V) | Red            <span class="swatch c-red"></span>|
+| ETH RX+           | Green/White    <span class="swatch c-green-white"></span>|
+| ETH RX-           | Green          <span class="swatch c-green"></span>|
+| ETH TX-           | Orange         <span class="swatch c-orange"></span>|
+| ETH TX+           | Orange/White   <span class="swatch c-orange-white"></span>|
+| Shielded wire     | Naked (silver) <span class="swatch c-silver"></span>| 
 
 # IO Boards
 The Water Linked IO Board is the easiest solution for testing Water Linked Products like the Sonar 3D-15. They provide an interface for connecting Power and ethernet to the Sonar 3D-15. Read more about how to connect your IO Board to your Water Linked product under "IO-Interface Cards".
