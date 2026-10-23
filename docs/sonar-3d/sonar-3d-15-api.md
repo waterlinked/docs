@@ -76,9 +76,9 @@ RIP2 supports several Protobuf-encoded messages. See [Protobuf packet descriptio
 - `radius = pixelValue * imagePixelScale`.
 
 #### `ImuBatch`
-- Unprocessed specific force and rate of turn from the internal IMU, sampled at 100 Hz. The sonar does not filter or resample the data.
-- The IMU itself outputs each sample as the average over the 10 ms sample period ending at its timestamp, not an instantaneous reading. To integrate, multiply each sample by 10 ms and sum. The result is valid at the timestamp of the last sample used.
-- `specific_force` and `rate_of_turn` are flat arrays with three values per sample, in x, y, z order, in m/s² and rad/s.
+- Measurements of specific force and rate of turn from an internal IMU, sampled at 100 Hz. The sonar does not filter or resample the data.
+- The IMU itself outputs each sample as an average over the 10 ms sample period ending at its timestamp, not an instantaneous reading. To integrate, multiply each sample by 10 ms and sum. The result is valid at the timestamp of the last sample used.
+- `specific_force` and `rate_of_turn` are flat arrays with three values per sample, in x, y, z order, in m/s² and rad/s. Axes follow the sonar coordinate conventions below.
 - Measurements are made at the position of the internal IMU within the sonar. The position offset relative to point cloud origin is -22 mm in x, -46 mm in y and -3 mm in z.
 - Output in batches, with latency below 100 ms during normal operation.
 - Expect occasional spikes in latency.
