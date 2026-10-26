@@ -61,12 +61,12 @@ The most common solution is to terminate a Deep Trekker connection port cable (D
 
     | Sonar Cable Type | Sonar Cable Color | Pin Number 9636 Deep Trekker Connector 7-pole (Female) Rebuild Kit |
     |------------------|-------------------|------------------------------------------------------------------------|
-    | DC-              | Black             | 1                                                                      |
-    | DC+              | Red               | 2                                                                      |
-    | RX+              | Green/White       | 6                                                                      |
-    | RX-              | Green             | 5                                                                      |
-    | TX+              | Orange/White      | 4                                                                      |
-    | TX-              | Orange            | 3                                                                      |
+    | DC-              | Black              <span class="swatch c-black"></span>| 1                                                                      |
+    | DC+              | Red                <span class="swatch c-red"></span>| 2                                                                      |
+    | RX+              | Green/White        <span class="swatch c-green-white"></span>| 6                                                                      |
+    | RX-              | Green              <span class="swatch c-green"></span>| 5                                                                      |
+    | TX+              | Orange/White       <span class="swatch c-orange-white"></span>| 4                                                                      |
+    | TX-              | Orange             <span class="swatch c-orange"></span>| 3                                                                      |
     | NC               | NC                | 7                                                                      |
 
 

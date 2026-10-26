@@ -26,7 +26,7 @@ See [Software updates](./sw-update.md) for more information on software updates.
 - Add water tracking
 - Add `get_version_info` command to the TCP JSON API
 - Improve dead-reckoning positioning
-- Time API v2
+- Add time API over TCP JSON API and serial, see [Time](time.md)
 
 ## 3.2.0 (2026-03)
 

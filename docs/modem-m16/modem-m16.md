@@ -36,5 +36,6 @@ The Modem M16 is a two-way half-duplex 10bps acoustic modem with a robust and us
 !!! note "Relative movement and Doppler shift"
     The two modems should not move faster than **0.8 m/s relative to each other**. Above
     this relative velocity, the Doppler shift of the acoustic signal becomes significant
-    and can disrupt the communication link.
+    and packets start to fail. See [How fast can the modems move relative to each other?](modem-m16-faq.md#6-how-fast-can-the-modems-move-relative-to-each-other)
+    for an explanation and practical advice.
 

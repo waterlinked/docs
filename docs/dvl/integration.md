@@ -34,10 +34,26 @@ Electrical interfaces differ by model:
 * DVL A50 and DVL A125 use the same UART electrical interface. See [DVL A50/A125 serial interface](electrical.md#dvl-a50-and-dvl-a125-serial-interface).
 * DVL A100 and DVL A250 use RS232. See [DVL A100/A250 serial interface](electrical.md#dvl-a100-and-dvl-a250-serial-interface).
 
+### Serial output is disabled by default on DVL A100/A250
+
+The serial output is the stream of velocity, transducer, and dead reckoning reports that the DVL sends on its own. The default differs by model:
+
+| Model | Serial output by default |
+| --- | --- |
+| DVL A50/A125 | Enabled |
+| DVL A100/A250 | Disabled |
+
+On DVL A100 and DVL A250 you must enable the serial output before any reports appear on the RS232 interface. On all models, the serial output is enabled or disabled in the web GUI or with the `wcp` command over serial. It cannot be changed over the TCP JSON API.
+
+Disabling the serial output only stops the report stream. It does not affect:
+
+* Serial commands. The DVL still receives commands over serial and replies to them, so you can enable the output with `wcp` from the serial port itself.
+* Hardware triggering on DVL A100/A250. The trigger pulse on the RS232 RX line still works. See [Triggering](dvl-triggering.md#hardware-triggering).
+
 Protocol references:
 
-* [DVL A50/A125 serial protocol](dvl-serial-protocol.md)
-* [DVL A100/A250 serial protocol](dvl-a250_a100-serial-protocol.md)
+* [DVL A50/A125 serial protocol](dvl-serial-protocol.md#change-serial-output-protocol-wcp)
+* [DVL A100/A250 serial protocol](dvl-a250_a100-serial-protocol.md#change-serial-output-protocol-wcp)
 
 ## PD formats { #pd0-pd4-and-pd6 }
 
@@ -71,9 +87,7 @@ See:
 
 ### RX-line trigger
 
-For DVL A100 and DVL A250, sending a NULL character over the RS232 RX line triggers a pulse on the falling edge.
-
-<!-- TODO: Engineering review: confirm timing requirements and valid baud/configuration assumptions for A100/A250 RX-line triggering. -->
+For DVL A100 and DVL A250, sending a NUL character at 115200 baud over the RS232 RX line triggers a ping. The DVL recognizes the 78.1 µs ± 4.3 µs positive pulse on the wire and triggers the ping when the pulse ends. Hardware triggering must be enabled in the configuration first, otherwise the pulses are ignored. See [Hardware triggering](dvl-triggering.md#hardware-triggering) for the pulse timing and a drawing.
 
 ## Diagnostics during integration
 

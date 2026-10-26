@@ -116,5 +116,5 @@ Water tracking is enabled by setting `range_mode` to `wt`. Select the interface 
     * [DVL A50/A125 serial velocity report](dvl-serial-protocol.md#velocity-report-wrs)
     * [DVL A100/A250 serial velocity report](dvl-a250_a100-serial-protocol.md#velocity-report-wrs)
 
-    !!! warning "`wrs` is used for two different reports on DVL A50/A125"
-        On DVL A50/A125 the `wrs` prefix is used for both the [time status](dvl-serial-protocol.md#time-status-wrs) response and the water tracking velocity report. Inspect the fields after the prefix to tell them apart: a water tracking velocity report begins with a decimal velocity (e.g. `wrs,0.120,...`), while a time status report begins with an integer epoch timestamp (e.g. `wrs,1776409079,...`).
+    !!! warning "`wrs` is used for two different reports"
+        The `wrs` prefix is used for both the time status response ([A50/A125](dvl-serial-protocol.md#time-status-wrs), [A100/A250](dvl-a250_a100-serial-protocol.md#time-status-wrs)) and the water tracking velocity report. Inspect the fields after the prefix to tell them apart: a water tracking velocity report begins with a decimal velocity (e.g. `wrs,0.120,...`), while a time status report begins with an integer epoch timestamp (e.g. `wrs,1776409079,...`).

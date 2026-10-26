@@ -8,9 +8,9 @@ When not synchronized with NTP, it is also possible to set time manually.
 |Model|Support|
 |-|-|
 |A50|Supported, starting with software release 2.7.2|
-|A100|Planned. Not supported in 3.2.0|
+|A100|Supported, starting with software release 3.3.0|
 |A125|Supported, starting with software release 2.7.2|
-|A250|Planned. Not supported in 3.2.0|
+|A250|Supported, starting with software release 3.3.0|
 
 See [Software updates](sw-update.md) for update instructions.
 
@@ -66,12 +66,14 @@ On supported models there is a "System time configuration" section in the Config
 
 ## TCP JSON API
 
-Time configuration is available in TCP JSON API `json_v3.3` and up for supported models:
+Time configuration is available in TCP JSON API `json_v3.3` and up for DVL A50/A125, and `json_v4.1` and up for DVL A100/A250:
 
 * [DVL A50/A125 TCP JSON time API](./dvl-json-protocol.md#time)
+* [DVL A100/A250 TCP JSON time API](./dvl-a250_a100-json-protocol.md#time)
 
 ## Serial API
 
-Time configuration is available in serial protocol `2.8.0` and up for supported models:
+Time configuration is available in serial protocol `2.8.0` and up for DVL A50/A125, and `3.1.0` and up for DVL A100/A250:
 
-* [DVL A50/A125 Serial time API](./dvl-serial-protocol.md)
+* [DVL A50/A125 serial time API](./dvl-serial-protocol.md#time-status-wrs)
+* [DVL A100/A250 serial time API](./dvl-a250_a100-serial-protocol.md#time-status-wrs)

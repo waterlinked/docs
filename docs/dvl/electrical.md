@@ -125,7 +125,7 @@ DVL A50 and DVL A125 use the same 3.3 V UART interface, 5 V tolerant.
 !!! warning
     There can be a momentary (<10 us) power spike (~5 V) on the UART lines when power is applied to the DVL, which may damage equipment that is not 5 V tolerant.
 
-See the [DVL A50/A125 serial protocol](dvl-serial-protocol.md#serial-protocol).
+The serial output is enabled by default. See the [DVL A50/A125 serial protocol](dvl-serial-protocol.md#serial-protocol).
 
 ### DVL A100 and DVL A250 serial interface { #dvl-a100-and-dvl-a250-serial-interface }
 
@@ -137,5 +137,8 @@ DVL A100 and DVL A250 use a standard RS232 serial interface.
 | Baud rate | 115200 |
 | Data/parity/stop | 8N1 |
 | Flow control | None |
+
+!!! note "Serial output is disabled by default"
+    DVL A100 and DVL A250 do not send reports over RS232 until the serial output is enabled in the web GUI or with the `wcp` command over serial. Serial commands and hardware triggering work regardless. See [Serial output is disabled by default on DVL A100/A250](integration.md#serial-output-is-disabled-by-default-on-dvl-a100a250).
 
 See the [DVL A100/A250 serial protocol](dvl-a250_a100-serial-protocol.md#serial-protocol).
