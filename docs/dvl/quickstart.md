@@ -30,7 +30,7 @@ See [Installation](installation.md) for common guidance on orientation, line of 
 
 Wire the DVL according to the correct electrical interface for your model, then connect Ethernet to your computer or network. Ethernet is the recommended interface for first setup because it gives access to the web GUI, diagnostics, configuration, software updates, and the TCP data stream.
 
-Serial is available for vehicle integrations where a direct serial data stream is required. On DVL A100 and DVL A250 the serial output is disabled by default and must be enabled in the web GUI or with the serial `wcp` command. See [Integration](integration.md#serial-output-is-disabled-by-default-on-dvl-a100a250).
+Serial is available for vehicle integrations where a direct serial data stream is required.
 
 | Model | Electrical interface | Recommended interface | Optional serial interface |
 | :--- | :--- | :--- | :--- |
