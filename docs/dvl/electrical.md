@@ -45,8 +45,13 @@ Power and Ethernet wiring are common. The brown and brown/white serial pair depe
 | DVL A100/A250 | Serial (RS232) TX | Brown/White | <span class="swatch c-brown-white"></span> |
 | DVL A100/A250 | Serial (RS232) RX | Brown | <span class="swatch c-brown"></span> |
 
-!!! note
-    Power must be applied to the power terminals before applying voltage to the serial pins.
+!!! note "Power and serial start-up order"
+    Connect ground first. The serial ground and the supply ground must be connected before any signal is applied to the serial pins.
+
+    We recommend applying power to the power terminals before driving the serial pins. This is a conservative general recommendation:
+
+    * **DVL A50/A125:** the UART inputs are protected and tolerate being driven before the DVL is powered, so a delay of a few milliseconds before power comes on is not a problem. What damages the UART is a DC voltage above 5 V on TX or RX. Keep the lines at 3.3 V, with 5 V as the absolute maximum.
+    * **DVL A100/A250:** apply power before driving the RS232 pins.
 
 ## Seacon connector option
 
@@ -109,7 +114,7 @@ DVL A50 and DVL A125 use the same 3.3 V UART interface, 5 V tolerant.
 
 | Setting | Value |
 | :--- | :--- |
-| Interface | 3.3 V UART, 5 V tolerant |
+| Interface | 3.3 V UART, 5 V tolerant (5 V absolute maximum) |
 | Baud rate | 115200 |
 | Data/parity/stop | 8N1 |
 | Flow control | None |
