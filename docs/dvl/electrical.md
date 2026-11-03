@@ -56,8 +56,6 @@ The Seacon connector option is available for:
 * DVL A100 side-entry versions only.
 * DVL A250 side-entry versions only.
 
-<!-- TODO: Confirm whether a Seacon connector option is available for DVL A100. -->
-
 ### DVL A50/A100/A250 Seacon MC8M connector
 
 The table below shows the pinout for the DVL A50/A100/A250 Seacon MC8M connector.
@@ -73,8 +71,6 @@ The table below shows the pinout for the DVL A50/A100/A250 Seacon MC8M connector
 | Serial TX | 7 | Brown/White | <span class="swatch c-brown-white"></span> |
 | Serial RX | 8 | Brown | <span class="swatch c-brown"></span> |
 
-<!-- TODO: Confirm and publish the DVL A250 side-entry Seacon connector pinout before reusing the A50/A125 table for A250. -->
-
 ## Power specifications
 
 | Specification | DVL A50 | DVL A100 | DVL A125 | DVL A250 |
@@ -82,8 +78,6 @@ The table below shows the pinout for the DVL A50/A100/A250 Seacon MC8M connector
 | Input voltage | 10–30 Vdc | 10–30 Vdc | 10–30 Vdc | 10–30 Vdc |
 | Power consumption, average | 4 W | 8 W | 4 W | 8 W |
 | Power-on current surge | 35 W | 30 W | 35 W | 30 W |
-
-<!-- TODO: Add or link DVL A50/A125 electrical specifications if they should be published here. -->
 
 ## Shielded cable information
 
@@ -93,8 +87,6 @@ Shielded DVL cable helps protect the communication and power lines from external
     For DVL A50, shielded cables were introduced autumn 2024.
 
     All DVL A125 units are delivered with shielded cable.
-
-<!-- TODO: Confirm whether all DVL A250 cable and connector variants use the same shield arrangement. -->
 
 ### Connecting the shield
 

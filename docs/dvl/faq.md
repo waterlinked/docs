@@ -85,8 +85,6 @@ Use automatic range mode unless you know that the DVL should only search within 
 
 See [Range mode](range-mode.md).
 
-<!-- TODO: Confirm final DVL A100/A250 range-mode tables before adding model-specific range-mode examples. -->
-
 ---
 
 ## 9. What is periodic cycling? { #what-is-periodic-cycling }
@@ -219,8 +217,6 @@ Triggering lets an external system control DVL pinging. This can be useful when 
 
 Triggering and synchronization are handled through the integration interface, not as a web GUI workflow. See [Integration overview](integration.md#triggering-and-synchronization) and the protocol page for your model.
 
-<!-- TODO: Confirm exact timing requirements and supported trigger configurations before publishing detailed trigger setup rules. -->
-
 ---
 
 ## 21. What is the operating range? { #what-is-the-operating-range }
@@ -237,8 +233,6 @@ Applies to: all DVL models
 
 Velocity output frequency varies with altitude and range mode. See [Range mode](range-mode.md) for the common range-mode concept and model applicability notes.
 
-<!-- TODO: Confirm A100 and A250 range mode values before publishing model-specific output frequency limits. -->
-
 ---
 
 ## 23. What is the source level or SPL? { #what-is-the-source-level-or-spl }
@@ -246,8 +240,6 @@ Velocity output frequency varies with altitude and range mode. See [Range mode](
 Applies to: all DVL models
 
 See the product comparison table in [Overview](overview.md). The FAQ does not repeat these values so that specifications are maintained in one place.
-
-<!-- TODO: Confirm A100 and A250 source level/SPL before publishing it in the overview comparison table. -->
 
 ---
 

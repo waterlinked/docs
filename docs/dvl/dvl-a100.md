@@ -6,8 +6,6 @@ It is designed for close-range and mid-range operation up to 100 m altitude, wit
 
 The DVL A100 is part of the same product family as the DVL A250. From a web GUI, configuration, protocol, and integration perspective, the two products are documented together where the behavior is shared. The main differences are operating range, frequency, speed limits, size, weight, depth rating, and physical configuration.
 
-<!-- TODO: Add product image of DVL A100. -->
-
 ## Key features
 
 * Altitude range from 5 cm to 100 m.
@@ -31,8 +29,6 @@ Use the mechanical information together with the common [Installation](installat
 * **Depth rating**: 1,000 m
 * **Material**: PEEK (housing), Stainless Steel 316 (back plate)
 
-<!-- TODO: Add DVL A100 dimensions drawing. -->
-
 ### Physical interface versions
 
 The DVL A100 is available in these physical interface versions:
@@ -46,8 +42,6 @@ Cable diameter: 7.8 mm +/- 0.2 mm
 
 The cable diameter is the same for the side-entry, rear O-ring interface and connector versions.
 
-<!-- TODO: Add DVL A100 cable dimensions drawing, including side cable entry and rear O-ring interface variants. -->
-
 ## Mounting holes
 
 Use a rigid mount so the DVL moves with the vehicle or boat. Avoid flexible poles, unsupported brackets, and mounts that can vibrate.
@@ -60,15 +54,11 @@ Transducer numbering is useful when comparing web GUI or protocol diagnostics wi
 
 Mechanical drawings number the transducers from 1 to 4. Protocol messages and diagnostic logs use zero-based transducer `id` values from 0 to 3. See [Transducer numbering and protocol IDs](axes.md#transducer-numbering-and-protocol-ids).
 
-<!-- TODO: Add DVL A100 transducer numbering drawing. -->
-
 ## Transducer beam geometry
 
 Keep all beam paths unobstructed. Avoid mounting locations where brackets, frames, skids, cables, thrusters, propellers, or hull structures can intersect the beam paths.
 
 The DVL A100 beam angle is 22.5 degrees.
-
-<!-- TODO: Add DVL A100 transducer beam geometry drawing. -->
 
 ## Line of sight
 
@@ -76,7 +66,6 @@ The DVL needs a clear acoustic path to the seabed or another reflecting surface.
 
 For boat-mounted installations, consider the flow around the hull and avoid positions where bubbles or aerated water pass across the transducers. For ROV/AUV installations, avoid mounting directly in thruster wash or near moving parts.
 
-<!-- TODO: Add DVL A100 line-of-sight drawing. -->
 ## Datasheet
 
 [Datasheet](https://www.waterlinked.com/web/content/108663?unique=39e82f816d08f4d2270df5a9e9f8b6822e9790fe&download=true)

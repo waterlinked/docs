@@ -150,9 +150,6 @@ Check model-specific line-of-sight information:
 * [DVL A125 line of sight](dvl-a125.md#line-of-sight)
 * [DVL A250 line of sight](dvl-a250.md#line-of-sight)
 
-<!-- TODO: Add final DVL A100 line-of-sight asset when available. -->
-<!-- TODO: Add final DVL A250 line-of-sight asset when available. -->
-
 If one beam shows a different distance or flickers more than the others, check whether that beam is seeing a wall, frame, skid, cable, or other obstruction.
 
 ## Active acoustic interference from other sensors

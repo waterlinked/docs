@@ -6,8 +6,6 @@ Range mode configuration can instruct the DVL to search for bottom lock in a lim
 
 The range-mode concept applies to all DVLs. The table below documents the currently published A50/A125 range modes.
 
-<!-- TODO: Confirm final DVL A100 and DVL A250 range mode altitude boundaries and update this page with a model-specific table or model column. -->
-
 The same configuration parameter can also enable [water tracking](water-tracking.md).
 
 ## Configuration format

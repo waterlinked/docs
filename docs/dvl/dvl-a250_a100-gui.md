@@ -62,16 +62,6 @@ See [Settings and configuration](configuration.md), [Axes](axes.md), [Range mode
 
 Gyro calibration is not needed for DVL A100/A250.
 
-<!--## Outputs
-
-The DVL A100/A250 web GUI does not have a separate Outputs page.
-
-Use the configuration page and the protocol references for output configuration until the final GUI labels are confirmed.
-
-See [Settings and configuration](configuration.md#output-settings), [Integration](integration.md), [DVL A100/A250 TCP JSON API](dvl-a250_a100-json-protocol.md), and [DVL A100/A250 serial protocol](dvl-a250_a100-serial-protocol.md).-->
-
-<!-- TODO: Confirm final DVL A100/A250 web GUI label and workflow for output configuration. -->
-
 ## Diagnostics and diagnostic log { #diagnostics-and-support }
 
 Use the diagnostics page to view live diagnostic information and collect a diagnostic log when troubleshooting or when requested by Water Linked support.
