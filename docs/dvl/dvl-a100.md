@@ -52,7 +52,7 @@ The cable diameter is the same for the side-entry, rear O-ring interface and con
 
 Use a rigid mount so the DVL moves with the vehicle or boat. Avoid flexible poles, unsupported brackets, and mounts that can vibrate.
 
-<!-- TODO: Add DVL A100 mounting holes drawing. -->
+For the mounting holes of both versions, the vehicle mounting interface of the rear O-ring interface version, and standard and precision mounting, see [Mounting interface](mounting-interface.md). Download the [mounting interface drawing (PDF)](https://www.waterlinked.com/web/content/139397?unique=5597169e8d073e75ffc3fbf9d39e7c823f68e866&download=true&access_token=c4317bae-e62f-4f78-8ba2-188e1fab7972). It is also available under *Downloads & Resources* on the [DVL A100 product page](https://www.waterlinked.com/shop/dvl-a100-1377).
 
 ## Transducer numbering
 

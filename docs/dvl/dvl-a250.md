@@ -1,6 +1,6 @@
 # DVL A250
 
-The [DVL A250](https://www.waterlinked.com/dvl/dvl-a250) is the most capable DVL in the lineup, delivering long-range performance while maintaining a compact and efficient design.
+The [DVL A250](https://www.waterlinked.com/shop/dvl-a250-1372) is the most capable DVL in the lineup, delivering long-range performance while maintaining a compact and efficient design.
 
 Operating at lower frequency for extended reach, the A250 enables reliable velocity measurements at distances up to 250 m, making it suitable for demanding subsea operations.
 
@@ -44,6 +44,8 @@ The DVL A250 is available with side-entry cable and rear O-ring interface option
 Use a rigid mount so the DVL moves with the vehicle or boat. Avoid flexible poles, unsupported brackets, and mounts that can vibrate.
 
 Use the mechanical drawings above as the reference for mounting-hole placement.
+
+For the vehicle mounting interface of the rear O-ring interface version, and for standard and precision mounting, see [Mounting interface](mounting-interface.md). Download the [mounting interface drawing (PDF)](https://www.waterlinked.com/web/content/139407?unique=665890810fa69948df7214dd54462d724ea2cfa3&download=true&access_token=09b5afbd-8fe6-4ded-b0f7-fc3bb5f165c2). It is also available under *Downloads & Resources* on the [DVL A250 product page](https://www.waterlinked.com/shop/dvl-a250-1372).
 
 ## Transducer numbering
 
