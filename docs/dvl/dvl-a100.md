@@ -62,6 +62,39 @@ The DVL A100 beam angle is 22.5 degrees.
 
 ## Line of sight
 
+Keep a 65° cone below the transducers free of obstructions. The cone starts at the outer edge of the housing face, and the drawing is to scale.
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 420" fill="currentColor" font-size="12" style="max-width: 680px;" role="img" aria-label="DVL A100 line of sight, side view: keep a 65 degree cone below the transducers free">
+  <defs><marker id="los-dvla100-a" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z"/></marker><marker id="los-dvla100-b" markerWidth="6" markerHeight="6" refX="1" refY="3" orient="auto"><path d="M6,0 L0,3 L6,6 Z"/></marker></defs>
+  <text x="20" y="24" font-size="14" font-weight="bold">DVL A100 line of sight (side view)</text>
+  <text x="20" y="42" font-size="11" opacity="0.75">Mounting side up, transducers facing the seabed. Drawn to scale against the other DVL models.</text>
+  <polygon points="268.0,126.0 412.0,126.0 573.8,380.0 106.2,380.0" fill="currentColor" fill-opacity="0.07" stroke="none"/>
+  <line x1="268.0" y1="126.0" x2="106.2" y2="380.0" stroke="currentColor" stroke-width="1.4"/>
+  <line x1="412.0" y1="126.0" x2="573.8" y2="380.0" stroke="currentColor" stroke-width="1.4"/>
+  <path d="M194.7,241.1 A270.5,270.5 0 0 0 485.3,241.1" fill="none" stroke="currentColor" stroke-width="0.8" marker-start="url(#los-dvla100-a)" marker-end="url(#los-dvla100-b)"/>
+  <text x="340" y="301.5" text-anchor="middle" font-size="13" font-weight="bold">65°</text>
+  <text x="340" y="402.0" text-anchor="middle" font-size="11">Keep this 65° cone free of brackets, frames, cables, thrusters and hull</text>
+  <g stroke="currentColor" stroke-width="0.9" stroke-dasharray="5 4" opacity="0.8">
+    <line x1="392.2" y1="134.2" x2="467.5" y2="315.9"/>
+    <line x1="287.8" y1="134.2" x2="212.5" y2="315.9"/>
+    <line x1="392.2" y1="134.2" x2="392.2" y2="194.2" stroke-dasharray="2 3"/>
+  </g>
+  <path d="M392.2,180.2 A46,46 0 0 0 409.8,176.7" fill="none" stroke="currentColor" stroke-width="0.8"/>
+  <text x="416.2" y="198.2" font-size="11">22.5°</text>
+  <text x="477.5" y="317.9" font-size="11" opacity="0.85">Beam axis</text>
+  <path d="M268.0,88.0 L412.0,88.0 L412.0,126.0 L372.4,142.4 L307.6,142.4 L268.0,126.0 Z" fill="currentColor" fill-opacity="0.18" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+  <g stroke="currentColor" stroke-width="3.2" stroke-linecap="round">
+    <line x1="407.2" y1="128.0" x2="377.2" y2="140.4"/>
+    <line x1="272.8" y1="128.0" x2="302.8" y2="140.4"/>
+  </g>
+  <line x1="268.0" y1="76.0" x2="412.0" y2="76.0" stroke="currentColor" stroke-width="0.7" marker-start="url(#los-dvla100-b)" marker-end="url(#los-dvla100-a)"/>
+  <text x="340" y="71.0" text-anchor="middle" font-size="11">Ø90 mm</text>
+  <line x1="426.0" y1="88.0" x2="426.0" y2="142.4" stroke="currentColor" stroke-width="0.7" marker-start="url(#los-dvla100-b)" marker-end="url(#los-dvla100-a)"/>
+  <text x="432.0" y="119.2" font-size="11">34 mm</text>
+  <text x="258.0" y="100.0" text-anchor="end" font-size="11" opacity="0.85">Mounting side</text>
+  <text x="245.6" y="146.4" text-anchor="end" font-size="11" opacity="0.85">Transducers</text>
+</svg>
+
 The DVL needs a clear acoustic path to the seabed or another reflecting surface. Strong turbulence, bubbles, vibration, and operation very close to the surface can reduce signal quality or cause loss of bottom lock.
 
 For boat-mounted installations, consider the flow around the hull and avoid positions where bubbles or aerated water pass across the transducers. For ROV/AUV installations, avoid mounting directly in thruster wash or near moving parts.
