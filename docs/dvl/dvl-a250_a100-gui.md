@@ -47,7 +47,7 @@ If velocity is invalid or bottom lock is unreliable, see [How to diagnose](how-t
 4. Use figure of merit or uncertainty indicators as a confidence check when they are available.
 5. Use the local map/dead-reckoning view only after checking the dead reckoning limitations.
 
-See [Dead reckoning](dead-reckoning.md) for the reference frame and limitations.
+See [Dead reckoning](dead-reckoning.md) for the reference frame and limitations. The [DVL versions without dead reckoning](dead-reckoning.md#dvl-versions-without-dead-reckoning), such as the DVL A250 4,000 m version, do not provide orientation or dead reckoning.
 
 !!! warning
     Dead reckoning will drift over time. Do not use the map view as an absolute position reference unless your system also provides an external position reference.

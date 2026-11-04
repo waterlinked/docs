@@ -20,12 +20,12 @@ Here is a quick overview of the differences between the DVL models:
 | **Weight in air / water** | 170 g / 105 g | 200 g / 125 g | 750 g / 500 g | 1650 g / 750 g |
 | **Power consumption** | 4 W (average) | 8 W (average) | 4 W (average) | 8 W (average) |
 | **Serial protocol** | UART TTL (3.3 V, 5 V tolerant) | RS232 | UART TTL (3.3 V, 5 V tolerant) | RS232 |
-| **IMU output** | No | Planned | No | Planned |
+| **IMU output** | No | Planned | No | Planned. Not on the 4000 m version |
 | **Ping triggering** | Software | Soft- and Hardware | Software | Soft- and Hardware |
 | **Cable entry** | Side entry | Side entry or rear O-ring interface | Side entry | Side entry or rear O-ring interface |
 | **Communication** | Ethernet and UART TTL | Ethernet and serial RS232 | Ethernet and UART TTL | Ethernet and serial RS232 |
 | **Source level (dB re 1 μPa @ 1 m)** | 197 | 210 | 198 | 207 |
-| **Depth rating** | 300 m or 600 m| 1000 m | 1000 m or 4000 m| 4000 m for side-entry cable configuration; rear O-ring interface version rated to 1000 m |
+| **Depth rating** | 300 m or 600 m| 1000 m | 1000 m or 4000 m| 4000 m for side-entry cable configuration; rear O-ring interface version rated to 1000 m. The 4000 m version has no [dead reckoning](dead-reckoning.md#dvl-versions-without-dead-reckoning) |
 | **Main use case** | Compact platforms where size and payload capacity are limited and operations are conducted close to the bottom | Compact platforms where size and payload capacity are limited but require more range than the A50 | Long-range and deep-water subsea operations in high-pressure environments | Long-range and deep-water subsea operations where large operating altitudes are required |
 
 \*Under ideal conditions

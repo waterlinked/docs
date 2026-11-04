@@ -2,7 +2,7 @@
 
 ## Introduction
 
-All our DVLs run a dead-reckoning algorithm that estimates the orientation and position of the DVL. This uses the velocities calculated by the DVL and its integrated IMU/AHRS.
+All our DVLs, except the [versions listed below](#dvl-versions-without-dead-reckoning), run a dead-reckoning algorithm that estimates the orientation and position of the DVL. This uses the velocities calculated by the DVL and its integrated IMU/AHRS.
 
 ## Starting dead reckoning
 
@@ -49,6 +49,22 @@ For orientation to function correctly, the DVL must be deployed in accordance wi
     A small tilt in the DVL mounting, though it will result in almost no position error with respect to the X and Y axes, may lead to a significant error with respect to the Z axis. This change will be a projection of the true horizontal position onto the Z axis. For example, when the DVL is mounted with 5&#176; tilt and the horizontal displacement of the DVL is 100 m since the last reset, the total displayed distance in the X, Y plane will be 99.6 m, and the Z position will be &pm;9 m.
 
 When dead reckoning is [reset](#starting-dead-reckoning), the roll, pitch, and yaw angles are set to zero.
+
+## DVL versions without dead reckoning { #dvl-versions-without-dead-reckoning }
+
+The DVL versions listed below do not output orientation or dead reckoning.
+
+| Model | Version | Velocity report | Orientation and dead reckoning |
+| --- | --- | --- | --- |
+| DVL A250 | 4,000 m | Yes | Not available |
+
+On these versions:
+
+* The velocity report is sent as normal. It contains the velocity the DVL measures acoustically, in the same format as on other versions.
+* The dead reckoning output is not available: neither the position (x, y, and z) nor the orientation (roll, pitch, and yaw).
+* The dead reckoning report is not sent over the [TCP JSON API](dvl-a250_a100-json-protocol.md#dead-reckoning-report), and the `wrp` report is not sent over the [serial protocol](dvl-a250_a100-serial-protocol.md#dead-reckoning-report-wrp).
+
+If your application needs orientation or dead reckoning from the DVL, choose a version that is not listed in the table.
 
 ## Yaw drift
 

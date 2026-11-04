@@ -19,6 +19,9 @@ Use the mechanical information together with the common [Installation](installat
 * **Depth rating**: 4,000 m for side-entry cable configuration; rear O-ring interface version rated to 1,000 m
 * **Material**: PEEK (housing), Stainless Steel 316 (back plate)
 
+!!! note "No dead reckoning on the 4,000 m version"
+    The 4,000 m version of the DVL A250 does not output orientation (roll, pitch, and yaw) or dead reckoning. Velocity is measured and reported as normal. The dead reckoning report is not sent over the TCP JSON API or the serial protocol. See [DVL versions without dead reckoning](dead-reckoning.md#dvl-versions-without-dead-reckoning).
+
 Use the drawings below as mechanical reference for the two A250 interface variants.
 
 ### Rear O-ring interface version

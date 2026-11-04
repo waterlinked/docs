@@ -202,6 +202,9 @@ wru,3,1.800,1.35,-58,-96*a3
 
 ### Dead reckoning report (wrp)
 
+!!! note
+    The `wrp` report is not sent by the [DVL versions without dead reckoning](dead-reckoning.md#dvl-versions-without-dead-reckoning), such as the DVL A250 4,000 m version.
+
 A dead reckoning report outputs the current speed, position, and orientation of the DVL as calculated by [dead reckoning](dead-reckoning.md), with respect to a [frame](dead-reckoning.md#frame) defined by the axes of the DVL's [body frame](axes.md#body-frame), or [vehicle frame](axes.md#vehicle-frame) if a mounting rotation offset is set, at the start of the dead reckoning run. The expected update rate is 5 Hz.
 
 The format is:
