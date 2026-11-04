@@ -26,8 +26,11 @@ Use the mechanical information together with the common [Installation](installat
 * **Height**: 34 mm
 * **Weight in air**: 0.2 kg
 * **Weight in water**: 0.125 kg
-* **Depth rating**: 1,000 m
+* **Depth rating**: 1,000 m or 4,000 m for side-entry cable configuration; rear O-ring interface version rated to 1,000 m
 * **Material**: PEEK (housing), Stainless Steel 316 (back plate)
+
+!!! note "No dead reckoning on the 4,000 m version"
+    The 4,000 m version of the DVL A100 does not output orientation (roll, pitch, and yaw) or dead reckoning. Velocity is measured and reported as normal. The dead reckoning report is not sent over the TCP JSON API or the serial protocol. See [DVL versions without dead reckoning](dead-reckoning.md#dvl-versions-without-dead-reckoning).
 
 ### Physical interface versions
 

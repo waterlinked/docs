@@ -56,6 +56,7 @@ The DVL versions listed below do not output orientation or dead reckoning.
 
 | Model | Version | Velocity report | Orientation and dead reckoning |
 | --- | --- | --- | --- |
+| DVL A100 | 4,000 m | Yes | Not available |
 | DVL A250 | 4,000 m | Yes | Not available |
 
 On these versions:

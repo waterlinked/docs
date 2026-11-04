@@ -16,7 +16,7 @@ Use the mechanical information together with the common [Installation](installat
 * **Height**: 40 mm
 * **Weight in air**: 1.65 kg
 * **Weight in water**: 0.75 kg
-* **Depth rating**: 4,000 m for side-entry cable configuration; rear O-ring interface version rated to 1,000 m
+* **Depth rating**: 1,000 m or 4,000 m for side-entry cable configuration; rear O-ring interface version rated to 1,000 m
 * **Material**: PEEK (housing), Stainless Steel 316 (back plate)
 
 !!! note "No dead reckoning on the 4,000 m version"
