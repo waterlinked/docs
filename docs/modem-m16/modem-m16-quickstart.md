@@ -32,7 +32,7 @@ For wiring details see: [Modem-M16 Wiring](../modem-m16/modem-m16-wiring.md)
 
 
 ### Connect using UART:
-- Connect VIN to a 3.3V power source, and ground to ground/VOUT
+- Connect VIN to a 3.3V power source, and ground to ground/VOUT. The power source must deliver enough current when the modem transmits. Do not use the VCC pin of a USB-to-UART adapter, see [Troubleshooting](modem-m16-troubleshooting.md).
 - Connect to your computer for instance using a UART to USB cable. 
 
 ### Connect using RS422:

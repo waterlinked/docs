@@ -60,3 +60,13 @@ Two things help in practice:
 * It is the relative speed between the two modems that matters, not speed over ground. Two vehicles traveling together at the same speed are not affected.
 
 Situations like a winch lowering a modem quickly, or a boat moving up and down in waves, can be enough to go over the limit on their own. If you need to communicate while under way, slow down or hold position for the duration of the transmission, which is 1.6 seconds per packet.
+
+---
+
+## 7. The modem does not answer. What should I check?
+
+The most common cause is that the modem does not get enough power. A USB-to-UART adapter or a development board often cannot deliver the current the modem needs when it transmits, even if the modem answers when it is connected another way.
+
+Power the modem from its own supply or battery. For the UART versions, use 3.0–4.2 V (3.3 V is typical) that can deliver at least 0.5 A. For the RS422 version, use 10–30 V. Connect only TX, RX and GND from the adapter, and use a 3.3 V logic level for UART.
+
+Then test with the [Water Linked M16 driver](https://github.com/waterlinked/Modem-M16-Driver) and request a report. See [Troubleshooting](modem-m16-troubleshooting.md) for the full step-by-step guide.

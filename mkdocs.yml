@@ -220,6 +220,7 @@ nav:
             - Interface overview: modem-m16/modem-m16-integration.md
             - Protocol: modem-m16/modem-m16-protocol.md
             - Diagnostic report structure: modem-m16/modem-m16-diagnostic-report.md
+          - Troubleshooting: modem-m16/modem-m16-troubleshooting.md
           - M16 FAQ: modem-m16/modem-m16-faq.md
       - Modem-M64 (retired):
           - Introduction: modem-m64/modem-m64.md
