@@ -39,3 +39,6 @@ The Modem M16 is a two-way half-duplex 10bps acoustic modem with a robust and us
     and packets start to fail. See [How fast can the modems move relative to each other?](modem-m16-faq.md#6-how-fast-can-the-modems-move-relative-to-each-other)
     for an explanation and practical advice.
 
+## Installation guide
+
+The [Modem M16 Installation Guide (PDF)](https://www.waterlinked.com/web/content/32131?unique=641b9a810dafb82231182cb096178d09b254f38b) shows the pinout and the wiring diagrams for the UART and RS422 versions. For the Flange and OEM versions it also lists what is included in the box, and gives the mechanical drawings and the assembly steps.

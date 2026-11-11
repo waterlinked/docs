@@ -43,7 +43,7 @@ Connect only the data lines and GND from the converter:
 
 The GND of the supply and the GND of the converter must be connected together. Without a common GND the data lines do not work.
 
-For the RS422 wire colours, see [Wiring interface](modem-m16-wiring.md).
+For the RS422 wire colours, see [Wiring interface](modem-m16-wiring.md). The [Modem M16 Installation Guide (PDF)](https://www.waterlinked.com/web/content/32131?unique=641b9a810dafb82231182cb096178d09b254f38b) has wiring diagrams for both the UART and the RS422 versions.
 
 !!! Note
     Leave the Shutdown line (green <span class="swatch c-green" aria-hidden="true"></span>) floating. If it is connected to GND, the modem is off. Do not apply a voltage to it.

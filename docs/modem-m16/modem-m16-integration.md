@@ -3,6 +3,8 @@ This document describes an overview of how the underwater modem can be operated.
 
 For details of the protocol used to implement the settings, see [Modem-M16-Protocol](../modem-m16/modem-m16-protocol.md)
 
+For the electrical and mechanical integration, see [Wiring interface](modem-m16-wiring.md) and the [Modem M16 Installation Guide (PDF)](https://www.waterlinked.com/web/content/32131?unique=641b9a810dafb82231182cb096178d09b254f38b). The guide has the pinout, the wiring diagrams for the UART and RS422 versions, and the mechanical drawings and assembly steps for the Flange and OEM versions. Make sure the modem gets enough power, see [Troubleshooting](modem-m16-troubleshooting.md).
+
 ---
 
 ## Interface overview

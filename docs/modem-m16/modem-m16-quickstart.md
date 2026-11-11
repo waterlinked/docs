@@ -28,7 +28,7 @@ By default the Modem M16 is delivered with the following settings:
 
 ## How to connect to the Modem-M16
 
-For wiring details see: [Modem-M16 Wiring](../modem-m16/modem-m16-wiring.md)
+For wiring details see: [Modem-M16 Wiring](../modem-m16/modem-m16-wiring.md) and the [Modem M16 Installation Guide (PDF)](https://www.waterlinked.com/web/content/32131?unique=641b9a810dafb82231182cb096178d09b254f38b).
 
 
 ### Connect using UART:
