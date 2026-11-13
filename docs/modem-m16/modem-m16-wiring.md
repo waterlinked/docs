@@ -2,6 +2,8 @@
 
 The tables below shows the pinning of the Modem-M16 interface. Depending on which type is used, the wires may have different colors. 
 
+The [Modem M16 Installation Guide (PDF)](https://www.waterlinked.com/web/content/32131?unique=641b9a810dafb82231182cb096178d09b254f38b) has the same pinout and wiring diagrams, and the mechanical drawings for the Flange and OEM versions.
+
 | Interface             | Colour (OEM)  | Colour (Standard) | Colour (Extended)|
 | :---------------------| :---------------- | :---------------  | :---------------  |
 | VIN                   | Orange (3V - 4.2V) <span class="swatch c-orange"></span>| Orange (3V - 4.2V) <span class="swatch c-orange"></span>| Orange (10V - 30V) <span class="swatch c-orange"></span>|

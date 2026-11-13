@@ -28,11 +28,11 @@ By default the Modem M16 is delivered with the following settings:
 
 ## How to connect to the Modem-M16
 
-For wiring details see: [Modem-M16 Wiring](../modem-m16/modem-m16-wiring.md)
+For wiring details see: [Modem-M16 Wiring](../modem-m16/modem-m16-wiring.md) and the [Modem M16 Installation Guide (PDF)](https://www.waterlinked.com/web/content/32131?unique=641b9a810dafb82231182cb096178d09b254f38b).
 
 
 ### Connect using UART:
-- Connect VIN to a 3.3V power source, and ground to ground/VOUT
+- Connect VIN to a 3.3V power source, and ground to ground/VOUT. The power source must deliver enough current when the modem transmits. Do not use the VCC pin of a USB-to-UART adapter, see [Troubleshooting](modem-m16-troubleshooting.md).
 - Connect to your computer for instance using a UART to USB cable. 
 
 ### Connect using RS422:
