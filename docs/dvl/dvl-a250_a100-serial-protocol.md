@@ -233,9 +233,9 @@ Dead reckoning can be reset by issuing the `wcr` command. The reply will be an a
 
 ### Calibrate gyro (wcg)
 
-Gyro calibration is not needed as a normal setup step for DVL A100/A250.
+Gyro calibration is not available yet on DVL A100/A250 and will be added in a future software release. The command is already accepted, but it currently has no effect on dead reckoning.
 
-The gyro can be calibrated by issuing the `wcg` command.  The reply will be an ack (`wra`) if the reset is successful, and a nak (`wrn`) if not.
+The `wcg` command is still accepted. The reply will be an ack (`wra`) if the calibration is successful, and a nak (`wrn`) if not.
 
 ### Trigger ping (wcx)
 

@@ -201,9 +201,9 @@ If the request is successfully received the response will have 'success' set to 
 
 ### Calibrate gyro
 
-Gyro calibration is not needed as a normal setup step for DVL A100/A250.
+Gyro calibration is not available yet on DVL A100/A250 and will be added in a future software release. The command is already accepted, but it currently has no effect on dead reckoning.
 
-The gyro can be calibrated by issuing the `calibrate_gyro` command:
+The `calibrate_gyro` command is still accepted:
 
 ```json
 {"command":"calibrate_gyro"}

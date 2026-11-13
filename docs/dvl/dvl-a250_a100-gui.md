@@ -60,7 +60,7 @@ Open the public [configuration demo page](https://dvl2.demo.waterlinked.com/#con
 
 See [Settings and configuration](configuration.md), [Axes](axes.md), [Range mode](range-mode.md), and [Water tracking](water-tracking.md).
 
-Gyro calibration is not needed for DVL A100/A250.
+Gyro calibration is not available yet on DVL A100/A250. It will be added in a future software release.
 
 <!--## Outputs
 
