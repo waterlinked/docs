@@ -6,14 +6,12 @@ All our DVLs run a dead-reckoning algorithm that estimates the orientation and p
 
 ## Starting dead reckoning
 
-Reset dead reckoning before using the local position estimate.
+Reset dead reckoning before using the local position estimate. Resetting works the same way on all DVL models: send the `reset_dead_reckoning` command over the TCP JSON API or the `wcr` command over the serial protocol. See the TCP JSON API for [DVL A50/A125](dvl-json-protocol.md#reset-dead-reckoning) or [DVL A100/A250](dvl-a250_a100-json-protocol.md#reset-dead-reckoning), and the serial protocol for [DVL A50/A125](dvl-serial-protocol.md#reset-dead-reckoning-wcr) or [DVL A100/A250](dvl-a250_a100-serial-protocol.md#reset-dead-reckoning-wcr). On DVL A50/A125 you can also click the **Reset** button ![](../img/dvl_gui_icon_reset.png) in the [dashboard](dvl-a50_a125-gui.md#dashboard-live-data).
 
-For DVL A50/A125:
+Gyro calibration depends on the model:
 
-1. Calibrate the gyroscope by pressing *More -> Calibrate gyro* in the [web GUI](dvl-a50_a125-gui.md) while the DVL is stationary.
-2. Click the **Reset** button ![](../img/dvl_gui_icon_reset.png) in the [dashboard](dvl-a50_a125-gui.md#dashboard-live-data), or send a reset command over the [TCP JSON API](dvl-json-protocol.md#reset-dead-reckoning) or [serial protocol](dvl-serial-protocol.md#reset-dead-reckoning-wcr).
-
-For DVL A100/A250, gyro calibration is not needed. Reset commands over the [TCP JSON API](dvl-a250_a100-json-protocol.md#reset-dead-reckoning) or [serial protocol](dvl-a250_a100-serial-protocol.md#reset-dead-reckoning-wcr) are included for backward compatibility and do not affect dead reckoning on DVL A100/A250.
+* **DVL A50/A125:** calibrate the gyroscope before you reset, by pressing *More -> Calibrate gyro* in the [web GUI](dvl-a50_a125-gui.md) while the DVL is stationary.
+* **DVL A100/A250:** gyro calibration is not available yet and will be added in a future software release. The gyro calibration commands over the [TCP JSON API](dvl-a250_a100-json-protocol.md#calibrate-gyro) (`calibrate_gyro`) and [serial protocol](dvl-a250_a100-serial-protocol.md#calibrate-gyro-wcg) (`wcg`) are already accepted, but they currently have no effect on dead reckoning.
 
 ## Frame
 
@@ -53,4 +51,4 @@ When dead reckoning is [reset](#starting-dead-reckoning), the roll, pitch, and y
 ## Yaw drift
 
 !!! note
-    For DVL A50/A125, yaw drift can be decreased to 0.1-0.3&#176; per minute by [calibration](#starting-dead-reckoning) of the gyroscope. For DVL A100/A250, gyro calibration is not needed.
+    For DVL A50/A125, yaw drift can be decreased to 0.1-0.3&#176; per minute by [calibration](#starting-dead-reckoning) of the gyroscope. For DVL A100/A250, gyro calibration will be added in a future software release.
