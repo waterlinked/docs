@@ -16,7 +16,14 @@ The [Modem M16 Installation Guide (PDF)](https://www.waterlinked.com/web/content
 | RS422 TX+             | NA                | NA                | Green              <span class="swatch c-green"></span>|
 | RS422 TX-             | NA                | NA                | Green-White <span class="swatch c-green-white"></span> |
 
-Maximum power consumption for package transmit is in range 390 mW to 1105 mW
+## Power consumption
+
+| Interface                    | Input voltage | Transmit (Tx) | Receive (Rx) |
+| :--------------------------- | :------------ | :------------ | :----------- |
+| UART (OEM, Standard, Flange) | 3.0–4.2 V DC  | < 1.1 W       | < 250 mW     |
+| RS422 (Extended)             | 10–30 V DC    | < 2.0 W       | < 400 mW     |
+
+Transmit power depends on the selected power level, see [Power Levels](modem-m16-integration.md#power-levels).
 
 !!! Note 
     Shutdown line can be used to control the ON/OFF state of the Modem. 
