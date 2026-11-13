@@ -31,7 +31,6 @@ SNR generally means the modems are closer to each other.
 
 ## 2. Do the modem retransmit data packets?
 
-<!--  No, the modem do not retransmit data packets. If you need a more robust data link to ensure that packets are received you will have to implement that in your application/driver.  -->
 
 Yes, If the modem is set to parrot mode (see [Parrot Mode](../modem-m16/modem-m16-integration.md#parrot-mode)), it will retransmit all packets it has received.
 

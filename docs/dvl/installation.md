@@ -32,14 +32,13 @@ See the model pages for line-of-sight drawings:
 * [DVL A125 line of sight](dvl-a125.md#line-of-sight)
 * [DVL A250 line of sight](dvl-a250.md#line-of-sight)
 
-<!-- TODO: Add final DVL A100 line-of-sight asset when available. -->
-<!-- TODO: Add final DVL A250 line-of-sight asset when available. -->
-
 ## Mounting orientation
 
 Velocity and dead reckoning output use the configured vehicle frame. If the DVL is not mounted with its forward direction aligned with the vehicle forward direction, configure the mounting rotation offset.
 
 See [Axes](axes.md) for the common DVL axis convention and mounting rotation offset.
+
+The DVL A100 and DVL A250 rear O-ring interface versions have a FWD slot that sets the rotation of the DVL on the vehicle. See [Mounting interface](mounting-interface.md).
 
 !!! warning
     Incorrect mounting rotation can make valid DVL data appear to point in the wrong direction.

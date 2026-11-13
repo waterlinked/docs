@@ -15,8 +15,6 @@ Water tracking requires a software version with water tracking support. See [Sof
 
 Water tracking works the same way on all models.
 
-<!-- TODO: Confirm the A100 water-tracking availability version. Water tracking was added in 3.3.0, but A100 support was added in 3.4.0. -->
-
 ## Mode of operation
 
 Water tracking uses acoustic reflections from the water column, approximately `1.5 m to 4.5 m` below the DVL. It is intended for use when the distance to the bottom is more than 4.5 m.

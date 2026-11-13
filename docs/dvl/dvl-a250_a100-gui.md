@@ -47,7 +47,7 @@ If velocity is invalid or bottom lock is unreliable, see [How to diagnose](how-t
 4. Use figure of merit or uncertainty indicators as a confidence check when they are available.
 5. Use the local map/dead-reckoning view only after checking the dead reckoning limitations.
 
-See [Dead reckoning](dead-reckoning.md) for the reference frame and limitations.
+See [Dead reckoning](dead-reckoning.md) for the reference frame and limitations. The [DVL versions without dead reckoning](dead-reckoning.md#dvl-versions-without-dead-reckoning), such as the DVL A100 and DVL A250 4,000 m versions, do not provide orientation or dead reckoning.
 
 !!! warning
     Dead reckoning will drift over time. Do not use the map view as an absolute position reference unless your system also provides an external position reference.
@@ -61,16 +61,6 @@ Open the public [configuration demo page](https://dvl2.demo.waterlinked.com/#con
 See [Settings and configuration](configuration.md), [Axes](axes.md), [Range mode](range-mode.md), and [Water tracking](water-tracking.md).
 
 Gyro calibration is not available yet on DVL A100/A250. It will be added in a future software release.
-
-<!--## Outputs
-
-The DVL A100/A250 web GUI does not have a separate Outputs page.
-
-Use the configuration page and the protocol references for output configuration until the final GUI labels are confirmed.
-
-See [Settings and configuration](configuration.md#output-settings), [Integration](integration.md), [DVL A100/A250 TCP JSON API](dvl-a250_a100-json-protocol.md), and [DVL A100/A250 serial protocol](dvl-a250_a100-serial-protocol.md).-->
-
-<!-- TODO: Confirm final DVL A100/A250 web GUI label and workflow for output configuration. -->
 
 ## Diagnostics and diagnostic log { #diagnostics-and-support }
 

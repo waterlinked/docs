@@ -3,7 +3,6 @@
 ---
 ## Introduction
 This is a manual on how to install the Water Linked Sonar 3D-15 on the Chasing M2 PRO MAX. Other information from Chasing can be found at: 
-<!-- DO we need contact infor to chasing here? -->
 
 - [Chasing M2 PRO MAX Manual](https://www.chasing.com/en/service-support/chasing-m2-pro-max.html?srsltid=AfmBOoqq3caSJ6M1j9U48qUh42ugU1upCzXp1yaTAs1w9XOOuRz0vp8V)
 

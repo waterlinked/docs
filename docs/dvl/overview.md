@@ -10,9 +10,9 @@ A DVL estimates velocity relative to the seafloor by sending acoustic waves from
 
 Here is a quick overview of the differences between the DVL models:
 
-| Feature | DVL A50 | DVL A100* | DVL A125 | DVL A250 |
+| Feature | DVL A50 | DVL A100 | DVL A125 | DVL A250 |
 | :--- | :--- | :--- | :--- | :--- |
-| **Altitude range**** | 5 cm to 50 m |5 cm to 100 m | 5 cm to 125 m| 30 cm to 250 m |
+| **Altitude range*** | 5 cm to 50 m |5 cm to 100 m | 5 cm to 125 m| 30 cm to 250 m |
 | **Maximum velocity** | 3.75 m/s | 5 m/s | 9 m/s | 15 m/s |
 | **Frequency** | 1 MHz | 625 kHz | 420 kHz | 250 kHz |
 | **Water tracking** | Yes | Yes | Yes | Yes |
@@ -20,43 +20,15 @@ Here is a quick overview of the differences between the DVL models:
 | **Weight in air / water** | 170 g / 105 g | 200 g / 125 g | 750 g / 500 g | 1650 g / 750 g |
 | **Power consumption** | 4 W (average) | 8 W (average) | 4 W (average) | 8 W (average) |
 | **Serial protocol** | UART TTL (3.3 V, 5 V tolerant) | RS232 | UART TTL (3.3 V, 5 V tolerant) | RS232 |
-| **IMU output** | No | Planned | No | Planned |
+| **IMU output** | No | Planned. Not on the 4000 m version | No | Planned. Not on the 4000 m version |
 | **Ping triggering** | Software | Soft- and Hardware | Software | Soft- and Hardware |
 | **Cable entry** | Side entry | Side entry or rear O-ring interface | Side entry | Side entry or rear O-ring interface |
 | **Communication** | Ethernet and UART TTL | Ethernet and serial RS232 | Ethernet and UART TTL | Ethernet and serial RS232 |
 | **Source level (dB re 1 μPa @ 1 m)** | 197 | 210 | 198 | 207 |
-| **Depth rating** | 300 m or 600 m| 1000 m | 1000 m or 4000 m| 4000 m for side-entry cable configuration; rear O-ring interface version rated to 1000 m |
+| **Depth rating** | 300 m or 600 m| 1000 m or 4000 m for side-entry cable configuration; rear O-ring interface version rated to 1000 m. The 4000 m version has no [dead reckoning](dead-reckoning.md#dvl-versions-without-dead-reckoning) | 1000 m or 4000 m| 1000 m or 4000 m for side-entry cable configuration; rear O-ring interface version rated to 1000 m. The 4000 m version has no [dead reckoning](dead-reckoning.md#dvl-versions-without-dead-reckoning) |
 | **Main use case** | Compact platforms where size and payload capacity are limited and operations are conducted close to the bottom | Compact platforms where size and payload capacity are limited but require more range than the A50 | Long-range and deep-water subsea operations in high-pressure environments | Long-range and deep-water subsea operations where large operating altitudes are required |
 
-*Coming Q4 2026
-
-**Under ideal conditions
-<!-- TODO: Confirm DVL A100 and DVL A250 source level/SPL before publishing source level/SPL in this comparison table. Keep SPL values in this overview only; FAQ should link here instead of repeating values. -->
-
-<!-- ## DVL A50 and DVL A125 comparison
-
-The DVL A50 and DVL A125 share the same general web GUI, configuration, electrical, and integration documentation. The main differences are operating range, frequency, velocity limit, depth rating, and physical size.
-
-## DVL A100 and DVL A250 comparison
-
-The DVL A100 and DVL A250 share the same general web GUI, configuration, electrical, and integration documentation. The main differences are operating range, frequency, velocity limit, depth rating, and physical size.
-
-| Feature | DVL A100 | DVL A250 |
-| :--- | :--- | :--- |
-| **Altitude range** | 5 cm to 100 m | 30 cm to 250 m |
-| **Maximum velocity** | 5 m/s | 15 m/s |
-| **Frequency** | 625 kHz | 250 kHz |
-| **Depth rating** | 1,000 m | 4,000 m for side-entry cable configuration; rear O-ring interface version rated to 1,000 m |
-| **Diameter / height** | 90 mm / 34 mm | 149 mm / 40 mm |
-| **Weight in air / water** | 0.2 kg / 0.125 kg | 1.65 kg / 0.75 kg |
-| **Communication** | Ethernet and serial RS232 | Ethernet and serial RS232 |
-| **Protocols** | TCP JSON API, serial protocol, PD4, PD6. PD0 planned. | TCP JSON API, serial protocol, PD4, PD6. PD0 planned. |
-| **Main use case** | Compact platforms where size and payload capacity are limited | Long-range and deep-water subsea operations where large altitudes are required | -->
-
-<!-- TODO: Update the comparison when PD0 becomes available for DVL A100/A250. -->
-
-
-
+\*Under ideal conditions
 
 ## Models
 
@@ -70,7 +42,7 @@ The DVL A100 and DVL A250 share the same general web GUI, configuration, electri
 
     [Model details](dvl-a50.md)
 
--   **[DVL A100](dvl-a100.md)** *(coming Q4 2026)*
+-   **[DVL A100](dvl-a100.md)**
 
     625 kHz · altitude to 100 m · 90 mm diameter
 
