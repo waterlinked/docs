@@ -243,6 +243,8 @@ Dead reckoning can be reset by issuing the `wcr` command. The reply will be an a
 
 The gyro can be calibrated by issuing the `wcg` command.  The reply will be an ack (`wra`) if the reset is successful, and a nak (`wrn`) if not.
 
+Keep the DVL completely still during the calibration. For the best result, calibrate when the DVL has its operating temperature, see [Calibrate the gyro at operating temperature](dead-reckoning.md#gyro-calibration-temperature).
+
 ### Trigger ping (wcx)
 
 In setups where multiple acoustic sensors are used it can be useful to control the pinging of each acoustic sensor individually. By setting the configuration `acoustic_enabled = n` the pinging of the DVL can be externally controlled. Up to 15 external trigger commands can be queued by issuing the `wcx` command. The DVL will execute each ping in quick succession until no more commands are in the queue.

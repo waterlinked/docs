@@ -211,6 +211,8 @@ If the request is successfully received the response will have 'success' set to 
 
 The gyro can be calibrated by issuing the `calibrate_gyro` command:
 
+Keep the DVL completely still during the calibration. For the best result, calibrate when the DVL has its operating temperature, see [Calibrate the gyro at operating temperature](dead-reckoning.md#gyro-calibration-temperature).
+
 ```json
 {"command":"calibrate_gyro"}
 ```

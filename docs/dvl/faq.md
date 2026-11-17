@@ -279,6 +279,8 @@ Applies to: all DVL models
 
 Yes. The IMU can perform differently under temperatures that differ significantly from the conditions where it was calibrated.
 
+If possible, calibrate the gyro when the DVL has its operating temperature: let the vehicle run in the water first, take it quickly out, calibrate it on a flat surface, and put it back in the water. See [Calibrate the gyro at operating temperature](dead-reckoning.md#gyro-calibration-temperature).
+
 ---
 
 ## 28. Why does the yaw angle change rapidly? { #why-does-the-yaw-angle-change-rapidly }
