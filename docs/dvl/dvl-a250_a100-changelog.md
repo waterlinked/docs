@@ -4,6 +4,13 @@ This page applies to DVL A100 and DVL A250.
 
 See [Software updates](./sw-update.md) for more information on software updates.
 
+## 3.6.0 (2026-11-17)
+
+- Improve range for A100/A250
+- Improve tank/pool performance
+- Fix issue with protocol rejecting water tracking mode (Serial and JSON)
+- Fix issue with stored settings sometimes being reset when changing another configuration in the UI
+
 ## 3.5.2 (2026-09-29)
 
 - Disable serial output by default
