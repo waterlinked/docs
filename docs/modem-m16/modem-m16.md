@@ -28,6 +28,7 @@ The Modem M16 is a two-way half-duplex 10bps acoustic modem with a robust and us
 | Range                     | 1000 m                                 |
 | Transducer directivity    | Omnidirectional                        |
 | Transducer frequency      | 58.5 kHz                               |
+| Frequency bandwidth       | 7812 Hz                                |
 | Bits per package          | 16                                     |
 | Package duration          | 1.6 seconds                            |
 | Max relative velocity     | 0.8 m/s                                |
