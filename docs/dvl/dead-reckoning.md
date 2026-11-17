@@ -10,8 +10,19 @@ Reset dead reckoning before using the local position estimate. Resetting works t
 
 Gyro calibration depends on the model:
 
-* **DVL A50/A125:** calibrate the gyroscope before you reset, by pressing *More -> Calibrate gyro* in the [web GUI](dvl-a50_a125-gui.md) while the DVL is stationary.
+* **DVL A50/A125:** calibrate the gyroscope before you reset, by pressing *More -> Calibrate gyro* in the [web GUI](dvl-a50_a125-gui.md) while the DVL is stationary. For the best result, [calibrate at operating temperature](#gyro-calibration-temperature).
 * **DVL A100/A250:** gyro calibration is not available yet and will be added in a future software release. The gyro calibration commands over the [TCP JSON API](dvl-a250_a100-json-protocol.md#calibrate-gyro) (`calibrate_gyro`) and [serial protocol](dvl-a250_a100-serial-protocol.md#calibrate-gyro-wcg) (`wcg`) are already accepted, but they currently have no effect on dead reckoning.
+
+### Calibrate the gyro at operating temperature { #gyro-calibration-temperature }
+
+The gyro performs best when it is calibrated at the same temperature as it has during the dive. If possible, calibrate it like this:
+
+1. Put the ROV/AUV with the DVL in the water and let it run until the DVL has reached its operating temperature.
+2. Take the vehicle quickly out of the water and place it on a flat, stable surface.
+3. Calibrate the gyro while the vehicle is completely still.
+4. Put the vehicle back in the water and reset dead reckoning.
+
+Do the calibration quickly, so the DVL does not cool down or heat up in air before it is back in the water.
 
 ## Frame
 
