@@ -10,6 +10,7 @@ See [Software updates](./sw-update.md) for more information on software updates.
 - Improve tank/pool performance
 - Fix issue with protocol rejecting water tracking mode (Serial and JSON)
 - Fix issue with stored settings sometimes being reset when changing another configuration in the UI
+- PD0 protocol support (experimental)
 
 ## 3.5.2 (2026-09-29)
 
