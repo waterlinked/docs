@@ -269,7 +269,9 @@ Keep the DVL in water when powered for normal operation.
 
 Applies to: all DVL models
 
-No. The calibration is saved in memory.
+No. The calibration is saved in the DVL and is used until you calibrate again.
+
+The DVL still asks you to calibrate the gyro every time it starts, also after a power cycle. It asks because the location and the temperature may have changed if the DVL has not been used for a long time. If you calibrated recently under similar conditions, a new calibration is probably not necessary. See [Calibration request at every start-up](dead-reckoning.md#gyro-calibration-at-startup).
 
 ---
 
