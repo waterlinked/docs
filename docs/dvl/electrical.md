@@ -137,6 +137,12 @@ The pin numbers of the Seacon MC8M connector are in the last column of the [wiri
 | Power consumption, average | 4 W | 8 W | 4 W | 8 W |
 | Power-on current surge | 35 W | 30 W | 35 W | 30 W |
 
+!!! warning "Use a clean power supply"
+    Power the DVL from a clean power supply. Electrical noise from a noisy power supply or DC-DC converter can give weak or noisy measurements.
+
+!!! note "Electrical noise from connected equipment"
+    A clean power supply for the DVL is not always enough. If the DVL's Ethernet is connected to a switch, computer or media converter with a noisy power supply or DC-DC converter, that noise can reach the DVL through the Ethernet cable. Power the connected equipment from a clean supply too.
+
 ## Shielded cable information
 
 Shielded DVL cable helps protect the communication and power lines from external electromagnetic interference (EMI) and radio frequency interference (RFI). The DVL electronics are not internally connected to the shield; it is up to the user to decide whether and how to connect the shield.

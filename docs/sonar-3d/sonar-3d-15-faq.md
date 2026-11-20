@@ -11,6 +11,8 @@ The Sonar 3D-15 is rated for depths up to 300 m, ensuring reliable performance
 ## 2. What kind of power supply is recommended?
 We recommend using a power supply capable of delivering 60 W peak (surge) at 10–30 V. For optimal performance, a 20 V or higher supply is preferred.
 
+The power supply should also be clean. Electrical noise from a noisy power supply or DC-DC converter can reduce the performance of the sonar. The same applies to the equipment the sonar connects to over Ethernet, such as a switch, computer or media converter. Noise from that equipment's power supply can reach the sonar through the Ethernet cable. See [Wiring Sonar 3D-15](sonar-3d-15-electrical.md).
+
 ---
 
 ## 3. Does the Sonar 3D-15 have a thermal shutdown mechanism?

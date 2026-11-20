@@ -108,6 +108,8 @@ Follow the electrical page for your model:
 General checks:
 
 * Use an adequate power supply for the model.
+* Use a clean power supply for the DVL. Electrical noise from a noisy power supply or DC-DC converter can give weak or noisy measurements.
+* Use a clean power supply for the equipment the DVL connects to over Ethernet as well, such as the Ethernet switch, computer or media converter. Electrical noise from that equipment's power supply or DC-DC converter can reach the DVL through the Ethernet cable.
 * Protect the cable from strain and abrasion.
 * Keep power and communication wiring away from high-noise wiring when practical.
 * Follow the shield grounding guidance in the electrical documentation.
