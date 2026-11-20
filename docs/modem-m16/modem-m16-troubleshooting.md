@@ -24,6 +24,8 @@ Source: the [Modem M16 product page](https://www.waterlinked.com/shop/modem-m16-
 
 If you use a lab power supply with a current limit, set the limit high enough. A current limit that is too low makes the voltage drop when the modem transmits.
 
+The power supply should also be clean. Electrical noise from a noisy power supply or DC-DC converter can reduce the performance of the modem. This also applies to the power supply of the equipment the modem is connected to.
+
 ## 2. Use a suitable converter for the data lines
 
 Connect the modem to your computer with a converter that matches the interface:
