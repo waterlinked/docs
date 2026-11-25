@@ -15,7 +15,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: write   # the deploy step pushes the built site to the gh-pages branch
+      contents: read
 
     steps:
     - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -62,15 +62,30 @@ jobs:
         uv run python check-images.py site
         test "$(ls site/pdf/*.pdf | wc -l)" -ge 1
 
-    # Only deploy on master. This publishes the site/ directory that was built and checked above
-    # to the gh-pages branch. Nothing is rebuilt, so the published site uses the MkDocs, theme
-    # and plugin versions from uv.lock. ghp-import is the tool `mkdocs gh-deploy` uses internally.
-    - name: Deploy docs
+    # Only on master: hand the site/ directory that was built and checked above to the deploy job.
+    # Nothing is rebuilt, so the published site uses the MkDocs, theme and plugin versions from
+    # uv.lock.
+    - name: Upload the site for GitHub Pages
       if: github.ref == 'refs/heads/master'
-      run: |
-        git config user.name "${GITHUB_ACTOR}"
-        git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-        uv run ghp-import --no-jekyll --force --push \
-          --cname docs.waterlinked.com \
-          --message "Deployed ${GITHUB_SHA::7} with the site built in CI" \
-          site
+      uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+      with:
+        path: site
+
+  # Publishes the uploaded site to GitHub Pages (https://docs.waterlinked.com). The site is not
+  # stored in a branch. This needs the repository setting Settings -> Pages -> Source to be
+  # "GitHub Actions". The custom domain is also set on that settings page, not in a CNAME file.
+  deploy:
+    name: Deploy docs
+    if: github.ref == 'refs/heads/master'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write      # to publish to GitHub Pages
+      id-token: write   # to prove that the site comes from this workflow
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
