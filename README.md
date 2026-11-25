@@ -117,3 +117,5 @@ Styling of the PDFs is in `scripts/pdf/pdf.css`, the button is in
 After the changes have been tested and they work, push the changes to a branch, and make a merge request. The documentation site will built automatically and links will be verified.
 
 Once the pull request is merged the documentation will be automatically built and published to https://docs.waterlinked.com.
+
+The site is published with GitHub Pages directly from the workflow run (`.github/workflows/build.yml`). It is not stored in a `gh-pages` branch. The custom domain is set in the repository settings under Pages.
