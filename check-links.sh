@@ -63,7 +63,8 @@ PORT="$("$PYTHON" -c 'import socket; s = socket.socket(); s.bind(("127.0.0.1", 0
 "$PYTHON" -m http.server "$PORT" --bind 127.0.0.1 --directory "$TMP_BUILD_DIR" >/dev/null 2>&1 &
 SERVER_PID=$!
 # Stop the server and remove the build when the script ends, also when it fails
-trap 'kill "$SERVER_PID" 2>/dev/null || true; rm -rf "$TMP_BUILD_DIR"' EXIT
+LINK_REPORT="$(mktemp)"
+trap 'kill "$SERVER_PID" 2>/dev/null || true; rm -rf "$TMP_BUILD_DIR" "$LINK_REPORT"' EXIT
 
 # Wait until the server answers
 for _ in $(seq 1 50); do
@@ -96,11 +97,19 @@ uv run --project "$PROJECT_ROOT" linkchecker "http://127.0.0.1:$PORT/" \
     --ignore-url='^https?://192\.168\.' \
     --ignore-url='^https?://waterlinked-[a-z0-9-]+(/|$)' \
     --ignore-url='^https://octopart\.com/' \
-    --ignore-url='^https://support\.blueye\.no/'
+    --ignore-url='^https://support\.blueye\.no/' \
+    | tee "$LINK_REPORT"
 # The PDF manuals are verified by scripts/build_pdf.py
 
-RESULT_EXTERNAL=$?
+RESULT_EXTERNAL=${PIPESTATUS[0]}
 set -e
+
+# On GitHub Actions, show every broken link on the summary page of the run
+if [ $RESULT_EXTERNAL -ne 0 ] && [ -n "$GITHUB_ACTIONS" ]; then
+    awk '/^URL /      { url = $0; sub(/^URL +/, "", url) }
+         /^Parent URL/ { parent = $0; sub(/^Parent URL +/, "", parent); sub(/^http:\/\/127\.0\.0\.1:[0-9]+/, "", parent) }
+         /^Result +Error/ { result = $0; sub(/^Result +/, "", result); print "::error title=Broken link::" url " on page " parent " - " result }' "$LINK_REPORT"
+fi
 
 if [ $RESULT_EXTERNAL -ne 0 ]; then
     echo "External linkcheck failed! Please fix broken links before pushing."
