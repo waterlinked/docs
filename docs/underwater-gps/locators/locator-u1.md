@@ -19,7 +19,7 @@ Use this checklist to get the Locator-U1 ready. Each step links to the detailed 
 
 | Step | What to do | LED |
 |:----:|------------|:---:|
-| 1 | [Charge](#charging) the Locator-U1 with a 5 V / 2 A wall adapter, within 24 hours before use. On SN: 0556 and higher the LED turns solid green when the battery is full; on SN: 0555 and lower, charge for 7 hours. | <span class="led led--breathe" role="img" aria-label="LED breathing green"></span> → <span class="led led--on" role="img" aria-label="LED solid green"></span><br><small>SN: 0556 and higher</small> |
+| 1 | [Charge](#charging) the Locator-U1 with a 5 V / 2 A wall adapter, within 24 hours before use. On SN: 0567 and higher the LED turns solid green when the battery is full; on SN: 0566 and lower, charge for 7 hours. | <span class="led led--breathe" role="img" aria-label="LED breathing green"></span> → <span class="led led--on" role="img" aria-label="LED solid green"></span><br><small>SN: 0567 and higher</small> |
 | 2 | Unplug the charger. With the cap off, set the [channel](#channel-selection) on the rotary switch to the same channel as in the GUI. | |
 | 3 | Check that the O-ring in the cap is clean and undamaged, then [screw the cap on](#powering-on-and-off) to power on. The Locator-U1 searches for a GPS signal to synchronize its clock. | <span class="led led--blink" role="img" aria-label="LED flashing once per second"></span> |
 | 4 | Keep the Locator-U1 in open sky until the LED turns solid green. Its clock is now synchronized and it is ready to use. | <span class="led led--on" role="img" aria-label="LED solid green"></span> |
@@ -42,15 +42,15 @@ The Locator-U1 has an internal rechargeable battery. Use the included USB-C cabl
    Attach the other end of the cable to a wall adapter providing at least 5 V / 2 A.
 
 4) **Charge the battery**  
-   On **SN: 0556 and higher**, the LED shows when the battery is full: charging is finished when the LED stops breathing and is solid green.  
-   On **SN: 0555 and lower**, the LED does not show the charging status, so leave the Locator-U1 connected for a full 7 hours.  
+   On **SN: 0567 and higher**, the LED shows when the battery is full: charging is finished when the LED stops breathing and is solid green.  
+   On **SN: 0566 and lower**, the LED does not show the charging status, so leave the Locator-U1 connected for a full 7 hours.  
    Charging overnight the night before use is a recommended routine.
 
 ### LED behavior while charging
 
 The LED behavior while charging depends on the serial number (SN) of your Locator-U1. The serial number is printed on the flat side of the Locator-U1, where the bracket is mounted. Select the tab that matches your unit.
 
-=== "SN: 0556 and higher"
+=== "SN: 0567 and higher"
 
     When connected to a charger, the Locator-U1 only charges. It does **not** power on, does **not** search for GPS, and the LED shows the charging status only:
 
@@ -61,7 +61,7 @@ The LED behavior while charging depends on the serial number (SN) of your Locato
 
     Screw the cap on to power the Locator-U1 on. The LED then shows the time synchronization status instead, as described in [LED behavior while in use](#led-signals).
 
-=== "SN: 0555 and lower"
+=== "SN: 0566 and lower"
 
     When connected to a charger, the Locator-U1 powers on and charges at the same time. The LED does **not** indicate charging progress:
 
