@@ -10,8 +10,17 @@ Reset dead reckoning before using the local position estimate. Resetting works t
 
 Gyro calibration depends on the model:
 
-* **DVL A50/A125:** calibrate the gyroscope before you reset, by pressing *More -> Calibrate gyro* in the [web GUI](dvl-a50_a125-gui.md) while the DVL is stationary. For the best result, [calibrate at operating temperature](#gyro-calibration-temperature).
+* **DVL A50/A125:** calibrate the gyroscope before you reset, by pressing *More -> Calibrate gyro* in the [web GUI](dvl-a50_a125-gui.md) while the DVL is stationary. For the best result, [calibrate at operating temperature](#gyro-calibration-temperature). The DVL asks for a calibration at every start-up, but [you do not always need a new one](#gyro-calibration-at-startup).
 * **DVL A100/A250:** gyro calibration is not available yet and will be added in a future software release. The gyro calibration commands over the [TCP JSON API](dvl-a250_a100-json-protocol.md#calibrate-gyro) (`calibrate_gyro`) and [serial protocol](dvl-a250_a100-serial-protocol.md#calibrate-gyro-wcg) (`wcg`) are already accepted, but they currently have no effect on dead reckoning.
+
+### Calibration request at every start-up { #gyro-calibration-at-startup }
+
+The DVL asks you to calibrate the gyro every time it starts, also after a short power cycle. The DVL cannot know how long it has been switched off. If it has not been used for a long time, the temperature may have changed, and a new calibration is then a good idea.
+
+Your last calibration is always saved in the DVL, and it is used until you calibrate again. So you do not need to calibrate every time the DVL asks:
+
+* **You calibrated recently, under similar conditions:** a new calibration is probably not necessary. This is the normal case after a power cycle during the same operation.
+* **The DVL has not been used for a long time, or the temperature has changed:** calibrate again.
 
 ### Calibrate the gyro at operating temperature { #gyro-calibration-temperature }
 
