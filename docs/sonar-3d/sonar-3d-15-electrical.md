@@ -12,6 +12,12 @@ The tables below shows the pinning of the Sonar 3D-15 interface.
 | ETH TX+           | Orange/White   <span class="swatch c-orange-white"></span>|
 | Shielded wire     | Naked (silver) <span class="swatch c-silver"></span>| 
 
+!!! warning "Use a clean power supply"
+    Power the Sonar 3D-15 from a clean power supply. Electrical noise from a noisy power supply or DC-DC converter can reduce the performance of the sonar.
+
+!!! note "Electrical noise from connected equipment"
+    A clean power supply for the Sonar 3D-15 is not always enough. If the Ethernet is connected to a switch, computer or media converter with a noisy power supply or DC-DC converter, that noise can reach the sonar through the Ethernet cable. Power the connected equipment from a clean supply too.
+
 # IO Boards
 The Water Linked IO Board is the easiest solution for testing Water Linked Products like the Sonar 3D-15. They provide an interface for connecting Power and ethernet to the Sonar 3D-15. Read more about how to connect your IO Board to your Water Linked product under "IO-Interface Cards".
 

@@ -25,6 +25,12 @@ The power cable comes with a blunt cut end. Strip the jacket and connect the wir
 | Power-on current surge | 2.30A at 12V     |
 | Protection             | Reverse polarity |
 
+!!! warning "Use a clean power supply"
+	Power the Underwater GPS from a clean power supply. Electrical noise from a noisy power supply or DC-DC converter can reduce the positioning performance.
+
+!!! note "Electrical noise from connected equipment"
+	A clean power supply for the Underwater GPS is not always enough. If the topside is connected over Ethernet to a switch, computer or media converter with a noisy power supply or DC-DC converter, that noise can reach the topside through the Ethernet cable. Power the connected equipment from a clean supply too.
+
 Both the power button and the power input can be found on the right side of the Underwater GPS housing.
 The power button will illuminate when the power is switched on.
 

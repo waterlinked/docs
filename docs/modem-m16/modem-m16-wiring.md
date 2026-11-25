@@ -25,6 +25,9 @@ The [Modem M16 Installation Guide (PDF)](https://www.waterlinked.com/web/content
 
 Transmit power depends on the selected power level, see [Power Levels](modem-m16-integration.md#power-levels).
 
+!!! warning "Use a clean power supply"
+    Power the modem from a clean power supply. Electrical noise from a noisy power supply or DC-DC converter can reduce the performance of the modem. The equipment the modem is connected to should have a clean power supply too.
+
 !!! Note 
     Shutdown line can be used to control the ON/OFF state of the Modem. 
     If Shutdown is left floating, the Modem is ON. If Shutdown is short to GND, the modem is OFF. 

@@ -71,11 +71,12 @@ If bottom lock is lost:
 
 ## Weak signal or noisy measurements
 
-Weak or noisy measurements can be caused by soft bottoms, acoustic reflections, bubbles, vibration, and other acoustic sources.
+Weak or noisy measurements can be caused by soft bottoms, acoustic reflections, bubbles, vibration, other acoustic sources, and electrical noise from power supplies.
 
 Practical checks:
 
 * Compare signal quality with thrusters or motors off and on.
+* Check for electrical noise: power the DVL from a battery and connect it directly to a laptop running on battery. If the noise is gone, connect the other equipment back one item at a time, including the Ethernet switch and its power supply, to find the source. See [Grounding, power, and cable considerations](installation.md#grounding-power-and-cable-considerations).
 * Test away from tank walls, dock structures, or polished metal surfaces.
 * Check whether transducer distances are stable and similar in a flat test area.
 * Collect a diagnostic log while the issue is present.
