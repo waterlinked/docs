@@ -43,9 +43,9 @@ When connected to a charger, the LED behavior depends on the serial number (SN):
 
 | SN | LED while charging |
 |----|--------------------|
-| **0556 and higher** | The Locator-U1 only charges and does not power on. <span class="led led--breathe" role="img" aria-label="LED breathing green"></span> Breathing green: charging. <span class="led led--on" role="img" aria-label="LED solid green"></span> Solid green: fully charged. |
-| **0555 and lower** | The Locator-U1 powers on while charging. The LED does **not** show the battery or charging status. |
+| **0567 and higher** | The Locator-U1 only charges and does not power on. <span class="led led--breathe" role="img" aria-label="LED breathing green"></span> Breathing green: charging. <span class="led led--on" role="img" aria-label="LED solid green"></span> Solid green: fully charged. |
+| **0566 and lower** | The Locator-U1 powers on while charging. The LED does **not** show the battery or charging status. |
 
-Charge the Locator-U1 with a 5 V / 2 A wall adapter before use: on SN: 0556 and higher until the LED is solid green, on SN: 0555 and lower for at least 7 hours.
+Charge the Locator-U1 with a 5 V / 2 A wall adapter before use: on SN: 0567 and higher until the LED is solid green, on SN: 0566 and lower for at least 7 hours.
 
 The serial number is printed on the flat side of the Locator-U1, where the bracket is mounted. See [Locator-U1](../locators/locator-u1.md#led-signals) for full details on the LED signals and [charging](../locators/locator-u1.md#charging).
