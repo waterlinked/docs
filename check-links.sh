@@ -53,26 +53,54 @@ fi
 
 echo "Image check passed!"
 
+# LinkChecker must read the build over HTTP. With file:// paths a link such as "dvl/overview/" is
+# a folder, so LinkChecker lists the folder and never opens the page in it. Only the links on the
+# front page were then checked.
+# The server is started with the Python of the project directly, not through "uv run", so that
+# SERVER_PID is the server itself and it can be stopped.
+PYTHON="$(uv run --project "$PROJECT_ROOT" python -c 'import sys; print(sys.executable)')"
+PORT="$("$PYTHON" -c 'import socket; s = socket.socket(); s.bind(("127.0.0.1", 0)); print(s.getsockname()[1])')"
+"$PYTHON" -m http.server "$PORT" --bind 127.0.0.1 --directory "$TMP_BUILD_DIR" >/dev/null 2>&1 &
+SERVER_PID=$!
+# Stop the server and remove the build when the script ends, also when it fails
+trap 'kill "$SERVER_PID" 2>/dev/null || true; rm -rf "$TMP_BUILD_DIR"' EXIT
+
+# Wait until the server answers
+for _ in $(seq 1 50); do
+    if "$PYTHON" -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:$PORT/', timeout=1)" >/dev/null 2>&1; then
+        break
+    fi
+    sleep 0.2
+done
+
 echo "Running LinkChecker on external links against local build..."
 set +e
-# Only report broken links
-uv run --project "$PROJECT_ROOT" linkchecker "file://$TMP_BUILD_DIR/index.html" \
+# Only report broken links. Redirects are warnings and are not reported.
+# Links that are not checked:
+#   - docs.waterlinked.com: every page has a canonical link to its published address. A new page
+#     is not published yet when it is checked here.
+#   - 192.168.x.x and waterlinked-<product>: addresses of a device on the reader's own network.
+#   - octopart.com and support.blueye.no: answer 403 to automated requests.
+uv run --project "$PROJECT_ROOT" linkchecker "http://127.0.0.1:$PORT/" \
     --no-status \
+    --no-warnings \
     --check-extern \
-    --recursion-level=2 \
+    --timeout=30 \
     --ignore-url='sitemap\.xml\.gz' \
     --ignore-url='https://github.com/.*/edit/' \
     --ignore-url='https://www.youtube.com/' \
     --ignore-url='.*/assets/.*' \
     --ignore-url='.*/images/.*' \
-    --ignore-url='.*/pdf/waterlinked-.*\.pdf$'  # PDF manuals: verified by scripts/build_pdf.py
-
+    --ignore-url='.*/pdf/waterlinked-.*\.pdf$' \
+    --ignore-url='^https://docs\.waterlinked\.com/' \
+    --ignore-url='^https?://192\.168\.' \
+    --ignore-url='^https?://waterlinked-[a-z0-9-]+(/|$)' \
+    --ignore-url='^https://octopart\.com/' \
+    --ignore-url='^https://support\.blueye\.no/'
+# The PDF manuals are verified by scripts/build_pdf.py
 
 RESULT_EXTERNAL=$?
 set -e
-
-# Clean up
-rm -rf "$TMP_BUILD_DIR"
 
 if [ $RESULT_EXTERNAL -ne 0 ]; then
     echo "External linkcheck failed! Please fix broken links before pushing."

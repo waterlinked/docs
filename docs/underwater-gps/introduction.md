@@ -17,7 +17,7 @@ The Underwater GPS G2 system is based upon Short Baseline (SBL) acoustic positio
 
 Time-of-flight from the locator to each of the four receivers is used in an innovative algorithm to calculate the position of the locator relative to the UGPS G2 topside unit. We refer to as the _acoustic position_. The UGPS G2 system obtains a _global position_ by combining this acoustic position with the global GPS coordinates of the topside unit. This may be provided by the topside unit's in-built GPS antenna, or, for greater precision, passed in externally by means of the UGPS G2 [API](../underwater-gps/integration/api.md). This API provides output of both the acoustic and global positions calculated by the UGPS G2 system, as well as comprehensive programmatic configuration of the system.
 
-Compared to USBL systems, the UGPS G2 system has the advantage of working well in challenging environments, for example shallow water, or reflective environments such as near ship hulls, in fish cages, near harbour installations, inside water tanks, etc. One of our [FAQs](https://support.waterlinked.com/en/knowledge/why-choose-ugps-g2-over-a-usbl-system) elaborates further on this.
+Compared to USBL systems, the UGPS G2 system has the advantage of working well in challenging environments, for example shallow water, or reflective environments such as near ship hulls, in fish cages, near harbour installations, inside water tanks, etc.
 
 ## Features
 
@@ -53,7 +53,7 @@ Please read the following carefully before the UGPS G2 system is installed and u
 
 ## Discussion
 
-If you have questions, you are very welcome to contact our [customer support](https://support.waterlinked.com/en/knowledge), where we will be happy to help you.
+If you have questions, you are very welcome to contact our [customer support](https://waterlinked.com/support), where we will be happy to help you.
 
 ## Datasheet
 

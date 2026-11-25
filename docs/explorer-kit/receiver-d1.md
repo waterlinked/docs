@@ -1,6 +1,6 @@
 # Receiver-D1
 
-[Buy Receiver-D1 here!](https://waterlinked.com/product/receiver-d1/)
+[Buy Receiver-D1 here!](https://www.waterlinked.com/shop/underwater-gps-g2-receiver-d1-128)
 
 ## Description
 

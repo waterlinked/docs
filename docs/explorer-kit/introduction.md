@@ -29,5 +29,5 @@ Once the position is known relative to the Receivers, the global position can be
 
 ## Discussion
 
-If you have questions, you are very welcome to contact our [customer support](https://support.waterlinked.com/en/knowledge), where we will be happy to help you.
+If you have questions, you are very welcome to contact our [customer support](https://waterlinked.com/support), where we will be happy to help you.
 

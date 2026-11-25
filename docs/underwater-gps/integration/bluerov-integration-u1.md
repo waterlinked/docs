@@ -16,7 +16,7 @@ In this guide it is described how to establish a network connection between UGPS
 
 1. Set the [IP switch](../network-settings.md#ethernet) inside the UGPS G2 topside unit to `192.168.2.94` (the down position). This equips the G2 topside unit with the static IP address 192.168.2.94.
 
-2. [Connect power](https://waterlinked.github.io/underwater-gps/power-supply/) to the UGPS Topside and switch on the power, resulting in the power switch lighting up.
+2. [Connect power](../power-supply.md) to the UGPS Topside and switch on the power, resulting in the power switch lighting up.
 
 3. Connect an Ethernet cable to the UGPS Topside.
 
