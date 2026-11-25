@@ -38,7 +38,7 @@ In our measurements, TCP JSON message latency was typically around 4 ms average,
 
 ### PD formats over TCP
 
-PD4 and PD6 are also supported over TCP for all DVL models. PD0 is planned for DVL A100 and DVL A250 over TCP and serial, but is not available yet. See [PD formats](dvl-pd-formats.md) for the canonical PD format descriptions.
+PD4 and PD6 are also supported over TCP for all DVL models. PD0 is available as an experimental format on DVL A100 and DVL A250. Contact Water Linked through the [support page](https://waterlinked.com/support) for more information. See [PD formats](dvl-pd-formats.md) for the canonical PD format descriptions.
 
 ### Velocity-and-transducer report
 

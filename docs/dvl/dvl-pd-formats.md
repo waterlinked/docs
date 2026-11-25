@@ -15,7 +15,7 @@ For new integrations, the TCP JSON API is usually the easiest starting point:
 | --- | --- | --- |
 | PD4 | Supported | Supported over TCP and serial for DVL A50, DVL A125, DVL A100, and DVL A250. |
 | PD6 | Supported | Supported over TCP and serial for DVL A50, DVL A125, DVL A100, and DVL A250. |
-| PD0 | Planned for DVL A100/A250 | Not available yet. Planned over TCP and serial when ready. |
+| PD0 | Experimental for DVL A100/A250 | Available from software version 3.6.0. Still experimental. Contact Water Linked through the [support page](https://waterlinked.com/support) for more information. |
 
 ## Transport support
 
@@ -23,7 +23,7 @@ For new integrations, the TCP JSON API is usually the easiest starting point:
 | --- | --- | --- | --- |
 | PD4 | Yes | Yes | DVL A50, DVL A125, DVL A100, DVL A250 |
 | PD6 | Yes | Yes | DVL A50, DVL A125, DVL A100, DVL A250 |
-| PD0 | Planned | Planned | DVL A100, DVL A250 |
+| PD0 | Experimental, contact support | Experimental, contact support | DVL A100, DVL A250 |
 
 PD4 and PD6 over TCP are always enabled. The TCP port is configurable in the web GUI.
 
@@ -184,6 +184,7 @@ To use BM1-BM4 correctly, use this translation. The numbering comes from the tra
 
 ## PD0 { #pd0-protocol }
 
-PD0 is planned for DVL A100 and DVL A250. It is not available yet.
+PD0 is available as an experimental format on DVL A100 and DVL A250 from software version 3.6.0, see the [changelog](dvl-a250_a100-changelog.md).
 
-When ready, PD0 is planned for both TCP and serial output.
+!!! note "PD0 is experimental"
+    The PD0 output is still experimental and may change in a later software release. It is not described in this documentation yet. Contact Water Linked through the [support page](https://waterlinked.com/support) for more information before you use PD0 in an integration.

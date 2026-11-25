@@ -13,7 +13,7 @@ The DVL A100 is part of the same product family as the DVL A250. From a web GUI,
 * 625 kHz transducer frequency.
 * Integrated AHRS for dead reckoning.
 * Ethernet and RS232 serial communication.
-* TCP JSON API, serial protocol, PD4, and PD6. PD0 is planned but not available yet.
+* TCP JSON API, serial protocol, PD4, and PD6. PD0 is available as an [experimental format](dvl-pd-formats.md#pd0-protocol).
 * Side cable entry and rear O-ring interface versions.
 
 ## Mechanical and installation overview

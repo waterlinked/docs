@@ -179,7 +179,7 @@ Applies to: all DVL models
 
 Use Ethernet and the web GUI for first setup, diagnostics, configuration, and testing. Use the Water Linked TCP JSON API over Ethernet for custom software integrations. Use the Water Linked serial protocol for direct vehicle integration over the serial interface.
 
-Use PD4 or PD6 only when the receiving system already supports that format. PD0 is planned for DVL A100 and DVL A250, but is not available yet.
+Use PD4 or PD6 only when the receiving system already supports that format. PD0 is available on DVL A100 and DVL A250, but it is still experimental. Contact Water Linked through the [support page](https://waterlinked.com/support) for more information.
 
 See [Integration overview](integration.md), [PD formats](dvl-pd-formats.md), [DVL electrical connection](electrical.md), and the protocol pages for your model.
 

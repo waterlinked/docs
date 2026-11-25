@@ -59,7 +59,7 @@ Protocol references:
 
 Use PD formats only when the receiving system already supports PD0, PD4, or PD6. This can reduce integration work when replacing or adding a DVL to an existing system.
 
-PD4 and PD6 are supported over TCP and serial for all DVL models. PD0 is planned for DVL A100 and DVL A250, but is not available yet.
+PD4 and PD6 are supported over TCP and serial for all DVL models. PD0 is available on DVL A100 and DVL A250, but it is still experimental. Contact Water Linked through the [support page](https://waterlinked.com/support) for more information.
 
 Protocol references:
 
