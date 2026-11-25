@@ -6466,7 +6466,7 @@
 <h2 id="which-interface-should-i-use-ethernet-serial-pd0-pd4-or-pd6">17. Which interface should I use: Ethernet, serial, PD0, PD4, or PD6?<a class="headerlink" href="#which-interface-should-i-use-ethernet-serial-pd0-pd4-or-pd6" title="Permanent link">🔗</a></h2>
 <p>Applies to: all DVL models</p>
 <p>Use Ethernet and the web GUI for first setup, diagnostics, configuration, and testing. Use the Water Linked TCP JSON API over Ethernet for custom software integrations. Use the Water Linked serial protocol for direct vehicle integration over the serial interface.</p>
-<p>Use PD4 or PD6 only when the receiving system already supports that format. PD0 is planned for DVL A100 and DVL A250, but is not available yet.</p>
+<p>Use PD4 or PD6 only when the receiving system already supports that format. PD0 is available on DVL A100 and DVL A250, but it is still experimental. Contact Water Linked through the <a href="https://waterlinked.com/support">support page</a> for more information.</p>
 <p>See <a href="../integration/">Integration overview</a>, <a href="../dvl-pd-formats/">PD formats</a>, <a href="../electrical/">DVL electrical connection</a>, and the protocol pages for your model.</p>
 <hr />
 <h2 id="does-the-dvl-have-an-rs232-interface">18. Does the DVL have an RS232 interface?<a class="headerlink" href="#does-the-dvl-have-an-rs232-interface" title="Permanent link">🔗</a></h2>
@@ -6511,7 +6511,8 @@
 <hr />
 <h2 id="do-i-need-to-calibrate-the-imu-each-time-i-power-on-the-dvl">26. Do I need to calibrate the IMU each time I power on the DVL?<a class="headerlink" href="#do-i-need-to-calibrate-the-imu-each-time-i-power-on-the-dvl" title="Permanent link">🔗</a></h2>
 <p>Applies to: all DVL models</p>
-<p>No. The calibration is saved in memory.</p>
+<p>No. The calibration is saved in the DVL and is used until you calibrate again.</p>
+<p>The DVL still asks you to calibrate the gyro every time it starts, also after a power cycle. It asks because the temperature may have changed if the DVL has not been used for a long time. If you calibrated recently under similar conditions, a new calibration is probably not necessary. See <a href="../dead-reckoning/#gyro-calibration-at-startup">Calibration request at every start-up</a>.</p>
 <hr />
 <h2 id="will-temperature-affect-the-imu">27. Will temperature affect the IMU?<a class="headerlink" href="#will-temperature-affect-the-imu" title="Permanent link">🔗</a></h2>
 <p>Applies to: all DVL models</p>

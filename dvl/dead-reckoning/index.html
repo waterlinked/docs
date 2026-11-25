@@ -3892,6 +3892,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#gyro-calibration-at-startup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Calibration request at every start-up
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#gyro-calibration-temperature" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5682,6 +5693,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#gyro-calibration-at-startup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Calibration request at every start-up
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#gyro-calibration-temperature" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5796,8 +5818,15 @@
 <p>Reset dead reckoning before using the local position estimate. Resetting works the same way on all DVL models: send the <code>reset_dead_reckoning</code> command over the TCP JSON API or the <code>wcr</code> command over the serial protocol. See the TCP JSON API for <a href="../dvl-json-protocol/#reset-dead-reckoning">DVL A50/A125</a> or <a href="../dvl-a250_a100-json-protocol/#reset-dead-reckoning">DVL A100/A250</a>, and the serial protocol for <a href="../dvl-serial-protocol/#reset-dead-reckoning-wcr">DVL A50/A125</a> or <a href="../dvl-a250_a100-serial-protocol/#reset-dead-reckoning-wcr">DVL A100/A250</a>. On DVL A50/A125 you can also click the <strong>Reset</strong> button <img alt="" src="../../img/dvl_gui_icon_reset.png" /> in the <a href="../dvl-a50_a125-gui/#dashboard-live-data">dashboard</a>.</p>
 <p>Gyro calibration depends on the model:</p>
 <ul>
-<li><strong>DVL A50/A125:</strong> calibrate the gyroscope before you reset, by pressing <em>More -&gt; Calibrate gyro</em> in the <a href="../dvl-a50_a125-gui/">web GUI</a> while the DVL is stationary. For the best result, <a href="#gyro-calibration-temperature">calibrate at operating temperature</a>.</li>
+<li><strong>DVL A50/A125:</strong> calibrate the gyroscope before you reset, by pressing <em>More -&gt; Calibrate gyro</em> in the <a href="../dvl-a50_a125-gui/">web GUI</a> while the DVL is stationary. For the best result, <a href="#gyro-calibration-temperature">calibrate at operating temperature</a>. The DVL asks for a calibration at every start-up, but <a href="#gyro-calibration-at-startup">you do not always need a new one</a>.</li>
 <li><strong>DVL A100/A250:</strong> gyro calibration is not available yet and will be added in a future software release. The gyro calibration commands over the <a href="../dvl-a250_a100-json-protocol/#calibrate-gyro">TCP JSON API</a> (<code>calibrate_gyro</code>) and <a href="../dvl-a250_a100-serial-protocol/#calibrate-gyro-wcg">serial protocol</a> (<code>wcg</code>) are already accepted, but they currently have no effect on dead reckoning.</li>
+</ul>
+<h3 id="gyro-calibration-at-startup">Calibration request at every start-up<a class="headerlink" href="#gyro-calibration-at-startup" title="Permanent link">🔗</a></h3>
+<p>The DVL asks you to calibrate the gyro every time it starts, also after a short power cycle. The DVL cannot know how long it has been switched off. If it has not been used for a long time, the temperature may have changed, and a new calibration is then a good idea.</p>
+<p>Your last calibration is always saved in the DVL, and it is used until you calibrate again. So you do not need to calibrate every time the DVL asks:</p>
+<ul>
+<li><strong>You calibrated recently, under similar conditions:</strong> a new calibration is probably not necessary. This is the normal case after a power cycle during the same operation.</li>
+<li><strong>The DVL has not been used for a long time, or the temperature has changed:</strong> calibrate again.</li>
 </ul>
 <h3 id="gyro-calibration-temperature">Calibrate the gyro at operating temperature<a class="headerlink" href="#gyro-calibration-temperature" title="Permanent link">🔗</a></h3>
 <p>The gyro performs best when it is calibrated at the same temperature as it has during the dive. If possible, calibrate it like this:</p>
