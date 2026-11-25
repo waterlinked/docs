@@ -96,8 +96,8 @@ uv run --project "$PROJECT_ROOT" linkchecker "http://127.0.0.1:$PORT/" \
     --ignore-url='^https://docs\.waterlinked\.com/' \
     --ignore-url='^https?://192\.168\.' \
     --ignore-url='^https?://waterlinked-[a-z0-9-]+(/|$)' \
-    --ignore-url='^https://octopart\.com/' \
-    --ignore-url='^https://support\.blueye\.no/' \
+    --ignore-url='^https://octopart\.com' \
+    --ignore-url='^https://support\.blueye\.no' \
     | tee "$LINK_REPORT"
 # The PDF manuals are verified by scripts/build_pdf.py
 
