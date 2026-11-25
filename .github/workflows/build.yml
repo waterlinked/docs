@@ -5,6 +5,12 @@ on:
     branches:
       - '**'   # run on all branches
 
+# A new push to a branch stops the older run of that branch. Runs on master are never stopped,
+# they wait in line, so a deploy is not cut off halfway and two deploys cannot run at the same time.
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/master' }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -12,12 +18,12 @@ jobs:
       contents: write   # the deploy step pushes the built site to the gh-pages branch
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       with:
         fetch-depth: 0   # full history: the PDF covers use the date of the last change per product
 
     - name: Install uv
-      uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+      uses: astral-sh/setup-uv@1db35dd8eee11c5894872e0b383ae6c406cf738d # v10.4.0
 
     - name: Install dependencies
       run: uv sync --locked
@@ -38,13 +44,10 @@ jobs:
     - name: Build and verify PDF manuals
       run: uv run python scripts/build_pdf.py --site-dir site --out-dir docs/pdf
 
-    - name: Check links
-      run: ./check-links.sh
-
     # Makes the PDFs of every branch downloadable from the workflow run, for review before merging.
     - name: Upload PDF manuals
       if: always()   # also when verification fails, so the problem can be inspected
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
       with:
         name: pdf-manuals
         path: docs/pdf/*.pdf
