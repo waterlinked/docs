@@ -317,7 +317,7 @@ Now that all hardware modifications are done, you will connect UGPS Topside, FXT
 
 * Set the [IP switch](../network-settings.md#ethernet) inside the UGPS Topside unit to `192.168.2.94` (the down position). This equips the G2 topside unit with the static IP address 192.168.2.94.
 
-* Connect the Binder-connector named "Locator" at the UGPS Topside with the newly installed Binder-connector at the FXTI using the deck extension cable, which came with the BlueROV integration kit. (Power up the UGPS Topside)[https://waterlinked.github.io/underwater-gps/power-supply/]. It is on when the power button is lit.
+* Connect the Binder-connector named "Locator" at the UGPS Topside with the newly installed Binder-connector at the FXTI using the deck extension cable, which came with the BlueROV integration kit. [Power up the UGPS Topside](../power-supply.md). It is on when the power button is lit.
 
 You should now be able to access both the BlueROV by typing `192.168.2.2` in your browser address line and UGPS Topside by typing `192.168.2.94`. Both have to be turned on.
 

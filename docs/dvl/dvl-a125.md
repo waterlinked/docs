@@ -5,7 +5,7 @@
 ![dvl_A125](../img/WL-21037-2_DVL-A125_InHand_1600.jpg)
 
 ## Description
-The [DVL A125](https://www.waterlinked.com/dvl/dvl-a125) is the next step up from the [DVL A50](https://www.waterlinked.com/dvl/dvl-a50), providing better performance at greater distances while still keeping a small form factor relative to competing DVLs.
+The [DVL A125](https://www.waterlinked.com/shop/dvl-a125-178) is the next step up from the [DVL A50](https://www.waterlinked.com/shop/dvl-a50-1248), providing better performance at greater distances while still keeping a small form factor relative to competing DVLs.
 
 The DVL A125 builds on the DVL A50 with increased performance, a small 4-beam setup, an open interface protocol, and mid-to-low cost.
 

@@ -96,14 +96,14 @@ These signals apply when the Locator-U1 is powered on by screwing on the cap. Th
 
 A completely empty battery looks the same as a Locator-U1 that is switched off: the LED stays dark. So if the LED is dark with the cap screwed on, the Locator-U1 most likely needs [charging](#charging).
 
-If the LED also stays dark when the Locator-U1 is connected to the charger, the battery is so deeply discharged that it may be damaged. Leave the Locator-U1 connected to the charger, as this can recover the battery. If the LED is still dark after a full charge, contact [support](https://support.waterlinked.com/en/knowledge).
+If the LED also stays dark when the Locator-U1 is connected to the charger, the battery is so deeply discharged that it may be damaged. Leave the Locator-U1 connected to the charger, as this can recover the battery. If the LED is still dark after a full charge, contact [support](https://waterlinked.com/support).
 
 ### Error indication
 
 A fast flashing LED often means one of the following:
 
 - The Locator-U1 has exceeded its [operating time](#operating-time) and the pressure sensor needs to dry. Charging the Locator-U1 helps the sensor dry more quickly.
-- Another internal failure. If the LED keeps flashing fast after the pressure sensor has dried, contact [support](https://support.waterlinked.com/en/knowledge).
+- Another internal failure. If the LED keeps flashing fast after the pressure sensor has dried, contact [support](https://waterlinked.com/support).
 
 ## Channel selection
 
