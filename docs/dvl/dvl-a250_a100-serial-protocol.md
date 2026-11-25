@@ -420,9 +420,10 @@ uint8_t crc8(uint8_t *message, int message_length) {
 
 ## PD0 format { #pd0-protocol }
 
-PD0 is planned for DVL A100 and DVL A250. It is not available yet.
+PD0 is available as an experimental format on DVL A100 and DVL A250 from software version 3.6.0.
 
-When ready, PD0 is planned for both TCP and serial output.
+!!! note "PD0 is experimental"
+    The PD0 output is still experimental and may change in a later software release. It is not described in this documentation yet. Contact Water Linked through the [support page](https://waterlinked.com/support) for more information before you use PD0 in an integration.
 
 See [PD formats](dvl-pd-formats.md#pd0-protocol).
 
