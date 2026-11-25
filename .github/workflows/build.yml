@@ -8,6 +8,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write   # the deploy step pushes the built site to the gh-pages branch
 
     steps:
     - uses: actions/checkout@v3
@@ -49,11 +51,23 @@ jobs:
         if-no-files-found: ignore
         retention-days: 30
 
-    # Only deploy on master. The deploy step builds the site again; the PDFs in docs/pdf/ are
-    # copied into the published site at /pdf/, where the "Download PDF" buttons link to.
+    # The site that gets published. It is built here, with the locked dependencies, after the PDFs
+    # exist in docs/pdf/, so it contains them under /pdf/ where the "Download PDF" buttons link to.
+    - name: Build the site to publish
+      run: |
+        uv run mkdocs build --strict
+        uv run python check-images.py site
+        test "$(ls site/pdf/*.pdf | wc -l)" -ge 1
+
+    # Only deploy on master. This publishes the site/ directory that was built and checked above
+    # to the gh-pages branch. Nothing is rebuilt, so the published site uses the MkDocs, theme
+    # and plugin versions from uv.lock. ghp-import is the tool `mkdocs gh-deploy` uses internally.
     - name: Deploy docs
       if: github.ref == 'refs/heads/master'
-      uses: mhausenblas/mkdocs-deploy-gh-pages@master
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        CUSTOM_DOMAIN: docs.waterlinked.com
+      run: |
+        git config user.name "${GITHUB_ACTOR}"
+        git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+        uv run ghp-import --no-jekyll --force --push \
+          --cname docs.waterlinked.com \
+          --message "Deployed ${GITHUB_SHA::7} with the site built in CI" \
+          site
