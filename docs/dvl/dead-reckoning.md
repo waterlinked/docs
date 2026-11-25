@@ -15,12 +15,12 @@ Gyro calibration depends on the model:
 
 ### Calibration request at every start-up { #gyro-calibration-at-startup }
 
-The DVL asks you to calibrate the gyro every time it starts, also after a short power cycle. The DVL cannot know how long it has been switched off. If it has not been used for a long time, the location and the temperature may have changed, and a new calibration is then a good idea.
+The DVL asks you to calibrate the gyro every time it starts, also after a short power cycle. The DVL cannot know how long it has been switched off. If it has not been used for a long time, the temperature may have changed, and a new calibration is then a good idea.
 
 Your last calibration is always saved in the DVL, and it is used until you calibrate again. So you do not need to calibrate every time the DVL asks:
 
 * **You calibrated recently, under similar conditions:** a new calibration is probably not necessary. This is the normal case after a power cycle during the same operation.
-* **The DVL has not been used for a long time, or the location or temperature has changed:** calibrate again.
+* **The DVL has not been used for a long time, or the temperature has changed:** calibrate again.
 
 ### Calibrate the gyro at operating temperature { #gyro-calibration-temperature }
 
